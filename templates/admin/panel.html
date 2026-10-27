@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>Panel de Control · Minuta Casino Coalfa / Promet</title>
   <style>
     :root {
@@ -23,11 +23,19 @@
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
+    
+    html, body {
+      width: 100%;
+      min-height: 100%;
+      overflow-x: hidden;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       background: var(--bg);
       color: var(--text);
       line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
       padding-bottom: 60px;
     }
 
@@ -43,20 +51,23 @@
       top: 0;
       z-index: 100;
       box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+      width: 100%;
     }
     .header-left {
       display: flex;
       align-items: center;
-      gap: 18px;
+      gap: 16px;
     }
     .header-left img {
       height: 32px;
+      max-width: 110px;
       object-fit: contain;
     }
     .header-title-box h1 {
       font-size: 17px;
       font-weight: 800;
       color: var(--primary);
+      line-height: 1.2;
     }
     .header-title-box span {
       font-size: 12px;
@@ -65,7 +76,8 @@
     .header-right {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
+      flex-wrap: wrap;
     }
     .btn-tv-live {
       display: inline-flex;
@@ -79,6 +91,7 @@
       font-size: 13px;
       font-weight: 700;
       transition: background 0.2s;
+      white-space: nowrap;
     }
     .btn-tv-live:hover { background: #1D4ED8; }
     .user-pill {
@@ -88,8 +101,22 @@
       padding: 6px 12px;
       border-radius: 20px;
       border: 1px solid var(--border);
+      white-space: nowrap;
     }
     .user-pill strong { color: var(--text); }
+    .btn-django {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      color: var(--text);
+      white-space: nowrap;
+    }
+    .btn-django:hover { background: #E2E8F0; }
     .btn-logout {
       color: var(--danger);
       background: #FEE2E2;
@@ -99,29 +126,36 @@
       text-decoration: none;
       font-size: 13px;
       font-weight: 600;
+      white-space: nowrap;
     }
 
     /* CONTENEDOR PRINCIPAL */
     .admin-container {
+      width: 100%;
       max-width: 1280px;
-      margin: 24px auto;
+      margin: 20px auto;
       padding: 0 20px;
     }
 
-    /* PESTAÑAS */
+    /* PESTAÑAS (SWIPEABLE EN MÓVIL) */
     .tabs-nav {
       display: flex;
       gap: 8px;
       border-bottom: 2px solid var(--border);
-      margin-bottom: 24px;
+      margin-bottom: 20px;
       overflow-x: auto;
-      padding-bottom: 2px;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: 4px;
+      scrollbar-width: none;
+    }
+    .tabs-nav::-webkit-scrollbar {
+      display: none;
     }
     .tab-btn {
       background: none;
       border: none;
-      padding: 10px 18px;
-      font-size: 15px;
+      padding: 10px 16px;
+      font-size: 14px;
       font-weight: 600;
       color: var(--text-muted);
       cursor: pointer;
@@ -129,14 +163,16 @@
       white-space: nowrap;
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
       transition: all 0.2s;
+      flex-shrink: 0;
     }
     .tab-btn:hover { color: var(--primary); background: rgba(11, 63, 168, 0.04); }
     .tab-btn.active {
       color: var(--primary);
       border-bottom: 3px solid var(--primary);
       background: #FFFFFF;
+      font-weight: 700;
     }
 
     .tab-content { display: none; }
@@ -147,87 +183,115 @@
       background: var(--card-bg);
       border: 1px solid var(--border);
       border-radius: 12px;
-      padding: 22px;
-      margin-bottom: 24px;
+      padding: 20px;
+      margin-bottom: 20px;
       box-shadow: 0 1px 3px rgba(0,0,0,0.03);
     }
     .card-title {
-      font-size: 17px;
+      font-size: 16px;
       font-weight: 700;
       color: var(--text);
       margin-bottom: 16px;
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
+      gap: 8px;
     }
 
-    /* CONTROL DE FECHA */
+    /* BARRA DE FECHA */
     .date-bar {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
-      gap: 16px;
+      gap: 12px;
       background: #FFFFFF;
-      padding: 16px 20px;
+      padding: 14px 18px;
       border-radius: 12px;
       border: 1px solid var(--border);
-      margin-bottom: 20px;
+      margin-bottom: 18px;
     }
     .date-nav-group {
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
       gap: 10px;
+    }
+    .date-picker-wrap {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .date-buttons-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
     }
     .btn-nav-date {
       background: var(--bg);
       border: 1px solid var(--border);
-      padding: 8px 14px;
+      padding: 8px 12px;
       border-radius: 6px;
       font-size: 13px;
       font-weight: 600;
       cursor: pointer;
       text-decoration: none;
       color: var(--text);
+      white-space: nowrap;
+      transition: background 0.15s;
     }
     .btn-nav-date:hover { background: #E2E8F0; }
     .date-input {
       font-size: 15px;
       font-weight: 600;
-      padding: 7px 12px;
+      padding: 7px 10px;
       border: 1.5px solid var(--border);
       border-radius: 6px;
       outline: none;
+      background: #FFFFFF;
+      color: var(--text);
     }
     .date-display-badge {
-      font-size: 15px;
+      font-size: 14px;
       font-weight: 700;
       color: var(--primary);
       background: var(--primary-light);
       padding: 6px 14px;
       border-radius: 20px;
+      white-space: nowrap;
     }
 
-    /* SELECTOR DE SERVICIOS (DESAYUNO, ALMUERZO, CENA) */
+    /* SELECTOR DE SERVICIOS */
     .services-pills {
-      display: flex;
-      gap: 12px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
       margin-bottom: 20px;
     }
     .service-pill-btn {
-      flex: 1;
       text-align: center;
-      padding: 12px;
+      padding: 12px 8px;
       border-radius: 8px;
-      font-size: 15px;
+      font-size: 14px;
       font-weight: 700;
       text-decoration: none;
       color: var(--text-muted);
       background: #FFFFFF;
       border: 2px solid var(--border);
       transition: all 0.2s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
     }
     .service-pill-btn:hover { border-color: #94A3B8; }
+    .service-pill-btn .service-hours {
+      font-size: 11px;
+      font-weight: 500;
+      opacity: 0.85;
+    }
     .service-pill-btn.active-desayuno {
       background: var(--desayuno);
       color: #FFFFFF;
@@ -247,9 +311,11 @@
       box-shadow: 0 4px 12px rgba(46, 125, 91, 0.25);
     }
 
-    /* TABLA DE ITEMS */
+    /* TABLA DE ITEMS (DESKTOP) */
     .table-responsive {
+      width: 100%;
       overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
     }
     table.data-table {
       width: 100%;
@@ -286,35 +352,42 @@
       padding: 3px 8px;
       border-radius: 12px;
       font-weight: 600;
+      white-space: nowrap;
     }
     .col-1-badge { background: #EFF6FF; color: #1D4ED8; border: 1px solid #BFDBFE; }
     .col-2-badge { background: #F0FDF4; color: #15803D; border: 1px solid #BBF7D0; }
+
+    .mobile-label { display: none; }
 
     .btn-action-edit {
       background: #E0E7FF;
       color: #3730A3;
       border: none;
-      padding: 5px 10px;
+      padding: 6px 12px;
       border-radius: 6px;
       font-size: 12px;
       font-weight: 600;
       cursor: pointer;
+      transition: background 0.15s;
     }
+    .btn-action-edit:hover { background: #C7D2FE; }
     .btn-action-delete {
       background: #FEE2E2;
       color: #B91C1C;
       border: none;
-      padding: 5px 10px;
+      padding: 6px 12px;
       border-radius: 6px;
       font-size: 12px;
       font-weight: 600;
       cursor: pointer;
+      transition: background 0.15s;
     }
+    .btn-action-delete:hover { background: #FECACA; }
 
     /* FORMULARIOS */
     .form-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 16px;
       margin-bottom: 16px;
     }
@@ -326,15 +399,18 @@
       font-size: 13px;
       font-weight: 600;
       color: #334155;
-      margin-bottom: 5px;
+      margin-bottom: 6px;
     }
     .form-control {
       width: 100%;
-      padding: 9px 12px;
+      min-height: 42px;
+      padding: 8px 12px;
       border: 1.5px solid var(--border);
       border-radius: 6px;
       font-size: 14px;
       outline: none;
+      background: #FFFFFF;
+      color: var(--text);
       transition: border-color 0.2s;
     }
     .form-control:focus {
@@ -345,17 +421,17 @@
       display: flex;
       flex-wrap: wrap;
       gap: 6px;
-      margin-top: 6px;
+      margin-top: 8px;
     }
     .chip {
       background: #E2E8F0;
       font-size: 11px;
       font-weight: 600;
-      padding: 3px 8px;
+      padding: 5px 10px;
       border-radius: 12px;
       cursor: pointer;
       user-select: none;
-      transition: background 0.15s;
+      transition: all 0.15s;
     }
     .chip:hover { background: #CBD5E1; color: var(--primary); }
 
@@ -369,8 +445,18 @@
       font-weight: 700;
       cursor: pointer;
       transition: background 0.2s;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
     }
     .btn-primary:hover { background: var(--primary-dark); }
+
+    .colacion-form-wrap {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
 
     /* AUDITORÍA */
     .audit-action-badge {
@@ -380,6 +466,7 @@
       padding: 3px 8px;
       border-radius: 4px;
       text-transform: uppercase;
+      white-space: nowrap;
     }
     .act-CREACION { background: #DCFCE7; color: #166534; }
     .act-MODIFICACION { background: #FEF3C7; color: #92400E; }
@@ -398,20 +485,237 @@
     .alert-success { background: #DCFCE7; color: #166534; border-left: 4px solid #16A34A; }
     .alert-error { background: #FEE2E2; color: #991B1B; border-left: 4px solid #DC2626; }
 
+    /* =======================================================
+       RESPONSIVE DESIGN COMPLETO PARA TELÉFONOS MÓVILES (SMARTPHONES)
+       ======================================================= */
     @media (max-width: 768px) {
-      .header-left img { height: 26px; }
-      .services-pills { flex-direction: column; }
-      .date-bar { flex-direction: column; align-items: stretch; }
+      body {
+        padding-bottom: 40px;
+      }
+
+      /* Navbar móvil en 2 filas limpias */
+      header.admin-header {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 10px 14px;
+        gap: 10px;
+      }
+      .header-left {
+        width: 100%;
+        justify-content: space-between;
+        gap: 10px;
+      }
+      .header-left img {
+        height: 24px;
+      }
+      .header-title-box h1 {
+        font-size: 14px;
+      }
+      .header-title-box span {
+        display: none; /* Ahorra espacio en pantallas angostas */
+      }
+      .header-right {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        gap: 6px;
+      }
+      .btn-tv-live {
+        flex: 1.2;
+        justify-content: center;
+        padding: 8px 6px;
+        font-size: 12px;
+      }
+      .user-pill {
+        padding: 6px 8px;
+        font-size: 11px;
+      }
+      .btn-django {
+        padding: 6px 8px;
+        font-size: 11px;
+      }
+      .btn-logout {
+        padding: 6px 8px;
+        font-size: 11px;
+      }
+
+      /* Contenedor sin márgenes sobrantes */
+      .admin-container {
+        padding: 0 12px;
+        margin: 14px auto;
+      }
+
+      /* Barra de navegación de fecha adaptativa */
+      .date-bar {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 12px;
+        gap: 10px;
+      }
+      .date-nav-group {
+        width: 100%;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .date-picker-wrap {
+        width: 100%;
+      }
+      .date-label {
+        font-size: 14px;
+        font-weight: 700;
+        white-space: nowrap;
+      }
+      .date-input {
+        width: 100%;
+        font-size: 16px; /* 16px previene auto-zoom molesto en iPhone Safari */
+        min-height: 42px;
+      }
+      .date-buttons-row {
+        width: 100%;
+        gap: 6px;
+      }
+      .date-buttons-row .btn-nav-date {
+        flex: 1;
+        text-align: center;
+        padding: 10px 4px;
+        font-size: 12px;
+      }
+      .date-display-badge {
+        width: 100%;
+        text-align: center;
+        font-size: 13px;
+        padding: 8px 10px;
+        border-radius: 8px;
+      }
+
+      /* Selector de servicios */
+      .services-pills {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+      .service-pill-btn {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 12px 16px;
+        font-size: 14px;
+      }
+      .service-pill-btn .service-hours {
+        font-size: 12px;
+      }
+
+      /* TABLA TRANSFORMADA EN TARJETAS TÁCTILES EN CELULAR */
+      table.data-table,
+      table.data-table thead,
+      table.data-table tbody,
+      table.data-table th,
+      table.data-table td,
+      table.data-table tr {
+        display: block;
+      }
+      table.data-table thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+      }
+      table.data-table tr {
+        background: #FFFFFF;
+        border: 1.5px solid var(--border);
+        border-radius: 10px;
+        padding: 12px 14px;
+        margin-bottom: 12px;
+        box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+      }
+      table.data-table td {
+        border: none;
+        padding: 5px 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px dashed #F1F5F9;
+      }
+      table.data-table td.dish-cat-cell {
+        border-bottom: none;
+        padding-bottom: 2px;
+      }
+      table.data-table td.dish-name-cell {
+        display: block;
+        font-size: 15px;
+        font-weight: 700;
+        color: #0F172A;
+        padding: 4px 0 10px 0;
+        line-height: 1.35;
+        border-bottom: 1px solid var(--border);
+      }
+      table.data-table td.dish-actions-cell {
+        display: flex;
+        gap: 8px;
+        margin-top: 8px;
+        padding-top: 10px;
+        border-top: 1px solid var(--border);
+        border-bottom: none;
+      }
+      table.data-table td.dish-actions-cell button {
+        flex: 1;
+        padding: 10px;
+        font-size: 13px;
+        font-weight: 700;
+        text-align: center;
+      }
+      .mobile-label {
+        display: inline;
+        font-size: 12px;
+        color: var(--text-muted);
+        font-weight: 600;
+      }
+
+      /* Formularios en móvil */
+      .form-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+      .form-control {
+        font-size: 16px; /* Evita zoom automático en Safari iOS */
+        min-height: 44px;
+      }
+      .quick-chips .chip {
+        padding: 7px 12px;
+        font-size: 12px;
+      }
+      .btn-primary {
+        width: 100%;
+        min-height: 46px;
+        font-size: 15px;
+      }
+      #btn-cancel-edit {
+        width: 100%;
+        min-height: 46px;
+        text-align: center;
+        margin-top: 6px;
+      }
+      .form-buttons-wrap {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .colacion-form-wrap {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .colacion-form-wrap .btn-primary {
+        width: 100%;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- NAVBAR -->
+  <!-- NAVBAR RESPONSIVA -->
   <header class="admin-header">
     <div class="header-left">
-      <img src="/static/img/logo_promet.svg" alt="PROMET">
-      <img src="/static/img/logo_coalfa.svg" alt="COALFA">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <img src="/static/img/logo_promet.svg" alt="PROMET">
+        <img src="/static/img/logo_coalfa.svg" alt="COALFA">
+      </div>
       <div class="header-title-box">
         <h1>Minuta Casino · Control</h1>
         <span>Hotelería Promet / Alimentación Coalfa</span>
@@ -420,14 +724,14 @@
     <div class="header-right">
       <a href="/" target="_blank" class="btn-tv-live">📺 Ver Pantalla TV</a>
       <span class="user-pill">👤 <strong>{{ request.user.username }}</strong></span>
-      <a href="/admin/" target="_blank" class="btn-nav-date" title="Django Admin Avanzado">⚙️ Django</a>
+      <a href="/admin/" target="_blank" class="btn-django" title="Django Admin Avanzado">⚙️ Django</a>
       <a href="/logout/" class="btn-logout">Salir</a>
     </div>
   </header>
 
   <div class="admin-container">
 
-    <!-- PESTAÑAS -->
+    <!-- PESTAÑAS (SCROLL HORIZONTAL SUAVE EN MÓVIL) -->
     <nav class="tabs-nav">
       <button class="tab-btn active" onclick="switchTab('minuta', this)">📅 Gestión Diaria</button>
       <button class="tab-btn" onclick="switchTab('importar', this)">📥 Carga Masiva (Mes)</button>
@@ -448,14 +752,18 @@
       <!-- Barra de navegación por fecha -->
       <div class="date-bar">
         <div class="date-nav-group">
-          <label for="fecha-picker" style="font-weight:700;">Fecha:</label>
-          <input type="date" id="fecha-picker" class="date-input" value="{{ fecha_sel }}" onchange="cambiarFecha(this.value)">
-          <button class="btn-nav-date" onclick="cambiarFechaRelativa(-1)">◀ Día Anterior</button>
-          <button class="btn-nav-date" onclick="irAHoy()">Hoy</button>
-          <button class="btn-nav-date" onclick="cambiarFechaRelativa(1)">Día Siguiente ▶</button>
+          <div class="date-picker-wrap">
+            <label for="fecha-picker" class="date-label">Fecha:</label>
+            <input type="date" id="fecha-picker" class="date-input" value="{{ fecha_sel }}" onchange="cambiarFecha(this.value)">
+          </div>
+          <div class="date-buttons-row">
+            <button class="btn-nav-date" onclick="cambiarFechaRelativa(-1)">◀ Anterior</button>
+            <button class="btn-nav-date" onclick="irAHoy()">Hoy</button>
+            <button class="btn-nav-date" onclick="cambiarFechaRelativa(1)">Siguiente ▶</button>
+          </div>
         </div>
         <div class="date-display-badge">
-          {{ fecha_sel_texto }}
+          📅 {{ fecha_sel_texto }}
         </div>
       </div>
 
@@ -463,15 +771,18 @@
       <div class="services-pills">
         <a href="?fecha={{ fecha_sel }}&servicio=desayuno" 
            class="service-pill-btn {% if servicio_sel == 'desayuno' %}active-desayuno{% endif %}">
-           🥐 DESAYUNO (05:00 a 10:00)
+           <span>🥐 DESAYUNO</span>
+           <span class="service-hours">(05:00 a 10:00)</span>
         </a>
         <a href="?fecha={{ fecha_sel }}&servicio=almuerzo" 
            class="service-pill-btn {% if servicio_sel == 'almuerzo' %}active-almuerzo{% endif %}">
-           🍲 ALMUERZO (12:00 a 14:30)
+           <span>🍲 ALMUERZO</span>
+           <span class="service-hours">(12:00 a 14:30)</span>
         </a>
         <a href="?fecha={{ fecha_sel }}&servicio=cena" 
            class="service-pill-btn {% if servicio_sel == 'cena' %}active-cena{% endif %}">
-           🍽️ CENA (16:30 a 22:00)
+           <span>🍽️ CENA</span>
+           <span class="service-hours">(16:30 a 22:00)</span>
         </a>
       </div>
 
@@ -479,7 +790,7 @@
       <div class="card">
         <div class="card-title">
           <span>Platos registrados para {{ servicio_sel|upper }} ({{ items.count }} ítems)</span>
-          <span style="font-size: 13px; color: var(--text-muted);">Se reflejan al instante en la TV</span>
+          <span style="font-size: 13px; color: var(--text-muted); font-weight: normal;">Se actualizan de inmediato en la TV</span>
         </div>
 
         {% if items %}
@@ -497,19 +808,27 @@
               <tbody>
                 {% for it in items %}
                   <tr>
-                    <td><span class="category-badge">{{ it.categoria }}</span></td>
-                    <td style="font-weight: 600;">{{ it.texto }}</td>
-                    <td>{{ it.cantidad|default:"—" }}</td>
+                    <td class="dish-cat-cell">
+                      <span class="category-badge">{{ it.categoria }}</span>
+                    </td>
+                    <td class="dish-name-cell">
+                      {{ it.texto }}
+                    </td>
                     <td>
+                      <span class="mobile-label">Raciones:</span>
+                      <span>{{ it.cantidad|default:"—" }}</span>
+                    </td>
+                    <td>
+                      <span class="mobile-label">Ubicación TV:</span>
                       {% if it.columna == 1 %}
                         <span class="col-badge col-1-badge">Columna 1 (Izq)</span>
                       {% else %}
                         <span class="col-badge col-2-badge">Columna 2 (Der)</span>
                       {% endif %}
                     </td>
-                    <td style="text-align: right; white-space: nowrap;">
-                      <button class="btn-action-edit" onclick="editarItem('{{ it.id }}', '{{ it.categoria|escapejs }}', '{{ it.texto|escapejs }}', '{{ it.columna }}', '{{ it.orden }}', '{{ it.cantidad|default:'' }}')">Editar</button>
-                      <button class="btn-action-delete" onclick="eliminarItemConfirm('{{ it.id }}', '{{ it.categoria|escapejs }}')">Eliminar</button>
+                    <td class="dish-actions-cell">
+                      <button type="button" class="btn-action-edit" onclick="editarItem('{{ it.id }}', '{{ it.categoria|escapejs }}', '{{ it.texto|escapejs }}', '{{ it.columna }}', '{{ it.orden }}', '{{ it.cantidad|default:'' }}')">✏️ Editar</button>
+                      <button type="button" class="btn-action-delete" onclick="eliminarItemConfirm('{{ it.id }}', '{{ it.categoria|escapejs }}')">🗑️ Eliminar</button>
                     </td>
                   </tr>
                 {% endfor %}
@@ -518,7 +837,7 @@
           </div>
         {% else %}
           <div style="text-align: center; padding: 24px; color: var(--text-muted); background: var(--bg); border-radius: 8px;">
-            No hay platos registrados para este servicio en esta fecha. Agrega uno a continuación.
+            No hay platos registrados para este servicio en esta fecha. Agrega uno con el formulario de abajo.
           </div>
         {% endif %}
       </div>
@@ -586,9 +905,9 @@
             <input type="text" id="texto" name="texto" class="form-control" required placeholder="Ej: Pescado napolitano al horno con papas gajos">
           </div>
 
-          <div style="display: flex; gap: 10px;">
-            <button type="submit" class="btn-primary" id="btn-save-item">Guardar Plato</button>
-            <button type="button" class="btn-nav-date" id="btn-cancel-edit" style="display: none;" onclick="cancelarEdicion()">Cancelar Edición</button>
+          <div class="form-buttons-wrap">
+            <button type="submit" class="btn-primary" id="btn-save-item">💾 Guardar Plato</button>
+            <button type="button" class="btn-nav-date" id="btn-cancel-edit" style="display: none;" onclick="cancelarEdicion()">✕ Cancelar Edición</button>
           </div>
         </form>
       </div>
@@ -599,7 +918,7 @@
         <form method="POST" action="/panel/guardar-colacion/">
           {% csrf_token %}
           <input type="hidden" name="fecha" value="{{ fecha_sel }}">
-          <div style="display: flex; gap: 12px; align-items: center;">
+          <div class="colacion-form-wrap">
             <input type="text" name="colacion" class="form-control" value="{{ minuta_dia.colacion }}" placeholder="Ej: Churrasco queso / Ave pimentón">
             <button type="submit" class="btn-primary" style="white-space: nowrap;">Guardar Colación</button>
           </div>
@@ -621,16 +940,16 @@
           
           <div class="form-group" style="margin-bottom: 24px;">
             <label for="archivo_minuta" style="font-size: 15px; font-weight: 700;">Opción 1: Subir archivo Excel (.xlsx) o JSON</label>
-            <input type="file" id="archivo_minuta" name="archivo_minuta" class="form-control" accept=".xlsx,.xls,.json" style="padding: 12px;">
-            <small style="color: var(--text-muted);">Acepta planillas Excel con columnas: fecha, servicio, categoria, plato, cantidad.</small>
+            <input type="file" id="archivo_minuta" name="archivo_minuta" class="form-control" accept=".xlsx,.xls,.json" style="padding: 10px;">
+            <small style="color: var(--text-muted); display: block; margin-top: 4px;">Acepta planillas Excel con columnas: fecha, servicio, categoria, plato, cantidad.</small>
           </div>
 
           <div class="form-group" style="margin-bottom: 24px;">
             <label for="json_data" style="font-size: 15px; font-weight: 700;">Opción 2: O pegar estructura JSON directamente</label>
-            <textarea id="json_data" name="json_data" class="form-control" rows="10" placeholder='{"dias": {"2026-10-27": {"almuerzo": {"items": [{"categoria": "FONDO NORMAL", "texto": "..."}]}}}}' style="font-family: monospace; font-size: 13px;"></textarea>
+            <textarea id="json_data" name="json_data" class="form-control" rows="8" placeholder='{"dias": {"2026-10-27": {"almuerzo": {"items": [{"categoria": "FONDO NORMAL", "texto": "..."}]}}}}' style="font-family: monospace; font-size: 13px;"></textarea>
           </div>
 
-          <button type="submit" class="btn-primary" style="font-size: 16px; padding: 12px 24px;">📥 Procesar e Importar Minuta</button>
+          <button type="submit" class="btn-primary" style="font-size: 15px; padding: 12px 24px;">📥 Procesar e Importar Minuta</button>
         </form>
       </div>
     </div>
@@ -643,8 +962,8 @@
           {% csrf_token %}
 
           {% for s in servicios %}
-            <div style="background: var(--bg); padding: 16px; border-radius: 8px; margin-bottom: 16px; border: 1px solid var(--border);">
-              <h3 style="font-size: 15px; font-weight: 800; color: var(--primary); margin-bottom: 12px;">{{ s.nombre }}</h3>
+            <div style="background: var(--bg); padding: 14px; border-radius: 8px; margin-bottom: 14px; border: 1px solid var(--border);">
+              <h3 style="font-size: 15px; font-weight: 800; color: var(--primary); margin-bottom: 10px;">{{ s.nombre }}</h3>
               <div class="form-grid">
                 <div class="form-group">
                   <label>Hora Inicio (Desde)</label>
@@ -657,7 +976,7 @@
                 <div class="form-group">
                   <label>Color Franja TV (Hex)</label>
                   <div style="display: flex; gap: 8px; align-items: center;">
-                    <input type="color" name="color_{{ s.codigo }}" value="{{ s.color_franja }}" style="height: 38px; width: 50px; border-radius: 6px; border: 1px solid var(--border); cursor: pointer;" onchange="this.nextElementSibling.value = this.value">
+                    <input type="color" name="color_{{ s.codigo }}" value="{{ s.color_franja }}" style="height: 42px; width: 48px; border-radius: 6px; border: 1px solid var(--border); cursor: pointer;" onchange="this.nextElementSibling.value = this.value">
                     <input type="text" class="form-control" value="{{ s.color_franja }}" onchange="this.previousElementSibling.value = this.value">
                   </div>
                 </div>
@@ -670,12 +989,12 @@
             <div class="form-group">
               <label for="intervalo_rotacion">Intervalo rotación Vistas (segundos)</label>
               <input type="number" id="intervalo_rotacion" name="intervalo_rotacion" class="form-control" value="{{ cfg.intervalo_rotacion_segundos }}" min="5" max="60">
-              <small style="color: var(--text-muted);">Recomendado: 10 segundos</small>
+              <small style="color: var(--text-muted); display: block; margin-top: 4px;">Recomendado: 10 segundos</small>
             </div>
             <div class="form-group">
               <label for="recarga_minutos">Recarga completa TV (minutos)</label>
               <input type="number" id="recarga_minutos" name="recarga_minutos" class="form-control" value="{{ cfg.recarga_minutos }}" min="5" max="120">
-              <small style="color: var(--text-muted);">Recomendado: 30 minutos (limpia memoria TV Bro)</small>
+              <small style="color: var(--text-muted); display: block; margin-top: 4px;">Recomendado: 30 minutos (limpia memoria en TV)</small>
             </div>
           </div>
 
@@ -686,16 +1005,16 @@
 
           <div class="form-grid" style="margin-top: 16px;">
             <div class="form-group">
-              <label>Logo PROMET (Opcional, reemplaza el vector por defecto)</label>
-              <input type="file" name="logo_promet" class="form-control" accept="image/*">
+              <label>Logo PROMET (Opcional)</label>
+              <input type="file" name="logo_promet" class="form-control" accept="image/*" style="padding: 8px;">
             </div>
             <div class="form-group">
-              <label>Logo COALFA (Opcional, reemplaza el vector por defecto)</label>
-              <input type="file" name="logo_coalfa" class="form-control" accept="image/*">
+              <label>Logo COALFA (Opcional)</label>
+              <input type="file" name="logo_coalfa" class="form-control" accept="image/*" style="padding: 8px;">
             </div>
           </div>
 
-          <button type="submit" class="btn-primary" style="margin-top: 16px;">Guardar Configuración</button>
+          <button type="submit" class="btn-primary" style="margin-top: 14px;">💾 Guardar Configuración</button>
         </form>
       </div>
     </div>
@@ -704,8 +1023,8 @@
     <div id="tab-auditoria" class="tab-content">
       <div class="card">
         <div class="card-title">
-          <span>Registro de Auditoría (Trazabilidad de Cambios)</span>
-          <span style="font-size: 13px; color: var(--text-muted);">Registra quién modificó la minuta y cuándo</span>
+          <span>Registro de Auditoría (Trazabilidad)</span>
+          <span style="font-size: 13px; color: var(--text-muted); font-weight: normal;">Quién modificó la minuta y cuándo</span>
         </div>
 
         <div class="table-responsive">
@@ -804,7 +1123,7 @@
       document.getElementById('cantidad').value = cant;
       
       document.getElementById('form-item-title').textContent = 'Editar Plato: ' + cat;
-      document.getElementById('btn-save-item').textContent = 'Actualizar Plato';
+      document.getElementById('btn-save-item').textContent = '💾 Actualizar Plato';
       document.getElementById('btn-cancel-edit').style.display = 'inline-block';
       document.getElementById('form-item-card').scrollIntoView({ behavior: 'smooth' });
     }
@@ -816,7 +1135,7 @@
       document.getElementById('cantidad').value = '';
       document.getElementById('orden').value = '0';
       document.getElementById('form-item-title').textContent = 'Agregar Plato a {{ servicio_sel|upper }}';
-      document.getElementById('btn-save-item').textContent = 'Guardar Plato';
+      document.getElementById('btn-save-item').textContent = '💾 Guardar Plato';
       document.getElementById('btn-cancel-edit').style.display = 'none';
     }
 

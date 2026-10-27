@@ -70,7 +70,7 @@
       padding: 12px 14px;
       border: 1.5px solid #CBD5E1;
       border-radius: 8px;
-      font-size: 15px;
+      font-size: 16px; /* 16px evita auto-zoom en iPhone / iOS Safari */
       color: #0F172A;
       outline: none;
       transition: border-color 0.2s, box-shadow 0.2s;
@@ -107,6 +107,21 @@
     }
     .footer-link a:hover {
       text-decoration: underline;
+    }
+    @media (max-width: 480px) {
+      body {
+        padding: 12px;
+      }
+      .login-card {
+        padding: 24px 18px;
+        border-radius: 12px;
+      }
+      .logos-header img {
+        height: 30px;
+      }
+      h2 {
+        font-size: 19px;
+      }
     }
   </style>
 </head>
