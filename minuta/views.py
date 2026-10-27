@@ -221,7 +221,11 @@ def api_tv_data(request):
         'logo_promet': logo_promet_url,
         'logo_coalfa': logo_coalfa_url,
     }
-    return JsonResponse(data)
+    response = JsonResponse(data)
+    response['Cache-Control'] = 'no-cache, no-store, must-revalidate, max-age=0'
+    response['Pragma'] = 'no-cache'
+    response['Expires'] = '0'
+    return response
 
 
 # ------------------ PANEL DE ADMINISTRACIÓN ------------------
@@ -266,20 +270,23 @@ def logout_view(request):
 def admin_panel(request):
     """Panel central de control y gestión de minuta"""
     cfg_gen = ConfiguracionGeneral.get_solo()
+    tz = ZoneInfo(cfg_gen.zona_horaria)
+    ahora_chile = datetime.now(tz)
     servicios = ConfiguracionServicio.objects.all().order_by('orden')
 
-    # Fecha seleccionada para editar
+    # Fecha seleccionada para editar (por defecto fecha actual en Chile)
     fecha_str = request.GET.get('fecha')
     if fecha_str:
         try:
             fecha_sel = datetime.strptime(fecha_str, "%Y-%m-%d").date()
         except ValueError:
-            fecha_sel = date.today()
+            fecha_sel = ahora_chile.date()
     else:
-        fecha_sel = date.today()
+        fecha_sel = ahora_chile.date()
 
-    # Servicio seleccionado
-    servicio_sel = request.GET.get('servicio', 'almuerzo')
+    # Servicio seleccionado: por defecto el que esté activo en este momento según la hora
+    info_actual = obtener_estado_servicio()
+    servicio_sel = request.GET.get('servicio', info_actual['servicio_codigo'])
 
     # Minuta para el día y servicio
     minuta_dia, _ = MinutaDia.objects.get_or_create(fecha=fecha_sel)

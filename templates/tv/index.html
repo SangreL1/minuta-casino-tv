@@ -524,6 +524,9 @@
     let simParam = new URLSearchParams(window.location.search).get('sim') || '';
     let intervalSeconds = 10;
     let wakeLockSentinel = null;
+    let lastRenderHash = '';
+    let serverTimeDelta = 0;
+    let serverTimeSynced = false;
 
     const viewA = document.getElementById('view-a');
     const viewB = document.getElementById('view-b');
@@ -542,6 +545,16 @@
     const liveClock = document.getElementById('live-clock');
     const imgPromet = document.getElementById('img-promet');
     const imgCoalfa = document.getElementById('img-coalfa');
+
+    // RELOJ CONTINUO SEGUNDO A SEGUNDO
+    function tickClock() {
+      if (!serverTimeSynced) return;
+      const now = new Date(Date.now() + serverTimeDelta);
+      const hh = String(now.getHours()).padStart(2, '0');
+      const mm = String(now.getMinutes()).padStart(2, '0');
+      liveClock.textContent = `${hh}:${mm}`;
+    }
+    setInterval(tickClock, 1000);
 
     // 1. ALTERNANCIA SUAVE ENTRE VISTAS CADA 10 SEGUNDOS
     function switchView() {
@@ -566,14 +579,17 @@
       rotationTimer = setInterval(switchView, s * 1000);
     }
 
-    // 2. OBTENER Y ACTUALIZAR DATOS DESDE LA API
+    // 2. OBTENER Y ACTUALIZAR DATOS DESDE LA API (CADA 5 SEGUNDOS SIN CACHÉ)
     async function fetchMinutaData() {
       try {
-        let url = '/api/minuta-tv/';
+        let url = '/api/minuta-tv/?_t=' + Date.now();
         if (simParam) {
-          url += '?sim=' + encodeURIComponent(simParam);
+          url += '&sim=' + encodeURIComponent(simParam);
         }
-        const resp = await fetch(url, { cache: 'no-store' });
+        const resp = await fetch(url, { 
+          cache: 'no-store',
+          headers: { 'Cache-Control': 'no-cache', 'Pragma': 'no-cache' }
+        });
         if (!resp.ok) return;
         const data = await resp.json();
         actualizarPantalla(data);
@@ -586,9 +602,25 @@
     function actualizarPantalla(data) {
       if (!data) return;
 
-      // Reloj y fecha
-      if (data.hora_actual) {
-        liveClock.textContent = data.hora_actual.substring(0, 5);
+      // Sincronizar reloj de la pantalla con la hora exacta del servidor en Chile
+      if (data.hora_actual && data.fecha_actual) {
+        try {
+          const parts = data.hora_actual.split(':');
+          const dateParts = data.fecha_actual.split('-');
+          const serverDate = new Date(
+            parseInt(dateParts[0]),
+            parseInt(dateParts[1]) - 1,
+            parseInt(dateParts[2]),
+            parseInt(parts[0]),
+            parseInt(parts[1]),
+            parseInt(parts[2] || 0)
+          );
+          serverTimeDelta = serverDate.getTime() - Date.now();
+          serverTimeSynced = true;
+          tickClock();
+        } catch (e) {
+          liveClock.textContent = data.hora_actual.substring(0, 5);
+        }
       }
 
       // Encabezado y logos
@@ -598,15 +630,21 @@
       if (data.logo_coalfa && imgCoalfa.src !== data.logo_coalfa) {
         imgCoalfa.src = data.logo_coalfa;
       }
-      if (data.pie_pagina) {
+      if (data.pie_pagina && footerText.textContent !== data.pie_pagina) {
         footerText.textContent = data.pie_pagina;
       }
 
       // Vista A: Franja de título
-      serviceTitle.textContent = data.nombre_servicio || 'SERVICIO';
-      serviceHours.textContent = data.horario_texto || '';
-      serviceDate.textContent = data.fecha_texto || '';
-      scheduleDate.textContent = data.fecha_texto || '';
+      if (serviceTitle.textContent !== (data.nombre_servicio || 'SERVICIO')) {
+        serviceTitle.textContent = data.nombre_servicio || 'SERVICIO';
+      }
+      if (serviceHours.textContent !== (data.horario_texto || '')) {
+        serviceHours.textContent = data.horario_texto || '';
+      }
+      if (serviceDate.textContent !== (data.fecha_texto || '')) {
+        serviceDate.textContent = data.fecha_texto || '';
+        scheduleDate.textContent = data.fecha_texto || '';
+      }
 
       if (data.color_franja) {
         serviceBanner.style.backgroundColor = data.color_franja;
@@ -618,7 +656,7 @@
         badgeProximo.style.display = 'none';
       }
 
-      // Vista A: Menú
+      // Vista A: Menú (con detección de cambios para evitar parpadeos)
       renderizarMinuta(data.hay_minuta, data.items_col1, data.items_col2);
 
       // Vista B: Tarjetas de horarios
@@ -632,6 +670,13 @@
     }
 
     function renderizarMinuta(hayMinuta, items1, items2) {
+      // Comparar hash para solo redibujar el DOM si los platos cambiaron realmente
+      const currentHash = JSON.stringify({ hayMinuta, items1, items2 });
+      if (currentHash === lastRenderHash) {
+        return; // Sin cambios, no tocar el DOM
+      }
+      lastRenderHash = currentHash;
+
       col1.innerHTML = '';
       col2.innerHTML = '';
 
@@ -768,8 +813,8 @@
       fetchMinutaData();
       startRotation(intervalSeconds);
 
-      // Consultar cambios en background cada 30 segundos
-      dataFetchTimer = setInterval(fetchMinutaData, 30000);
+      // Consultar cambios en background cada 5 segundos (actualización automática sin recargar)
+      dataFetchTimer = setInterval(fetchMinutaData, 5000);
 
       // Recarga forzada cada 30 minutos para evitar fugas de memoria en TV
       reloadTimer = setTimeout(() => {
