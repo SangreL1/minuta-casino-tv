@@ -147,9 +147,8 @@ def api_tv_data(request):
 
     serv_cfg = ConfiguracionServicio.objects.filter(codigo=s_cod).first()
     nombre_servicio = serv_cfg.nombre if serv_cfg else s_cod.upper()
-    color_franja = serv_cfg.color_franja if (serv_cfg and serv_cfg.color_franja) else "#0B3FA8"
-    if color_franja in ("#C07A2C", "#2E7D5B"):
-        color_franja = "#0B3FA8"
+    # Forzar la paleta oficial de Almuerzo (#0B3FA8) para todos los servicios
+    color_franja = "#0B3FA8"
     horario_texto = f"{serv_cfg.desde.strftime('%H:%M')} a {serv_cfg.hasta.strftime('%H:%M')} hrs" if serv_cfg else ""
 
     # Buscar minuta para la fecha
@@ -184,19 +183,16 @@ def api_tv_data(request):
         items_col1 = total_items[:mitad]
         items_col2 = total_items[mitad:]
 
-    # Horarios para Vista B
+    # Horarios para Vista B: todos usan la paleta de Almuerzo (#0B3FA8)
     servicios_list = []
     for s in ConfiguracionServicio.objects.all().order_by('orden'):
         es_activo = (s.codigo == s_cod)
-        color_card = s.color_franja if s.color_franja else "#0B3FA8"
-        if color_card in ("#C07A2C", "#2E7D5B"):
-            color_card = "#0B3FA8"
         servicios_list.append({
             'codigo': s.codigo,
             'nombre': s.nombre,
             'desde': s.desde.strftime('%H:%M'),
             'hasta': s.hasta.strftime('%H:%M'),
-            'color': color_card,
+            'color': '#0B3FA8',
             'es_activo': es_activo
         })
 

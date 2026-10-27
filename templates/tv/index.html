@@ -3,10 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="color-scheme" content="light">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Minuta Casino · Promet - Coalfa</title>
   
   <style>
+    :root {
+      color-scheme: light;
+    }
     /* Tipografía nativa legible a larga distancia estilo Calibri */
     * {
       box-sizing: border-box;
@@ -21,7 +25,8 @@
       height: 100vh;
       overflow: hidden;
       font-family: "Calibri", "Carlito", "Segoe UI", -apple-system, BlinkMacSystemFont, Arial, sans-serif;
-      background: linear-gradient(180deg, #E6F0FB 0%, #F5F9FE 55%, #FFFFFF 100%);
+      background: #FFFFFF;
+      background: linear-gradient(180deg, #FFFFFF 0%, #F5F9FE 55%, #EDF4FD 100%);
       color: #1A202C;
       cursor: none; /* Oculta cursor en TV */
     }
@@ -158,7 +163,8 @@
       flex: 1;
       margin-top: 2vh;
       margin-bottom: 1.5vh;
-      background: #DCE8F5; /* Azul pálido exacto de la foto */
+      background: #EBF3FC; /* Celeste muy luminoso y claro para máxima visibilidad en TV */
+      border: 1.5px solid #C5DCF6;
       border-radius: 12px;
       padding: 3vh 3.5vw;
       display: grid;
@@ -166,7 +172,7 @@
       column-gap: 5.5vw;
       row-gap: 2vh;
       align-content: start;
-      box-shadow: inset 0 1px 3px rgba(255, 255, 255, 0.6), 0 4px 16px rgba(0, 0, 0, 0.04);
+      box-shadow: inset 0 1px 3px rgba(255, 255, 255, 0.9), 0 4px 16px rgba(11, 63, 168, 0.05);
       overflow: hidden;
     }
 
@@ -646,9 +652,9 @@
         scheduleDate.textContent = data.fecha_texto || '';
       }
 
-      if (data.color_franja) {
-        serviceBanner.style.backgroundColor = data.color_franja;
-      }
+      // Mantener siempre el azul brillante oficial del almuerzo (#0B3FA8)
+      const colorFranja = (data.color_franja && data.color_franja !== '#2E7D5B' && data.color_franja !== '#C07A2C') ? data.color_franja : '#0B3FA8';
+      serviceBanner.style.backgroundColor = colorFranja;
 
       if (data.es_proximo) {
         badgeProximo.style.display = 'inline-block';
@@ -740,8 +746,10 @@
           if (s.es_activo) {
             card.classList.add('active-card');
             const h = card.querySelector('.card-header');
-            if (h && s.color) {
-              h.style.backgroundColor = s.color;
+            if (h) {
+              const c = (s.color && s.color !== '#2E7D5B' && s.color !== '#C07A2C') ? s.color : '#0B3FA8';
+              h.style.backgroundColor = c;
+              h.style.color = '#FFFFFF';
             }
           } else {
             card.classList.remove('active-card');

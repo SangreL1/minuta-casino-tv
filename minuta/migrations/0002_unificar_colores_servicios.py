@@ -14,3 +14,4 @@ class Migration(migrations.Migration):
     operations = [
         migrations.RunPython(unificar_colores, reverse_code=migrations.RunPython.noop),
     ]
+
