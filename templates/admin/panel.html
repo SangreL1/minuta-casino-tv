@@ -9,9 +9,9 @@
       --primary: #0B3FA8;
       --primary-dark: #072B75;
       --primary-light: #E8F0FE;
-      --desayuno: #C07A2C;
+      --desayuno: #0B3FA8;
       --almuerzo: #0B3FA8;
-      --cena: #2E7D5B;
+      --cena: #0B3FA8;
       --bg: #F1F5F9;
       --card-bg: #FFFFFF;
       --text: #0F172A;
@@ -292,23 +292,13 @@
       font-weight: 500;
       opacity: 0.85;
     }
-    .service-pill-btn.active-desayuno {
-      background: var(--desayuno);
-      color: #FFFFFF;
-      border-color: var(--desayuno);
-      box-shadow: 0 4px 12px rgba(192, 122, 44, 0.25);
-    }
-    .service-pill-btn.active-almuerzo {
-      background: var(--almuerzo);
-      color: #FFFFFF;
-      border-color: var(--almuerzo);
-      box-shadow: 0 4px 12px rgba(11, 63, 168, 0.25);
-    }
+    .service-pill-btn.active-desayuno,
+    .service-pill-btn.active-almuerzo,
     .service-pill-btn.active-cena {
-      background: var(--cena);
+      background: var(--primary);
       color: #FFFFFF;
-      border-color: var(--cena);
-      box-shadow: 0 4px 12px rgba(46, 125, 91, 0.25);
+      border-color: var(--primary);
+      box-shadow: 0 4px 12px rgba(11, 63, 168, 0.25);
     }
 
     /* TABLA DE ITEMS (DESKTOP) */
@@ -424,16 +414,18 @@
       margin-top: 8px;
     }
     .chip {
-      background: #E2E8F0;
+      background: #E8F0FE;
+      color: #0B3FA8;
+      border: 1px solid #BFDBFE;
       font-size: 11px;
-      font-weight: 600;
+      font-weight: 700;
       padding: 5px 10px;
       border-radius: 12px;
       cursor: pointer;
       user-select: none;
       transition: all 0.15s;
     }
-    .chip:hover { background: #CBD5E1; color: var(--primary); }
+    .chip:hover { background: #0B3FA8; color: #FFFFFF; border-color: #0B3FA8; }
 
     .btn-primary {
       background: var(--primary);

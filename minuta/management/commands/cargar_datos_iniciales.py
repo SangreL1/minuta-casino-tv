@@ -25,7 +25,7 @@ class Command(BaseCommand):
                 "nombre": "DESAYUNO",
                 "desde": time(5, 0),
                 "hasta": time(10, 0),
-                "color_franja": "#C07A2C",
+                "color_franja": "#0B3FA8",
                 "orden": 1
             },
             {
@@ -41,7 +41,7 @@ class Command(BaseCommand):
                 "nombre": "CENA",
                 "desde": time(16, 30),
                 "hasta": time(22, 0),
-                "color_franja": "#2E7D5B",
+                "color_franja": "#0B3FA8",
                 "orden": 3
             },
         ]
