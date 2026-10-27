@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acceso Administración · Minuta Casino</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: linear-gradient(135deg, #E6F0FB 0%, #D4E4F7 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .login-card {
+      background: #FFFFFF;
+      width: 100%;
+      max-width: 440px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(11, 63, 168, 0.12);
+      padding: 36px 32px;
+      border: 1px solid rgba(11, 63, 168, 0.08);
+    }
+    .logos-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 24px;
+      gap: 16px;
+    }
+    .logos-header img {
+      height: 38px;
+      object-fit: contain;
+    }
+    h2 {
+      font-size: 22px;
+      font-weight: 700;
+      color: #0E3572;
+      margin-bottom: 6px;
+    }
+    p.subtitle {
+      font-size: 14px;
+      color: #64748B;
+      margin-bottom: 24px;
+    }
+    .alert-error {
+      background: #FEE2E2;
+      border-left: 4px solid #DC2626;
+      color: #991B1B;
+      padding: 10px 14px;
+      border-radius: 6px;
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+    .form-group {
+      margin-bottom: 18px;
+    }
+    label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: #334155;
+      margin-bottom: 6px;
+    }
+    input[type="text"], input[type="password"] {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1.5px solid #CBD5E1;
+      border-radius: 8px;
+      font-size: 15px;
+      color: #0F172A;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    input[type="text"]:focus, input[type="password"]:focus {
+      border-color: #0B3FA8;
+      box-shadow: 0 0 0 3px rgba(11, 63, 168, 0.15);
+    }
+    button.btn-submit {
+      width: 100%;
+      background: #0B3FA8;
+      color: #FFFFFF;
+      border: none;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s;
+      margin-top: 6px;
+    }
+    button.btn-submit:hover {
+      background: #082E7D;
+    }
+    .footer-link {
+      margin-top: 24px;
+      text-align: center;
+      font-size: 13px;
+    }
+    .footer-link a {
+      color: #0B3FA8;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .footer-link a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-card">
+    <div class="logos-header">
+      <img src="/static/img/logo_promet.svg" alt="PROMET">
+      <img src="/static/img/logo_coalfa.svg" alt="COALFA">
+    </div>
+
+    <h2>Administración Minuta</h2>
+    <p class="subtitle">Ingresa tus credenciales para gestionar el menú del casino.</p>
+
+    {% if error %}
+      <div class="alert-error">{{ error }}</div>
+    {% endif %}
+
+    <form method="POST">
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="username">Usuario</label>
+        <input type="text" id="username" name="username" required autofocus placeholder="admin">
+      </div>
+      <div class="form-group">
+        <label for="password">Contraseña</label>
+        <input type="password" id="password" name="password" required placeholder="••••••••">
+      </div>
+      <button type="submit" class="btn-submit">Iniciar Sesión</button>
+    </form>
+
+    <div class="footer-link">
+      <a href="/" target="_blank">← Abrir pantalla de TV pública</a>
+    </div>
+  </div>
+</body>
+</html>

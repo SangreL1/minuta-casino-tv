@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel de Control · Minuta Casino Coalfa / Promet</title>
+  <style>
+    :root {
+      --primary: #0B3FA8;
+      --primary-dark: #072B75;
+      --primary-light: #E8F0FE;
+      --desayuno: #C07A2C;
+      --almuerzo: #0B3FA8;
+      --cena: #2E7D5B;
+      --bg: #F1F5F9;
+      --card-bg: #FFFFFF;
+      --text: #0F172A;
+      --text-muted: #64748B;
+      --border: #E2E8F0;
+      --success: #16A34A;
+      --danger: #DC2626;
+      --warning: #D97706;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      padding-bottom: 60px;
+    }
+
+    /* NAVBAR */
+    header.admin-header {
+      background: #FFFFFF;
+      border-bottom: 1px solid var(--border);
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+    .header-left img {
+      height: 32px;
+      object-fit: contain;
+    }
+    .header-title-box h1 {
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--primary);
+    }
+    .header-title-box span {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .btn-tv-live {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #2563EB;
+      color: #FFFFFF;
+      padding: 7px 14px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 700;
+      transition: background 0.2s;
+    }
+    .btn-tv-live:hover { background: #1D4ED8; }
+    .user-pill {
+      font-size: 13px;
+      color: var(--text-muted);
+      background: var(--bg);
+      padding: 6px 12px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+    }
+    .user-pill strong { color: var(--text); }
+    .btn-logout {
+      color: var(--danger);
+      background: #FEE2E2;
+      border: 1px solid #FECACA;
+      padding: 6px 12px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    /* CONTENEDOR PRINCIPAL */
+    .admin-container {
+      max-width: 1280px;
+      margin: 24px auto;
+      padding: 0 20px;
+    }
+
+    /* PESTAÑAS */
+    .tabs-nav {
+      display: flex;
+      gap: 8px;
+      border-bottom: 2px solid var(--border);
+      margin-bottom: 24px;
+      overflow-x: auto;
+      padding-bottom: 2px;
+    }
+    .tab-btn {
+      background: none;
+      border: none;
+      padding: 10px 18px;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      border-radius: 8px 8px 0 0;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
+    }
+    .tab-btn:hover { color: var(--primary); background: rgba(11, 63, 168, 0.04); }
+    .tab-btn.active {
+      color: var(--primary);
+      border-bottom: 3px solid var(--primary);
+      background: #FFFFFF;
+    }
+
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+
+    /* TARJETAS */
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px;
+      margin-bottom: 24px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+    }
+    .card-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    /* CONTROL DE FECHA */
+    .date-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      background: #FFFFFF;
+      padding: 16px 20px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      margin-bottom: 20px;
+    }
+    .date-nav-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .btn-nav-date {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      padding: 8px 14px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      color: var(--text);
+    }
+    .btn-nav-date:hover { background: #E2E8F0; }
+    .date-input {
+      font-size: 15px;
+      font-weight: 600;
+      padding: 7px 12px;
+      border: 1.5px solid var(--border);
+      border-radius: 6px;
+      outline: none;
+    }
+    .date-display-badge {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--primary);
+      background: var(--primary-light);
+      padding: 6px 14px;
+      border-radius: 20px;
+    }
+
+    /* SELECTOR DE SERVICIOS (DESAYUNO, ALMUERZO, CENA) */
+    .services-pills {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .service-pill-btn {
+      flex: 1;
+      text-align: center;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: none;
+      color: var(--text-muted);
+      background: #FFFFFF;
+      border: 2px solid var(--border);
+      transition: all 0.2s;
+    }
+    .service-pill-btn:hover { border-color: #94A3B8; }
+    .service-pill-btn.active-desayuno {
+      background: var(--desayuno);
+      color: #FFFFFF;
+      border-color: var(--desayuno);
+      box-shadow: 0 4px 12px rgba(192, 122, 44, 0.25);
+    }
+    .service-pill-btn.active-almuerzo {
+      background: var(--almuerzo);
+      color: #FFFFFF;
+      border-color: var(--almuerzo);
+      box-shadow: 0 4px 12px rgba(11, 63, 168, 0.25);
+    }
+    .service-pill-btn.active-cena {
+      background: var(--cena);
+      color: #FFFFFF;
+      border-color: var(--cena);
+      box-shadow: 0 4px 12px rgba(46, 125, 91, 0.25);
+    }
+
+    /* TABLA DE ITEMS */
+    .table-responsive {
+      overflow-x: auto;
+    }
+    table.data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+    table.data-table th {
+      background: var(--bg);
+      text-align: left;
+      padding: 10px 14px;
+      font-weight: 700;
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--border);
+    }
+    table.data-table td {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: middle;
+    }
+    table.data-table tr:hover { background: #F8FAFC; }
+
+    .category-badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 800;
+      color: #0E3572;
+      background: #DCE8F5;
+      padding: 3px 8px;
+      border-radius: 4px;
+      letter-spacing: 0.5px;
+    }
+    .col-badge {
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: 12px;
+      font-weight: 600;
+    }
+    .col-1-badge { background: #EFF6FF; color: #1D4ED8; border: 1px solid #BFDBFE; }
+    .col-2-badge { background: #F0FDF4; color: #15803D; border: 1px solid #BBF7D0; }
+
+    .btn-action-edit {
+      background: #E0E7FF;
+      color: #3730A3;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .btn-action-delete {
+      background: #FEE2E2;
+      color: #B91C1C;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    /* FORMULARIOS */
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    .form-group {
+      margin-bottom: 14px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: #334155;
+      margin-bottom: 5px;
+    }
+    .form-control {
+      width: 100%;
+      padding: 9px 12px;
+      border: 1.5px solid var(--border);
+      border-radius: 6px;
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .form-control:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(11, 63, 168, 0.1);
+    }
+    .quick-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 6px;
+    }
+    .chip {
+      background: #E2E8F0;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 12px;
+      cursor: pointer;
+      user-select: none;
+      transition: background 0.15s;
+    }
+    .chip:hover { background: #CBD5E1; color: var(--primary); }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #FFFFFF;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn-primary:hover { background: var(--primary-dark); }
+
+    /* AUDITORÍA */
+    .audit-action-badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 3px 8px;
+      border-radius: 4px;
+      text-transform: uppercase;
+    }
+    .act-CREACION { background: #DCFCE7; color: #166534; }
+    .act-MODIFICACION { background: #FEF3C7; color: #92400E; }
+    .act-ELIMINACION { background: #FEE2E2; color: #991B1B; }
+    .act-IMPORTACION { background: #E0E7FF; color: #3730A3; }
+    .act-CONFIGURACION { background: #F3E8FF; color: #6B21A8; }
+
+    /* ALERTAS */
+    .alert-box {
+      padding: 12px 16px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .alert-success { background: #DCFCE7; color: #166534; border-left: 4px solid #16A34A; }
+    .alert-error { background: #FEE2E2; color: #991B1B; border-left: 4px solid #DC2626; }
+
+    @media (max-width: 768px) {
+      .header-left img { height: 26px; }
+      .services-pills { flex-direction: column; }
+      .date-bar { flex-direction: column; align-items: stretch; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="admin-header">
+    <div class="header-left">
+      <img src="/static/img/logo_promet.svg" alt="PROMET">
+      <img src="/static/img/logo_coalfa.svg" alt="COALFA">
+      <div class="header-title-box">
+        <h1>Minuta Casino · Control</h1>
+        <span>Hotelería Promet / Alimentación Coalfa</span>
+      </div>
+    </div>
+    <div class="header-right">
+      <a href="/" target="_blank" class="btn-tv-live">📺 Ver Pantalla TV</a>
+      <span class="user-pill">👤 <strong>{{ request.user.username }}</strong></span>
+      <a href="/admin/" target="_blank" class="btn-nav-date" title="Django Admin Avanzado">⚙️ Django</a>
+      <a href="/logout/" class="btn-logout">Salir</a>
+    </div>
+  </header>
+
+  <div class="admin-container">
+
+    <!-- PESTAÑAS -->
+    <nav class="tabs-nav">
+      <button class="tab-btn active" onclick="switchTab('minuta', this)">📅 Gestión Diaria</button>
+      <button class="tab-btn" onclick="switchTab('importar', this)">📥 Carga Masiva (Mes)</button>
+      <button class="tab-btn" onclick="switchTab('config', this)">⚙️ Horarios y Ajustes</button>
+      <button class="tab-btn" onclick="switchTab('auditoria', this)">📋 Historial de Cambios</button>
+    </nav>
+
+    {% if request.session.import_success %}
+      <div class="alert-box alert-success">{{ request.session.import_success }}</div>
+    {% endif %}
+    {% if request.session.import_error %}
+      <div class="alert-box alert-error">{{ request.session.import_error }}</div>
+    {% endif %}
+
+    <!-- ================= PESTAÑA 1: GESTIÓN DIARIA ================= -->
+    <div id="tab-minuta" class="tab-content active">
+      
+      <!-- Barra de navegación por fecha -->
+      <div class="date-bar">
+        <div class="date-nav-group">
+          <label for="fecha-picker" style="font-weight:700;">Fecha:</label>
+          <input type="date" id="fecha-picker" class="date-input" value="{{ fecha_sel }}" onchange="cambiarFecha(this.value)">
+          <button class="btn-nav-date" onclick="cambiarFechaRelativa(-1)">◀ Día Anterior</button>
+          <button class="btn-nav-date" onclick="irAHoy()">Hoy</button>
+          <button class="btn-nav-date" onclick="cambiarFechaRelativa(1)">Día Siguiente ▶</button>
+        </div>
+        <div class="date-display-badge">
+          {{ fecha_sel_texto }}
+        </div>
+      </div>
+
+      <!-- Selector de servicio -->
+      <div class="services-pills">
+        <a href="?fecha={{ fecha_sel }}&servicio=desayuno" 
+           class="service-pill-btn {% if servicio_sel == 'desayuno' %}active-desayuno{% endif %}">
+           🥐 DESAYUNO (05:00 a 10:00)
+        </a>
+        <a href="?fecha={{ fecha_sel }}&servicio=almuerzo" 
+           class="service-pill-btn {% if servicio_sel == 'almuerzo' %}active-almuerzo{% endif %}">
+           🍲 ALMUERZO (12:00 a 14:30)
+        </a>
+        <a href="?fecha={{ fecha_sel }}&servicio=cena" 
+           class="service-pill-btn {% if servicio_sel == 'cena' %}active-cena{% endif %}">
+           🍽️ CENA (16:30 a 22:00)
+        </a>
+      </div>
+
+      <!-- Platos registrados para el servicio -->
+      <div class="card">
+        <div class="card-title">
+          <span>Platos registrados para {{ servicio_sel|upper }} ({{ items.count }} ítems)</span>
+          <span style="font-size: 13px; color: var(--text-muted);">Se reflejan al instante en la TV</span>
+        </div>
+
+        {% if items %}
+          <div class="table-responsive">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th style="width: 25%;">Categoría</th>
+                  <th style="width: 45%;">Descripción del Plato</th>
+                  <th style="width: 10%;">Raciones</th>
+                  <th style="width: 10%;">Columna TV</th>
+                  <th style="width: 10%; text-align: right;">Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for it in items %}
+                  <tr>
+                    <td><span class="category-badge">{{ it.categoria }}</span></td>
+                    <td style="font-weight: 600;">{{ it.texto }}</td>
+                    <td>{{ it.cantidad|default:"—" }}</td>
+                    <td>
+                      {% if it.columna == 1 %}
+                        <span class="col-badge col-1-badge">Columna 1 (Izq)</span>
+                      {% else %}
+                        <span class="col-badge col-2-badge">Columna 2 (Der)</span>
+                      {% endif %}
+                    </td>
+                    <td style="text-align: right; white-space: nowrap;">
+                      <button class="btn-action-edit" onclick="editarItem('{{ it.id }}', '{{ it.categoria|escapejs }}', '{{ it.texto|escapejs }}', '{{ it.columna }}', '{{ it.orden }}', '{{ it.cantidad|default:'' }}')">Editar</button>
+                      <button class="btn-action-delete" onclick="eliminarItemConfirm('{{ it.id }}', '{{ it.categoria|escapejs }}')">Eliminar</button>
+                    </td>
+                  </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        {% else %}
+          <div style="text-align: center; padding: 24px; color: var(--text-muted); background: var(--bg); border-radius: 8px;">
+            No hay platos registrados para este servicio en esta fecha. Agrega uno a continuación.
+          </div>
+        {% endif %}
+      </div>
+
+      <!-- Formulario para agregar / editar plato -->
+      <div class="card" id="form-item-card">
+        <div class="card-title" id="form-item-title">Agregar Plato a {{ servicio_sel|upper }}</div>
+        <form method="POST" action="/panel/guardar-item/">
+          {% csrf_token %}
+          <input type="hidden" name="fecha" value="{{ fecha_sel }}">
+          <input type="hidden" name="servicio" value="{{ servicio_sel }}">
+          <input type="hidden" id="item_id" name="item_id" value="">
+
+          <div class="form-grid">
+            <div>
+              <div class="form-group">
+                <label for="categoria">Categoría del plato *</label>
+                <input type="text" id="categoria" name="categoria" class="form-control" required placeholder="Ej: FONDO NORMAL">
+              </div>
+              <div class="quick-chips">
+                {% if servicio_sel == 'desayuno' %}
+                  <span class="chip" onclick="setCategoria('SÁNDWICH', 1)">SÁNDWICH</span>
+                  <span class="chip" onclick="setCategoria('PAN', 1)">PAN</span>
+                  <span class="chip" onclick="setCategoria('AGREGADOS', 1)">AGREGADOS</span>
+                  <span class="chip" onclick="setCategoria('LECHE', 1)">LECHE</span>
+                  <span class="chip" onclick="setCategoria('PORRIDGE', 2)">PORRIDGE</span>
+                  <span class="chip" onclick="setCategoria('MEJORADO', 2)">MEJORADO</span>
+                  <span class="chip" onclick="setCategoria('POSTRE', 2)">POSTRE</span>
+                {% else %}
+                  <span class="chip" onclick="setCategoria('ENTRADA CALIENTE · SOPA', 1)">ENTRADA · SOPA</span>
+                  <span class="chip" onclick="setCategoria('FONDO NORMAL', 1)">FONDO NORMAL</span>
+                  <span class="chip" onclick="setCategoria('FONDO ALTERNATIVO', 1)">FONDO ALTERNATIVO</span>
+                  <span class="chip" onclick="setCategoria('TERCERA OPCIÓN', 1)">TERCERA OPCIÓN</span>
+                  <span class="chip" onclick="setCategoria('HIPOCALÓRICO', 2)">HIPOCALÓRICO</span>
+                  <span class="chip" onclick="setCategoria('ENSALADAS', 2)">ENSALADAS</span>
+                  <span class="chip" onclick="setCategoria('POSTRES', 2)">POSTRES</span>
+                {% endif %}
+              </div>
+            </div>
+
+            <div>
+              <div class="form-group">
+                <label for="columna">Columna en pantalla TV</label>
+                <select id="columna" name="columna" class="form-control">
+                  <option value="1">Columna 1 (Izquierda)</option>
+                  <option value="2">Columna 2 (Derecha)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="cantidad">Cantidad / Raciones (opcional)</label>
+                <input type="number" id="cantidad" name="cantidad" class="form-control" placeholder="Ej: 60">
+              </div>
+            </div>
+
+            <div>
+              <div class="form-group">
+                <label for="orden">Orden de aparición</label>
+                <input type="number" id="orden" name="orden" class="form-control" value="0">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="texto">Descripción o nombre del plato *</label>
+            <input type="text" id="texto" name="texto" class="form-control" required placeholder="Ej: Pescado napolitano al horno con papas gajos">
+          </div>
+
+          <div style="display: flex; gap: 10px;">
+            <button type="submit" class="btn-primary" id="btn-save-item">Guardar Plato</button>
+            <button type="button" class="btn-nav-date" id="btn-cancel-edit" style="display: none;" onclick="cancelarEdicion()">Cancelar Edición</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Colación del día -->
+      <div class="card">
+        <div class="card-title">Colación del Día</div>
+        <form method="POST" action="/panel/guardar-colacion/">
+          {% csrf_token %}
+          <input type="hidden" name="fecha" value="{{ fecha_sel }}">
+          <div style="display: flex; gap: 12px; align-items: center;">
+            <input type="text" name="colacion" class="form-control" value="{{ minuta_dia.colacion }}" placeholder="Ej: Churrasco queso / Ave pimentón">
+            <button type="submit" class="btn-primary" style="white-space: nowrap;">Guardar Colación</button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+
+    <!-- ================= PESTAÑA 2: CARGA MASIVA ================= -->
+    <div id="tab-importar" class="tab-content">
+      <div class="card">
+        <div class="card-title">Carga Masiva de Minuta Mensual (Excel o JSON)</div>
+        <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 20px;">
+          Actualmente hay <strong>{{ total_dias_cargados }} días</strong> cargados en el sistema. Puedes actualizar o reemplazar la minuta de todo el mes subiendo un archivo Excel (.xlsx) o pegando el texto JSON.
+        </p>
+
+        <form method="POST" action="/panel/importar-masiva/" enctype="multipart/form-data">
+          {% csrf_token %}
+          
+          <div class="form-group" style="margin-bottom: 24px;">
+            <label for="archivo_minuta" style="font-size: 15px; font-weight: 700;">Opción 1: Subir archivo Excel (.xlsx) o JSON</label>
+            <input type="file" id="archivo_minuta" name="archivo_minuta" class="form-control" accept=".xlsx,.xls,.json" style="padding: 12px;">
+            <small style="color: var(--text-muted);">Acepta planillas Excel con columnas: fecha, servicio, categoria, plato, cantidad.</small>
+          </div>
+
+          <div class="form-group" style="margin-bottom: 24px;">
+            <label for="json_data" style="font-size: 15px; font-weight: 700;">Opción 2: O pegar estructura JSON directamente</label>
+            <textarea id="json_data" name="json_data" class="form-control" rows="10" placeholder='{"dias": {"2026-10-27": {"almuerzo": {"items": [{"categoria": "FONDO NORMAL", "texto": "..."}]}}}}' style="font-family: monospace; font-size: 13px;"></textarea>
+          </div>
+
+          <button type="submit" class="btn-primary" style="font-size: 16px; padding: 12px 24px;">📥 Procesar e Importar Minuta</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- ================= PESTAÑA 3: CONFIGURACIÓN Y HORARIOS ================= -->
+    <div id="tab-config" class="tab-content">
+      <div class="card">
+        <div class="card-title">Horarios de Servicios y Colores de Franja</div>
+        <form method="POST" action="/panel/actualizar-config/" enctype="multipart/form-data">
+          {% csrf_token %}
+
+          {% for s in servicios %}
+            <div style="background: var(--bg); padding: 16px; border-radius: 8px; margin-bottom: 16px; border: 1px solid var(--border);">
+              <h3 style="font-size: 15px; font-weight: 800; color: var(--primary); margin-bottom: 12px;">{{ s.nombre }}</h3>
+              <div class="form-grid">
+                <div class="form-group">
+                  <label>Hora Inicio (Desde)</label>
+                  <input type="time" name="desde_{{ s.codigo }}" class="form-control" value="{{ s.desde|time:'H:i' }}" required>
+                </div>
+                <div class="form-group">
+                  <label>Hora Fin (Hasta)</label>
+                  <input type="time" name="hasta_{{ s.codigo }}" class="form-control" value="{{ s.hasta|time:'H:i' }}" required>
+                </div>
+                <div class="form-group">
+                  <label>Color Franja TV (Hex)</label>
+                  <div style="display: flex; gap: 8px; align-items: center;">
+                    <input type="color" name="color_{{ s.codigo }}" value="{{ s.color_franja }}" style="height: 38px; width: 50px; border-radius: 6px; border: 1px solid var(--border); cursor: pointer;" onchange="this.nextElementSibling.value = this.value">
+                    <input type="text" class="form-control" value="{{ s.color_franja }}" onchange="this.previousElementSibling.value = this.value">
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+
+          <div class="card-title" style="margin-top: 24px;">Ajustes de Pantalla TV</div>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="intervalo_rotacion">Intervalo rotación Vistas (segundos)</label>
+              <input type="number" id="intervalo_rotacion" name="intervalo_rotacion" class="form-control" value="{{ cfg.intervalo_rotacion_segundos }}" min="5" max="60">
+              <small style="color: var(--text-muted);">Recomendado: 10 segundos</small>
+            </div>
+            <div class="form-group">
+              <label for="recarga_minutos">Recarga completa TV (minutos)</label>
+              <input type="number" id="recarga_minutos" name="recarga_minutos" class="form-control" value="{{ cfg.recarga_minutos }}" min="5" max="120">
+              <small style="color: var(--text-muted);">Recomendado: 30 minutos (limpia memoria TV Bro)</small>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="pie_pagina">Texto Pie de Página</label>
+            <input type="text" id="pie_pagina" name="pie_pagina" class="form-control" value="{{ cfg.pie_pagina }}">
+          </div>
+
+          <div class="form-grid" style="margin-top: 16px;">
+            <div class="form-group">
+              <label>Logo PROMET (Opcional, reemplaza el vector por defecto)</label>
+              <input type="file" name="logo_promet" class="form-control" accept="image/*">
+            </div>
+            <div class="form-group">
+              <label>Logo COALFA (Opcional, reemplaza el vector por defecto)</label>
+              <input type="file" name="logo_coalfa" class="form-control" accept="image/*">
+            </div>
+          </div>
+
+          <button type="submit" class="btn-primary" style="margin-top: 16px;">Guardar Configuración</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- ================= PESTAÑA 4: AUDITORÍA (QUIÉN MODIFICÓ) ================= -->
+    <div id="tab-auditoria" class="tab-content">
+      <div class="card">
+        <div class="card-title">
+          <span>Registro de Auditoría (Trazabilidad de Cambios)</span>
+          <span style="font-size: 13px; color: var(--text-muted);">Registra quién modificó la minuta y cuándo</span>
+        </div>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th style="width: 15%;">Fecha y Hora</th>
+                <th style="width: 12%;">Usuario</th>
+                <th style="width: 12%;">Acción</th>
+                <th style="width: 35%;">Resumen</th>
+                <th style="width: 26%;">Detalles / IP</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for aud in auditorias %}
+                <tr>
+                  <td style="font-size: 13px; white-space: nowrap;">{{ aud.fecha_hora|date:"d/m/Y H:i:s" }}</td>
+                  <td><strong>{{ aud.nombre_usuario }}</strong></td>
+                  <td><span class="audit-action-badge act-{{ aud.accion }}">{{ aud.get_accion_display }}</span></td>
+                  <td>{{ aud.resumen }}</td>
+                  <td style="font-size: 12px; color: var(--text-muted);">
+                    {{ aud.detalles }}
+                    {% if aud.ip %}<br><span style="opacity: 0.7;">IP: {{ aud.ip }}</span>{% endif %}
+                  </td>
+                </tr>
+              {% empty %}
+                <tr>
+                  <td colspan="5" style="text-align: center; padding: 24px; color: var(--text-muted);">No hay registros de auditoría aún.</td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    // Manejo de pestañas
+    function switchTab(tabId, btn) {
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+      const target = document.getElementById('tab-' + tabId);
+      if (target) {
+        target.classList.add('active');
+      }
+      if (btn) {
+        btn.classList.add('active');
+      }
+      // Actualizar URL sin recargar
+      const url = new URL(window.location);
+      url.searchParams.set('tab', tabId);
+      window.history.replaceState({}, '', url);
+    }
+
+    // Navegación por fechas
+    function cambiarFecha(f) {
+      const url = new URL(window.location);
+      url.searchParams.set('fecha', f);
+      window.location = url.toString();
+    }
+
+    function cambiarFechaRelativa(offset) {
+      const cur = document.getElementById('fecha-picker').value;
+      const d = new Date(cur + 'T00:00:00');
+      d.setDate(d.getDate() + offset);
+      const yyyy = d.getFullYear();
+      const mm = String(d.getMonth() + 1).padStart(2, '0');
+      const dd = String(d.getDate()).padStart(2, '0');
+      cambiarFecha(`${yyyy}-${mm}-${dd}`);
+    }
+
+    function irAHoy() {
+      const d = new Date();
+      const yyyy = d.getFullYear();
+      const mm = String(d.getMonth() + 1).padStart(2, '0');
+      const dd = String(d.getDate()).padStart(2, '0');
+      cambiarFecha(`${yyyy}-${mm}-${dd}`);
+    }
+
+    // Asignación rápida de categoría y columna
+    function setCategoria(cat, col) {
+      document.getElementById('categoria').value = cat;
+      document.getElementById('columna').value = col;
+      document.getElementById('texto').focus();
+    }
+
+    // Edición de ítem existente
+    function editarItem(id, cat, txt, col, ord, cant) {
+      document.getElementById('item_id').value = id;
+      document.getElementById('categoria').value = cat;
+      document.getElementById('texto').value = txt;
+      document.getElementById('columna').value = col;
+      document.getElementById('orden').value = ord;
+      document.getElementById('cantidad').value = cant;
+      
+      document.getElementById('form-item-title').textContent = 'Editar Plato: ' + cat;
+      document.getElementById('btn-save-item').textContent = 'Actualizar Plato';
+      document.getElementById('btn-cancel-edit').style.display = 'inline-block';
+      document.getElementById('form-item-card').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function cancelarEdicion() {
+      document.getElementById('item_id').value = '';
+      document.getElementById('categoria').value = '';
+      document.getElementById('texto').value = '';
+      document.getElementById('cantidad').value = '';
+      document.getElementById('orden').value = '0';
+      document.getElementById('form-item-title').textContent = 'Agregar Plato a {{ servicio_sel|upper }}';
+      document.getElementById('btn-save-item').textContent = 'Guardar Plato';
+      document.getElementById('btn-cancel-edit').style.display = 'none';
+    }
+
+    function eliminarItemConfirm(id, cat) {
+      if (confirm(`¿Estás seguro de eliminar el ítem "${cat}"? Esta acción quedará registrada en la auditoría.`)) {
+        window.location = `/panel/eliminar-item/${id}/`;
+      }
+    }
+
+    // Inicializar pestaña activa según parámetro URL (?tab=config)
+    window.addEventListener('DOMContentLoaded', () => {
+      const tabParam = new URLSearchParams(window.location.search).get('tab');
+      if (tabParam) {
+        const btn = document.querySelector(`[onclick*="'${tabParam}'"]`);
+        switchTab(tabParam, btn);
+      }
+    });
+  </script>
+</body>
+</html>

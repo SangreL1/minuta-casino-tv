@@ -1,0 +1,1139 @@
+{
+ "mes": "2026-10",
+ "zona_horaria": "America/Santiago",
+ "servicios": {
+  "desayuno": {
+   "nombre": "DESAYUNO",
+   "desde": "05:00",
+   "hasta": "10:00",
+   "color": "#C07A2C"
+  },
+  "almuerzo": {
+   "nombre": "ALMUERZO",
+   "desde": "12:00",
+   "hasta": "14:30",
+   "color": "#0B3FA8"
+  },
+  "cena": {
+   "nombre": "CENA",
+   "desde": "16:30",
+   "hasta": "22:00",
+   "color": "#2E7D5B"
+  }
+ },
+ "dias": {
+  "2026-10-01": {
+   "desayuno": {
+    "items": [
+     {"categoria": "SÁNDWICH", "texto": "Jamon palta"},
+     {"categoria": "PAN", "texto": "Hallulla y Marraqueta"},
+     {"categoria": "AGREGADOS", "texto": "Mermelada / mantequilla"},
+     {"categoria": "LECHE", "texto": "Leche Caliente"},
+     {"categoria": "PORRIDGE", "texto": "Capucchino con Vainilla"},
+     {"categoria": "MEJORADO", "texto": "Salame"},
+     {"categoria": "POSTRE", "texto": "Yogurt de sabores / snack"}
+    ]
+   },
+   "almuerzo": {
+    "items": [
+     {"categoria": "ENTRADA CALIENTE · SOPA", "texto": "Crema Verduras", "cantidad": 120},
+     {"categoria": "FONDO NORMAL", "texto": "Hamburguesa Napolitana con arroz piamontés", "cantidad": 30},
+     {"categoria": "FONDO ALTERNATIVO", "texto": "Pollo Thai con tortilla de verduras", "cantidad": 50},
+     {"categoria": "TERCERA OPCIÓN", "texto": "Cazuela de vacuno", "cantidad": 40},
+     {"categoria": "HIPOCALÓRICO", "texto": "Tomate Neptuno con Mix de Ensaladas"},
+     {"categoria": "ENSALADAS", "texto": "Poroto Verde / Arvejas / Brocoli"},
+     {"categoria": "POSTRES", "texto": "Fruta / Leche Nevada / Jalea / Breden Master"}
+    ]
+   },
+   "cena": {
+    "items": [
+     {"categoria": "ENTRADA CALIENTE · SOPA", "texto": "Sopa de Carne con arroz", "cantidad": 480},
+     {"categoria": "FONDO NORMAL", "texto": "Estofado de cerdo con pure mixto", "cantidad": 260},
+     {"categoria": "FONDO ALTERNATIVO", "texto": "Lazaña Boloñesa", "cantidad": 100},
+     {"categoria": "TERCERA OPCIÓN", "texto": "Carbonada de Vacuno", "cantidad": 120},
+     {"categoria": "HIPOCALÓRICO", "texto": "Tomate Neptuno con Mix de Ensaladas"},
+     {"categoria": "ENSALADAS", "texto": "Jardinera / Pepino / Chilena"},
+     {"categoria": "POSTRES", "texto": "Fruta / Leche Nevada / Jalea / Breden Master"}
+    ]
+   },
+   "colacion": "Churrasco queso"
+  },
+  "2026-10-02": {
+   "desayuno": {
+    "items": [
+     {"categoria": "SÁNDWICH", "texto": "Completo italiano"},
+     {"categoria": "PAN", "texto": "Hallulla y Marraqueta"},
+     {"categoria": "AGREGADOS", "texto": "Manjar / mantequilla"},
+     {"categoria": "LECHE", "texto": "Leche Caliente"},
+     {"categoria": "PORRIDGE", "texto": "Leche Frutilla"},
+     {"categoria": "MEJORADO", "texto": "Sopaipillas"},
+     {"categoria": "POSTRE", "texto": "Yogurt de sabores / snack"}
+    ]
+   },
+   "almuerzo": {
+    "items": [
+     {"categoria": "ENTRADA CALIENTE · SOPA", "texto": "Sopa Pollo con Arroz", "cantidad": 100},
+     {"categoria": "FONDO NORMAL", "texto": "Prietas Lyonesas con papas doradas", "cantidad": 30},
+     {"categoria": "FONDO ALTERNATIVO", "texto": "Lasaña Boloñesa", "cantidad": 50},
+     {"categoria": "TERCERA OPCIÓN", "texto": "Lentejas parmesanas con vinesas salteadas", "cantidad": 20},
+     {"categoria": "HIPOCALÓRICO", "texto": "Ensalada Cesar"},
+     {"categoria": "ENSALADAS", "texto": "Primavera / Apio / Beterraga"},
+     {"categoria": "POSTRES", "texto": "Fruta / Natilla / Jalea / Torta Casera"}
+    ]
+   },
+   "cena": {
+    "items": [
+     {"categoria": "ENTRADA CALIENTE · SOPA", "texto": "Crema de Esparragos", "cantidad": 480},
+     {"categoria": "FONDO NORMAL", "texto": "Vacuno Arvejado con tortilla de acelga", "cantidad": 240},
+     {"categoria": "FONDO ALTERNATIVO", "texto": "Ragout de Ave con spaguettis atomatadas", "cantidad": 120},
+     {"categoria": "TERCERA OPCIÓN", "texto": "Ajiaco de ave", "cantidad": 120},
+     {"categoria": "HIPOCALÓRICO", "texto": "Ensalada Cesar"},
+     {"categoria": "ENSALADAS", "texto": "Ceviche de Mote / Brocoli / Leechuga"},
+     {"categoria": "POSTRES", "texto": "Fruta / Natilla / Jalea / Torta Casera"}
+    ]
+   },
+   "colacion": "Croqueta palta"
+  },
+  "2026-10-03": {
+   "desayuno": {
+    "items": [
+     {"categoria": "SÁNDWICH", "texto": "Hamburguesa tomate"},
+     {"categoria": "PAN", "texto": "Hallulla y Marraqueta"},
+     {"categoria": "AGREGADOS", "texto": "Mermelada / mantequilla"},
+     {"categoria": "LECHE", "texto": "Leche Caliente"},
+     {"categoria": "PORRIDGE", "texto": "Leche C/ Avena"},
+     {"categoria": "MEJORADO", "texto": "Buffet de queso"},
+     {"categoria": "POSTRE", "texto": "Yogurt de sabores / snack"}
+    ]
+   },
+   "almuerzo": {
+    "items": [
+     {"categoria": "ENTRADA CALIENTE · SOPA", "texto": "Crema de Tomates", "cantidad": 100},
+     {"categoria": "FONDO NORMAL", "texto": "Pescado Frito con arroz primavera", "cantidad": 60},
+     {"categoria": "FONDO ALTERNATIVO", "texto": "Pastel de Papa", "cantidad": 20},
+     {"categoria": "TERCERA OPCIÓN", "texto": "Carbonada de ave", "cantidad": 20},
+     {"categoria": "HIPOCALÓRICO", "texto": "Atun Cebollin con Ensaladas"},
+     {"categoria": "ENSALADAS", "texto": "Repollo / Haba / Tomate"},
+     {"categoria": "POSTRES", "texto": "Fruta / Bavaroise / Jalea / Colegial"}
+    ]
+   },
+   "cena": {
+    "items": [
+     {"categoria": "ENTRADA CALIENTE · SOPA", "texto": "Sopa de Carne con Verduras", "cantidad": 480},
+     {"categoria": "FONDO NORMAL", "texto": "Estofado de Cerdo con espirales al olivo", "cantidad": 350},
+     {"categoria": "FONDO ALTERNATIVO", "texto": "Panita al Ajillo con tortilla de primavera", "cantidad": 100},
+     {"categoria": "TERCERA OPCIÓN", "texto": "Garbanzos guisados vienesas", "cantidad": 30},
+     {"categoria": "HIPOCALÓRICO", "texto": "Atun Cebollin con Ensaladas"},
+     {"categoria": "ENSALADAS", "texto": "Poroto a la Chilena / Apio / Pepino"},
+     {"categoria": "POSTRES", "texto": "Fruta / Bavaroise / Jalea / Colegial"}
+    ]
+   },
+   "colacion": "Ave pimenton/mayonesa"
+  },
+  "2026-10-04": {
+   "desayuno": {
+    "items": [
+     {"categoria": "SÁNDWICH", "texto": "Huevo revuelto"},
+     {"categoria": "PAN", "texto": "Hallulla y Marraqueta"},
+     {"categoria": "AGREGADOS", "texto": "Mermelada / mantequilla"},
+     {"categoria": "LECHE", "texto": "Leche Caliente"},
+     {"categoria": "PORRIDGE", "texto": "Leche C/ Chocolate"},
+     {"categoria": "MEJORADO", "texto": "Torta"},
+     {"categoria": "POSTRE", "texto": "Yogurt de sabores / snack"}
+    ]
+   },
+   "almuerzo": {
+    "items": [
+     {"categoria": "ENTRADA CALIENTE · SOPA", "texto": "Sopa Pollo con Fideos", "cantidad": 100},
+     {"categoria": "FONDO NORMAL", "texto": "Chuleta de Cerdo Asada con pure lyonesa", "cantidad": 30},
+     {"categoria": "FONDO ALTERNATIVO", "texto": "Milanesa de Pollo con espirales atomatados", "cantidad": 60},
+     {"categoria": "TERCERA OPCIÓN", "texto": "Arvejas guisadas con chorizos", "cantidad": 10},
+     {"categoria": "HIPOCALÓRICO", "texto": "Pechuga de Pollo con Ensaladas"},
+     {"categoria": "ENSALADAS", "texto": "Lechuga / Pebre / Zanahoria"},
+     {"categoria": "POSTRES", "texto": "Fruta / Arroz con leche / Jalea / Kuchen de Manzana"}
+    ]
+   },
+   "cena": {
+    "items": [
+     {"categoria": "ENTRADA CALIENTE · SOPA", "texto": "Crema de Lentejas", "cantidad": 480},
+     {"categoria": "FONDO NORMAL", "texto": "Chorrillana Coalfa con papas fritas", "cantidad": 310},
+     {"categoria": "FONDO ALTERNATIVO", "texto": "Salsa Alfredo con spaguettis al cilantro", "cantidad": 50},
+     {"categoria": "TERCERA OPCIÓN", "texto": "Pantrucas", "cantidad": 120},
+     {"categoria": "HIPOCALÓRICO", "texto": "Pechuga de Pollo con Ensaladas"},
+     {"categoria": "ENSALADAS", "texto": "Repollo / Choclo / Tomate"},
+     {"categoria": "POSTRES", "texto": "Fruta / Arroz con leche / Jalea / Kuchen de Manzana"}
+    ]
+   },
+   "colacion": "Aliado palta"
+  },
+  "2026-10-05": {
+   "desayuno": {
+    "items": [
+     {"categoria": "SÁNDWICH", "texto": "Barros jarpa"},
+     {"categoria": "PAN", "texto": "Hallulla y Marraqueta"},
+     {"categoria": "AGREGADOS", "texto": "Mermelada / mantequilla"},
+     {"categoria": "LECHE", "texto": "Leche Caliente"},
+     {"categoria": "PORRIDGE", "texto": "Leche C/ Avena"},
+     {"categoria": "MEJORADO", "texto": "Berlines"},
+     {"categoria": "POSTRE", "texto": "Yogurt de sabores / snack"}
+    ]
+   },
+   "almuerzo": {
+    "items": [
+     {"categoria": "ENTRADA CALIENTE · SOPA", "texto": "Sopa Verduras con Arroz"},
+     {"categoria": "FONDO NORMAL", "texto": "Zapallo Italiano Relleno con papas gajos al sesamo", "cantidad": 40},
+     {"categoria": "FONDO ALTERNATIVO", "texto": "Salsa Bountoux con spaguettis", "cantidad": 30},
+     {"categoria": "TERCERA OPCIÓN", "texto": "Porotos con rienda y chorizos", "cantidad": 40},
+     {"categoria": "HIPOCALÓRICO", "texto": "Fideos Toscana, huevo Duro y Ensaladas"},
+     {"categoria": "ENSALADAS", "texto": "Cochayuyo / Repollo / Arveja"},
+     {"categoria": "POSTRES", "texto": "Fruta / Flan / Jalea / Tartaleta de Fruta"}
+    ]
+   },
+   "cena": {
+    "items": [
+     {"categoria": "ENTRADA CALIENTE · SOPA", "texto": "Sopa de Vacuno con Fideos"},
+     {"categoria": "FONDO NORMAL", "texto": "Goulash de Vacuno con arroz baltimore", "cantidad": 200},
+     {"categoria": "FONDO ALTERNATIVO", "texto": "Croquetas de Atun con budin de verduras", "cantidad": 100},
+     {"categoria": "TERCERA OPCIÓN", "texto": "Cazuela de ave", "cantidad": 200},
+     {"categoria": "HIPOCALÓRICO", "texto": "Fideos Toscana, huevo Duro y Ensaladas"},
+     {"categoria": "ENSALADAS", "texto": "Lechuga / Beterraga / Tomate"},
+     {"categoria": "POSTRES", "texto": "Fruta / Flan / Jalea / Tartaleta de Fruta"}
+    ]
+   },
+   "colacion": "Churrasco queso"
+  },
+  "2026-10-06": {
+   "desayuno": {
+    "items": [
+     {"categoria": "SÁNDWICH", "texto": "Suprema de pollo queso"},
+     {"categoria": "PAN", "texto": "Hallulla y Marraqueta"},
+     {"categoria": "AGREGADOS", "texto": "Pate / mantequilla"},
+     {"categoria": "LECHE", "texto": "Leche Caliente"},
+     {"categoria": "PORRIDGE", "texto": "Leche C/ Chocolate"},
+     {"categoria": "MEJORADO", "texto": "Brownie"},
+     {"categoria": "POSTRE", "texto": "Yogurt de sabores / snack"}
+    ]
+   },
+   "almuerzo": {
+    "items": [
+     {"categoria": "ENTRADA CALIENTE · SOPA", "texto": "Crema de Choclo"},
+     {"categoria": "FONDO NORMAL", "texto": "Pollo Mongoliano con arroz chaufa", "cantidad": 60},
+     {"categoria": "FONDO ALTERNATIVO", "texto": "Pastel de Choclo", "cantidad": 40},
+     {"categoria": "TERCERA OPCIÓN", "texto": "Garbanzos guisados", "cantidad": 10},
+     {"categoria": "HIPOCALÓRICO", "texto": "Atun Cebollin con Ensaladas"},
+     {"categoria": "ENSALADAS", "texto": "Lechuga / Zapallo Italiano / Cebolla"},
+     {"categoria": "POSTRES", "texto": "Fruta / Semola con leche / Jalea / Brownie"}
+    ]
+   },
+   "cena": {
+    "items": [
+     {"categoria": "ENTRADA CALIENTE · SOPA", "texto": "Crema de Esparragos"},
+     {"categoria": "FONDO NORMAL", "texto": "Strogonoff de Cerdo con pure lyonesa", "cantidad": 220},
+     {"categoria": "FONDO ALTERNATIVO", "texto": "Asado Aleman con corbatas atomatadas", "cantidad": 160},
+     {"categoria": "TERCERA OPCIÓN", "texto": "Carbonada de vacuno", "cantidad": 120},
+     {"categoria": "HIPOCALÓRICO", "texto": "Atun Cebollin con Ensaladas"},
+     {"categoria": "ENSALADAS", "texto": "Choclo / Apio / Poroto Verde"},
+     {"categoria": "POSTRES", "texto": "Fruta / Semola con leche / Jalea / Brownie"}
+    ]
+   },
+   "colacion": "Ave pimenton"
+  },
+  "2026-10-07": {
+   "desayuno": {
+    "items": [
+     {"categoria": "SÁNDWICH", "texto": "Atun cebolla cilantro"},
+     {"categoria": "PAN", "texto": "Hallulla y Marraqueta"},
+     {"categoria": "AGREGADOS", "texto": "Mermelada / mantequilla"},
+     {"categoria": "LECHE", "texto": "Leche Caliente"},
+     {"categoria": "PORRIDGE", "texto": "Leche C/ Maicena"},
+     {"categoria": "MEJORADO", "texto": "Buffet de queso"},
+     {"categoria": "POSTRE", "texto": "Yogurt de sabores / snack"}
+    ]
+   },
+   "almuerzo": {
+    "items": [
+     {"categoria": "ENTRADA CALIENTE · SOPA", "texto": "Sopa Carne con Arroz"},
+     {"categoria": "FONDO NORMAL", "texto": "Cancato de Pescado con espirales al olivo", "cantidad": 30},
+     {"categoria": "FONDO ALTERNATIVO", "texto": "Lasaña Boloñesa", "cantidad": 50},
+     {"categoria": "TERCERA OPCIÓN", "texto": "Ajiaco de vacuno", "cantidad": 30},
+     {"categoria": "HIPOCALÓRICO", "texto": "Ensalada Cesar"},
+     {"categoria": "ENSALADAS", "texto": "Haba / Coliflor / Beterraga"},
+     {"categoria": "POSTRES", "texto": "Fruta / Mousse / Jalea / Torta Tres Leches"}
+    ]
+   },
+   "cena": {
+    "items": [
+     {"categoria": "ENTRADA CALIENTE · SOPA", "texto": "Consome al Huevo"},
+     {"categoria": "FONDO NORMAL", "texto": "Pollo Truto Arvejado con arroz primavera", "cantidad": 380},
+     {"categoria": "FONDO ALTERNATIVO", "texto": "Prietas Lyonesas con tortilla de papas", "cantidad": 60},
+     {"categoria": "TERCERA OPCIÓN", "texto": "Lentejas parmesanas con vinesas salteadas", "cantidad": 60},
+     {"categoria": "HIPOCALÓRICO", "texto": "Ensalada Cesar"},
+     {"categoria": "ENSALADAS", "texto": "Repollo / Zanahoria / Pepino"},
+     {"categoria": "POSTRES", "texto": "Fruta / Mousse / Jalea / Torta Tres Leches"}
+    ]
+   },
+   "colacion": "Mechada palta"
+  },
+  "2026-10-08": {
+   "desayuno": {
+    "items": [
+     {"categoria": "SÁNDWICH", "texto": "Churrasco queso"},
+     {"categoria": "PAN", "texto": "Hallulla y Marraqueta"},
+     {"categoria": "AGREGADOS", "texto": "Mermelada / mantequilla"},
+     {"categoria": "LECHE", "texto": "Leche Caliente"},
+     {"categoria": "PORRIDGE", "texto": "Capucchino con Vainilla"},
+     {"categoria": "MEJORADO", "texto": "Sopaipillas"},
+     {"categoria": "POSTRE", "texto": "Yogurt de sabores / snack"}
+    ]
+   },
+   "almuerzo": {
+    "items": [
+     {"categoria": "ENTRADA CALIENTE · SOPA", "texto": "Crema Verduras"},
+     {"categoria": "FONDO NORMAL", "texto": "Vacuno al Jugo con budin de verduras", "cantidad": 60},
+     {"categoria": "FONDO ALTERNATIVO", "texto": "Aji de Gallina con arroz piamontes", "cantidad": 20},
+     {"categoria": "TERCERA OPCIÓN", "texto": "Porotos con mazamorra con longaniza asada", "cantidad": 30},
+     {"categoria": "HIPOCALÓRICO", "texto": "Pollo Salteado con Verduras al Vapor."},
+     {"categoria": "ENSALADAS", "texto": "Chilena / Pepino / Repollo"},
+     {"categoria": "POSTRES", "texto": "Fruta / Leche Asada / Jalea / Queque Marmoleado"}
+    ]
+   },
+   "cena": {
+    "items": [
+     {"categoria": "ENTRADA CALIENTE · SOPA", "texto": "Sopa Mejorada de Vacuno"},
+     {"categoria": "FONDO NORMAL", "texto": "Costillar de Cerdo a lo pobre (costillar, papas Fritas, Arroz, cebolla acaramelizada y Longaniza)", "cantidad": 500},
+     {"categoria": "HIPOCALÓRICO", "texto": "Pollo Salteado con Verduras al Vapor."},
+     {"categoria": "ENSALADAS", "texto": "Lechuga / Tomate / Cochayuyo"},
+     {"categoria": "POSTRES", "texto": "Fruta / Leche Asada / Jalea / Queque Marmoleado"}
+    ]
+   },
+   "colacion": "Lomito queso"
+  },
+  "2026-10-09": {
+   "desayuno": {
+    "items": [
+     {"categoria": "SÁNDWICH", "texto": "Huevo revuelto"},
+     {"categoria": "PAN", "texto": "Hallulla y Marraqueta"},
+     {"categoria": "AGREGADOS", "texto": "Manjar / mantequilla"},
+     {"categoria": "LECHE", "texto": "Leche Caliente"},
+     {"categoria": "PORRIDGE", "texto": "Leche C/ Frutilla"},
+     {"categoria": "MEJORADO", "texto": "Bufett de jamon"},
+     {"categoria": "POSTRE", "texto": "Yogurt de sabores / snack"}
+    ]
+   },
+   "almuerzo": {
+    "items": [
+     {"categoria": "ENTRADA CALIENTE · SOPA", "texto": "Sopa Pollo con Semola"},
+     {"categoria": "FONDO NORMAL", "texto": "Pescado Frito con pure rustico", "cantidad": 70},
+     {"categoria": "FONDO ALTERNATIVO", "texto": "Panita al Ajillo con tortilla de zanahoria", "cantidad": 20},
+     {"categoria": "TERCERA OPCIÓN", "texto": "Carbonada mixta", "cantidad": 20},
+     {"categoria": "HIPOCALÓRICO", "texto": "Tomate Reina"},
+     {"categoria": "ENSALADAS", "texto": "Ceviche de Mote / Brocoli / Acelga Cruda"},
+     {"categoria": "POSTRES", "texto": "Fruta / Leche Nevada / Mote con Huesillos / Colegial"}
+    ]
+   },
+   "cena": {
+    "items": [
+     {"categoria": "ENTRADA CALIENTE · SOPA", "texto": "Crema de Choclo"},
+     {"categoria": "FONDO NORMAL", "texto": "Chuleta de Cerdo con papas romero", "cantidad": 400},
+     {"categoria": "FONDO ALTERNATIVO", "texto": "Charquican de Verduras con huevo frito", "cantidad": 70},
+     {"categoria": "TERCERA OPCIÓN", "texto": "Arvejas guisadas con chorizos", "cantidad": 30},
+     {"categoria": "HIPOCALÓRICO", "texto": "Tomate Reina"},
+     {"categoria": "ENSALADAS", "texto": "Pepino / Apio / Beterraga"},
+     {"categoria": "POSTRES", "texto": "Fruta / Leche Nevada / Mote con Huesillos / Colegial"}
+    ]
+   },
+   "colacion": "Churrasco queso"
+  },
+  "2026-10-10": {
+   "desayuno": {
+    "items": [
+     {"categoria": "SÁNDWICH", "texto": "Lomito tomate"},
+     {"categoria": "PAN", "texto": "Hallulla y Marraqueta"},
+     {"categoria": "AGREGADOS", "texto": "Mermelada / mantequilla"},
+     {"categoria": "LECHE", "texto": "Leche Caliente"},
+     {"categoria": "PORRIDGE", "texto": "Leche C/ Avena"},
+     {"categoria": "MEJORADO", "texto": "Cocadas"},
+     {"categoria": "POSTRE", "texto": "Yogurt de sabores / snack"}
+    ]
+   },
+   "almuerzo": {
+    "items": [
+     {"categoria": "ENTRADA CALIENTE · SOPA", "texto": "Crema de Tomates"},
+     {"categoria": "FONDO NORMAL", "texto": "Rogout de Pollo con tortilla de acelga", "cantidad": 30},
+     {"categoria": "FONDO ALTERNATIVO", "texto": "Salsa Boloñesa con spaguettis atomatados", "cantidad": 50},
+     {"categoria": "TERCERA OPCIÓN", "texto": "Lentejas parmesanas con vinesas salteadas", "cantidad": 20},
+     {"categoria": "HIPOCALÓRICO", "texto": "Ensalada Mediterranea"},
+     {"categoria": "ENSALADAS", "texto": "Primavera / Lechuga / Pepino"},
+     {"categoria": "POSTRES", "texto": "Fruta / Natilla / Jalea / Breden Master"}
+    ]
+   },
+   "cena": {
+    "items": [
+     {"categoria": "ENTRADA CALIENTE · SOPA", "texto": "Sopa de Carne con Verduras"},
+     {"categoria": "FONDO NORMAL", "texto": "Vacuno Mongoliano con arroz chaufan", "cantidad": 260},
+     {"categoria": "FONDO ALTERNATIVO", "texto": "Salsa Alfredo con corbatas con albahaca", "cantidad": 60},
+     {"categoria": "TERCERA OPCIÓN", "texto": "Ajiaco de vacuno", "cantidad": 160},
+     {"categoria": "HIPOCALÓRICO", "texto": "Ensalada Mediterranea"},
+     {"categoria": "ENSALADAS", "texto": "Repollo Morado / Haba / Tomate"},
+     {"categoria": "POSTRES", "texto": "Fruta / Natilla / Jalea / Breden Master"}
+    ]
+   },
+   "colacion": "Aliado palta"
+  },
+  "2026-10-11": {
+   "desayuno": {
+    "items": [
+     {"categoria": "SÁNDWICH", "texto": "Jamon palta"},
+     {"categoria": "PAN", "texto": "Hallulla y Marraqueta"},
+     {"categoria": "AGREGADOS", "texto": "Mermelada / mantequilla"},
+     {"categoria": "LECHE", "texto": "Leche Caliente"},
+     {"categoria": "PORRIDGE", "texto": "Leche C/ Chocolate"},
+     {"categoria": "MEJORADO", "texto": "Salame"},
+     {"categoria": "POSTRE", "texto": "Yogurt de sabores / snack"}
+    ]
+   },
+   "almuerzo": {
+    "items": [
+     {"categoria": "ENTRADA CALIENTE · SOPA", "texto": "Sopa de Ave con Arroz"},
+     {"categoria": "FONDO NORMAL", "texto": "Guatitas a la Jardinera con arroz pilaf", "cantidad": 30},
+     {"categoria": "FONDO ALTERNATIVO", "texto": "Vacuno Mechado con fritos de verduras", "cantidad": 60},
+     {"categoria": "TERCERA OPCIÓN", "texto": "Caldillo de mariscos", "cantidad": 10},
+     {"categoria": "HIPOCALÓRICO", "texto": "Pescado al horno con Ensaladas"},
+     {"categoria": "ENSALADAS", "texto": "Repollo Mix / Choclo / Tomate"},
+     {"categoria": "POSTRES", "texto": "Fruta / Bavaroise / Jalea / Brazo de Reina"}
+    ]
+   },
+   "cena": {
+    "items": [
+     {"categoria": "ENTRADA CALIENTE · SOPA", "texto": "Crema de Calabaza"},
+     {"categoria": "FONDO NORMAL", "texto": "Pollo Asado con papas fritas", "cantidad": 400},
+     {"categoria": "FONDO ALTERNATIVO", "texto": "Chupe de Mariscos", "cantidad": 40},
+     {"categoria": "TERCERA OPCIÓN", "texto": "Garbanzos guisados con chorizos", "cantidad": 40},
+     {"categoria": "HIPOCALÓRICO", "texto": "Pescado al horno con Ensaladas"},
+     {"categoria": "ENSALADAS", "texto": "Lechuga / Pebre / Zanahoria"},
+     {"categoria": "POSTRES", "texto": "Fruta / Bavaroise / Jalea / Brazo de Reina"}
+    ]
+   },
+   "colacion": "Hamburguesa queso"
+  },
+  "2026-10-12": {
+   "desayuno": {
+    "items": [
+     {"categoria": "SÁNDWICH", "texto": "Huevo revuelto"},
+     {"categoria": "PAN", "texto": "Hallulla y Marraqueta"},
+     {"categoria": "AGREGADOS", "texto": "Manjar / mantequilla"},
+     {"categoria": "LECHE", "texto": "Leche Caliente"},
+     {"categoria": "PORRIDGE", "texto": "Leche C/ Avena"},
+     {"categoria": "MEJORADO", "texto": "Roscas"},
+     {"categoria": "POSTRE", "texto": "Yogurt de sabores / snack"}
+    ]
+   },
+   "almuerzo": {
+    "items": [
+     {"categoria": "ENTRADA CALIENTE · SOPA", "texto": "Consome de Res"},
+     {"categoria": "FONDO NORMAL", "texto": "Strogonoff de Vacuno con arroz piamontes"},
+     {"categoria": "FONDO ALTERNATIVO", "texto": "Pastel de Papas"},
+     {"categoria": "TERCERA OPCIÓN", "texto": "Porotos granados c/ chorizo"},
+     {"categoria": "HIPOCALÓRICO", "texto": "Omelette Jamon/Queso con Verduras al Vapor"},
+     {"categoria": "ENSALADAS", "texto": "Lechuga / Beterraga / Tomate"},
+     {"categoria": "POSTRES", "texto": "Fruta / Arroz con leche / Jalea / Masa breden"}
+    ]
+   },
+   "cena": {
+    "items": [
+     {"categoria": "ENTRADA CALIENTE · SOPA", "texto": "Crema Esparragos"},
+     {"categoria": "FONDO NORMAL", "texto": "Pollo a la Mostaza con pure mixto"},
+     {"categoria": "FONDO ALTERNATIVO", "texto": "Hamburguesa de Vacuno Napolitana con pastelera de choclo"},
+     {"categoria": "TERCERA OPCIÓN", "texto": "Carbonada mixta"},
+     {"categoria": "HIPOCALÓRICO", "texto": "Omelette Jamon/Queso con Verduras al Vapor"},
+     {"categoria": "ENSALADAS", "texto": "Cochayuyo / Repollo / Arveja"},
+     {"categoria": "POSTRES", "texto": "Fruta / Arroz con leche / Jalea / Masa breden"}
+    ]
+   },
+   "colacion": "Ave pimenton/mayonesa"
+  },
+  "2026-10-13": {
+   "desayuno": {
+    "items": [
+     {"categoria": "SÁNDWICH", "texto": "Jamon palta"},
+     {"categoria": "PAN", "texto": "Hallulla y Marraqueta"},
+     {"categoria": "AGREGADOS", "texto": "Mermelada / mantequilla"},
+     {"categoria": "LECHE", "texto": "Leche Caliente"},
+     {"categoria": "PORRIDGE", "texto": "Leche Frutilla"},
+     {"categoria": "MEJORADO", "texto": "Coktel de frutas"},
+     {"categoria": "POSTRE", "texto": "Yogurt de sabores / snack"}
+    ]
+   },
+   "almuerzo": {
+    "items": [
+     {"categoria": "ENTRADA CALIENTE · SOPA", "texto": "Crema de Choclo"},
+     {"categoria": "FONDO NORMAL", "texto": "Pollo Arvejado con espaguettis al cilantro"},
+     {"categoria": "FONDO ALTERNATIVO", "texto": "Panita al Ajillo con budin de verduras"},
+     {"categoria": "TERCERA OPCIÓN", "texto": "Cazuela de vacuno"},
+     {"categoria": "HIPOCALÓRICO", "texto": "Ensalada Griega"},
+     {"categoria": "ENSALADAS", "texto": "Choclo / Apio / Poroto Verde"},
+     {"categoria": "POSTRES", "texto": "Fruta / Flan / Jalea / Tartaleta de Frutas"}
+    ]
+   },
+   "cena": {
+    "items": [
+     {"categoria": "ENTRADA CALIENTE · SOPA", "texto": "Sopa de Carne con Semola"},
+     {"categoria": "FONDO NORMAL", "texto": "Tomatican de Vacuno con corbatitas"},
+     {"categoria": "FONDO ALTERNATIVO", "texto": "Chupe de Mariscos"},
+     {"categoria": "TERCERA OPCIÓN", "texto": "Lentejas guisadas con chorizos"},
+     {"categoria": "HIPOCALÓRICO", "texto": "Ensalada Griega"},
+     {"categoria": "ENSALADAS", "texto": "Lechuga / Brocoli / Cebolla"},
+     {"categoria": "POSTRES", "texto": "Fruta / Flan / Jalea / Tartaleta de Frutas"}
+    ]
+   },
+   "colacion": "Mechada queso"
+  },
+  "2026-10-14": {
+   "desayuno": {
+    "items": [
+     {"categoria": "SÁNDWICH", "texto": "Lomito tomate"},
+     {"categoria": "PAN", "texto": "Hallulla y Marraqueta"},
+     {"categoria": "AGREGADOS", "texto": "Pate / mantequilla"},
+     {"categoria": "LECHE", "texto": "Leche Caliente"},
+     {"categoria": "PORRIDGE", "texto": "Leche C/ Maicena"},
+     {"categoria": "MEJORADO", "texto": "Buffet de queso"},
+     {"categoria": "POSTRE", "texto": "Yogurt de sabores / snack"}
+    ]
+   },
+   "almuerzo": {
+    "items": [
+     {"categoria": "ENTRADA CALIENTE · SOPA", "texto": "Consome de Ave"},
+     {"categoria": "FONDO NORMAL", "texto": "Pescado Frito con arroz pilaf"},
+     {"categoria": "FONDO ALTERNATIVO", "texto": "Pastel de Choclo"},
+     {"categoria": "TERCERA OPCIÓN", "texto": "Arvejas guisadas con chorizos"},
+     {"categoria": "HIPOCALÓRICO", "texto": "Pechuga de Pollo con Ensalada Surtida"},
+     {"categoria": "ENSALADAS", "texto": "Repollo / Zanahoria / Pepino"},
+     {"categoria": "POSTRES", "texto": "Fruta / Semola con leche / Jalea / Pie de Limon"}
+    ]
+   },
+   "cena": {
+    "items": [
+     {"categoria": "ENTRADA CALIENTE · SOPA", "texto": "Crema de Champiñon"},
+     {"categoria": "FONDO NORMAL", "texto": "Chuleta de Cerdo Asada con papas al perejil"},
+     {"categoria": "FONDO ALTERNATIVO", "texto": "Guatitas a la primavera con arroz piamontes"},
+     {"categoria": "TERCERA OPCIÓN", "texto": "Ajiaco de vacuno"},
+     {"categoria": "HIPOCALÓRICO", "texto": "Pechuga de Pollo con Ensalada Surtida"},
+     {"categoria": "ENSALADAS", "texto": "Haba / Coliflor / Beterraga"},
+     {"categoria": "POSTRES", "texto": "Fruta / Semola con leche / Jalea / Pie de Limon"}
+    ]
+   },
+   "colacion": "Aliado palta"
+  },
+  "2026-10-15": {
+   "desayuno": {
+    "items": [
+     {"categoria": "SÁNDWICH", "texto": "Pollo con pimento"},
+     {"categoria": "PAN", "texto": "Hallulla y Marraqueta"},
+     {"categoria": "AGREGADOS", "texto": "Mermelada / mantequilla"},
+     {"categoria": "LECHE", "texto": "Leche Caliente"},
+     {"categoria": "PORRIDGE", "texto": "Capucchino con Vainilla"},
+     {"categoria": "MEJORADO", "texto": "Queque de chocolate"},
+     {"categoria": "POSTRE", "texto": "Yogurt de sabores / snack"}
+    ]
+   },
+   "almuerzo": {
+    "items": [
+     {"categoria": "ENTRADA CALIENTE · SOPA", "texto": "Sopa de carne con verduras"},
+     {"categoria": "FONDO NORMAL", "texto": "Estofado Mixto con fideos al pesto"},
+     {"categoria": "FONDO ALTERNATIVO", "texto": "Zapallo Italiano relleno con verduras asadas"},
+     {"categoria": "TERCERA OPCIÓN", "texto": "Carbonada de vacuno"},
+     {"categoria": "HIPOCALÓRICO", "texto": "Pescado al horno con Ensaladas"},
+     {"categoria": "ENSALADAS", "texto": "Lechuga / Tomate / Cebolla"},
+     {"categoria": "POSTRES", "texto": "Fruta / Mousse / Jalea / Queque manzana canela"}
+    ]
+   },
+   "cena": {
+    "items": [
+     {"categoria": "ENTRADA CALIENTE · SOPA", "texto": "Crema de Lentejas"},
+     {"categoria": "FONDO NORMAL", "texto": "Pollo Asado con pastelera de choclo"},
+     {"categoria": "FONDO ALTERNATIVO", "texto": "Asado Aleman con pure al merken"},
+     {"categoria": "TERCERA OPCIÓN", "texto": "Garbanzos guisados con chorizos"},
+     {"categoria": "HIPOCALÓRICO", "texto": "Pescado al horno con Ensaladas"},
+     {"categoria": "ENSALADAS", "texto": "Porotos Verdes / Pepino / Repollo"},
+     {"categoria": "POSTRES", "texto": "Fruta / Mousse / Jalea / Queque manzana canela"}
+    ]
+   },
+   "colacion": "Churrasco queso"
+  },
+  "2026-10-16": {
+   "desayuno": {
+    "items": [
+     {"categoria": "SÁNDWICH", "texto": "Completo italiano"},
+     {"categoria": "PAN", "texto": "Hallulla y Marraqueta"},
+     {"categoria": "AGREGADOS", "texto": "Mermelada / mantequilla"},
+     {"categoria": "LECHE", "texto": "Leche Caliente"},
+     {"categoria": "PORRIDGE", "texto": "Leche C/ Semola"},
+     {"categoria": "MEJORADO", "texto": "Bufett de jamon"},
+     {"categoria": "POSTRE", "texto": "Yogurt de sabores / snack"}
+    ]
+   },
+   "almuerzo": {
+    "items": [
+     {"categoria": "ENTRADA CALIENTE · SOPA", "texto": "Sopa de Pollo con Arroz"},
+     {"categoria": "FONDO NORMAL", "texto": "Pulpa de Cerdo al Jugo con papas doradas"},
+     {"categoria": "FONDO ALTERNATIVO", "texto": "Salas Boloñesa con spaguettis"},
+     {"categoria": "TERCERA OPCIÓN", "texto": "Porotos con riendas longaniza asada"},
+     {"categoria": "HIPOCALÓRICO", "texto": "Ensalada de atún"},
+     {"categoria": "ENSALADAS", "texto": "Choclo / Apio / Beterraga"},
+     {"categoria": "POSTRES", "texto": "Fruta / Leche Asada / Jalea / Torta Casera"}
+    ]
+   },
+   "cena": {
+    "items": [
+     {"categoria": "ENTRADA CALIENTE · SOPA", "texto": "Crema de Arvejas con Jamon"},
+     {"categoria": "FONDO NORMAL", "texto": "Vacuno Mongoliano con arroz chaufan"},
+     {"categoria": "FONDO ALTERNATIVO", "texto": "Milanesa de Pollo con budin de coliflor"},
+     {"categoria": "TERCERA OPCIÓN", "texto": "Cazuela de ave"},
+     {"categoria": "HIPOCALÓRICO", "texto": "Ensalada de atún"},
+     {"categoria": "ENSALADAS", "texto": "Ceviche de Mote / Brocoli / Leechuga"},
+     {"categoria": "POSTRES", "texto": "Fruta / Leche Asada / Jalea / Torta Casera"}
+    ]
+   },
+   "colacion": "Croqueta queso"
+  },
+  "2026-10-17": {
+   "desayuno": {
+    "items": [
+     {"categoria": "SÁNDWICH", "texto": "Churrasco queso lechuga"},
+     {"categoria": "PAN", "texto": "Hallulla y Marraqueta"},
+     {"categoria": "AGREGADOS", "texto": "Manjar / mantequilla"},
+     {"categoria": "LECHE", "texto": "Leche Caliente"},
+     {"categoria": "PORRIDGE", "texto": "Leche C/ Avena"},
+     {"categoria": "MEJORADO", "texto": "Masa breden master"},
+     {"categoria": "POSTRE", "texto": "Yogurt de sabores / snack"}
+    ]
+   },
+   "almuerzo": {
+    "items": [
+     {"categoria": "ENTRADA CALIENTE · SOPA", "texto": "Crema de Espárragos"},
+     {"categoria": "FONDO NORMAL", "texto": "Estofado de Vacuno con corbatitas"},
+     {"categoria": "FONDO ALTERNATIVO", "texto": "Pastel de Papas"},
+     {"categoria": "TERCERA OPCIÓN", "texto": "Ajiaco de vacuno"},
+     {"categoria": "HIPOCALÓRICO", "texto": "Ensalada Cesar"},
+     {"categoria": "ENSALADAS", "texto": "Repollo / Haba / Tomate"},
+     {"categoria": "POSTRES", "texto": "Fruta / Leche Nevada / Jalea / Masa Breden Master"}
+    ]
+   },
+   "cena": {
+    "items": [
+     {"categoria": "ENTRADA CALIENTE · SOPA", "texto": "Sopa de Pollo con Arroz."},
+     {"categoria": "FONDO NORMAL", "texto": "Truto de Pollo a la Mostaza con papas fritas"},
+     {"categoria": "FONDO ALTERNATIVO", "texto": "Higado al ajillo con budin de acelgas"},
+     {"categoria": "TERCERA OPCIÓN", "texto": "Arvejas guisadas con chorizos"},
+     {"categoria": "HIPOCALÓRICO", "texto": "Ensalada Cesar"},
+     {"categoria": "ENSALADAS", "texto": "Poroto a la Chilena / Apio / Pepino"},
+     {"categoria": "POSTRES", "texto": "Fruta / Leche Nevada / Jalea / Masa Breden Master"}
+    ]
+   },
+   "colacion": "Lomito queso"
+  },
+  "2026-10-18": {
+   "desayuno": {
+    "items": [
+     {"categoria": "SÁNDWICH", "texto": "Huevo revuelto"},
+     {"categoria": "PAN", "texto": "Hallulla y Marraqueta"},
+     {"categoria": "AGREGADOS", "texto": "Mermelada / mantequilla"},
+     {"categoria": "LECHE", "texto": "Leche Caliente"},
+     {"categoria": "PORRIDGE", "texto": "Leche C/ Chocolate"},
+     {"categoria": "MEJORADO", "texto": "Calzon roto"},
+     {"categoria": "POSTRE", "texto": "Yogurt de sabores / snack"}
+    ]
+   },
+   "almuerzo": {
+    "items": [
+     {"categoria": "ENTRADA CALIENTE · SOPA", "texto": "Sopa de Carne con Caracolitos"},
+     {"categoria": "FONDO NORMAL", "texto": "Croquetas Atun Jurel con epirales atomatados"},
+     {"categoria": "FONDO ALTERNATIVO", "texto": "Chuleta de Cerdo con pure lyonesa"},
+     {"categoria": "TERCERA OPCIÓN", "texto": "Lentejas guisadas con chorizos"},
+     {"categoria": "HIPOCALÓRICO", "texto": "Fideos Toscana, huevo Duro y Ensaladas"},
+     {"categoria": "ENSALADAS", "texto": "Lechuga / Pebre / Zanahoria"},
+     {"categoria": "POSTRES", "texto": "Fruta / Natilla / Jalea / Kuchen de manzana"}
+    ]
+   },
+   "cena": {
+    "items": [
+     {"categoria": "ENTRADA CALIENTE · SOPA", "texto": "Crema de Tomates"},
+     {"categoria": "FONDO NORMAL", "texto": "Pescado Napolitano con arroz verde"},
+     {"categoria": "FONDO ALTERNATIVO", "texto": "Albondigas Atomatadas con fideos atomatados"},
+     {"categoria": "TERCERA OPCIÓN", "texto": "Carbonada de ave"},
+     {"categoria": "HIPOCALÓRICO", "texto": "Fideos Toscana, huevo Duro y Ensaladas"},
+     {"categoria": "ENSALADAS", "texto": "Repollo / Choclo / Tomate"},
+     {"categoria": "POSTRES", "texto": "Fruta / Natilla / Jalea / Kuchen de manzana"}
+    ]
+   },
+   "colacion": "Ave pimenton/mayonesa"
+  },
+  "2026-10-19": {
+   "desayuno": {
+    "items": [
+     {"categoria": "SÁNDWICH", "texto": "Churrasco palta tomate"},
+     {"categoria": "PAN", "texto": "Hallulla y Marraqueta"},
+     {"categoria": "AGREGADOS", "texto": "Pate / mantequilla"},
+     {"categoria": "LECHE", "texto": "Leche Caliente"},
+     {"categoria": "PORRIDGE", "texto": "Leche de Frutilla"},
+     {"categoria": "MEJORADO", "texto": "Coktel de frutas"},
+     {"categoria": "POSTRE", "texto": "Yogurt de sabores / snack"}
+    ]
+   },
+   "almuerzo": {
+    "items": [
+     {"categoria": "ENTRADA CALIENTE · SOPA", "texto": "Consome al huevo"},
+     {"categoria": "FONDO NORMAL", "texto": "Vacuno al Jugo con espirales", "cantidad": 40},
+     {"categoria": "FONDO ALTERNATIVO", "texto": "Pastel de Choclo", "cantidad": 30},
+     {"categoria": "TERCERA OPCIÓN", "texto": "Cazuela de ave", "cantidad": 40},
+     {"categoria": "HIPOCALÓRICO", "texto": "Omelette Jamon/Queso con Verduras al Vapor"},
+     {"categoria": "ENSALADAS", "texto": "Arveja / Lechuga / Coliflor"},
+     {"categoria": "POSTRES", "texto": "Fruta / Bavaroise / Mote con Huesillos / Torta Casera"}
+    ]
+   },
+   "cena": {
+    "items": [
+     {"categoria": "ENTRADA CALIENTE · SOPA", "texto": "Crema de Cholo"},
+     {"categoria": "FONDO NORMAL", "texto": "Cerdo Asado con pure rustico", "cantidad": 360},
+     {"categoria": "FONDO ALTERNATIVO", "texto": "Chupe de Mariscos", "cantidad": 40},
+     {"categoria": "TERCERA OPCIÓN", "texto": "Lentejas guisadas con vienesas", "cantidad": 90},
+     {"categoria": "HIPOCALÓRICO", "texto": "Omelette Jamon/Queso con Verduras al Vapor"},
+     {"categoria": "ENSALADAS", "texto": "Pepino / Repollo / Choclo"},
+     {"categoria": "POSTRES", "texto": "Fruta / Bavaroise / Mote con Huesillos / Torta Casera"}
+    ]
+   },
+   "colacion": "Aliado palta"
+  },
+  "2026-10-20": {
+   "desayuno": {
+    "items": [
+     {"categoria": "SÁNDWICH", "texto": "Huevo revuelto"},
+     {"categoria": "PAN", "texto": "Hallulla y Marraqueta"},
+     {"categoria": "AGREGADOS", "texto": "Mermelada / mantequilla"},
+     {"categoria": "LECHE", "texto": "Leche Caliente"},
+     {"categoria": "PORRIDGE", "texto": "Leche C/ Semola"},
+     {"categoria": "MEJORADO", "texto": "Brownie"},
+     {"categoria": "POSTRE", "texto": "Yogurt de sabores / snack"}
+    ]
+   },
+   "almuerzo": {
+    "items": [
+     {"categoria": "ENTRADA CALIENTE · SOPA", "texto": "Sopa Pollo con Fideos"},
+     {"categoria": "FONDO NORMAL", "texto": "Pescado Frito con papas lyonesa", "cantidad": 50},
+     {"categoria": "FONDO ALTERNATIVO", "texto": "Salsa Italiana con spaguettis", "cantidad": 30},
+     {"categoria": "TERCERA OPCIÓN", "texto": "Porotos granados con chorizos", "cantidad": 30},
+     {"categoria": "HIPOCALÓRICO", "texto": "Ensalada Griega"},
+     {"categoria": "ENSALADAS", "texto": "Tomate / Brocoli / Zanahoria"},
+     {"categoria": "POSTRES", "texto": "Fruta / Arroz con leche / Jalea / Queque Marmoleado"}
+    ]
+   },
+   "cena": {
+    "items": [
+     {"categoria": "ENTRADA CALIENTE · SOPA", "texto": "Sopa de Carne con Semola"},
+     {"categoria": "FONDO NORMAL", "texto": "Pollo thai con arroz", "cantidad": 190},
+     {"categoria": "FONDO ALTERNATIVO", "texto": "Hamburguesa Napolitana con budin de coliflor", "cantidad": 200},
+     {"categoria": "TERCERA OPCIÓN", "texto": "Ajiaco de vacuno", "cantidad": 100},
+     {"categoria": "HIPOCALÓRICO", "texto": "Ensalada Griega"},
+     {"categoria": "ENSALADAS", "texto": "Lechuga / Betarraga / Poroto Verde"},
+     {"categoria": "POSTRES", "texto": "Fruta / Arroz con leche / Jalea / Queque Marmoleado"}
+    ]
+   },
+   "colacion": "Mechada queso"
+  },
+  "2026-10-21": {
+   "desayuno": {
+    "items": [
+     {"categoria": "SÁNDWICH", "texto": "Hamburguesa tomate"},
+     {"categoria": "PAN", "texto": "Hallulla y Marraqueta"},
+     {"categoria": "AGREGADOS", "texto": "Mermelada / mantequilla"},
+     {"categoria": "LECHE", "texto": "Leche Caliente"},
+     {"categoria": "PORRIDGE", "texto": "Leche C/ Avena"},
+     {"categoria": "MEJORADO", "texto": "Salame"},
+     {"categoria": "POSTRE", "texto": "Yogurt de sabores / snack"}
+    ]
+   },
+   "almuerzo": {
+    "items": [
+     {"categoria": "ENTRADA CALIENTE · SOPA", "texto": "Sopa Verduras con Arroz"},
+     {"categoria": "FONDO NORMAL", "texto": "Chuleta de Cerdo con arroz primavera", "cantidad": 90},
+     {"categoria": "FONDO ALTERNATIVO", "texto": "Pastel de Papas", "cantidad": 10},
+     {"categoria": "TERCERA OPCIÓN", "texto": "Carbonada de ave", "cantidad": 10},
+     {"categoria": "HIPOCALÓRICO", "texto": "Ensalada Cesar"},
+     {"categoria": "ENSALADAS", "texto": "Cochayuyo / Repollo / Arveja"},
+     {"categoria": "POSTRES", "texto": "Fruta / Flan / Jalea / Tartaleta de Fruta"}
+    ]
+   },
+   "cena": {
+    "items": [
+     {"categoria": "ENTRADA CALIENTE · SOPA", "texto": "Consome de pollo"},
+     {"categoria": "FONDO NORMAL", "texto": "Strogonoff de Vacuno con papas doradas", "cantidad": 260},
+     {"categoria": "FONDO ALTERNATIVO", "texto": "Pechuga de Pollo a la Mostaza con budin de zanahoria", "cantidad": 200},
+     {"categoria": "TERCERA OPCIÓN", "texto": "Arvejas guisadas con chorizo salteado", "cantidad": 30},
+     {"categoria": "HIPOCALÓRICO", "texto": "Ensalada Cesar"},
+     {"categoria": "ENSALADAS", "texto": "Acelga / Zanahoria / Tomate"},
+     {"categoria": "POSTRES", "texto": "Fruta / Flan / Jalea / Tartaleta de Fruta"}
+    ]
+   },
+   "colacion": "Lomito queso"
+  },
+  "2026-10-22": {
+   "desayuno": {
+    "items": [
+     {"categoria": "SÁNDWICH", "texto": "Jamon palta"},
+     {"categoria": "PAN", "texto": "Hallulla y Marraqueta"},
+     {"categoria": "AGREGADOS", "texto": "Mermelada / mantequilla"},
+     {"categoria": "LECHE", "texto": "Leche Caliente"},
+     {"categoria": "PORRIDGE", "texto": "Leche C/ Chocolate"},
+     {"categoria": "MEJORADO", "texto": "Torta"},
+     {"categoria": "POSTRE", "texto": "Yogurt de sabores / snack"}
+    ]
+   },
+   "almuerzo": {
+    "items": [
+     {"categoria": "ENTRADA CALIENTE · SOPA", "texto": "Crema de Lentejas"},
+     {"categoria": "FONDO NORMAL", "texto": "Pollo Asado con pure rustico", "cantidad": 70},
+     {"categoria": "FONDO ALTERNATIVO", "texto": "Albondigas Atomatadas con tortillas de coliflor", "cantidad": 20},
+     {"categoria": "TERCERA OPCIÓN", "texto": "Lentejas guisadas con vienesas", "cantidad": 20},
+     {"categoria": "HIPOCALÓRICO", "texto": "Atun Cebollin con Ensaladas"},
+     {"categoria": "ENSALADAS", "texto": "Rusa / Cebiche de Cochayuyo"},
+     {"categoria": "POSTRES", "texto": "Fruta / Semola con leche / Jalea / Queque de Limon"}
+    ]
+   },
+   "cena": {
+    "items": [
+     {"categoria": "ENTRADA CALIENTE · SOPA", "texto": "Sopa de Vacuno con Semola"},
+     {"categoria": "FONDO NORMAL", "texto": "Hamburguesa:tomate ,queso,lechuga,palta,cebolla caramelizada", "cantidad": 500},
+     {"categoria": "FONDO ALTERNATIVO", "texto": "Papas fritas"},
+     {"categoria": "HIPOCALÓRICO", "texto": "Atun Cebollin con Ensaladas"},
+     {"categoria": "ENSALADAS", "texto": "Choclo / Apio / Poroto Verde"},
+     {"categoria": "POSTRES", "texto": "Fruta / Semola con leche / Jalea / Queque de Limon"}
+    ]
+   },
+   "colacion": "Hamburguesa queso"
+  },
+  "2026-10-23": {
+   "desayuno": {
+    "items": [
+     {"categoria": "SÁNDWICH", "texto": "Lomito tomate"},
+     {"categoria": "PAN", "texto": "Hallulla y Marraqueta"},
+     {"categoria": "AGREGADOS", "texto": "Manjar / mantequilla"},
+     {"categoria": "LECHE", "texto": "Leche Caliente"},
+     {"categoria": "PORRIDGE", "texto": "Leche C/ Maicena"},
+     {"categoria": "MEJORADO", "texto": "Buffet de queso"},
+     {"categoria": "POSTRE", "texto": "Yogurt de sabores / snack"}
+    ]
+   },
+   "almuerzo": {
+    "items": [
+     {"categoria": "ENTRADA CALIENTE · SOPA", "texto": "Crema Verduras"},
+     {"categoria": "FONDO NORMAL", "texto": "Strogonoff de Vacuno con papas duquesas", "cantidad": 40},
+     {"categoria": "FONDO ALTERNATIVO", "texto": "Pescado Cancato con verduras asada", "cantidad": 20},
+     {"categoria": "TERCERA OPCIÓN", "texto": "Ajiaco mixto", "cantidad": 40},
+     {"categoria": "HIPOCALÓRICO", "texto": "Tomate Reina"},
+     {"categoria": "ENSALADAS", "texto": "Chilena / Pepino / Repollo"},
+     {"categoria": "POSTRES", "texto": "Fruta / Mousse / Jalea / Breden Master"}
+    ]
+   },
+   "cena": {
+    "items": [
+     {"categoria": "ENTRADA CALIENTE · SOPA", "texto": "Crema deChampiñon"},
+     {"categoria": "FONDO NORMAL", "texto": "Pulpa de cerdo con salsa de champiñon con arroz piamontes", "cantidad": 390},
+     {"categoria": "FONDO ALTERNATIVO", "texto": "Aji de Gallina con espirales verde", "cantidad": 60},
+     {"categoria": "TERCERA OPCIÓN", "texto": "Garbanzos guisados con vianesas", "cantidad": 30},
+     {"categoria": "HIPOCALÓRICO", "texto": "Tomate Reina"},
+     {"categoria": "ENSALADAS", "texto": "Ceviche de Mote / Brocoli / Leechuga"},
+     {"categoria": "POSTRES", "texto": "Fruta / Mousse / Jalea / Breden Master"}
+    ]
+   },
+   "colacion": "Churrasco queso"
+  },
+  "2026-10-24": {
+   "desayuno": {
+    "items": [
+     {"categoria": "SÁNDWICH", "texto": "Huevo revuelto"},
+     {"categoria": "PAN", "texto": "Hallulla y Marraqueta"},
+     {"categoria": "AGREGADOS", "texto": "Mermelada / mantequilla"},
+     {"categoria": "LECHE", "texto": "Leche Caliente"},
+     {"categoria": "PORRIDGE", "texto": "Capuccino"},
+     {"categoria": "MEJORADO", "texto": "Queque de chocolate"},
+     {"categoria": "POSTRE", "texto": "Yogurt de sabores / snack"}
+    ]
+   },
+   "almuerzo": {
+    "items": [
+     {"categoria": "ENTRADA CALIENTE · SOPA", "texto": "Sopa Carne con Arroz"},
+     {"categoria": "FONDO NORMAL", "texto": "Panita Lyonesa con arroz pilaf", "cantidad": 40},
+     {"categoria": "FONDO ALTERNATIVO", "texto": "Lasaña Boloñesa", "cantidad": 40},
+     {"categoria": "TERCERA OPCIÓN", "texto": "Arvejas guisadas con chorizo salteado", "cantidad": 10},
+     {"categoria": "HIPOCALÓRICO", "texto": "Pescado al horno con Ensaladas"},
+     {"categoria": "ENSALADAS", "texto": "Haba / Coliflor / Beterraga"},
+     {"categoria": "POSTRES", "texto": "Fruta / Flan de Vainilla / Jalea / Torta Tres Leches"}
+    ]
+   },
+   "cena": {
+    "items": [
+     {"categoria": "ENTRADA CALIENTE · SOPA", "texto": "Consome al Huevo"},
+     {"categoria": "FONDO NORMAL", "texto": "Pollo Truto Arvejado con tortilla de papas", "cantidad": 380},
+     {"categoria": "FONDO ALTERNATIVO", "texto": "Prietas Lyonesas con budin de verduras", "cantidad": 40},
+     {"categoria": "TERCERA OPCIÓN", "texto": "Carbonada de Vacuno", "cantidad": 60},
+     {"categoria": "HIPOCALÓRICO", "texto": "Pescado al horno con Ensaladas"},
+     {"categoria": "ENSALADAS", "texto": "Repollo / Zanahoria / Pepino"},
+     {"categoria": "POSTRES", "texto": "Fruta / Flan de Vainilla / Jalea / Torta Tres Leches"}
+    ]
+   },
+   "colacion": "Ave pimenton/mayonesa"
+  },
+  "2026-10-25": {
+   "desayuno": {
+    "items": [
+     {"categoria": "SÁNDWICH", "texto": "Arrollado de huaso, palta"},
+     {"categoria": "PAN", "texto": "Hallulla y Marraqueta"},
+     {"categoria": "AGREGADOS", "texto": "Mermelada / mantequilla"},
+     {"categoria": "LECHE", "texto": "Leche Caliente"},
+     {"categoria": "PORRIDGE", "texto": "Leche de Frutilla"},
+     {"categoria": "MEJORADO", "texto": "Sopaipillas"},
+     {"categoria": "POSTRE", "texto": "Yogurt de sabores / snack"}
+    ]
+   },
+   "almuerzo": {
+    "items": [
+     {"categoria": "ENTRADA CALIENTE · SOPA", "texto": "Crema Verduras"},
+     {"categoria": "FONDO NORMAL", "texto": "Vacuno al Jugo con budin de verduras", "cantidad": 40},
+     {"categoria": "FONDO ALTERNATIVO", "texto": "Zapallos Italiano Relleno con corbatas al olivo", "cantidad": 20},
+     {"categoria": "TERCERA OPCIÓN", "texto": "Cazuela de Vacuno", "cantidad": 40},
+     {"categoria": "HIPOCALÓRICO", "texto": "Pollo Salteado con Verduras al Vapor."},
+     {"categoria": "ENSALADAS", "texto": "Chilena / Pepino / Repollo"},
+     {"categoria": "POSTRES", "texto": "Fruta / Leche Asada / Jalea / Pie de Limon"}
+    ]
+   },
+   "cena": {
+    "items": [
+     {"categoria": "ENTRADA CALIENTE · SOPA", "texto": "Crema de Choclo"},
+     {"categoria": "FONDO NORMAL", "texto": "Chuleta de Cerdo con papas eneldo", "cantidad": 340},
+     {"categoria": "FONDO ALTERNATIVO", "texto": "Charquican de Verduras con huevo frito", "cantidad": 60},
+     {"categoria": "TERCERA OPCIÓN", "texto": "Pantrucas", "cantidad": 90},
+     {"categoria": "HIPOCALÓRICO", "texto": "Pollo Salteado con Verduras al Vapor."},
+     {"categoria": "ENSALADAS", "texto": "Pepino / Apio / Beterraga"},
+     {"categoria": "POSTRES", "texto": "Fruta / Leche Asada / Jalea / Pie de Limon"}
+    ]
+   },
+   "colacion": "Lomito queso"
+  },
+  "2026-10-26": {
+   "desayuno": {
+    "items": [
+     {"categoria": "SÁNDWICH", "texto": "Churrasco tomate"},
+     {"categoria": "PAN", "texto": "Hallulla y Marraqueta"},
+     {"categoria": "AGREGADOS", "texto": "Pate / mantequilla"},
+     {"categoria": "LECHE", "texto": "Leche Caliente"},
+     {"categoria": "PORRIDGE", "texto": "Leche C/ Maicena"},
+     {"categoria": "MEJORADO", "texto": "Bufett de jamon"},
+     {"categoria": "POSTRE", "texto": "Yogurt de sabores / snack"}
+    ]
+   },
+   "almuerzo": {
+    "items": [
+     {"categoria": "ENTRADA CALIENTE · SOPA", "texto": "Consome al huevo"},
+     {"categoria": "FONDO NORMAL", "texto": "Vacuno al Jugo con arroz primavera", "cantidad": 40},
+     {"categoria": "FONDO ALTERNATIVO", "texto": "Pastel de Choclo", "cantidad": 30},
+     {"categoria": "TERCERA OPCIÓN", "texto": "Cazuela de ave", "cantidad": 40},
+     {"categoria": "HIPOCALÓRICO", "texto": "Omelette Jamon/Queso con Verduras al Vapor"},
+     {"categoria": "ENSALADAS", "texto": "Arveja / Lechuga / Coliflor"},
+     {"categoria": "POSTRES", "texto": "Fruta / Bavaroise / Jalea / Torta Casera"}
+    ]
+   },
+   "cena": {
+    "items": [
+     {"categoria": "ENTRADA CALIENTE · SOPA", "texto": "Crema de Esparragos"},
+     {"categoria": "FONDO NORMAL", "texto": "Cerdo Asado con pure rustico", "cantidad": 300},
+     {"categoria": "FONDO ALTERNATIVO", "texto": "Hamburguesa Napolitana con budin de coliflor", "cantidad": 100},
+     {"categoria": "TERCERA OPCIÓN", "texto": "Lentejas guisadas con vienesas", "cantidad": 90},
+     {"categoria": "HIPOCALÓRICO", "texto": "Omelette Jamon/Queso con Verduras al Vapor"},
+     {"categoria": "ENSALADAS", "texto": "Pepino / Repollo / Choclo"},
+     {"categoria": "POSTRES", "texto": "Fruta / Bavaroise / Jalea / Torta Casera"}
+    ]
+   },
+   "colacion": "Hamburguesa queso"
+  },
+  "2026-10-27": {
+   "desayuno": {
+    "items": [
+     {"categoria": "SÁNDWICH", "texto": "Arrollado palta"},
+     {"categoria": "PAN", "texto": "Hallulla y Marraqueta"},
+     {"categoria": "AGREGADOS", "texto": "Mermelada / mantequilla"},
+     {"categoria": "LECHE", "texto": "Leche Caliente"},
+     {"categoria": "PORRIDGE", "texto": "Leche Capuccino"},
+     {"categoria": "MEJORADO", "texto": "Buffet de queso"},
+     {"categoria": "POSTRE", "texto": "Yogurt de sabores / snack"}
+    ]
+   },
+   "almuerzo": {
+    "items": [
+     {"categoria": "ENTRADA CALIENTE · SOPA", "texto": "Crema de Tomates"},
+     {"categoria": "FONDO NORMAL", "texto": "Pescado Napolitano al horno con papas gajos", "cantidad": 50},
+     {"categoria": "FONDO ALTERNATIVO", "texto": "Prieta Lyonesas con pure mixto", "cantidad": 30},
+     {"categoria": "TERCERA OPCIÓN", "texto": "Porotos granados c/ chorizo", "cantidad": 30},
+     {"categoria": "HIPOCALÓRICO", "texto": "Ensalada de Cesar"},
+     {"categoria": "ENSALADAS", "texto": "Cochayuyo / Zanahoria / Primavera"},
+     {"categoria": "POSTRES", "texto": "Fruta / Arroz con leche / Jalea / Breden Master"}
+    ]
+   },
+   "cena": {
+    "items": [
+     {"categoria": "ENTRADA CALIENTE · SOPA", "texto": "Sopa de Carne con Verduras"},
+     {"categoria": "FONDO NORMAL", "texto": "Pechuga de Pollo al jugo con papas fritas", "cantidad": 210},
+     {"categoria": "FONDO ALTERNATIVO", "texto": "Carme Mongoliana con arroz perla", "cantidad": 190},
+     {"categoria": "TERCERA OPCIÓN", "texto": "Carbonada de Vacuno", "cantidad": 90},
+     {"categoria": "HIPOCALÓRICO", "texto": "Ensalada de Cesar"},
+     {"categoria": "ENSALADAS", "texto": "Repollo / Habas / Tomate"},
+     {"categoria": "POSTRES", "texto": "Fruta / Arroz con leche / Jalea / Breden Master"}
+    ]
+   },
+   "colacion": "Mechada queso"
+  },
+  "2026-10-28": {
+   "desayuno": {
+    "items": [
+     {"categoria": "SÁNDWICH", "texto": "Hamburguesa tomate, lechuga"},
+     {"categoria": "PAN", "texto": "Hallulla y Marraqueta"},
+     {"categoria": "AGREGADOS", "texto": "Mermelada / mantequilla"},
+     {"categoria": "LECHE", "texto": "Leche Caliente"},
+     {"categoria": "PORRIDGE", "texto": "Leche C/ Chocolate"},
+     {"categoria": "MEJORADO", "texto": "Salame"},
+     {"categoria": "POSTRE", "texto": "Yogurt de sabores / snack"}
+    ]
+   },
+   "almuerzo": {
+    "items": [
+     {"categoria": "ENTRADA CALIENTE · SOPA", "texto": "Sopa Pollo con Fideos"},
+     {"categoria": "FONDO NORMAL", "texto": "Chuleta de Cerdo con spaguettis atomatado", "cantidad": 70},
+     {"categoria": "FONDO ALTERNATIVO", "texto": "Charquican de Vacuno con huevo frito(1)", "cantidad": 20},
+     {"categoria": "TERCERA OPCIÓN", "texto": "Ajiaco mixto", "cantidad": 20},
+     {"categoria": "HIPOCALÓRICO", "texto": "Pescado al horno con Ensaladas"},
+     {"categoria": "ENSALADAS", "texto": "Beterraga / Choclo / Tomate"},
+     {"categoria": "POSTRES", "texto": "Fruta / Flan / Jalea / Brazo de Reina"}
+    ]
+   },
+   "cena": {
+    "items": [
+     {"categoria": "ENTRADA CALIENTE · SOPA", "texto": "Crema de Choclo"},
+     {"categoria": "FONDO NORMAL", "texto": "Pescado Napolitano con tortilla de verduras", "cantidad": 210},
+     {"categoria": "FONDO ALTERNATIVO", "texto": "Goulash Mixto con quifaros", "cantidad": 190},
+     {"categoria": "TERCERA OPCIÓN", "texto": "Arvejas guisadas con chorizos", "cantidad": 90},
+     {"categoria": "HIPOCALÓRICO", "texto": "Pescado al horno con Ensaladas"},
+     {"categoria": "ENSALADAS", "texto": "Lechuga / Pebre / Zanahoria"},
+     {"categoria": "POSTRES", "texto": "Fruta / Flan / Jalea / Brazo de Reina"}
+    ]
+   },
+   "colacion": "Lomito queso"
+  },
+  "2026-10-29": {
+   "desayuno": {
+    "items": [
+     {"categoria": "SÁNDWICH", "texto": "Aliado"},
+     {"categoria": "PAN", "texto": "Hallulla y Marraqueta"},
+     {"categoria": "AGREGADOS", "texto": "Queso crema / mantequilla"},
+     {"categoria": "LECHE", "texto": "Leche Caliente"},
+     {"categoria": "PORRIDGE", "texto": "Leche C/ Semola"},
+     {"categoria": "MEJORADO", "texto": "Berlines"},
+     {"categoria": "POSTRE", "texto": "Yogurt de sabores / snack"}
+    ]
+   },
+   "almuerzo": {
+    "items": [
+     {"categoria": "ENTRADA CALIENTE · SOPA", "texto": "Crema Verduras"},
+     {"categoria": "FONDO NORMAL", "texto": "Vacuno al Jugo con budin de verduras", "cantidad": 60},
+     {"categoria": "FONDO ALTERNATIVO", "texto": "Aji de Gallina con arroz piamontes", "cantidad": 30},
+     {"categoria": "TERCERA OPCIÓN", "texto": "Garbanzos guisados con longaniza asada", "cantidad": 20},
+     {"categoria": "HIPOCALÓRICO", "texto": "Pollo Salteado con Verduras al Vapor."},
+     {"categoria": "ENSALADAS", "texto": "Habas a la chilena / Pepino / Repollo"},
+     {"categoria": "POSTRES", "texto": "Fruta / Leche Asada / Jalea / Queque Marmoleado"}
+    ]
+   },
+   "cena": {
+    "items": [
+     {"categoria": "ENTRADA CALIENTE · SOPA", "texto": "Sopa de Verduras con Fideos"},
+     {"categoria": "FONDO NORMAL", "texto": "Pechuga de pollo a la mostaza con papas romero", "cantidad": 290},
+     {"categoria": "FONDO ALTERNATIVO", "texto": "Charquican de Verduras con huevo frito", "cantidad": 100},
+     {"categoria": "TERCERA OPCIÓN", "texto": "Porotos granados c/ chorizo", "cantidad": 100},
+     {"categoria": "HIPOCALÓRICO", "texto": "Tomate Reina"},
+     {"categoria": "ENSALADAS", "texto": "Pepino / Apio / Beterraga"},
+     {"categoria": "POSTRES", "texto": "Fruta / Leche Asada / Jalea / Queque Marmoleado"}
+    ]
+   },
+   "colacion": "Ave pimenton/mayonesa"
+  },
+  "2026-10-30": {
+   "desayuno": {
+    "items": [
+     {"categoria": "SÁNDWICH", "texto": "Completo italiano"},
+     {"categoria": "PAN", "texto": "Hallulla y Marraqueta"},
+     {"categoria": "AGREGADOS", "texto": "Mermelada / mantequilla"},
+     {"categoria": "LECHE", "texto": "Leche Caliente"},
+     {"categoria": "PORRIDGE", "texto": "Leche C/ Frutilla"},
+     {"categoria": "MEJORADO", "texto": "Brownie"},
+     {"categoria": "POSTRE", "texto": "Yogurt de sabores / snack"}
+    ]
+   },
+   "almuerzo": {
+    "items": [
+     {"categoria": "ENTRADA CALIENTE · SOPA", "texto": "Sopa Pollo con Semola"},
+     {"categoria": "FONDO NORMAL", "texto": "Pescado Frito con pure rustico", "cantidad": 60},
+     {"categoria": "FONDO ALTERNATIVO", "texto": "Panita al Ajillo con tortilla de zanahoria", "cantidad": 30},
+     {"categoria": "TERCERA OPCIÓN", "texto": "Carbonada mixta", "cantidad": 20},
+     {"categoria": "HIPOCALÓRICO", "texto": "Tomate Reina"},
+     {"categoria": "ENSALADAS", "texto": "Ceviche de Mote / Brocoli / Acelga Cruda"},
+     {"categoria": "POSTRES", "texto": "Fruta / Semola / Mote con Huesillos / Colegial"}
+    ]
+   },
+   "cena": {
+    "items": [
+     {"categoria": "ENTRADA CALIENTE · SOPA", "texto": "Sopa de Carne con Verduras"},
+     {"categoria": "FONDO NORMAL", "texto": "Chuleta de cerdo al jugo con arroz chaufan", "cantidad": 290},
+     {"categoria": "FONDO ALTERNATIVO", "texto": "Salsa Alfredo con corbatas con albahaca", "cantidad": 80},
+     {"categoria": "TERCERA OPCIÓN", "texto": "Ajiaco de vacuno", "cantidad": 120},
+     {"categoria": "HIPOCALÓRICO", "texto": "Ensalada Mediterranea"},
+     {"categoria": "ENSALADAS", "texto": "Repollo Morado / Choclo / Tomate"},
+     {"categoria": "POSTRES", "texto": "Fruta / Semola / Mote con Huesillos / Colegial"}
+    ]
+   },
+   "colacion": "Churrasco queso"
+  },
+  "2026-10-31": {
+   "desayuno": {
+    "items": [
+     {"categoria": "SÁNDWICH", "texto": "Atun Cebolla Cilantro"},
+     {"categoria": "PAN", "texto": "Hallulla y Marraqueta"},
+     {"categoria": "AGREGADOS", "texto": "Manjar / mantequilla"},
+     {"categoria": "LECHE", "texto": "Leche Caliente"},
+     {"categoria": "PORRIDGE", "texto": "Leche C/ Chocolate"},
+     {"categoria": "MEJORADO", "texto": "Buffet de jamon"},
+     {"categoria": "POSTRE", "texto": "Yogurt de sabores / snack"}
+    ]
+   },
+   "almuerzo": {
+    "items": [
+     {"categoria": "ENTRADA CALIENTE · SOPA", "texto": "Crema de Tomates"},
+     {"categoria": "FONDO NORMAL", "texto": "Rogout de Pollo con arroz pilaf", "cantidad": 50},
+     {"categoria": "FONDO ALTERNATIVO", "texto": "Salsa Boloñesa con spaguettis atomatados", "cantidad": 30},
+     {"categoria": "TERCERA OPCIÓN", "texto": "Lentejas parmesanas con vinesas salteadas", "cantidad": 30},
+     {"categoria": "HIPOCALÓRICO", "texto": "Ensalada Mediterranea"},
+     {"categoria": "ENSALADAS", "texto": "Primavera / Lechuga / Pepino"},
+     {"categoria": "POSTRES", "texto": "Fruta / Natilla / Jalea / Queque manzana canela"}
+    ]
+   },
+   "cena": {
+    "items": [
+     {"categoria": "ENTRADA CALIENTE · SOPA", "texto": "Crema de Tomate"},
+     {"categoria": "FONDO NORMAL", "texto": "Pollo Asado con papas fritas", "cantidad": 350},
+     {"categoria": "FONDO ALTERNATIVO", "texto": "Chupe de Mariscos", "cantidad": 50},
+     {"categoria": "TERCERA OPCIÓN", "texto": "Garbanzos guisados con chorizos", "cantidad": 90},
+     {"categoria": "HIPOCALÓRICO", "texto": "Pescado al horno con Ensaladas"},
+     {"categoria": "ENSALADAS", "texto": "Lechuga / Pebre / Zanahoria"},
+     {"categoria": "POSTRES", "texto": "Fruta / Natilla / Jalea / Queque manzana canela"}
+    ]
+   },
+   "colacion": "Aliado palta"
+  }
+ }
+}
