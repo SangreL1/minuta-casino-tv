@@ -13,7 +13,7 @@ from minuta.models import (
 )
 
 class Command(BaseCommand):
-    help = "Carga la configuración inicial de servicios, usuario administrador y la minuta de Octubre 2026"
+    help = "Carga la configuración inicial de servicios, usuario administrador y las minutas (Octubre, Noviembre, etc.)"
 
     def handle(self, *args, **options):
         self.stdout.write(self.style.NOTICE("Iniciando carga de datos iniciales..."))
@@ -76,76 +76,82 @@ class Command(BaseCommand):
         else:
             self.stdout.write("Usuario admin ya existe.")
 
-        # 4. Cargar Minuta Octubre 2026
-        json_path = Path(__file__).resolve().parent.parent.parent / "data" / "minuta_octubre_2026.json"
-        if not json_path.exists():
-            self.stdout.write(self.style.ERROR(f"No se encontró {json_path}"))
+        # 4. Cargar Minutas desde minuta/data/*.json
+        data_dir = Path(__file__).resolve().parent.parent.parent / "data"
+        json_files = sorted(data_dir.glob("minuta_*.json"))
+        if not json_files:
+            self.stdout.write(self.style.ERROR(f"No se encontraron archivos minuta_*.json en {data_dir}"))
             return
 
-        with open(json_path, "r", encoding="utf-8") as f:
-            data = json.load(f)
-
-        dias = data.get("dias", {})
         dias_cargados = 0
+        archivos_cargados = []
 
         # Categorías típicas que van en la columna derecha
         col2_categories = {
             "HIPOCALÓRICO", "ENSALADAS", "POSTRES", "POSTRE", "PORRIDGE", "MEJORADO"
         }
 
-        for fecha_str, serv_dict in dias.items():
-            fecha = datetime.strptime(fecha_str, "%Y-%m-%d").date()
-            colacion = serv_dict.get("colacion", "")
+        for json_path in json_files:
+            self.stdout.write(f"Cargando {json_path.name}...")
+            with open(json_path, "r", encoding="utf-8") as f:
+                data = json.load(f)
 
-            minuta_dia, _ = MinutaDia.objects.update_or_create(
-                fecha=fecha,
-                defaults={"colacion": colacion}
-            )
+            dias = data.get("dias", {})
+            for fecha_str, serv_dict in dias.items():
+                fecha = datetime.strptime(fecha_str, "%Y-%m-%d").date()
+                colacion = serv_dict.get("colacion", "")
 
-            for s_cod in ["desayuno", "almuerzo", "cena"]:
-                if s_cod in serv_dict:
-                    s_info = serv_dict[s_cod]
-                    items = s_info.get("items", [])
+                minuta_dia, _ = MinutaDia.objects.update_or_create(
+                    fecha=fecha,
+                    defaults={"colacion": colacion}
+                )
 
-                    minuta_serv, _ = MinutaServicio.objects.update_or_create(
-                        dia=minuta_dia,
-                        servicio_codigo=s_cod
-                    )
+                for s_cod in ["desayuno", "almuerzo", "cena"]:
+                    if s_cod in serv_dict:
+                        s_info = serv_dict[s_cod]
+                        items = s_info.get("items", [])
 
-                    # Borrar items previos para recarga limpia
-                    minuta_serv.items.all().delete()
-
-                    # Asignar items a columnas 1 y 2
-                    total_items = len(items)
-                    mitad = (total_items + 1) // 2
-
-                    for idx, it in enumerate(items):
-                        cat = it.get("categoria", "").strip()
-                        txt = it.get("texto", "").strip()
-                        cant = it.get("cantidad")
-
-                        # Decidir columna: si es categoría típica de col2 o si estamos en la 2da mitad
-                        columna = 1
-                        if cat.upper() in col2_categories or idx >= mitad:
-                            columna = 2
-
-                        ItemMinuta.objects.create(
-                            servicio=minuta_serv,
-                            categoria=cat,
-                            texto=txt,
-                            cantidad=cant,
-                            orden=idx,
-                            columna=columna
+                        minuta_serv, _ = MinutaServicio.objects.update_or_create(
+                            dia=minuta_dia,
+                            servicio_codigo=s_cod
                         )
 
-            dias_cargados += 1
+                        # Borrar items previos para recarga limpia
+                        minuta_serv.items.all().delete()
+
+                        # Asignar items a columnas 1 y 2
+                        total_items = len(items)
+                        mitad = (total_items + 1) // 2
+
+                        for idx, it in enumerate(items):
+                            cat = it.get("categoria", "").strip()
+                            txt = it.get("texto", "").strip()
+                            cant = it.get("cantidad")
+
+                            # Decidir columna: si es categoría típica de col2 o si estamos en la 2da mitad
+                            columna = 1
+                            if cat.upper() in col2_categories or idx >= mitad:
+                                columna = 2
+
+                            ItemMinuta.objects.create(
+                                servicio=minuta_serv,
+                                categoria=cat,
+                                texto=txt,
+                                cantidad=cant,
+                                orden=idx,
+                                columna=columna
+                            )
+
+                dias_cargados += 1
+            archivos_cargados.append(json_path.name)
 
         # 5. Registro de auditoría
+        archivos_str = ", ".join(archivos_cargados)
         RegistroAuditoria.objects.create(
             nombre_usuario="Sistema",
             accion="IMPORTACION",
-            resumen="Carga inicial automática de minuta de Octubre 2026 (31 días)",
-            detalles=f"Se cargaron exitosamente {dias_cargados} días con desayunos, almuerzos y cenas.",
+            resumen=f"Carga inicial automática de minutas ({archivos_str})",
+            detalles=f"Se cargaron exitosamente {dias_cargados} días con desayunos, almuerzos, cenas y colaciones.",
             ip="127.0.0.1"
         )
 
