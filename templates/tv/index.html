@@ -475,13 +475,6 @@
       letter-spacing: 0.5px;
     }
 
-    .qr-url-tag {
-      font-size: clamp(0.7rem, 1vw, 1rem);
-      color: #64748B;
-      font-weight: 600;
-      text-align: center;
-    }
-
     /* PANEL DISCRETO DE SIMULACIÓN Y TEST (Oculto en TV, activable con tecla 'S' o clic en el reloj) */
     #sim-bar {
       position: fixed;
@@ -622,7 +615,6 @@
               <canvas id="qr-canvas"></canvas>
             </div>
             <div class="qr-label">📱 Escanear con tu celular</div>
-            <div class="qr-url-tag" id="qr-url-tag"></div>
           </div>
         </div>
       </section>
@@ -985,9 +977,8 @@
     // GENERADOR QR COMPACTO (sin dependencias externas)
     function generarQR() {
       const qrUrl = window.location.origin + '/proximos-dias/';
-      document.getElementById('qr-url-tag').textContent = qrUrl.replace('https://', '').replace('http://', '');
       
-      // Usar la API pública de Google Charts para generar el QR
+      // Usar la API para generar el QR
       const canvas = document.getElementById('qr-canvas');
       const size = 260;
       const img = new Image();
