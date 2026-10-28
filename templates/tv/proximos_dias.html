@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light">
+  <title>Próximos días · Minuta Casino Promet - Coalfa</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --azul: #0B3FA8;
+      --azul-dark: #072B75;
+      --azul-light: #EBF3FC;
+      --celeste: #C5DCF6;
+      --text: #0F172A;
+      --text-muted: #475569;
+      --border: #D1E3F6;
+      --bg: #F7FAFD;
+      --white: #FFFFFF;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Calibri", Arial, sans-serif;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* HEADER */
+    .page-header {
+      background: var(--azul);
+      color: #FFFFFF;
+      padding: 18px 24px 16px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 3px 12px rgba(11, 63, 168, 0.3);
+    }
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .header-logos {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .header-logos img {
+      height: 34px;
+      object-fit: contain;
+      filter: brightness(0) invert(1);
+    }
+    .header-title {
+      flex: 1;
+    }
+    .header-title h1 {
+      font-size: clamp(16px, 3.5vw, 22px);
+      font-weight: 800;
+      letter-spacing: 0.3px;
+      line-height: 1.2;
+    }
+    .header-title p {
+      font-size: clamp(11px, 2.2vw, 14px);
+      opacity: 0.85;
+      margin-top: 2px;
+    }
+    .header-clock {
+      font-size: 14px;
+      font-weight: 700;
+      opacity: 0.9;
+      background: rgba(255,255,255,0.15);
+      padding: 6px 14px;
+      border-radius: 20px;
+    }
+
+    /* AVISO DE VARIACIÓN */
+    .disclaimer-banner {
+      background: #FEF3C7;
+      border-left: 5px solid #D97706;
+      color: #78350F;
+      padding: 12px 20px;
+      font-size: 14px;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    /* CONTENEDOR PRINCIPAL */
+    .page-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 20px 16px 60px;
+    }
+
+    /* CARGANDO */
+    .loading-state {
+      text-align: center;
+      padding: 80px 20px;
+      color: var(--text-muted);
+    }
+    .loading-state .spinner {
+      width: 40px;
+      height: 40px;
+      border: 4px solid var(--celeste);
+      border-top-color: var(--azul);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      margin: 0 auto 16px;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* CARD POR DÍA */
+    .dia-card {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      margin-bottom: 20px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(11, 63, 168, 0.05);
+      transition: box-shadow 0.2s;
+    }
+    .dia-card:hover {
+      box-shadow: 0 4px 16px rgba(11, 63, 168, 0.12);
+    }
+    .dia-card.hoy {
+      border-color: var(--azul);
+      border-width: 2.5px;
+    }
+    .dia-card.hoy .dia-header {
+      background: var(--azul);
+      color: #FFFFFF;
+    }
+    .dia-card.hoy .dia-header .dia-badge-hoy {
+      display: inline-block;
+    }
+
+    .dia-header {
+      padding: 14px 20px;
+      background: var(--azul-light);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .dia-nombre {
+      font-size: clamp(17px, 3vw, 22px);
+      font-weight: 900;
+      text-transform: capitalize;
+    }
+    .dia-fecha {
+      font-size: clamp(12px, 2vw, 15px);
+      font-weight: 600;
+      opacity: 0.85;
+    }
+    .dia-badge-hoy {
+      display: none;
+      background: #FFFFFF;
+      color: var(--azul);
+      font-size: 11px;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: 20px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    /* GRID DE SERVICIOS */
+    .servicios-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+    }
+
+    .servicio-col {
+      padding: 16px 18px;
+      border-right: 1px solid var(--border);
+    }
+    .servicio-col:last-child {
+      border-right: none;
+    }
+
+    .servicio-col-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--azul);
+    }
+    .servicio-col-nombre {
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--azul);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+    .servicio-col-horario {
+      font-size: 11px;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .plato-item {
+      margin-bottom: 10px;
+    }
+    .plato-categoria {
+      font-size: 10px;
+      font-weight: 800;
+      color: var(--azul-dark);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 2px;
+    }
+    .plato-nombre {
+      font-size: clamp(12px, 2vw, 14px);
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.3;
+    }
+
+    .sin-minuta {
+      color: var(--text-muted);
+      font-size: 12px;
+      font-style: italic;
+      padding: 8px 0;
+    }
+
+    /* EMOJI ICONOS POR SERVICIO */
+    .ico { font-size: 16px; }
+
+    /* COLACION */
+    .colacion-row {
+      padding: 10px 18px;
+      background: #F8FBFF;
+      border-top: 1px dashed var(--border);
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    .colacion-row strong {
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    /* PIE */
+    .page-footer {
+      text-align: center;
+      padding: 20px;
+      color: var(--text-muted);
+      font-size: 12px;
+      border-top: 1px solid var(--border);
+      margin-top: 10px;
+    }
+    .page-footer .org {
+      font-weight: 700;
+      color: var(--azul);
+    }
+
+    /* RESPONSIVE MÓVIL */
+    @media (max-width: 700px) {
+      .page-header { padding: 14px 16px 12px; }
+      .header-clock { display: none; }
+      .servicios-grid {
+        grid-template-columns: 1fr;
+      }
+      .servicio-col {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+        padding: 14px 16px;
+      }
+      .servicio-col:last-child {
+        border-bottom: none;
+      }
+      .disclaimer-banner {
+        font-size: 13px;
+        padding: 10px 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="page-header">
+    <div class="header-inner">
+      <div class="header-logos">
+        <img src="/static/img/logo_promet.svg" alt="PROMET">
+        <img src="/static/img/logo_coalfa.svg" alt="COALFA">
+      </div>
+      <div class="header-title">
+        <h1>Próximos días · Menú del Casino</h1>
+        <p>Hotelería Promet · Servicio de alimentación Coalfa</p>
+      </div>
+      <div class="header-clock" id="live-clock">--:--</div>
+    </div>
+  </header>
+
+  <!-- AVISO IMPORTANTE -->
+  <div class="disclaimer-banner">
+    ⚠️&nbsp; La minuta es referencial y puede variar sin previo aviso según disponibilidad de productos.
+  </div>
+
+  <!-- CONTENIDO DINÁMICO -->
+  <div class="page-container">
+    <div id="contenido">
+      <div class="loading-state">
+        <div class="spinner"></div>
+        <p>Cargando minuta de los próximos días…</p>
+      </div>
+    </div>
+  </div>
+
+  <footer class="page-footer" id="pie-footer">
+    <span class="org">Hotelería Promet · Servicio de alimentación Coalfa</span>
+  </footer>
+
+  <script>
+    const ICONOS = { desayuno: '🥐', almuerzo: '🍲', cena: '🍽️' };
+
+    // Reloj en tiempo real
+    function tickClock() {
+      const now = new Date();
+      const hh = String(now.getHours()).padStart(2, '0');
+      const mm = String(now.getMinutes()).padStart(2, '0');
+      document.getElementById('live-clock').textContent = `${hh}:${mm}`;
+    }
+    tickClock();
+    setInterval(tickClock, 10000);
+
+    function crearPlato(it) {
+      return `<div class="plato-item">
+        <div class="plato-categoria">${it.categoria}</div>
+        <div class="plato-nombre">${it.texto}</div>
+      </div>`;
+    }
+
+    function crearServicioCol(s) {
+      const icono = ICONOS[s.codigo] || '🍴';
+      const itemsHtml = s.hay_minuta
+        ? s.items.map(crearPlato).join('')
+        : `<div class="sin-minuta">Minuta no disponible aún</div>`;
+
+      return `<div class="servicio-col">
+        <div class="servicio-col-title">
+          <span class="ico">${icono}</span>
+          <div>
+            <div class="servicio-col-nombre">${s.nombre}</div>
+            <div class="servicio-col-horario">${s.desde} a ${s.hasta} hrs</div>
+          </div>
+        </div>
+        ${itemsHtml}
+      </div>`;
+    }
+
+    function crearDiaCard(dia) {
+      const claseHoy = dia.es_hoy ? ' hoy' : '';
+      const serviciosCols = dia.servicios.map(crearServicioCol).join('');
+      const colacionHtml = dia.colacion
+        ? `<div class="colacion-row">🥪 <strong>Colación:</strong> ${dia.colacion}</div>`
+        : '';
+
+      return `<div class="dia-card${claseHoy}">
+        <div class="dia-header">
+          <div>
+            <div class="dia-nombre">${dia.dia_semana} ${dia.dia_num} de ${dia.mes}</div>
+            <div class="dia-fecha">${dia.fecha_texto}</div>
+          </div>
+          ${dia.es_hoy ? '<span class="dia-badge-hoy">📌 Hoy</span>' : ''}
+        </div>
+        <div class="servicios-grid">${serviciosCols}</div>
+        ${colacionHtml}
+      </div>`;
+    }
+
+    async function cargarDatos() {
+      try {
+        const resp = await fetch('/api/proximos-dias/?_t=' + Date.now(), {
+          cache: 'no-store',
+          headers: { 'Cache-Control': 'no-cache' }
+        });
+        if (!resp.ok) throw new Error('Error al cargar datos');
+        const data = await resp.json();
+
+        const html = data.dias.map(crearDiaCard).join('');
+        document.getElementById('contenido').innerHTML = html;
+
+        if (data.pie_pagina) {
+          document.getElementById('pie-footer').innerHTML =
+            `<span class="org">${data.pie_pagina}</span> &nbsp;·&nbsp; Actualizado a las ${data.generado_a}`;
+        }
+      } catch (e) {
+        document.getElementById('contenido').innerHTML =
+          `<div class="loading-state" style="color:#DC2626;">
+            <p>⚠️ No se pudo cargar la minuta. Intenta recargar la página.</p>
+           </div>`;
+      }
+    }
+
+    cargarDatos();
+    // Refrescar cada 5 minutos
+    setInterval(cargarDatos, 300000);
+  </script>
+</body>
+</html>
+

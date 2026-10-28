@@ -229,6 +229,69 @@ def api_tv_data(request):
     return response
 
 
+# ------------------ PRÓXIMOS DÍAS ------------------
+
+def proximos_dias(request):
+    """Página pública con la minuta de los próximos 7 días — accesible por QR."""
+    return render(request, 'tv/proximos_dias.html')
+
+
+def api_proximos_dias(request):
+    """API JSON que devuelve los menús de los próximos 7 días a partir de hoy."""
+    cfg_gen = ConfiguracionGeneral.get_solo()
+    tz = ZoneInfo(cfg_gen.zona_horaria)
+    hoy = datetime.now(tz).date()
+
+    dias_data = []
+    for offset in range(0, 8):
+        fecha = hoy + timedelta(days=offset)
+        minuta_dia = MinutaDia.objects.filter(fecha=fecha).first()
+        servicios_dia = []
+
+        for s_cfg in ConfiguracionServicio.objects.all().order_by('orden'):
+            if minuta_dia:
+                min_serv = minuta_dia.servicios.filter(servicio_codigo=s_cfg.codigo).first()
+                items = []
+                if min_serv:
+                    for it in min_serv.items.all().order_by('columna', 'orden', 'id'):
+                        items.append({
+                            'categoria': it.categoria,
+                            'texto': it.texto,
+                        })
+            else:
+                items = []
+
+            servicios_dia.append({
+                'codigo': s_cfg.codigo,
+                'nombre': s_cfg.nombre,
+                'desde': s_cfg.desde.strftime('%H:%M'),
+                'hasta': s_cfg.hasta.strftime('%H:%M'),
+                'items': items,
+                'hay_minuta': len(items) > 0,
+            })
+
+        dias_data.append({
+            'fecha': fecha.isoformat(),
+            'fecha_texto': formatear_fecha_espanol(fecha),
+            'dia_semana': DIAS_SEMANA[fecha.weekday()].capitalize(),
+            'dia_num': fecha.day,
+            'mes': MESES[fecha.month - 1].capitalize(),
+            'es_hoy': offset == 0,
+            'colacion': minuta_dia.colacion if minuta_dia else '',
+            'servicios': servicios_dia,
+        })
+
+    data = {
+        'status': 'ok',
+        'dias': dias_data,
+        'generado_a': datetime.now(tz).strftime('%H:%M'),
+        'pie_pagina': cfg_gen.pie_pagina,
+    }
+    response = JsonResponse(data)
+    response['Cache-Control'] = 'no-cache, no-store, must-revalidate, max-age=0'
+    return response
+
+
 # ------------------ PANEL DE ADMINISTRACIÓN ------------------
 
 def login_view(request):
