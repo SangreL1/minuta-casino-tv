@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
@@ -22,9 +23,14 @@
       --warning: #D97706;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    
-    html, body {
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
       width: 100%;
       min-height: 100%;
       overflow-x: hidden;
@@ -50,35 +56,41 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
       width: 100%;
     }
+
     .header-left {
       display: flex;
       align-items: center;
       gap: 16px;
     }
+
     .header-left img {
       height: 32px;
       max-width: 110px;
       object-fit: contain;
     }
+
     .header-title-box h1 {
       font-size: 17px;
       font-weight: 800;
       color: var(--primary);
       line-height: 1.2;
     }
+
     .header-title-box span {
       font-size: 12px;
       color: var(--text-muted);
     }
+
     .header-right {
       display: flex;
       align-items: center;
       gap: 10px;
       flex-wrap: wrap;
     }
+
     .btn-tv-live {
       display: inline-flex;
       align-items: center;
@@ -93,7 +105,11 @@
       transition: background 0.2s;
       white-space: nowrap;
     }
-    .btn-tv-live:hover { background: #1D4ED8; }
+
+    .btn-tv-live:hover {
+      background: #1D4ED8;
+    }
+
     .user-pill {
       font-size: 13px;
       color: var(--text-muted);
@@ -103,7 +119,11 @@
       border: 1px solid var(--border);
       white-space: nowrap;
     }
-    .user-pill strong { color: var(--text); }
+
+    .user-pill strong {
+      color: var(--text);
+    }
+
     .btn-django {
       background: var(--bg);
       border: 1px solid var(--border);
@@ -116,7 +136,11 @@
       color: var(--text);
       white-space: nowrap;
     }
-    .btn-django:hover { background: #E2E8F0; }
+
+    .btn-django:hover {
+      background: #E2E8F0;
+    }
+
     .btn-logout {
       color: var(--danger);
       background: #FEE2E2;
@@ -148,9 +172,11 @@
       padding-bottom: 4px;
       scrollbar-width: none;
     }
+
     .tabs-nav::-webkit-scrollbar {
       display: none;
     }
+
     .tab-btn {
       background: none;
       border: none;
@@ -167,7 +193,12 @@
       transition: all 0.2s;
       flex-shrink: 0;
     }
-    .tab-btn:hover { color: var(--primary); background: rgba(11, 63, 168, 0.04); }
+
+    .tab-btn:hover {
+      color: var(--primary);
+      background: rgba(11, 63, 168, 0.04);
+    }
+
     .tab-btn.active {
       color: var(--primary);
       border-bottom: 3px solid var(--primary);
@@ -175,8 +206,13 @@
       font-weight: 700;
     }
 
-    .tab-content { display: none; }
-    .tab-content.active { display: block; }
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
 
     /* TARJETAS */
     .card {
@@ -185,8 +221,9 @@
       border-radius: 12px;
       padding: 20px;
       margin-bottom: 20px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
     }
+
     .card-title {
       font-size: 16px;
       font-weight: 700;
@@ -212,22 +249,26 @@
       border: 1px solid var(--border);
       margin-bottom: 18px;
     }
+
     .date-nav-group {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
       gap: 10px;
     }
+
     .date-picker-wrap {
       display: flex;
       align-items: center;
       gap: 8px;
     }
+
     .date-buttons-row {
       display: flex;
       align-items: center;
       gap: 6px;
     }
+
     .btn-nav-date {
       background: var(--bg);
       border: 1px solid var(--border);
@@ -241,7 +282,11 @@
       white-space: nowrap;
       transition: background 0.15s;
     }
-    .btn-nav-date:hover { background: #E2E8F0; }
+
+    .btn-nav-date:hover {
+      background: #E2E8F0;
+    }
+
     .date-input {
       font-size: 15px;
       font-weight: 600;
@@ -252,6 +297,7 @@
       background: #FFFFFF;
       color: var(--text);
     }
+
     .date-display-badge {
       font-size: 14px;
       font-weight: 700;
@@ -269,6 +315,7 @@
       gap: 10px;
       margin-bottom: 20px;
     }
+
     .service-pill-btn {
       text-align: center;
       padding: 12px 8px;
@@ -286,12 +333,17 @@
       justify-content: center;
       gap: 4px;
     }
-    .service-pill-btn:hover { border-color: #94A3B8; }
+
+    .service-pill-btn:hover {
+      border-color: #94A3B8;
+    }
+
     .service-pill-btn .service-hours {
       font-size: 11px;
       font-weight: 500;
       opacity: 0.85;
     }
+
     .service-pill-btn.active-desayuno,
     .service-pill-btn.active-almuerzo,
     .service-pill-btn.active-cena {
@@ -307,11 +359,13 @@
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
     }
+
     table.data-table {
       width: 100%;
       border-collapse: collapse;
       font-size: 14px;
     }
+
     table.data-table th {
       background: var(--bg);
       text-align: left;
@@ -320,12 +374,16 @@
       color: var(--text-muted);
       border-bottom: 1px solid var(--border);
     }
+
     table.data-table td {
       padding: 12px 14px;
       border-bottom: 1px solid var(--border);
       vertical-align: middle;
     }
-    table.data-table tr:hover { background: #F8FAFC; }
+
+    table.data-table tr:hover {
+      background: #F8FAFC;
+    }
 
     .category-badge {
       display: inline-block;
@@ -337,6 +395,7 @@
       border-radius: 4px;
       letter-spacing: 0.5px;
     }
+
     .col-badge {
       font-size: 11px;
       padding: 3px 8px;
@@ -344,10 +403,22 @@
       font-weight: 600;
       white-space: nowrap;
     }
-    .col-1-badge { background: #EFF6FF; color: #1D4ED8; border: 1px solid #BFDBFE; }
-    .col-2-badge { background: #F0FDF4; color: #15803D; border: 1px solid #BBF7D0; }
 
-    .mobile-label { display: none; }
+    .col-1-badge {
+      background: #EFF6FF;
+      color: #1D4ED8;
+      border: 1px solid #BFDBFE;
+    }
+
+    .col-2-badge {
+      background: #F0FDF4;
+      color: #15803D;
+      border: 1px solid #BBF7D0;
+    }
+
+    .mobile-label {
+      display: none;
+    }
 
     .btn-action-edit {
       background: #E0E7FF;
@@ -360,7 +431,11 @@
       cursor: pointer;
       transition: background 0.15s;
     }
-    .btn-action-edit:hover { background: #C7D2FE; }
+
+    .btn-action-edit:hover {
+      background: #C7D2FE;
+    }
+
     .btn-action-delete {
       background: #FEE2E2;
       color: #B91C1C;
@@ -372,7 +447,10 @@
       cursor: pointer;
       transition: background 0.15s;
     }
-    .btn-action-delete:hover { background: #FECACA; }
+
+    .btn-action-delete:hover {
+      background: #FECACA;
+    }
 
     /* FORMULARIOS */
     .form-grid {
@@ -381,9 +459,11 @@
       gap: 16px;
       margin-bottom: 16px;
     }
+
     .form-group {
       margin-bottom: 14px;
     }
+
     .form-group label {
       display: block;
       font-size: 13px;
@@ -391,6 +471,7 @@
       color: #334155;
       margin-bottom: 6px;
     }
+
     .form-control {
       width: 100%;
       min-height: 42px;
@@ -403,16 +484,19 @@
       color: var(--text);
       transition: border-color 0.2s;
     }
+
     .form-control:focus {
       border-color: var(--primary);
       box-shadow: 0 0 0 3px rgba(11, 63, 168, 0.1);
     }
+
     .quick-chips {
       display: flex;
       flex-wrap: wrap;
       gap: 6px;
       margin-top: 8px;
     }
+
     .chip {
       background: #E8F0FE;
       color: #0B3FA8;
@@ -425,7 +509,12 @@
       user-select: none;
       transition: all 0.15s;
     }
-    .chip:hover { background: #0B3FA8; color: #FFFFFF; border-color: #0B3FA8; }
+
+    .chip:hover {
+      background: #0B3FA8;
+      color: #FFFFFF;
+      border-color: #0B3FA8;
+    }
 
     .btn-primary {
       background: var(--primary);
@@ -442,7 +531,10 @@
       justify-content: center;
       gap: 6px;
     }
-    .btn-primary:hover { background: var(--primary-dark); }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+    }
 
     .colacion-form-wrap {
       display: flex;
@@ -460,11 +552,31 @@
       text-transform: uppercase;
       white-space: nowrap;
     }
-    .act-CREACION { background: #DCFCE7; color: #166534; }
-    .act-MODIFICACION { background: #FEF3C7; color: #92400E; }
-    .act-ELIMINACION { background: #FEE2E2; color: #991B1B; }
-    .act-IMPORTACION { background: #E0E7FF; color: #3730A3; }
-    .act-CONFIGURACION { background: #F3E8FF; color: #6B21A8; }
+
+    .act-CREACION {
+      background: #DCFCE7;
+      color: #166534;
+    }
+
+    .act-MODIFICACION {
+      background: #FEF3C7;
+      color: #92400E;
+    }
+
+    .act-ELIMINACION {
+      background: #FEE2E2;
+      color: #991B1B;
+    }
+
+    .act-IMPORTACION {
+      background: #E0E7FF;
+      color: #3730A3;
+    }
+
+    .act-CONFIGURACION {
+      background: #F3E8FF;
+      color: #6B21A8;
+    }
 
     /* ALERTAS */
     .alert-box {
@@ -474,8 +586,18 @@
       font-size: 14px;
       font-weight: 600;
     }
-    .alert-success { background: #DCFCE7; color: #166534; border-left: 4px solid #16A34A; }
-    .alert-error { background: #FEE2E2; color: #991B1B; border-left: 4px solid #DC2626; }
+
+    .alert-success {
+      background: #DCFCE7;
+      color: #166534;
+      border-left: 4px solid #16A34A;
+    }
+
+    .alert-error {
+      background: #FEE2E2;
+      color: #991B1B;
+      border-left: 4px solid #DC2626;
+    }
 
     /* =======================================================
        RESPONSIVE DESIGN COMPLETO PARA TELÉFONOS MÓVILES (SMARTPHONES)
@@ -492,40 +614,50 @@
         padding: 10px 14px;
         gap: 10px;
       }
+
       .header-left {
         width: 100%;
         justify-content: space-between;
         gap: 10px;
       }
+
       .header-left img {
         height: 24px;
       }
+
       .header-title-box h1 {
         font-size: 14px;
       }
+
       .header-title-box span {
-        display: none; /* Ahorra espacio en pantallas angostas */
+        display: none;
+        /* Ahorra espacio en pantallas angostas */
       }
+
       .header-right {
         width: 100%;
         display: flex;
         justify-content: space-between;
         gap: 6px;
       }
+
       .btn-tv-live {
         flex: 1.2;
         justify-content: center;
         padding: 8px 6px;
         font-size: 12px;
       }
+
       .user-pill {
         padding: 6px 8px;
         font-size: 11px;
       }
+
       .btn-django {
         padding: 6px 8px;
         font-size: 11px;
       }
+
       .btn-logout {
         padding: 6px 8px;
         font-size: 11px;
@@ -544,34 +676,42 @@
         padding: 12px;
         gap: 10px;
       }
+
       .date-nav-group {
         width: 100%;
         flex-direction: column;
         gap: 8px;
       }
+
       .date-picker-wrap {
         width: 100%;
       }
+
       .date-label {
         font-size: 14px;
         font-weight: 700;
         white-space: nowrap;
       }
+
       .date-input {
         width: 100%;
-        font-size: 16px; /* 16px previene auto-zoom molesto en iPhone Safari */
+        font-size: 16px;
+        /* 16px previene auto-zoom molesto en iPhone Safari */
         min-height: 42px;
       }
+
       .date-buttons-row {
         width: 100%;
         gap: 6px;
       }
+
       .date-buttons-row .btn-nav-date {
         flex: 1;
         text-align: center;
         padding: 10px 4px;
         font-size: 12px;
       }
+
       .date-display-badge {
         width: 100%;
         text-align: center;
@@ -585,12 +725,14 @@
         grid-template-columns: 1fr;
         gap: 8px;
       }
+
       .service-pill-btn {
         flex-direction: row;
         justify-content: space-between;
         padding: 12px 16px;
         font-size: 14px;
       }
+
       .service-pill-btn .service-hours {
         font-size: 12px;
       }
@@ -604,19 +746,22 @@
       table.data-table tr {
         display: block;
       }
+
       table.data-table thead tr {
         position: absolute;
         top: -9999px;
         left: -9999px;
       }
+
       table.data-table tr {
         background: #FFFFFF;
         border: 1.5px solid var(--border);
         border-radius: 10px;
         padding: 12px 14px;
         margin-bottom: 12px;
-        box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
       }
+
       table.data-table td {
         border: none;
         padding: 5px 0;
@@ -625,10 +770,12 @@
         justify-content: space-between;
         border-bottom: 1px dashed #F1F5F9;
       }
+
       table.data-table td.dish-cat-cell {
         border-bottom: none;
         padding-bottom: 2px;
       }
+
       table.data-table td.dish-name-cell {
         display: block;
         font-size: 15px;
@@ -638,6 +785,7 @@
         line-height: 1.35;
         border-bottom: 1px solid var(--border);
       }
+
       table.data-table td.dish-actions-cell {
         display: flex;
         gap: 8px;
@@ -646,6 +794,7 @@
         border-top: 1px solid var(--border);
         border-bottom: none;
       }
+
       table.data-table td.dish-actions-cell button {
         flex: 1;
         padding: 10px;
@@ -653,6 +802,7 @@
         font-weight: 700;
         text-align: center;
       }
+
       .mobile-label {
         display: inline;
         font-size: 12px;
@@ -665,40 +815,49 @@
         grid-template-columns: 1fr;
         gap: 12px;
       }
+
       .form-control {
-        font-size: 16px; /* Evita zoom automático en Safari iOS */
+        font-size: 16px;
+        /* Evita zoom automático en Safari iOS */
         min-height: 44px;
       }
+
       .quick-chips .chip {
         padding: 7px 12px;
         font-size: 12px;
       }
+
       .btn-primary {
         width: 100%;
         min-height: 46px;
         font-size: 15px;
       }
+
       #btn-cancel-edit {
         width: 100%;
         min-height: 46px;
         text-align: center;
         margin-top: 6px;
       }
+
       .form-buttons-wrap {
         display: flex;
         flex-direction: column;
         gap: 8px;
       }
+
       .colacion-form-wrap {
         flex-direction: column;
         align-items: stretch;
       }
+
       .colacion-form-wrap .btn-primary {
         width: 100%;
       }
     }
   </style>
 </head>
+
 <body>
 
   <!-- NAVBAR RESPONSIVA -->
@@ -715,7 +874,8 @@
     </div>
     <div class="header-right">
       <a href="/" target="_blank" class="btn-tv-live">📺 Ver TV</a>
-      <a href="/proximos-dias/" target="_blank" class="btn-django" title="Ver vista pública de próximos días">📅 Próximos Días</a>
+      <a href="/proximos-dias/" target="_blank" class="btn-django" title="Ver vista pública de próximos días">📅
+        Próximos Días</a>
       <span class="user-pill">👤 <strong>{{ request.user.username }}</strong></span>
       <a href="/admin/" target="_blank" class="btn-django" title="Django Admin Avanzado">⚙️ Django</a>
       <a href="/logout/" class="btn-logout">Salir</a>
@@ -733,21 +893,22 @@
     </nav>
 
     {% if request.session.import_success %}
-      <div class="alert-box alert-success">{{ request.session.import_success }}</div>
+    <div class="alert-box alert-success">{{ request.session.import_success }}</div>
     {% endif %}
     {% if request.session.import_error %}
-      <div class="alert-box alert-error">{{ request.session.import_error }}</div>
+    <div class="alert-box alert-error">{{ request.session.import_error }}</div>
     {% endif %}
 
     <!-- ================= PESTAÑA 1: GESTIÓN DIARIA ================= -->
     <div id="tab-minuta" class="tab-content active">
-      
+
       <!-- Barra de navegación por fecha -->
       <div class="date-bar">
         <div class="date-nav-group">
           <div class="date-picker-wrap">
             <label for="fecha-picker" class="date-label">Fecha:</label>
-            <input type="date" id="fecha-picker" class="date-input" value="{{ fecha_sel }}" onchange="cambiarFecha(this.value)">
+            <input type="date" id="fecha-picker" class="date-input" value="{{ fecha_sel }}"
+              onchange="cambiarFecha(this.value)">
           </div>
           <div class="date-buttons-row">
             <button class="btn-nav-date" onclick="cambiarFechaRelativa(-1)">◀ Anterior</button>
@@ -762,20 +923,20 @@
 
       <!-- Selector de servicio -->
       <div class="services-pills">
-        <a href="?fecha={{ fecha_sel }}&servicio=desayuno" 
-           class="service-pill-btn {% if servicio_sel == 'desayuno' %}active-desayuno{% endif %}">
-           <span>🥐 DESAYUNO</span>
-           <span class="service-hours">(05:00 a 10:00)</span>
+        <a href="?fecha={{ fecha_sel }}&servicio=desayuno"
+          class="service-pill-btn {% if servicio_sel == 'desayuno' %}active-desayuno{% endif %}">
+          <span>🥐 DESAYUNO</span>
+          <span class="service-hours">(05:00 a 10:00)</span>
         </a>
-        <a href="?fecha={{ fecha_sel }}&servicio=almuerzo" 
-           class="service-pill-btn {% if servicio_sel == 'almuerzo' %}active-almuerzo{% endif %}">
-           <span>🍲 ALMUERZO</span>
-           <span class="service-hours">(12:00 a 14:30)</span>
+        <a href="?fecha={{ fecha_sel }}&servicio=almuerzo"
+          class="service-pill-btn {% if servicio_sel == 'almuerzo' %}active-almuerzo{% endif %}">
+          <span>🍲 ALMUERZO</span>
+          <span class="service-hours">(12:00 a 14:30)</span>
         </a>
-        <a href="?fecha={{ fecha_sel }}&servicio=cena" 
-           class="service-pill-btn {% if servicio_sel == 'cena' %}active-cena{% endif %}">
-           <span>🍽️ CENA</span>
-           <span class="service-hours">(16:30 a 22:00)</span>
+        <a href="?fecha={{ fecha_sel }}&servicio=cena"
+          class="service-pill-btn {% if servicio_sel == 'cena' %}active-cena{% endif %}">
+          <span>🍽️ CENA</span>
+          <span class="service-hours">(16:30 a 22:00)</span>
         </a>
       </div>
 
@@ -783,55 +944,60 @@
       <div class="card">
         <div class="card-title">
           <span>Platos registrados para {{ servicio_sel|upper }} ({{ items.count }} ítems)</span>
-          <span style="font-size: 13px; color: var(--text-muted); font-weight: normal;">Se actualizan de inmediato en la TV</span>
+          <span style="font-size: 13px; color: var(--text-muted); font-weight: normal;">Se actualizan de inmediato en la
+            TV</span>
         </div>
 
         {% if items %}
-          <div class="table-responsive">
-            <table class="data-table">
-              <thead>
-                <tr>
-                  <th style="width: 25%;">Categoría</th>
-                  <th style="width: 45%;">Descripción del Plato</th>
-                  <th style="width: 10%;">Raciones</th>
-                  <th style="width: 10%;">Columna TV</th>
-                  <th style="width: 10%; text-align: right;">Acciones</th>
-                </tr>
-              </thead>
-              <tbody>
-                {% for it in items %}
-                  <tr>
-                    <td class="dish-cat-cell">
-                      <span class="category-badge">{{ it.categoria }}</span>
-                    </td>
-                    <td class="dish-name-cell">
-                      {{ it.texto }}
-                    </td>
-                    <td>
-                      <span class="mobile-label">Raciones:</span>
-                      <span>{{ it.cantidad|default:"—" }}</span>
-                    </td>
-                    <td>
-                      <span class="mobile-label">Ubicación TV:</span>
-                      {% if it.columna == 1 %}
-                        <span class="col-badge col-1-badge">Columna 1 (Izq)</span>
-                      {% else %}
-                        <span class="col-badge col-2-badge">Columna 2 (Der)</span>
-                      {% endif %}
-                    </td>
-                    <td class="dish-actions-cell">
-                      <button type="button" class="btn-action-edit" onclick="editarItem('{{ it.id }}', '{{ it.categoria|escapejs }}', '{{ it.texto|escapejs }}', '{{ it.columna }}', '{{ it.orden }}', '{{ it.cantidad|default:'' }}')">✏️ Editar</button>
-                      <button type="button" class="btn-action-delete" onclick="eliminarItemConfirm('{{ it.id }}', '{{ it.categoria|escapejs }}')">🗑️ Eliminar</button>
-                    </td>
-                  </tr>
-                {% endfor %}
-              </tbody>
-            </table>
-          </div>
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th style="width: 25%;">Categoría</th>
+                <th style="width: 45%;">Descripción del Plato</th>
+                <th style="width: 10%;">Raciones</th>
+                <th style="width: 10%;">Columna TV</th>
+                <th style="width: 10%; text-align: right;">Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for it in items %}
+              <tr>
+                <td class="dish-cat-cell">
+                  <span class="category-badge">{{ it.categoria }}</span>
+                </td>
+                <td class="dish-name-cell">
+                  {{ it.texto }}
+                </td>
+                <td>
+                  <span class="mobile-label">Raciones:</span>
+                  <span>{{ it.cantidad|default:"—" }}</span>
+                </td>
+                <td>
+                  <span class="mobile-label">Ubicación TV:</span>
+                  {% if it.columna == 1 %}
+                  <span class="col-badge col-1-badge">Columna 1 (Izq)</span>
+                  {% else %}
+                  <span class="col-badge col-2-badge">Columna 2 (Der)</span>
+                  {% endif %}
+                </td>
+                <td class="dish-actions-cell">
+                  <button type="button" class="btn-action-edit"
+                    onclick="editarItem('{{ it.id }}', '{{ it.categoria|escapejs }}', '{{ it.texto|escapejs }}', '{{ it.columna }}', '{{ it.orden }}', '{{ it.cantidad|default:'' }}')">✏️
+                    Editar</button>
+                  <button type="button" class="btn-action-delete"
+                    onclick="eliminarItemConfirm('{{ it.id }}', '{{ it.categoria|escapejs }}')">🗑️ Eliminar</button>
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
         {% else %}
-          <div style="text-align: center; padding: 24px; color: var(--text-muted); background: var(--bg); border-radius: 8px;">
-            No hay platos registrados para este servicio en esta fecha. Agrega uno con el formulario de abajo.
-          </div>
+        <div
+          style="text-align: center; padding: 24px; color: var(--text-muted); background: var(--bg); border-radius: 8px;">
+          No hay platos registrados para este servicio en esta fecha. Agrega uno con el formulario de abajo.
+        </div>
         {% endif %}
       </div>
 
@@ -848,25 +1014,26 @@
             <div>
               <div class="form-group">
                 <label for="categoria">Categoría del plato *</label>
-                <input type="text" id="categoria" name="categoria" class="form-control" required placeholder="Ej: FONDO NORMAL">
+                <input type="text" id="categoria" name="categoria" class="form-control" required
+                  placeholder="Ej: FONDO NORMAL">
               </div>
               <div class="quick-chips">
                 {% if servicio_sel == 'desayuno' %}
-                  <span class="chip" onclick="setCategoria('SÁNDWICH', 1)">SÁNDWICH</span>
-                  <span class="chip" onclick="setCategoria('PAN', 1)">PAN</span>
-                  <span class="chip" onclick="setCategoria('AGREGADOS', 1)">AGREGADOS</span>
-                  <span class="chip" onclick="setCategoria('LECHE', 1)">LECHE</span>
-                  <span class="chip" onclick="setCategoria('PORRIDGE', 2)">PORRIDGE</span>
-                  <span class="chip" onclick="setCategoria('MEJORADO', 2)">MEJORADO</span>
-                  <span class="chip" onclick="setCategoria('POSTRE', 2)">POSTRE</span>
+                <span class="chip" onclick="setCategoria('SÁNDWICH', 1)">SÁNDWICH</span>
+                <span class="chip" onclick="setCategoria('PAN', 1)">PAN</span>
+                <span class="chip" onclick="setCategoria('AGREGADOS', 1)">AGREGADOS</span>
+                <span class="chip" onclick="setCategoria('LECHE', 1)">LECHE</span>
+                <span class="chip" onclick="setCategoria('PORRIDGE', 2)">PORRIDGE</span>
+                <span class="chip" onclick="setCategoria('MEJORADO', 2)">MEJORADO</span>
+                <span class="chip" onclick="setCategoria('POSTRE', 2)">POSTRE</span>
                 {% else %}
-                  <span class="chip" onclick="setCategoria('ENTRADA CALIENTE · SOPA', 1)">ENTRADA · SOPA</span>
-                  <span class="chip" onclick="setCategoria('FONDO NORMAL', 1)">FONDO NORMAL</span>
-                  <span class="chip" onclick="setCategoria('FONDO ALTERNATIVO', 1)">FONDO ALTERNATIVO</span>
-                  <span class="chip" onclick="setCategoria('TERCERA OPCIÓN', 1)">TERCERA OPCIÓN</span>
-                  <span class="chip" onclick="setCategoria('HIPOCALÓRICO', 2)">HIPOCALÓRICO</span>
-                  <span class="chip" onclick="setCategoria('ENSALADAS', 2)">ENSALADAS</span>
-                  <span class="chip" onclick="setCategoria('POSTRES', 2)">POSTRES</span>
+                <span class="chip" onclick="setCategoria('ENTRADA CALIENTE · SOPA', 1)">ENTRADA · SOPA</span>
+                <span class="chip" onclick="setCategoria('FONDO NORMAL', 1)">FONDO NORMAL</span>
+                <span class="chip" onclick="setCategoria('FONDO ALTERNATIVO', 1)">FONDO ALTERNATIVO</span>
+                <span class="chip" onclick="setCategoria('TERCERA OPCIÓN', 1)">TERCERA OPCIÓN</span>
+                <span class="chip" onclick="setCategoria('HIPOCALÓRICO', 2)">HIPOCALÓRICO</span>
+                <span class="chip" onclick="setCategoria('ENSALADAS', 2)">ENSALADAS</span>
+                <span class="chip" onclick="setCategoria('POSTRES', 2)">POSTRES</span>
                 {% endif %}
               </div>
             </div>
@@ -895,12 +1062,14 @@
 
           <div class="form-group">
             <label for="texto">Descripción o nombre del plato *</label>
-            <input type="text" id="texto" name="texto" class="form-control" required placeholder="Ej: Pescado napolitano al horno con papas gajos">
+            <input type="text" id="texto" name="texto" class="form-control" required
+              placeholder="Ej: Pescado napolitano al horno con papas gajos">
           </div>
 
           <div class="form-buttons-wrap">
             <button type="submit" class="btn-primary" id="btn-save-item">💾 Guardar Plato</button>
-            <button type="button" class="btn-nav-date" id="btn-cancel-edit" style="display: none;" onclick="cancelarEdicion()">✕ Cancelar Edición</button>
+            <button type="button" class="btn-nav-date" id="btn-cancel-edit" style="display: none;"
+              onclick="cancelarEdicion()">✕ Cancelar Edición</button>
           </div>
         </form>
       </div>
@@ -912,7 +1081,8 @@
           {% csrf_token %}
           <input type="hidden" name="fecha" value="{{ fecha_sel }}">
           <div class="colacion-form-wrap">
-            <input type="text" name="colacion" class="form-control" value="{{ minuta_dia.colacion }}" placeholder="Ej: Churrasco queso / Ave pimentón">
+            <input type="text" name="colacion" class="form-control" value="{{ minuta_dia.colacion }}"
+              placeholder="Ej: Churrasco queso / Ave pimentón">
             <button type="submit" class="btn-primary" style="white-space: nowrap;">Guardar Colación</button>
           </div>
         </form>
@@ -925,24 +1095,32 @@
       <div class="card">
         <div class="card-title">Carga Masiva de Minuta Mensual (Excel o JSON)</div>
         <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 20px;">
-          Actualmente hay <strong>{{ total_dias_cargados }} días</strong> cargados en el sistema. Puedes actualizar o reemplazar la minuta de todo el mes subiendo un archivo Excel (.xlsx) o pegando el texto JSON.
+          Actualmente hay <strong>{{ total_dias_cargados }} días</strong> cargados en el sistema. Puedes actualizar o
+          reemplazar la minuta de todo el mes subiendo un archivo Excel (.xlsx) o pegando el texto JSON.
         </p>
 
         <form method="POST" action="/panel/importar-masiva/" enctype="multipart/form-data">
           {% csrf_token %}
-          
+
           <div class="form-group" style="margin-bottom: 24px;">
-            <label for="archivo_minuta" style="font-size: 15px; font-weight: 700;">Opción 1: Subir archivo Excel (.xlsx) o JSON</label>
-            <input type="file" id="archivo_minuta" name="archivo_minuta" class="form-control" accept=".xlsx,.xls,.json" style="padding: 10px;">
-            <small style="color: var(--text-muted); display: block; margin-top: 4px;">Acepta planillas Excel con columnas: fecha, servicio, categoria, plato, cantidad.</small>
+            <label for="archivo_minuta" style="font-size: 15px; font-weight: 700;">Opción 1: Subir archivo Excel (.xlsx)
+              o JSON</label>
+            <input type="file" id="archivo_minuta" name="archivo_minuta" class="form-control" accept=".xlsx,.xls,.json"
+              style="padding: 10px;">
+            <small style="color: var(--text-muted); display: block; margin-top: 4px;">Acepta planillas Excel con
+              columnas: fecha, servicio, categoria, plato, cantidad.</small>
           </div>
 
           <div class="form-group" style="margin-bottom: 24px;">
-            <label for="json_data" style="font-size: 15px; font-weight: 700;">Opción 2: O pegar estructura JSON directamente</label>
-            <textarea id="json_data" name="json_data" class="form-control" rows="8" placeholder='{"dias": {"2026-10-27": {"almuerzo": {"items": [{"categoria": "FONDO NORMAL", "texto": "..."}]}}}}' style="font-family: monospace; font-size: 13px;"></textarea>
+            <label for="json_data" style="font-size: 15px; font-weight: 700;">Opción 2: O pegar estructura JSON
+              directamente</label>
+            <textarea id="json_data" name="json_data" class="form-control" rows="8"
+              placeholder='{"dias": {"2026-10-27": {"almuerzo": {"items": [{"categoria": "FONDO NORMAL", "texto": "..."}]}}}}'
+              style="font-family: monospace; font-size: 13px;"></textarea>
           </div>
 
-          <button type="submit" class="btn-primary" style="font-size: 15px; padding: 12px 24px;">📥 Procesar e Importar Minuta</button>
+          <button type="submit" class="btn-primary" style="font-size: 15px; padding: 12px 24px;">📥 Procesar e Importar
+            Minuta</button>
         </form>
       </div>
     </div>
@@ -955,39 +1133,49 @@
           {% csrf_token %}
 
           {% for s in servicios %}
-            <div style="background: var(--bg); padding: 14px; border-radius: 8px; margin-bottom: 14px; border: 1px solid var(--border);">
-              <h3 style="font-size: 15px; font-weight: 800; color: var(--primary); margin-bottom: 10px;">{{ s.nombre }}</h3>
-              <div class="form-grid">
-                <div class="form-group">
-                  <label>Hora Inicio (Desde)</label>
-                  <input type="time" name="desde_{{ s.codigo }}" class="form-control" value="{{ s.desde|time:'H:i' }}" required>
-                </div>
-                <div class="form-group">
-                  <label>Hora Fin (Hasta)</label>
-                  <input type="time" name="hasta_{{ s.codigo }}" class="form-control" value="{{ s.hasta|time:'H:i' }}" required>
-                </div>
-                <div class="form-group">
-                  <label>Color Franja TV (Hex)</label>
-                  <div style="display: flex; gap: 8px; align-items: center;">
-                    <input type="color" name="color_{{ s.codigo }}" value="{{ s.color_franja }}" style="height: 42px; width: 48px; border-radius: 6px; border: 1px solid var(--border); cursor: pointer;" onchange="this.nextElementSibling.value = this.value">
-                    <input type="text" class="form-control" value="{{ s.color_franja }}" onchange="this.previousElementSibling.value = this.value">
-                  </div>
+          <div
+            style="background: var(--bg); padding: 14px; border-radius: 8px; margin-bottom: 14px; border: 1px solid var(--border);">
+            <h3 style="font-size: 15px; font-weight: 800; color: var(--primary); margin-bottom: 10px;">{{ s.nombre }}
+            </h3>
+            <div class="form-grid">
+              <div class="form-group">
+                <label>Hora Inicio (Desde)</label>
+                <input type="time" name="desde_{{ s.codigo }}" class="form-control" value="{{ s.desde|time:'H:i' }}"
+                  required>
+              </div>
+              <div class="form-group">
+                <label>Hora Fin (Hasta)</label>
+                <input type="time" name="hasta_{{ s.codigo }}" class="form-control" value="{{ s.hasta|time:'H:i' }}"
+                  required>
+              </div>
+              <div class="form-group">
+                <label>Color Franja TV (Hex)</label>
+                <div style="display: flex; gap: 8px; align-items: center;">
+                  <input type="color" name="color_{{ s.codigo }}" value="{{ s.color_franja }}"
+                    style="height: 42px; width: 48px; border-radius: 6px; border: 1px solid var(--border); cursor: pointer;"
+                    onchange="this.nextElementSibling.value = this.value">
+                  <input type="text" class="form-control" value="{{ s.color_franja }}"
+                    onchange="this.previousElementSibling.value = this.value">
                 </div>
               </div>
             </div>
+          </div>
           {% endfor %}
 
           <div class="card-title" style="margin-top: 24px;">Ajustes de Pantalla TV</div>
           <div class="form-grid">
             <div class="form-group">
               <label for="intervalo_rotacion">Intervalo rotación Vistas (segundos)</label>
-              <input type="number" id="intervalo_rotacion" name="intervalo_rotacion" class="form-control" value="{{ cfg.intervalo_rotacion_segundos }}" min="5" max="60">
+              <input type="number" id="intervalo_rotacion" name="intervalo_rotacion" class="form-control"
+                value="{{ cfg.intervalo_rotacion_segundos }}" min="5" max="60">
               <small style="color: var(--text-muted); display: block; margin-top: 4px;">Recomendado: 10 segundos</small>
             </div>
             <div class="form-group">
               <label for="recarga_minutos">Recarga completa TV (minutos)</label>
-              <input type="number" id="recarga_minutos" name="recarga_minutos" class="form-control" value="{{ cfg.recarga_minutos }}" min="5" max="120">
-              <small style="color: var(--text-muted); display: block; margin-top: 4px;">Recomendado: 30 minutos (limpia memoria en TV)</small>
+              <input type="number" id="recarga_minutos" name="recarga_minutos" class="form-control"
+                value="{{ cfg.recarga_minutos }}" min="5" max="120">
+              <small style="color: var(--text-muted); display: block; margin-top: 4px;">Recomendado: 30 minutos (limpia
+                memoria en TV)</small>
             </div>
           </div>
 
@@ -1017,7 +1205,8 @@
       <div class="card">
         <div class="card-title">
           <span>Registro de Auditoría (Trazabilidad)</span>
-          <span style="font-size: 13px; color: var(--text-muted); font-weight: normal;">Quién modificó la minuta y cuándo</span>
+          <span style="font-size: 13px; color: var(--text-muted); font-weight: normal;">Quién modificó la minuta y
+            cuándo</span>
         </div>
 
         <div class="table-responsive">
@@ -1033,20 +1222,21 @@
             </thead>
             <tbody>
               {% for aud in auditorias %}
-                <tr>
-                  <td style="font-size: 13px; white-space: nowrap;">{{ aud.fecha_hora|date:"d/m/Y H:i:s" }}</td>
-                  <td><strong>{{ aud.nombre_usuario }}</strong></td>
-                  <td><span class="audit-action-badge act-{{ aud.accion }}">{{ aud.get_accion_display }}</span></td>
-                  <td>{{ aud.resumen }}</td>
-                  <td style="font-size: 12px; color: var(--text-muted);">
-                    {{ aud.detalles }}
-                    {% if aud.ip %}<br><span style="opacity: 0.7;">IP: {{ aud.ip }}</span>{% endif %}
-                  </td>
-                </tr>
+              <tr>
+                <td style="font-size: 13px; white-space: nowrap;">{{ aud.fecha_hora|date:"d/m/Y H:i:s" }}</td>
+                <td><strong>{{ aud.nombre_usuario }}</strong></td>
+                <td><span class="audit-action-badge act-{{ aud.accion }}">{{ aud.get_accion_display }}</span></td>
+                <td>{{ aud.resumen }}</td>
+                <td style="font-size: 12px; color: var(--text-muted);">
+                  {{ aud.detalles }}
+                  {% if aud.ip %}<br><span style="opacity: 0.7;">IP: {{ aud.ip }}</span>{% endif %}
+                </td>
+              </tr>
               {% empty %}
-                <tr>
-                  <td colspan="5" style="text-align: center; padding: 24px; color: var(--text-muted);">No hay registros de auditoría aún.</td>
-                </tr>
+              <tr>
+                <td colspan="5" style="text-align: center; padding: 24px; color: var(--text-muted);">No hay registros de
+                  auditoría aún.</td>
+              </tr>
               {% endfor %}
             </tbody>
           </table>
@@ -1114,7 +1304,7 @@
       document.getElementById('columna').value = col;
       document.getElementById('orden').value = ord;
       document.getElementById('cantidad').value = cant;
-      
+
       document.getElementById('form-item-title').textContent = 'Editar Plato: ' + cat;
       document.getElementById('btn-save-item').textContent = '💾 Actualizar Plato';
       document.getElementById('btn-cancel-edit').style.display = 'inline-block';
@@ -1148,4 +1338,5 @@
     });
   </script>
 </body>
+
 </html>
