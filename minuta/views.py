@@ -1,4 +1,5 @@
 import json
+import re
 from datetime import datetime, date, time, timedelta
 from zoneinfo import ZoneInfo
 from django.shortcuts import render, redirect, get_object_or_404
@@ -527,7 +528,7 @@ def importar_minuta_masiva(request):
         error_msg = None
 
         col2_categories = {
-            "HIPOCALÓRICO", "ENSALADAS", "POSTRES", "POSTRE", "PORRIDGE", "MEJORADO"
+            "HIPOCALÓRICO", "HIPOCALORICO", "ENSALADAS", "ENSALADA", "POSTRES", "POSTRE", "PORRIDGE", "MEJORADO"
         }
 
         try:
@@ -539,15 +540,13 @@ def importar_minuta_masiva(request):
                 elif nombre_arch.endswith(('.xlsx', '.xls')):
                     import openpyxl
                     wb = openpyxl.load_workbook(archivo, data_only=True)
-                    # Procesar hoja activa o con nombre 'Minuta'
-                    ws = wb.active
-                    data = procesar_excel_minuta(ws)
+                    data = procesar_excel_minuta(wb)
                 else:
                     error_msg = "Formato no soportado. Suba archivo .xlsx o .json"
             elif json_texto:
                 data = json.loads(json_texto)
 
-            if data and 'dias' in data:
+            if data and 'dias' in data and data['dias']:
                 with transaction.atomic():
                     for fecha_str, serv_dict in data['dias'].items():
                         fecha = datetime.strptime(fecha_str, "%Y-%m-%d").date()
@@ -572,7 +571,7 @@ def importar_minuta_masiva(request):
                                     cat = it.get('categoria', '').strip()
                                     txt = it.get('texto', '').strip()
                                     cant = it.get('cantidad')
-                                    columna = 2 if (cat.upper() in col2_categories or idx >= mitad) else 1
+                                    columna = 2 if (cat.upper().strip() in col2_categories or idx >= mitad) else 1
 
                                     ItemMinuta.objects.create(
                                         servicio=minuta_serv,
@@ -593,7 +592,7 @@ def importar_minuta_masiva(request):
                     ip=get_client_ip(request)
                 )
             elif not error_msg:
-                error_msg = "El formato no contiene la clave 'dias'. Verifique la estructura JSON."
+                error_msg = "No se detectaron días válidos en el archivo o texto. Verifique que las hojas o fechas sean correctas."
 
         except Exception as e:
             error_msg = f"Error al procesar la importación: {str(e)}"
@@ -605,9 +604,152 @@ def importar_minuta_masiva(request):
     return redirect('admin_panel')
 
 
-def procesar_excel_minuta(ws):
-    """Convierte filas de una planilla Excel en la estructura JSON requerida"""
-    # Mapeo flexible de encabezados
+def extraer_fecha_celda(val):
+    """Extrae una fecha en formato YYYY-MM-DD desde un valor datetime, date o string de celda."""
+    if not val:
+        return None
+    if isinstance(val, (datetime, date)):
+        return val.strftime('%Y-%m-%d')
+    s = str(val).strip()
+    m = re.search(r'(\d{4})[-/](\d{1,2})[-/](\d{1,2})', s)
+    if m:
+        return f'{int(m.group(1)):04d}-{int(m.group(2)):02d}-{int(m.group(3)):02d}'
+    m = re.search(r'(\d{1,2})[-/](\d{1,2})[-/](\d{2,4})', s)
+    if m:
+        y = int(m.group(3))
+        if y < 100:
+            y += 2000
+        return f'{y:04d}-{int(m.group(2)):02d}-{int(m.group(1)):02d}'
+    return None
+
+
+def limpiar_texto_celda(val):
+    """Limpia textos vacíos, guiones o None de celdas."""
+    if val is None:
+        return ''
+    s = str(val).strip()
+    if s.startswith('---') or s == '-' or s.lower() == 'none':
+        return ''
+    return s
+
+
+def procesar_excel_minuta(wb_or_ws):
+    """
+    Convierte un archivo Excel en la estructura JSON requerida.
+    Soporta:
+    1. Formato oficial con pestañas SEMANA, Desayuno Mej., Colaciones.
+    2. Formato tabular plano (hoja con columnas fecha, servicio, categoria, plato, etc.)
+    """
+    # Si es un workbook con hojas
+    if hasattr(wb_or_ws, 'sheetnames'):
+        sheet_names = wb_or_ws.sheetnames
+        # Si tiene hojas SEMANA, procesar con lógica multi-hoja de casino
+        has_semana = any('SEMANA' in s.upper() for s in sheet_names)
+        if has_semana:
+            dias = {}
+
+            def get_dia(f_str):
+                if f_str not in dias:
+                    dias[f_str] = {
+                        'colacion': '',
+                        'desayuno': {'items': []},
+                        'almuerzo': {'items': []},
+                        'cena': {'items': []}
+                    }
+                return dias[f_str]
+
+            for sname in sheet_names:
+                if 'SEMANA' in sname.upper():
+                    ws = wb_or_ws[sname]
+                    servicio_actual = None
+                    date_cols = {}
+
+                    for r in range(1, ws.max_row + 1):
+                        c1_val = str(ws.cell(r, 1).value or '').strip()
+                        row_str = ' '.join([str(ws.cell(r, c).value or '') for c in range(1, ws.max_column + 1)]).upper()
+
+                        if 'DESAYUNO' in row_str and ('HOSTAL' in row_str or 'CALAMA' in row_str or r <= 3):
+                            servicio_actual = 'desayuno'
+                            date_cols = {}
+                            continue
+                        elif 'ALMUERZO' in row_str and ('HOSTAL' in row_str or 'CALAMA' in row_str or (10 <= r <= 15)):
+                            servicio_actual = 'almuerzo'
+                            date_cols = {}
+                            continue
+                        elif 'CENA' in row_str and ('HOSTAL' in row_str or 'CALAMA' in row_str or (25 <= r <= 32)):
+                            servicio_actual = 'cena'
+                            date_cols = {}
+                            continue
+
+                        fechas_en_fila = {}
+                        for c in range(2, ws.max_column + 1):
+                            f = extraer_fecha_celda(ws.cell(r, c).value)
+                            if f:
+                                fechas_en_fila[c] = f
+
+                        if fechas_en_fila:
+                            date_cols = fechas_en_fila
+                            continue
+
+                        if servicio_actual and date_cols and c1_val:
+                            cat = c1_val
+                            for col_idx, f_str in date_cols.items():
+                                dia_obj = get_dia(f_str)
+                                plato = limpiar_texto_celda(ws.cell(r, col_idx).value)
+                                if not plato:
+                                    continue
+
+                                cant = None
+                                if (col_idx + 1) not in date_cols:
+                                    cant_val = ws.cell(r, col_idx + 1).value
+                                    if cant_val is not None:
+                                        try:
+                                            cant = int(float(str(cant_val).strip()))
+                                        except (ValueError, TypeError):
+                                            cant = None
+
+                                it = {'categoria': cat, 'texto': plato}
+                                if cant is not None:
+                                    it['cantidad'] = cant
+                                dia_obj[servicio_actual]['items'].append(it)
+
+            # Desayuno Mejorado
+            for sname in sheet_names:
+                if 'MEJ' in sname.upper():
+                    ws = wb_or_ws[sname]
+                    for r in range(1, ws.max_row):
+                        for c in range(1, ws.max_column + 1):
+                            f = extraer_fecha_celda(ws.cell(r, c).value)
+                            if f:
+                                next_val = limpiar_texto_celda(ws.cell(r + 1, c).value)
+                                if next_val and not extraer_fecha_celda(next_val):
+                                    dia_obj = get_dia(f)
+                                    dia_obj['desayuno']['items'].append({
+                                        'categoria': 'MEJORADO',
+                                        'texto': next_val
+                                    })
+
+            # Colaciones
+            for sname in sheet_names:
+                if 'COLACION' in sname.upper():
+                    ws = wb_or_ws[sname]
+                    for r in range(1, ws.max_row):
+                        for c in range(1, ws.max_column + 1):
+                            f = extraer_fecha_celda(ws.cell(r, c).value)
+                            if f:
+                                next_val = limpiar_texto_celda(ws.cell(r + 1, c).value)
+                                if next_val and not extraer_fecha_celda(next_val):
+                                    dia_obj = get_dia(f)
+                                    dia_obj['colacion'] = next_val
+
+            if dias:
+                return {'dias': dias}
+
+        ws = wb_or_ws.active
+    else:
+        ws = wb_or_ws
+
+    # Fallback: Procesar formato tabular plano
     rows = list(ws.iter_rows(values_only=True))
     if not rows:
         return {'dias': {}}
@@ -620,16 +762,12 @@ def procesar_excel_minuta(ws):
             continue
         row_dict = {headers[i]: row[i] for i in range(len(headers)) if i < len(row)}
 
-        # Buscar fecha
         fecha_val = row_dict.get('fecha')
         if not fecha_val:
             continue
-        if isinstance(fecha_val, datetime):
-            f_str = fecha_val.strftime('%Y-%m-%d')
-        elif isinstance(fecha_val, date):
-            f_str = fecha_val.strftime('%Y-%m-%d')
-        else:
-            f_str = str(fecha_val).strip()
+        f_str = extraer_fecha_celda(fecha_val)
+        if not f_str:
+            continue
 
         servicio = str(row_dict.get('servicio', 'almuerzo')).strip().lower()
         categoria = str(row_dict.get('categoria', '')).strip()

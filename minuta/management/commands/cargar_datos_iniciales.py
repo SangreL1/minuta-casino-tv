@@ -88,7 +88,7 @@ class Command(BaseCommand):
 
         # Categorías típicas que van en la columna derecha
         col2_categories = {
-            "HIPOCALÓRICO", "ENSALADAS", "POSTRES", "POSTRE", "PORRIDGE", "MEJORADO"
+            "HIPOCALÓRICO", "HIPOCALORICO", "ENSALADAS", "ENSALADA", "POSTRES", "POSTRE", "PORRIDGE", "MEJORADO"
         }
 
         for json_path in json_files:
@@ -130,7 +130,7 @@ class Command(BaseCommand):
 
                             # Decidir columna: si es categoría típica de col2 o si estamos en la 2da mitad
                             columna = 1
-                            if cat.upper() in col2_categories or idx >= mitad:
+                            if cat.upper().strip() in col2_categories or idx >= mitad:
                                 columna = 2
 
                             ItemMinuta.objects.create(

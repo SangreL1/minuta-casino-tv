@@ -1,2952 +1,4917 @@
 {
-  "mes": "2026-11",
-  "zona_horaria": "America/Santiago",
-  "servicios": {
-    "desayuno": {
-      "nombre": "DESAYUNO",
-      "desde": "05:00",
-      "hasta": "10:00",
-      "color": "#0B3FA8"
-    },
-    "almuerzo": {
-      "nombre": "ALMUERZO",
-      "desde": "12:00",
-      "hasta": "14:30",
-      "color": "#0B3FA8"
-    },
-    "cena": {
-      "nombre": "CENA",
-      "desde": "16:30",
-      "hasta": "22:00",
-      "color": "#0B3FA8"
-    }
-  },
   "dias": {
     "2026-11-01": {
+      "colacion": "ALIADO PALTA",
       "desayuno": {
         "items": [
           {
-            "categoria": "SÁNDWICH",
+            "categoria": "Porción Solida",
             "texto": "HUEVO REVUELTO"
           },
           {
-            "categoria": "PAN",
+            "categoria": "Variedad Pan",
             "texto": "Hallulla y Marraqueta"
           },
           {
-            "categoria": "AGREGADOS",
-            "texto": "Mermelada / Mantequilla"
+            "categoria": "P. Solida",
+            "texto": "Agr Mermelada"
           },
           {
-            "categoria": "LECHE",
+            "categoria": "Agregado",
+            "texto": "Agr Mantequilla"
+          },
+          {
+            "categoria": "P. Solida",
+            "texto": "Yogurt Sabores"
+          },
+          {
+            "categoria": "P. Solida",
+            "texto": "Snack"
+          },
+          {
+            "categoria": "Porcion Liquida",
             "texto": "Leche Caliente"
           },
           {
-            "categoria": "PORRIDGE",
+            "categoria": "Porridge",
             "texto": "Leche Caapucchino"
           },
           {
             "categoria": "MEJORADO",
             "texto": "TORTA"
-          },
-          {
-            "categoria": "POSTRE",
-            "texto": "Yogurt de sabores / snack"
           }
         ]
       },
       "almuerzo": {
         "items": [
           {
-            "categoria": "ENTRADA CALIENTE · SOPA",
+            "categoria": "E.Caliente Sopa",
             "texto": "Sopa Pollo con Fideos"
           },
           {
-            "categoria": "FONDO NORMAL",
-            "texto": "Chuleta de Cerdo Asada con Pure Lyonesa"
+            "categoria": "Fondo Normal",
+            "texto": "Chuleta de Cerdo Asada"
           },
           {
-            "categoria": "FONDO ALTERNATIVO",
-            "texto": "Milanesa de Pollo con Espirales Atomatados"
+            "categoria": "Fondo Alternativo",
+            "texto": "Milanesa de Pollo"
           },
           {
-            "categoria": "TERCERA OPCIÓN",
+            "categoria": "Acompañamiento Normal",
+            "texto": "Pure Lyonesa"
+          },
+          {
+            "categoria": "Acompañamiento Alternativo",
+            "texto": "Espirales Atomatados"
+          },
+          {
+            "categoria": "TERCERA OPCION",
             "texto": "ARVEJAS GUISADAS CON CHORIZOS"
           },
           {
-            "categoria": "HIPOCALÓRICO",
+            "categoria": "Hipocalórico",
             "texto": "Pechuga de Pollo con Ensaladas"
           },
           {
-            "categoria": "ENSALADAS",
-            "texto": "Lechuga / Pebre / Zanahoria"
+            "categoria": "Ensaladas",
+            "texto": "Lechuga"
           },
           {
-            "categoria": "POSTRES",
-            "texto": "Fruta / Arroz con leche / Jalea / Kuchen de Manzana"
+            "categoria": "Ensaladas",
+            "texto": "Pebre"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Zanahoria"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Fruta"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Arroz con leche"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Jalea"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Kuchen de Manzana"
           }
         ]
       },
       "cena": {
         "items": [
           {
-            "categoria": "ENTRADA CALIENTE · SOPA",
+            "categoria": "E.Caliente Sopa",
             "texto": "Crema de Choclo"
           },
           {
-            "categoria": "FONDO NORMAL",
-            "texto": "Cerdo a la Mostaza con Papas al Oregano"
+            "categoria": "Fondo Normal",
+            "texto": "Cerdo a la Mostaza"
           },
           {
-            "categoria": "FONDO ALTERNATIVO",
-            "texto": "Salsa Alfredo con Spaguettis al Cilantro"
+            "categoria": "Fondo Alternativo",
+            "texto": "Salsa Alfredo"
           },
           {
-            "categoria": "TERCERA OPCIÓN",
+            "categoria": "Acompañamiento Normal",
+            "texto": "Papas al Oregano"
+          },
+          {
+            "categoria": "Acompañamiento Alternativo",
+            "texto": "Spaguettis al Cilantro"
+          },
+          {
+            "categoria": "TERCERA OPCION",
             "texto": "PANTRUCAS"
           },
           {
-            "categoria": "HIPOCALÓRICO",
+            "categoria": "Hipocalórico",
             "texto": "Pechuga de Pollo con Ensaladas"
           },
           {
-            "categoria": "ENSALADAS",
-            "texto": "Repollo / Choclo / Tomate"
+            "categoria": "Ensaladas",
+            "texto": "Repollo"
           },
           {
-            "categoria": "POSTRES",
-            "texto": "Fruta / Arroz con leche / Jalea / Kuchen de Manzana"
+            "categoria": "Ensaladas",
+            "texto": "Choclo"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Tomate"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Fruta"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Arroz con leche"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Jalea"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Kuchen de Manzana"
           }
         ]
-      },
-      "colacion": "ALIADO PALTA"
+      }
     },
     "2026-11-02": {
+      "colacion": "CHURRASCO QUESO",
       "desayuno": {
         "items": [
           {
-            "categoria": "SÁNDWICH",
+            "categoria": "Porción Solida",
             "texto": "BARROS JARPA"
           },
           {
-            "categoria": "PAN",
-            "texto": "Hallulla y Marraqueta"
+            "categoria": "Variedad Pan",
+            "texto": "Hallulla y Marraqueta             (280 kcal.)"
           },
           {
-            "categoria": "AGREGADOS",
-            "texto": "Mermelada / Mantequilla"
+            "categoria": "P. Solida",
+            "texto": "Agr Mermelada (55 kcal.)"
           },
           {
-            "categoria": "LECHE",
-            "texto": "Leche Caliente"
+            "categoria": "Agregado",
+            "texto": "Agr Mantequilla (102 kcal.)"
           },
           {
-            "categoria": "PORRIDGE",
+            "categoria": "P. Solida",
+            "texto": "Yogurt Sabores (90 kcal.)"
+          },
+          {
+            "categoria": "P. Solida",
+            "texto": "Snack"
+          },
+          {
+            "categoria": "Porcion Liquida",
+            "texto": "Leche Caliente (116 kcal.)"
+          },
+          {
+            "categoria": "Porridge",
             "texto": "Leche C/ Avena"
           },
           {
             "categoria": "MEJORADO",
             "texto": "BERLINES"
-          },
-          {
-            "categoria": "POSTRE",
-            "texto": "Yogurt de sabores / snack"
           }
         ]
       },
       "almuerzo": {
         "items": [
           {
-            "categoria": "ENTRADA CALIENTE · SOPA",
-            "texto": "Sopa Verduras con Arroz"
+            "categoria": "E.Caliente Sopa",
+            "texto": "Sopa Verduras con Arroz  (45 kcal.)"
           },
           {
-            "categoria": "FONDO NORMAL",
-            "texto": "Zapallo Italiano Relleno con Papas Gajos al sesamo"
+            "categoria": "Fondo Normal",
+            "texto": "Zapallo Italiano Relleno",
+            "cantidad": 40
           },
           {
-            "categoria": "FONDO ALTERNATIVO",
-            "texto": "Salsa Boloñesa con Spaguettis"
+            "categoria": "Fondo Alternativo",
+            "texto": "Salsa Boloñesa",
+            "cantidad": 40
           },
           {
-            "categoria": "TERCERA OPCIÓN",
-            "texto": "POROTOS CON RIENDA Y CHORIZOS"
+            "categoria": "Acompañamiento Normal",
+            "texto": "Papas Gajos al sesamo"
           },
           {
-            "categoria": "HIPOCALÓRICO",
+            "categoria": "Acompañamiento Alternativo",
+            "texto": "Spaguettis"
+          },
+          {
+            "categoria": "TERCERA OPCION",
+            "texto": "POROTOS CON RIENDA Y CHORIZOS",
+            "cantidad": 30
+          },
+          {
+            "categoria": "Hipocalórico",
             "texto": "Fideos Toscana, huevo Duro y Ensaladas"
           },
           {
-            "categoria": "ENSALADAS",
-            "texto": "Cochayuyo / Repollo / Arveja"
+            "categoria": "Ensaladas",
+            "texto": "Cochayuyo"
           },
           {
-            "categoria": "POSTRES",
-            "texto": "Fruta / Flan / Jalea / Queque de Zanahoria"
+            "categoria": "Ensaladas",
+            "texto": "Repollo"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Arveja"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Fruta"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Flan"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Jalea"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Queque de Zanahoria"
           }
         ]
       },
       "cena": {
         "items": [
           {
-            "categoria": "ENTRADA CALIENTE · SOPA",
-            "texto": "Sopa de Vacuno con Fideos"
+            "categoria": "E.Caliente Sopa",
+            "texto": "Sopa de Vacuno con Fideos (45 kcal.)"
           },
           {
-            "categoria": "FONDO NORMAL",
-            "texto": "Goulash de Vacuno con ARROZ BALTIMORE"
+            "categoria": "Fondo Normal",
+            "texto": "Goulash de Vacuno"
           },
           {
-            "categoria": "FONDO ALTERNATIVO",
-            "texto": "Croquetas de Atun con Budin de Verduras"
+            "categoria": "Fondo Alternativo",
+            "texto": "Croquetas de Atun",
+            "cantidad": 70
           },
           {
-            "categoria": "TERCERA OPCIÓN",
-            "texto": "CAZUELA DE AVE"
+            "categoria": "Acompañamiento Normal",
+            "texto": "ARROZ BALTIMORE"
           },
           {
-            "categoria": "HIPOCALÓRICO",
+            "categoria": "Acompañamiento Alternativo",
+            "texto": "Budin de Verduras"
+          },
+          {
+            "categoria": "TERCERA OPCION",
+            "texto": "CAZUELA DE AVE",
+            "cantidad": 150
+          },
+          {
+            "categoria": "Hipocalórico",
             "texto": "Fideos Toscana, huevo Duro y Ensaladas"
           },
           {
-            "categoria": "ENSALADAS",
-            "texto": "Lechuga / Beterraga / Tomate"
+            "categoria": "Ensaladas",
+            "texto": "Lechuga"
           },
           {
-            "categoria": "POSTRES",
-            "texto": "Fruta / Flan / Jalea / Queque de Zanahoria"
+            "categoria": "Ensaladas",
+            "texto": "Beterraga"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Tomate"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Fruta"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Flan"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Jalea"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Queque de Zanahoria"
           }
         ]
-      },
-      "colacion": "CHURRASCO QUESO"
+      }
     },
     "2026-11-03": {
+      "colacion": "AVE PIMENTON",
       "desayuno": {
         "items": [
           {
-            "categoria": "SÁNDWICH",
+            "categoria": "Porción Solida",
             "texto": "SUPREMA DE POLLO QUESO"
           },
           {
-            "categoria": "PAN",
-            "texto": "Hallulla y Marraqueta"
+            "categoria": "Variedad Pan",
+            "texto": "Hallulla y Marraqueta  (280 kcal.)"
           },
           {
-            "categoria": "AGREGADOS",
-            "texto": "Pate / Mantequilla"
+            "categoria": "P. Solida",
+            "texto": "Agr Pate"
           },
           {
-            "categoria": "LECHE",
-            "texto": "Leche Caliente"
+            "categoria": "Agregado",
+            "texto": "Agr Mantequilla (102 kcal.)"
           },
           {
-            "categoria": "PORRIDGE",
+            "categoria": "P. Solida",
+            "texto": "Yogurt Sabores (90 kcal.)"
+          },
+          {
+            "categoria": "P. Solida",
+            "texto": "Snack"
+          },
+          {
+            "categoria": "Porcion Liquida",
+            "texto": "Leche Caliente (116 kcal.)"
+          },
+          {
+            "categoria": "Porridge",
             "texto": "Leche C/ Chocolate"
           },
           {
             "categoria": "MEJORADO",
             "texto": "BUFFET DE QUESO"
-          },
-          {
-            "categoria": "POSTRE",
-            "texto": "Yogurt de sabores / snack"
           }
         ]
       },
       "almuerzo": {
         "items": [
           {
-            "categoria": "ENTRADA CALIENTE · SOPA",
-            "texto": "Crema de Choclo"
+            "categoria": "E.Caliente Sopa",
+            "texto": "Crema de Choclo (49 kcal.)"
           },
           {
-            "categoria": "FONDO NORMAL",
-            "texto": "Pollo Asado con ARROZ CHAUFA"
+            "categoria": "Fondo Normal",
+            "texto": "Pollo Asado",
+            "cantidad": 70
           },
           {
-            "categoria": "FONDO ALTERNATIVO",
-            "texto": "Pastel de Choclo"
+            "categoria": "Fondo Alternativo",
+            "texto": "Pastel de Choclo",
+            "cantidad": 30
           },
           {
-            "categoria": "TERCERA OPCIÓN",
-            "texto": "GARBANZOS GUISADOS"
+            "categoria": "Acompañamiento Normal",
+            "texto": "ARROZ CHAUFA"
           },
           {
-            "categoria": "HIPOCALÓRICO",
+            "categoria": "TERCERA OPCION",
+            "texto": "GARBANZOS GUISADOS",
+            "cantidad": 10
+          },
+          {
+            "categoria": "Hipocalórico",
             "texto": "Atun Cebollin con Ensaladas"
           },
           {
-            "categoria": "ENSALADAS",
-            "texto": "Lechuga / Zapallo Italiano / Cebolla"
+            "categoria": "Ensaladas",
+            "texto": "Lechuga"
           },
           {
-            "categoria": "POSTRES",
-            "texto": "Fruta / Semola con leche / Jalea / Brownie"
+            "categoria": "Ensaladas",
+            "texto": "Zapallo Italiano"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Cebolla"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Fruta"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Semola con leche"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Jalea"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Brownie"
           }
         ]
       },
       "cena": {
         "items": [
           {
-            "categoria": "ENTRADA CALIENTE · SOPA",
-            "texto": "Crema de Esparragos"
+            "categoria": "E.Caliente Sopa",
+            "texto": "Crema de Esparragos (49 kcal.)"
           },
           {
-            "categoria": "FONDO NORMAL",
-            "texto": "Cerdo al Jugo con PURE LYONESA"
+            "categoria": "Fondo Normal",
+            "texto": "Cerdo al Jugo",
+            "cantidad": 250
           },
           {
-            "categoria": "FONDO ALTERNATIVO",
-            "texto": "Asado Aleman con Corbatas Atomatadas"
+            "categoria": "Fondo Alternativo",
+            "texto": "Asado Aleman",
+            "cantidad": 130
           },
           {
-            "categoria": "TERCERA OPCIÓN",
-            "texto": "CARBONADA DE VACUNO"
+            "categoria": "Acompañamiento Normal",
+            "texto": "PURE LYONESA"
           },
           {
-            "categoria": "HIPOCALÓRICO",
+            "categoria": "Acompañamiento Alternativo",
+            "texto": "Corbatas Atomatadas"
+          },
+          {
+            "categoria": "TERCERA OPCION",
+            "texto": "CARBONADA DE VACUNO",
+            "cantidad": 120
+          },
+          {
+            "categoria": "Hipocalórico",
             "texto": "Atun Cebollin con Ensaladas"
           },
           {
-            "categoria": "ENSALADAS",
-            "texto": "Choclo / Apio / Poroto Verde"
+            "categoria": "Ensaladas",
+            "texto": "Choclo"
           },
           {
-            "categoria": "POSTRES",
-            "texto": "Fruta / Semola con leche / ILUSION DE JALEA / Brownie"
+            "categoria": "Ensaladas",
+            "texto": "Apio"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Poroto Verde"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Fruta"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Semola con leche"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "ILUSION DE JALEA"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Brownie"
           }
         ]
-      },
-      "colacion": "AVE PIMENTON"
+      }
     },
     "2026-11-04": {
+      "colacion": "MECHADA PALTA",
       "desayuno": {
         "items": [
           {
-            "categoria": "SÁNDWICH",
+            "categoria": "Porción Solida",
             "texto": "ATUN CEBOLLA CILANTRO"
           },
           {
-            "categoria": "PAN",
-            "texto": "Hallulla y Marraqueta"
+            "categoria": "Variedad Pan",
+            "texto": "Hallulla y Marraqueta  (280 kcal.)"
           },
           {
-            "categoria": "AGREGADOS",
-            "texto": "Mermelada / Mantequilla"
+            "categoria": "P. Solida",
+            "texto": "Agr Mermelada (55 kcal.)"
           },
           {
-            "categoria": "LECHE",
-            "texto": "Leche Caliente"
+            "categoria": "Agregado",
+            "texto": "Agr Mantequilla (102 kcal.)"
           },
           {
-            "categoria": "PORRIDGE",
+            "categoria": "P. Solida",
+            "texto": "Yogurt Sabores (90 kcal.)"
+          },
+          {
+            "categoria": "P. Solida",
+            "texto": "Snack"
+          },
+          {
+            "categoria": "Porcion Liquida",
+            "texto": "Leche Caliente (116 kcal.)"
+          },
+          {
+            "categoria": "Porridge",
             "texto": "Leche C/ Maicena"
           },
           {
             "categoria": "MEJORADO",
             "texto": "COCKTEL DE FRUTAS"
-          },
-          {
-            "categoria": "POSTRE",
-            "texto": "Yogurt de sabores / snack"
           }
         ]
       },
       "almuerzo": {
         "items": [
           {
-            "categoria": "ENTRADA CALIENTE · SOPA",
-            "texto": "Sopa Carne con Arroz"
+            "categoria": "E.Caliente Sopa",
+            "texto": "Sopa Carne con Arroz  (45 kcal.)"
           },
           {
-            "categoria": "FONDO NORMAL",
-            "texto": "Cancato de Pescado con Espirales Al Olivo"
+            "categoria": "Fondo Normal",
+            "texto": "Cancato de Pescado",
+            "cantidad": 30
           },
           {
-            "categoria": "FONDO ALTERNATIVO",
-            "texto": "Lasaña Boloñesa"
+            "categoria": "Fondo Alternativo",
+            "texto": "Lasaña Boloñesa",
+            "cantidad": 50
           },
           {
-            "categoria": "TERCERA OPCIÓN",
-            "texto": "AJIACO DE VACUNO"
+            "categoria": "Acompañamiento Normal",
+            "texto": "Espirales Al Olivo"
           },
           {
-            "categoria": "HIPOCALÓRICO",
-            "texto": "Ensalada Cesar"
+            "categoria": "TERCERA OPCION",
+            "texto": "AJIACO DE VACUNO",
+            "cantidad": 30
           },
           {
-            "categoria": "ENSALADAS",
-            "texto": "Haba / Coliflor / Beterraga"
+            "categoria": "Hipocalórico",
+            "texto": "Ensalada Cesar (270 kcal.)"
           },
           {
-            "categoria": "POSTRES",
-            "texto": "Fruta / LECHE CON AVENA / Jalea / Torta Tres Leches"
+            "categoria": "Ensaladas",
+            "texto": "Haba"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Coliflor"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Beterraga"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Fruta"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "LECHE CON AVENA"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Jalea"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Torta Tres Leches"
           }
         ]
       },
       "cena": {
         "items": [
           {
-            "categoria": "ENTRADA CALIENTE · SOPA",
+            "categoria": "E.Caliente Sopa",
             "texto": "Consome al Huevo"
           },
           {
-            "categoria": "FONDO NORMAL",
-            "texto": "Pollo Truto Arvejado con Arroz Primavera"
+            "categoria": "Fondo Normal",
+            "texto": "Pollo  Truto Arvejado",
+            "cantidad": 390
           },
           {
-            "categoria": "FONDO ALTERNATIVO",
-            "texto": "Prietas Lyonesas con Tortilla de Papas"
+            "categoria": "Fondo Alternativo",
+            "texto": "Prietas Lyonesas",
+            "cantidad": 50
           },
           {
-            "categoria": "TERCERA OPCIÓN",
-            "texto": "LENTEJAS PARMESANAS CON VINESAS SALTEADAS"
+            "categoria": "Acompañamiento Normal",
+            "texto": "Arroz Primavera"
           },
           {
-            "categoria": "HIPOCALÓRICO",
-            "texto": "Ensalada Cesar"
+            "categoria": "Acompañamiento Alternativo",
+            "texto": "Tortilla de Papas"
           },
           {
-            "categoria": "ENSALADAS",
-            "texto": "Repollo / Zanahoria / Pepino"
+            "categoria": "TERCERA OPCION",
+            "texto": "LENTEJAS PARMESANAS CON VINESAS SALTEADAS",
+            "cantidad": 60
           },
           {
-            "categoria": "POSTRES",
-            "texto": "Fruta / LECHE CON AVENA / Jalea / Torta Tres Leches"
+            "categoria": "Hipocalórico",
+            "texto": "Ensalada Cesar (270 kcal.)"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Repollo"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Zanahoria"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Pepino"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Fruta"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "LECHE CON AVENA"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Jalea"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Torta Tres Leches"
           }
         ]
-      },
-      "colacion": "MECHADA PALTA"
+      }
     },
     "2026-11-05": {
+      "colacion": "LOMITO QUESO",
       "desayuno": {
         "items": [
           {
-            "categoria": "SÁNDWICH",
+            "categoria": "Porción Solida",
             "texto": "CHURRASCO QUESO"
           },
           {
-            "categoria": "PAN",
-            "texto": "Hallulla y Marraqueta"
+            "categoria": "Variedad Pan",
+            "texto": "Hallulla y Marraqueta  (280 kcal.)"
           },
           {
-            "categoria": "AGREGADOS",
-            "texto": "Mermelada / Mantequilla"
+            "categoria": "P. Solida",
+            "texto": "Agr Mermelada (55 kcal.)"
           },
           {
-            "categoria": "LECHE",
-            "texto": "Leche Caliente"
+            "categoria": "Agregado",
+            "texto": "Agr Mantequilla (102 kcal.)"
           },
           {
-            "categoria": "PORRIDGE",
+            "categoria": "P. Solida",
+            "texto": "Yogurt Sabores (90 kcal.)"
+          },
+          {
+            "categoria": "P. Solida",
+            "texto": "Snack"
+          },
+          {
+            "categoria": "Porcion Liquida",
+            "texto": "Leche Caliente (116 kcal.)"
+          },
+          {
+            "categoria": "Porridge",
             "texto": "Capucchino con Vainilla"
           },
           {
             "categoria": "MEJORADO",
             "texto": "SOPAIPILLAS"
-          },
-          {
-            "categoria": "POSTRE",
-            "texto": "Yogurt de sabores / snack"
           }
         ]
       },
       "almuerzo": {
         "items": [
           {
-            "categoria": "ENTRADA CALIENTE · SOPA",
-            "texto": "Crema Verduras"
+            "categoria": "E.Caliente Sopa",
+            "texto": "Crema Verduras (49 kcal.)"
           },
           {
-            "categoria": "FONDO NORMAL",
-            "texto": "Vacuno al Jugo con Budin De Verduras"
+            "categoria": "Fondo Normal",
+            "texto": "Vacuno al Jugo",
+            "cantidad": 60
           },
           {
-            "categoria": "FONDO ALTERNATIVO",
-            "texto": "Aji de Gallina con Arroz Piamontes"
+            "categoria": "Fondo Alternativo",
+            "texto": "Aji de Gallina",
+            "cantidad": 30
           },
           {
-            "categoria": "TERCERA OPCIÓN",
-            "texto": "POROTOS CON MAZAMORRA CON LONGANIZA ASADA"
+            "categoria": "Acompañamiento Normal",
+            "texto": "Budin De Verduras"
           },
           {
-            "categoria": "HIPOCALÓRICO",
-            "texto": "Pollo Salteado con Verduras al Vapor."
+            "categoria": "Acompañamiento Alternativo",
+            "texto": "Arroz Piamontes"
           },
           {
-            "categoria": "ENSALADAS",
-            "texto": "Chilena / Pepino / Repollo"
+            "categoria": "TERCERA OPCION",
+            "texto": "POROTOS CON MAZAMORRA CON LONGANIZA ASADA",
+            "cantidad": 20
           },
           {
-            "categoria": "POSTRES",
-            "texto": "Fruta / Leche Asada / Jalea / Queque Marmoleado"
+            "categoria": "Hipocalórico",
+            "texto": "Pollo Salteado con Verduras al Vapor.          (247 kcal)"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Chilena"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Pepino"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Repollo"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Fruta"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Leche Asada"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Jalea"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Queque Marmoleado"
           }
         ]
       },
       "cena": {
         "items": [
           {
-            "categoria": "ENTRADA CALIENTE · SOPA",
+            "categoria": "E.Caliente Sopa",
             "texto": "Sopa Mejorada de Vacuno"
           },
           {
-            "categoria": "FONDO NORMAL",
-            "texto": "Costillar de Cerdo a lo pobre (costillar, papas Fritas,Arroz, cebolla acaramelizada y Longaniza)"
+            "categoria": "Fondo Normal",
+            "texto": "Costillar de Cerdo a lo pobre (costillar, papas Fritas,Arroz, cebolla acaramelizada y Longaniza)",
+            "cantidad": 500
           },
           {
-            "categoria": "HIPOCALÓRICO",
-            "texto": "Pollo Salteado con Verduras al Vapor."
+            "categoria": "Hipocalórico",
+            "texto": "Pollo Salteado con Verduras al Vapor.          (247 kcal)"
           },
           {
-            "categoria": "ENSALADAS",
-            "texto": "Lechuga / Tomate / ENS PRIMAVERA"
+            "categoria": "Ensaladas",
+            "texto": "Lechuga"
           },
           {
-            "categoria": "POSTRES",
-            "texto": "Fruta / Leche Asada / Jalea / QUEQUE MANZANA CANELA"
+            "categoria": "Ensaladas",
+            "texto": "Tomate"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "ENS PRIMAVERA"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Fruta"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Leche Asada"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Jalea"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "QUEQUE MANZANA CANELA"
           }
         ]
-      },
-      "colacion": "LOMITO QUESO"
+      }
     },
     "2026-11-06": {
+      "colacion": "CHURRASCO QUESO",
       "desayuno": {
         "items": [
           {
-            "categoria": "SÁNDWICH",
+            "categoria": "Porción Solida",
             "texto": "HUEVO REVUELTO"
           },
           {
-            "categoria": "PAN",
-            "texto": "Hallulla y Marraqueta"
+            "categoria": "Variedad Pan",
+            "texto": "Hallulla y Marraqueta  (280 kcal.)"
           },
           {
-            "categoria": "AGREGADOS",
-            "texto": "Manjar / Mantequilla"
+            "categoria": "P. Solida",
+            "texto": "Agr Manjar"
           },
           {
-            "categoria": "LECHE",
-            "texto": "Leche Caliente"
+            "categoria": "Agregado",
+            "texto": "Agr Mantequilla (102 kcal.)"
           },
           {
-            "categoria": "PORRIDGE",
+            "categoria": "P. Solida",
+            "texto": "Yogurt Sabores (90 kcal.)"
+          },
+          {
+            "categoria": "P. Solida",
+            "texto": "Snack"
+          },
+          {
+            "categoria": "Porcion Liquida",
+            "texto": "Leche Caliente (116 kcal.)"
+          },
+          {
+            "categoria": "Porridge",
             "texto": "Leche C/ Frutilla"
           },
           {
             "categoria": "MEJORADO",
             "texto": "BUFETT DE JAMON"
-          },
-          {
-            "categoria": "POSTRE",
-            "texto": "Yogurt de sabores / snack"
           }
         ]
       },
       "almuerzo": {
         "items": [
           {
-            "categoria": "ENTRADA CALIENTE · SOPA",
-            "texto": "Sopa Pollo con Semola"
+            "categoria": "E.Caliente Sopa",
+            "texto": "Sopa Pollo con Semola  (45 kcal.)"
           },
           {
-            "categoria": "FONDO NORMAL",
-            "texto": "Pescado Frito con Pure Rustico"
+            "categoria": "Fondo Normal",
+            "texto": "Pescado Frito",
+            "cantidad": 50
           },
           {
-            "categoria": "FONDO ALTERNATIVO",
-            "texto": "Panita al Ajillo con Tortilla de Zanahoria"
+            "categoria": "Fondo Alternativo",
+            "texto": "Panita al Ajillo",
+            "cantidad": 30
           },
           {
-            "categoria": "TERCERA OPCIÓN",
-            "texto": "CARBONADA MIXTA"
+            "categoria": "Acompañamiento Normal",
+            "texto": "Pure Rustico"
           },
           {
-            "categoria": "HIPOCALÓRICO",
-            "texto": "Tomate Reina"
+            "categoria": "Acompañamiento Alternativo",
+            "texto": "Tortilla de Zanahoria"
           },
           {
-            "categoria": "ENSALADAS",
-            "texto": "Ceviche de Mote / Brocoli / Acelga Cruda"
+            "categoria": "TERCERA OPCION",
+            "texto": "CARBONADA MIXTA",
+            "cantidad": 20
           },
           {
-            "categoria": "POSTRES",
-            "texto": "Fruta / Leche Nevada / Mote con Huesillos / Colegial"
+            "categoria": "Hipocalórico",
+            "texto": "Tomate Reina (268 kcal)"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Ceviche de Mote (145 kcal.)"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Brocoli"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Acelga Cruda"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Fruta"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Leche Nevada"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Mote con Huesillos"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Colegial"
           }
         ]
       },
       "cena": {
         "items": [
           {
-            "categoria": "ENTRADA CALIENTE · SOPA",
-            "texto": "Crema de Choclo"
+            "categoria": "E.Caliente Sopa",
+            "texto": "Crema de Choclo (49 kcal.)"
           },
           {
-            "categoria": "FONDO NORMAL",
-            "texto": "Chuleta de Cerdo con Papas Romero"
+            "categoria": "Fondo Normal",
+            "texto": "Chuleta de Cerdo",
+            "cantidad": 380
           },
           {
-            "categoria": "FONDO ALTERNATIVO",
-            "texto": "Charquican de Verduras con Huevo Frito"
+            "categoria": "Fondo Alternativo",
+            "texto": "Charquican de Verduras",
+            "cantidad": 60
           },
           {
-            "categoria": "TERCERA OPCIÓN",
-            "texto": "ARVEJAS GUISADAS CON CHORIZOS"
+            "categoria": "Acompañamiento Normal",
+            "texto": "Papas Romero"
           },
           {
-            "categoria": "HIPOCALÓRICO",
-            "texto": "Tomate Reina"
+            "categoria": "Acompañamiento Alternativo",
+            "texto": "Huevo Frito"
           },
           {
-            "categoria": "ENSALADAS",
-            "texto": "Pepino / Apio / Beterraga"
+            "categoria": "TERCERA OPCION",
+            "texto": "ARVEJAS GUISADAS CON CHORIZOS",
+            "cantidad": 60
           },
           {
-            "categoria": "POSTRES",
-            "texto": "Fruta / Leche Nevada / Mote con Huesillos / Colegial"
+            "categoria": "Hipocalórico",
+            "texto": "Tomate Reina (268 kcal)"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Pepino"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Apio"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Beterraga"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Fruta"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Leche Nevada"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Mote con Huesillos"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Colegial"
           }
         ]
-      },
-      "colacion": "CHURRASCO QUESO"
+      }
     },
     "2026-11-07": {
+      "colacion": "ALIADO PALTA",
       "desayuno": {
         "items": [
           {
-            "categoria": "SÁNDWICH",
+            "categoria": "Porción Solida",
             "texto": "LOMITO TOMATE"
           },
           {
-            "categoria": "PAN",
-            "texto": "Hallulla y Marraqueta"
+            "categoria": "Variedad Pan",
+            "texto": "Hallulla y Marraqueta  (280 kcal.)"
           },
           {
-            "categoria": "AGREGADOS",
-            "texto": "Mermelada / Mantequilla"
+            "categoria": "P. Solida",
+            "texto": "Agr Mermelada (55 kcal.)"
           },
           {
-            "categoria": "LECHE",
-            "texto": "Leche Caliente"
+            "categoria": "Agregado",
+            "texto": "Agr Mantequilla (102 kcal.)"
           },
           {
-            "categoria": "PORRIDGE",
+            "categoria": "P. Solida",
+            "texto": "Yogurt Sabores (90 kcal.)"
+          },
+          {
+            "categoria": "P. Solida",
+            "texto": "Snack"
+          },
+          {
+            "categoria": "Porcion Liquida",
+            "texto": "Leche Caliente (116 kcal.)"
+          },
+          {
+            "categoria": "Porridge",
             "texto": "Leche C/ Avena"
           },
           {
             "categoria": "MEJORADO",
             "texto": "COCADAS"
-          },
-          {
-            "categoria": "POSTRE",
-            "texto": "Yogurt de sabores / snack"
           }
         ]
       },
       "almuerzo": {
         "items": [
           {
-            "categoria": "ENTRADA CALIENTE · SOPA",
-            "texto": "Crema de Tomates"
+            "categoria": "E.Caliente Sopa",
+            "texto": "Crema de Tomates  (49 kcal.)"
           },
           {
-            "categoria": "FONDO NORMAL",
-            "texto": "Rogout de Pollo con Tortilla de Acelga"
+            "categoria": "Fondo Normal",
+            "texto": "Rogout de Pollo",
+            "cantidad": 40
           },
           {
-            "categoria": "FONDO ALTERNATIVO",
-            "texto": "Salsa Boloñesa con Spaguettis atomatados"
+            "categoria": "Fondo Alternativo",
+            "texto": "Salsa Boloñesa",
+            "cantidad": 30
           },
           {
-            "categoria": "TERCERA OPCIÓN",
-            "texto": "LENTEJAS PARMESANAS CON VINESAS SALTEADAS"
+            "categoria": "Acompañamiento Normal",
+            "texto": "Tortilla de Acelga"
           },
           {
-            "categoria": "HIPOCALÓRICO",
-            "texto": "Ensalada Mediterranea"
+            "categoria": "Acompañamiento Alternativo",
+            "texto": "Spaguettis atomatados"
           },
           {
-            "categoria": "ENSALADAS",
-            "texto": "Primavera / Lechuga / Pepino"
+            "categoria": "TERCERA OPCION",
+            "texto": "LENTEJAS PARMESANAS CON VINESAS SALTEADAS",
+            "cantidad": 20
           },
           {
-            "categoria": "POSTRES",
-            "texto": "Fruta / Natilla / Jalea / Breden Master"
+            "categoria": "Hipocalórico",
+            "texto": "Ensalada Mediterranea (206 kcal)"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Primavera"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Lechuga"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Pepino"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Fruta"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Natilla"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Jalea"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Breden Master"
           }
         ]
       },
       "cena": {
         "items": [
           {
-            "categoria": "ENTRADA CALIENTE · SOPA",
-            "texto": "Sopa de Carne con Verduras"
+            "categoria": "E.Caliente Sopa",
+            "texto": "Sopa de Carne con Verduras (45 kcal.)"
           },
           {
-            "categoria": "FONDO NORMAL",
-            "texto": "Vacuno Mongoliano con Arroz Chaufan"
+            "categoria": "Fondo Normal",
+            "texto": "Vacuno Mongoliano",
+            "cantidad": 320
           },
           {
-            "categoria": "FONDO ALTERNATIVO",
-            "texto": "Salsa Alfredo con Corbatas con Albahaca"
+            "categoria": "Fondo Alternativo",
+            "texto": "Salsa Alfredo",
+            "cantidad": 60
           },
           {
-            "categoria": "TERCERA OPCIÓN",
-            "texto": "AJIACO DE VACUNO"
+            "categoria": "Acompañamiento Normal",
+            "texto": "Arroz Chaufan"
           },
           {
-            "categoria": "HIPOCALÓRICO",
-            "texto": "Ensalada Mediterranea"
+            "categoria": "Acompañamiento Alternativo",
+            "texto": "Corbatas con Albahaca"
           },
           {
-            "categoria": "ENSALADAS",
-            "texto": "Repollo Morado / Haba / Tomate"
+            "categoria": "TERCERA OPCION",
+            "texto": "AJIACO DE VACUNO",
+            "cantidad": 120
           },
           {
-            "categoria": "POSTRES",
-            "texto": "Fruta / Natilla / Jalea / Breden Master"
+            "categoria": "Hipocalórico",
+            "texto": "Ensalada Mediterranea (206 kcal)"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Repollo Morado"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Haba"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Tomate"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Fruta"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Natilla"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Jalea"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Breden Master"
           }
         ]
-      },
-      "colacion": "ALIADO PALTA"
+      }
     },
     "2026-11-08": {
+      "colacion": "ALIADO PALTA",
       "desayuno": {
         "items": [
           {
-            "categoria": "SÁNDWICH",
+            "categoria": "Porción Solida",
             "texto": "JAMON PALTA"
           },
           {
-            "categoria": "PAN",
-            "texto": "Hallulla y Marraqueta"
+            "categoria": "Variedad Pan",
+            "texto": "Hallulla y Marraqueta  (280 kcal.)"
           },
           {
-            "categoria": "AGREGADOS",
-            "texto": "Mermelada / Mantequilla"
+            "categoria": "P. Solida",
+            "texto": "Agr Mermelada (55 kcal.)"
           },
           {
-            "categoria": "LECHE",
-            "texto": "Leche Caliente"
+            "categoria": "Agregado",
+            "texto": "Agr Mantequilla (102 kcal.)"
           },
           {
-            "categoria": "PORRIDGE",
+            "categoria": "P. Solida",
+            "texto": "Yogurt Sabores (90 kcal.)"
+          },
+          {
+            "categoria": "P. Solida",
+            "texto": "Snack"
+          },
+          {
+            "categoria": "Porcion Liquida",
+            "texto": "Leche Caliente (116 kcal.)"
+          },
+          {
+            "categoria": "Porridge",
             "texto": "Leche C/ Chocolate"
           },
           {
             "categoria": "MEJORADO",
             "texto": "SALAME"
-          },
-          {
-            "categoria": "POSTRE",
-            "texto": "Yogurt de sabores / snack"
           }
         ]
       },
       "almuerzo": {
         "items": [
           {
-            "categoria": "ENTRADA CALIENTE · SOPA",
+            "categoria": "E.Caliente Sopa",
             "texto": "Sopa de Ave con Arroz"
           },
           {
-            "categoria": "FONDO NORMAL",
-            "texto": "Guatitas a la Jardinera con Arroz Pilaf"
+            "categoria": "Fondo Normal",
+            "texto": "Guatitas a la Jardinera",
+            "cantidad": 30
           },
           {
-            "categoria": "FONDO ALTERNATIVO",
-            "texto": "Vacuno Mechado con Fritos de Verduras"
+            "categoria": "Fondo Alternativo",
+            "texto": "Vacuno Mechado",
+            "cantidad": 60
           },
           {
-            "categoria": "TERCERA OPCIÓN",
-            "texto": "CALDILLO DE MARISCOS"
+            "categoria": "Acompañamiento Normal",
+            "texto": "Arroz Pilaf"
           },
           {
-            "categoria": "HIPOCALÓRICO",
+            "categoria": "Acompañamiento Alternativo",
+            "texto": "Fritos de Verduras"
+          },
+          {
+            "categoria": "TERCERA OPCION",
+            "texto": "CALDILLO DE MARISCOS",
+            "cantidad": 10
+          },
+          {
+            "categoria": "Hipocalórico",
             "texto": "Pescado al horno con Ensaladas"
           },
           {
-            "categoria": "ENSALADAS",
-            "texto": "Repollo Mix / Choclo / Tomate"
+            "categoria": "Ensaladas",
+            "texto": "Repollo Mix"
           },
           {
-            "categoria": "POSTRES",
-            "texto": "Fruta / Bavaroise / Jalea / Brazo de Reina"
+            "categoria": "Ensaladas",
+            "texto": "Choclo"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Tomate"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Fruta"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Bavaroise"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Jalea"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Brazo de Reina"
           }
         ]
       },
       "cena": {
         "items": [
           {
-            "categoria": "ENTRADA CALIENTE · SOPA",
-            "texto": "Crema de Calabaza"
+            "categoria": "E.Caliente Sopa",
+            "texto": "Crema de Calabaza  (45 kcal.)"
           },
           {
-            "categoria": "FONDO NORMAL",
-            "texto": "Pollo Asado con Papas Fritas"
+            "categoria": "Fondo Normal",
+            "texto": "Pollo Asado",
+            "cantidad": 400
           },
           {
-            "categoria": "FONDO ALTERNATIVO",
-            "texto": "Chupe de Mariscos"
+            "categoria": "Fondo Alternativo",
+            "texto": "Chupe de Mariscos",
+            "cantidad": 40
           },
           {
-            "categoria": "TERCERA OPCIÓN",
-            "texto": "GARBANZOS GUISADOS CON CHORIZOS"
+            "categoria": "Acompañamiento Normal",
+            "texto": "Papas Fritas"
           },
           {
-            "categoria": "HIPOCALÓRICO",
+            "categoria": "TERCERA OPCION",
+            "texto": "GARBANZOS GUISADOS CON CHORIZOS",
+            "cantidad": 40
+          },
+          {
+            "categoria": "Hipocalórico",
             "texto": "Pescado al horno con Ensaladas"
           },
           {
-            "categoria": "ENSALADAS",
-            "texto": "Lechuga / Pebre / Zanahoria"
+            "categoria": "Ensaladas",
+            "texto": "Lechuga"
           },
           {
-            "categoria": "POSTRES",
-            "texto": "Fruta / Bavaroise / Jalea / Brazo de Reina"
+            "categoria": "Ensaladas",
+            "texto": "Pebre"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Zanahoria"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Fruta"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Bavaroise"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Jalea"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Brazo de Reina"
           }
         ]
-      },
-      "colacion": "HAMBURGUESA QUESO"
+      }
     },
     "2026-11-09": {
+      "colacion": "AVE PIMENTON/MAYONESA",
       "desayuno": {
         "items": [
           {
-            "categoria": "SÁNDWICH",
-            "texto": "HAMBURGUESA PALTA TOMATE"
+            "categoria": "Porción Solida",
+            "texto": "HUEVO REVUELTO"
           },
           {
-            "categoria": "PAN",
-            "texto": "Hallulla y Marraqueta"
+            "categoria": "Variedad Pan",
+            "texto": "Hallulla y Marraqueta             (280 kcal.)"
           },
           {
-            "categoria": "AGREGADOS",
-            "texto": "Manjar / Mantequilla"
+            "categoria": "P. Solida",
+            "texto": "Agr Manjar"
           },
           {
-            "categoria": "LECHE",
-            "texto": "Leche Caliente"
+            "categoria": "Agregado",
+            "texto": "Agr Mantequilla (102 kcal.)"
           },
           {
-            "categoria": "PORRIDGE",
+            "categoria": "P. Solida",
+            "texto": "Yogurt Sabores (90 kcal.)"
+          },
+          {
+            "categoria": "P. Solida",
+            "texto": "Snack"
+          },
+          {
+            "categoria": "Porcion Liquida",
+            "texto": "Leche Caliente (116 kcal.)"
+          },
+          {
+            "categoria": "Porridge",
             "texto": "Leche C/ Avena"
           },
           {
             "categoria": "MEJORADO",
             "texto": "ROSCAS"
-          },
-          {
-            "categoria": "POSTRE",
-            "texto": "Yogurt de sabores / snack"
           }
         ]
       },
       "almuerzo": {
         "items": [
           {
-            "categoria": "ENTRADA CALIENTE · SOPA",
-            "texto": "Consome de Res"
+            "categoria": "E.Caliente Sopa",
+            "texto": "Consome de Res (45 kcal.)"
           },
           {
-            "categoria": "FONDO NORMAL",
-            "texto": "Strogonoff de Vacuno con Arroz CHAUFA"
+            "categoria": "Fondo Normal",
+            "texto": "Strogonoff de Vacuno",
+            "cantidad": 50
           },
           {
-            "categoria": "FONDO ALTERNATIVO",
-            "texto": "CHAPSUI DE POLLO con TORTILLA DE PAPA"
+            "categoria": "Fondo Alternativo",
+            "texto": "CHAPSUI DE POLLO",
+            "cantidad": 30
           },
           {
-            "categoria": "TERCERA OPCIÓN",
-            "texto": "POROTOS GRANADOS C/ CHORIZO"
+            "categoria": "Acompañamiento Normal",
+            "texto": "Arroz CHAUFA"
           },
           {
-            "categoria": "HIPOCALÓRICO",
+            "categoria": "Acompañamiento Alternativo",
+            "texto": "TORTILLA DE PAPA"
+          },
+          {
+            "categoria": "TERCERA OPCION",
+            "texto": "POROTOS GRANADOS  C/ CHORIZO",
+            "cantidad": 30
+          },
+          {
+            "categoria": "Hipocalórico",
             "texto": "Omelette Jamon/Queso con Verduras al Vapor"
           },
           {
-            "categoria": "ENSALADAS",
-            "texto": "Lechuga / Beterraga / Tomate"
+            "categoria": "Ensaladas",
+            "texto": "Cochayuyo"
           },
           {
-            "categoria": "POSTRES",
-            "texto": "Fruta / Arroz con leche / Jalea / MASA BREDEN"
+            "categoria": "Ensaladas",
+            "texto": "Repollo"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Arveja"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Fruta"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Arroz con leche"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Jalea"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "ChocoFlan"
           }
         ]
       },
       "cena": {
         "items": [
           {
-            "categoria": "ENTRADA CALIENTE · SOPA",
-            "texto": "Crema Esparragos"
+            "categoria": "E.Caliente Sopa",
+            "texto": "Crema de Champiñon"
           },
           {
-            "categoria": "FONDO NORMAL",
-            "texto": "Pollo a la Mostaza con Pure Mixto"
+            "categoria": "Fondo Normal",
+            "texto": "Pollo a la Mostaza",
+            "cantidad": 180
           },
           {
-            "categoria": "FONDO ALTERNATIVO",
-            "texto": "Hamburguesa de Vacuno Napolitana con Pastelera de Choclo"
+            "categoria": "Fondo Alternativo",
+            "texto": "Costillar de cerdo",
+            "cantidad": 240
           },
           {
-            "categoria": "HIPOCALÓRICO",
+            "categoria": "Acompañamiento Normal",
+            "texto": "Papas duquesas"
+          },
+          {
+            "categoria": "Acompañamiento Alternativo",
+            "texto": "Arroz Chaufa"
+          },
+          {
+            "categoria": "Hipocalórico",
             "texto": "Omelette Jamon/Queso con Verduras al Vapor"
           },
           {
-            "categoria": "ENSALADAS",
-            "texto": "Cochayuyo / Repollo / Arveja"
+            "categoria": "Ensaladas",
+            "texto": "Lechuga"
           },
           {
-            "categoria": "POSTRES",
-            "texto": "Fruta / Arroz con leche / Jalea / MASA BREDEN"
+            "categoria": "Ensaladas",
+            "texto": "Betarraga"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Tomate"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Fruta"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Arroz con leche"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Jalea"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Chocoflan"
           }
         ]
-      },
-      "colacion": "AVE PIMENTON/MAYONESA"
+      }
     },
     "2026-11-10": {
+      "colacion": "MECHADA QUESO",
       "desayuno": {
         "items": [
           {
-            "categoria": "SÁNDWICH",
+            "categoria": "Porción Solida",
             "texto": "JAMON PALTA"
           },
           {
-            "categoria": "PAN",
-            "texto": "Hallulla y Marraqueta"
+            "categoria": "Variedad Pan",
+            "texto": "Hallulla y Marraqueta  (280 kcal.)"
           },
           {
-            "categoria": "AGREGADOS",
-            "texto": "Mermelada / Mantequilla"
+            "categoria": "P. Solida",
+            "texto": "Agr Mermelada (55 kcal.)"
           },
           {
-            "categoria": "LECHE",
-            "texto": "Leche Caliente"
+            "categoria": "Agregado",
+            "texto": "Agr Mantequilla (102 kcal.)"
           },
           {
-            "categoria": "PORRIDGE",
-            "texto": "Leche Frutilla"
+            "categoria": "P. Solida",
+            "texto": "Yogurt Sabores (90 kcal.)"
+          },
+          {
+            "categoria": "P. Solida",
+            "texto": "Snack"
+          },
+          {
+            "categoria": "Porcion Liquida",
+            "texto": "Leche Caliente (116 kcal.)"
+          },
+          {
+            "categoria": "Porridge",
+            "texto": "Capucchino con Vainilla"
           },
           {
             "categoria": "MEJORADO",
             "texto": "BUFFET DE QUESO"
-          },
-          {
-            "categoria": "POSTRE",
-            "texto": "Yogurt de sabores / snack"
           }
         ]
       },
       "almuerzo": {
         "items": [
           {
-            "categoria": "ENTRADA CALIENTE · SOPA",
-            "texto": "Crema de Choclo"
+            "categoria": "E.Caliente Sopa",
+            "texto": "Crema de  Choclo  (49 kcal.)"
           },
           {
-            "categoria": "FONDO NORMAL",
-            "texto": "Pollo Arvejado con Espaguettis al Cilantro"
+            "categoria": "Fondo Normal",
+            "texto": "Pollo Arvejado",
+            "cantidad": 50
           },
           {
-            "categoria": "FONDO ALTERNATIVO",
-            "texto": "Panita al Ajillo con Budin de Verduras"
+            "categoria": "Fondo Alternativo",
+            "texto": "Panita al Ajillo",
+            "cantidad": 20
           },
           {
-            "categoria": "TERCERA OPCIÓN",
-            "texto": "CAZUELA DE VACUNO"
+            "categoria": "Acompañamiento Normal",
+            "texto": "Espaguettis al Cilantro"
           },
           {
-            "categoria": "HIPOCALÓRICO",
+            "categoria": "Acompañamiento Alternativo",
+            "texto": "Budin de Verduras"
+          },
+          {
+            "categoria": "TERCERA OPCION",
+            "texto": "CAZUELA DE VACUNO",
+            "cantidad": 40
+          },
+          {
+            "categoria": "Hipocalórico",
             "texto": "Ensalada Griega"
           },
           {
-            "categoria": "ENSALADAS",
-            "texto": "Choclo / Apio / Poroto Verde"
+            "categoria": "Ensaladas",
+            "texto": "Choclo"
           },
           {
-            "categoria": "POSTRES",
-            "texto": "Fruta / Flan / Jalea / PIE DE LIMON"
+            "categoria": "Ensaladas",
+            "texto": "Apio"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Poroto Verde"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Fruta"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Flan"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Jalea"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "PIE DE LIMON"
           }
         ]
       },
       "cena": {
         "items": [
           {
-            "categoria": "ENTRADA CALIENTE · SOPA",
-            "texto": "Sopa de Carne con Semola"
+            "categoria": "E.Caliente Sopa",
+            "texto": "Sopa de Carne con Semola (45 kcal.)"
           },
           {
-            "categoria": "FONDO NORMAL",
-            "texto": "Vacuno al jugo con Corbatitas"
+            "categoria": "Fondo Normal",
+            "texto": "Vacuno al jugo",
+            "cantidad": 370
           },
           {
-            "categoria": "FONDO ALTERNATIVO",
-            "texto": "Chupe de Mariscos"
+            "categoria": "Fondo Alternativo",
+            "texto": "Chupe de Mariscos",
+            "cantidad": 40
           },
           {
-            "categoria": "HIPOCALÓRICO",
+            "categoria": "Acompañamiento Normal",
+            "texto": "Corbatitas"
+          },
+          {
+            "categoria": "Hipocalórico",
             "texto": "Ensalada Griega"
           },
           {
-            "categoria": "ENSALADAS",
-            "texto": "Lechuga / Brocoli / Cebolla"
+            "categoria": "Ensaladas",
+            "texto": "Lechuga"
           },
           {
-            "categoria": "POSTRES",
-            "texto": "Fruta / Flan / Jalea / PIE DE LIMON"
+            "categoria": "Ensaladas",
+            "texto": "Brocoli"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Cebolla"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Fruta"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Flan"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Jalea"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "PIE DE LIMON"
           }
         ]
-      },
-      "colacion": "MECHADA QUESO"
+      }
     },
     "2026-11-11": {
+      "colacion": "ALIADO PALTA",
       "desayuno": {
         "items": [
           {
-            "categoria": "SÁNDWICH",
+            "categoria": "Porción Solida",
             "texto": "LOMITO TOMATE"
           },
           {
-            "categoria": "PAN",
-            "texto": "Hallulla y Marraqueta"
+            "categoria": "Variedad Pan",
+            "texto": "Hallulla y Marraqueta  (280 kcal.)"
           },
           {
-            "categoria": "AGREGADOS",
-            "texto": "Pate / Mantequilla"
+            "categoria": "P. Solida",
+            "texto": "Agr Pate(55 kcal.)"
           },
           {
-            "categoria": "LECHE",
-            "texto": "Leche Caliente"
+            "categoria": "Agregado",
+            "texto": "Agr Mantequilla (102 kcal.)"
           },
           {
-            "categoria": "PORRIDGE",
+            "categoria": "P. Solida",
+            "texto": "Yogurt Sabores (90 kcal.)"
+          },
+          {
+            "categoria": "P. Solida",
+            "texto": "Snack"
+          },
+          {
+            "categoria": "Porcion Liquida",
+            "texto": "Leche Caliente (116 kcal.)"
+          },
+          {
+            "categoria": "Porridge",
             "texto": "Leche C/ Maicena"
           },
           {
             "categoria": "MEJORADO",
             "texto": "BROWNIE"
-          },
-          {
-            "categoria": "POSTRE",
-            "texto": "Yogurt de sabores / snack"
           }
         ]
       },
       "almuerzo": {
         "items": [
           {
-            "categoria": "ENTRADA CALIENTE · SOPA",
-            "texto": "Consome de Ave"
+            "categoria": "E.Caliente Sopa",
+            "texto": "Consome de Ave(49 kcal.)"
           },
           {
-            "categoria": "FONDO NORMAL",
-            "texto": "Pescado Frito con Arroz Pilaf"
+            "categoria": "Fondo Normal",
+            "texto": "Pescado Frito",
+            "cantidad": 60
           },
           {
-            "categoria": "FONDO ALTERNATIVO",
-            "texto": "Pastel de Choclo"
+            "categoria": "Fondo Alternativo",
+            "texto": "Pastel de Choclo",
+            "cantidad": 40
           },
           {
-            "categoria": "TERCERA OPCIÓN",
-            "texto": "ARVEJAS GUISADAS CON CHORIZOS"
+            "categoria": "Acompañamiento Normal",
+            "texto": "Arroz Pilaf"
           },
           {
-            "categoria": "HIPOCALÓRICO",
-            "texto": "Pechuga de Pollo con Ensalada Surtida"
+            "categoria": "TERCERA OPCION",
+            "texto": "ARVEJAS GUISADAS CON CHORIZOS",
+            "cantidad": 10
           },
           {
-            "categoria": "ENSALADAS",
-            "texto": "Repollo / Zanahoria / Pepino"
+            "categoria": "Hipocalórico",
+            "texto": "Pechuga de Pollo con Ensalada Surtida                (215 kcal.)"
           },
           {
-            "categoria": "POSTRES",
-            "texto": "Fruta / Semola con leche / Jalea / TARTALETA DE FRUTAS"
+            "categoria": "Ensaladas",
+            "texto": "Repollo"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Zanahoria"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Pepino"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Fruta"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Semola con leche"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Jalea"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "TARTALETA DE FRUTAS"
           }
         ]
       },
       "cena": {
         "items": [
           {
-            "categoria": "ENTRADA CALIENTE · SOPA",
-            "texto": "Crema de Champiñon"
+            "categoria": "E.Caliente Sopa",
+            "texto": "Crema Esparragos            (49 kcal.)"
           },
           {
-            "categoria": "FONDO NORMAL",
-            "texto": "Chuleta de Cerdo Asada con Papas al perejil"
+            "categoria": "Fondo Normal",
+            "texto": "Chuleta de Cerdo Asada",
+            "cantidad": 300
           },
           {
-            "categoria": "FONDO ALTERNATIVO",
-            "texto": "Guatitas a la primavera con Arroz Piamontes"
+            "categoria": "Fondo Alternativo",
+            "texto": "Guatitas a la primavera",
+            "cantidad": 80
           },
           {
-            "categoria": "HIPOCALÓRICO",
-            "texto": "Pechuga de Pollo con Ensalada Surtida"
+            "categoria": "Acompañamiento Normal",
+            "texto": "Papas al perejil"
           },
           {
-            "categoria": "ENSALADAS",
-            "texto": "Haba / Coliflor / Beterraga"
+            "categoria": "Acompañamiento Alternativo",
+            "texto": "Arroz Piamontes"
           },
           {
-            "categoria": "POSTRES",
-            "texto": "Fruta / Semola con leche / Jalea / TARTALETA DE FRUTAS"
+            "categoria": "Hipocalórico",
+            "texto": "Pechuga de Pollo con Ensalada Surtida                (215 kcal.)"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Haba"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Coliflor"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Beterraga"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Fruta"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Semola con leche"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Jalea"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "TARTALETA DE FRUTAS"
           }
         ]
-      },
-      "colacion": "ALIADO PALTA"
+      }
     },
     "2026-11-12": {
+      "colacion": "CHURRASCO QUESO",
       "desayuno": {
         "items": [
           {
-            "categoria": "SÁNDWICH",
+            "categoria": "Porción Solida",
             "texto": "POLLO CON PIMENTO"
           },
           {
-            "categoria": "PAN",
-            "texto": "Hallulla y Marraqueta"
+            "categoria": "Variedad Pan",
+            "texto": "Hallulla y Marraqueta  (280 kcal.)"
           },
           {
-            "categoria": "AGREGADOS",
-            "texto": "Mermelada / Mantequilla"
+            "categoria": "P. Solida",
+            "texto": "Agr Mermelada (55 kcal.)"
           },
           {
-            "categoria": "LECHE",
-            "texto": "Leche Caliente"
+            "categoria": "Agregado",
+            "texto": "Agr Mantequilla (102 kcal.)"
           },
           {
-            "categoria": "PORRIDGE",
+            "categoria": "P. Solida",
+            "texto": "Yogurt Sabores (90 kcal.)"
+          },
+          {
+            "categoria": "P. Solida",
+            "texto": "Snack"
+          },
+          {
+            "categoria": "Porcion Liquida",
+            "texto": "Leche Caliente (116 kcal.)"
+          },
+          {
+            "categoria": "Porridge",
             "texto": "Capucchino con Vainilla"
           },
           {
             "categoria": "MEJORADO",
             "texto": "QUEQUE DE CHOCOLATE"
-          },
-          {
-            "categoria": "POSTRE",
-            "texto": "Yogurt de sabores / snack"
           }
         ]
       },
       "almuerzo": {
         "items": [
           {
-            "categoria": "ENTRADA CALIENTE · SOPA",
+            "categoria": "E.Caliente Sopa",
             "texto": "Sopa de carne con verduras"
           },
           {
-            "categoria": "FONDO NORMAL",
-            "texto": "Estofado Mixto con Fideos al Pesto"
+            "categoria": "Fondo Normal",
+            "texto": "Estofado Mixto",
+            "cantidad": 60
           },
           {
-            "categoria": "FONDO ALTERNATIVO",
-            "texto": "Zapallo Italiano relleno con Verduras Asadas"
+            "categoria": "Fondo Alternativo",
+            "texto": "Zapallo Italiano relleno",
+            "cantidad": 30
           },
           {
-            "categoria": "TERCERA OPCIÓN",
-            "texto": "CARBONADA DE VACUNO"
+            "categoria": "Acompañamiento Normal",
+            "texto": "Fideos al Pesto"
           },
           {
-            "categoria": "HIPOCALÓRICO",
-            "texto": "Pescado al horno con Ensaladas"
+            "categoria": "Acompañamiento Alternativo",
+            "texto": "Verduras Asadas"
           },
           {
-            "categoria": "ENSALADAS",
-            "texto": "Lechuga / Tomate / Cebolla"
+            "categoria": "TERCERA OPCION",
+            "texto": "CARBONADA DE VACUNO",
+            "cantidad": 20
           },
           {
-            "categoria": "POSTRES",
-            "texto": "Fruta / Mousse / Jalea / QUEQUE MANZANA CANELA"
+            "categoria": "Hipocalórico",
+            "texto": "Ensalada de Atún"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Lechuga"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Tomate"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Cebolla"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Fruta"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Leche Asada"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "ilusion Jalea"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "QUEQUE MANZANA CANELA"
           }
         ]
       },
       "cena": {
         "items": [
           {
-            "categoria": "ENTRADA CALIENTE · SOPA",
+            "categoria": "E.Caliente Sopa",
             "texto": "Crema de Lentejas"
           },
           {
-            "categoria": "FONDO NORMAL",
-            "texto": "Pollo Asado con PASTELERA DE CHOCLO"
+            "categoria": "Fondo Normal",
+            "texto": "Pollo Asado",
+            "cantidad": 320
           },
           {
-            "categoria": "FONDO ALTERNATIVO",
-            "texto": "Asado Aleman con Pure al Merken"
+            "categoria": "Fondo Alternativo",
+            "texto": "Asado Aleman",
+            "cantidad": 120
           },
           {
-            "categoria": "HIPOCALÓRICO",
-            "texto": "Pescado al horno con Ensaladas"
+            "categoria": "Acompañamiento Normal",
+            "texto": "PASTELERA DE CHOCLO"
           },
           {
-            "categoria": "ENSALADAS",
-            "texto": "Porotos Verdes / Pepino / Repollo"
+            "categoria": "Acompañamiento Alternativo",
+            "texto": "Pure al Merken"
           },
           {
-            "categoria": "POSTRES",
-            "texto": "Fruta / Mousse / ILUSION DE JALEA / QUEQUE MANZANA CANELA"
+            "categoria": "Hipocalórico",
+            "texto": "Ensalada de Atún"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Porotos Verdes"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Pepino"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Repollo"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Fruta"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Leche Asada"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "ILUSION DE JALEA"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "QUEQUE MANZANA CANELA"
           }
         ]
-      },
-      "colacion": "CHURRASCO QUESO"
+      }
     },
     "2026-11-13": {
+      "colacion": "CROQUETA QUESO",
       "desayuno": {
         "items": [
           {
-            "categoria": "SÁNDWICH",
+            "categoria": "Porción Solida",
             "texto": "COMPLETO ITALIANO"
           },
           {
-            "categoria": "PAN",
-            "texto": "Hallulla y Marraqueta"
+            "categoria": "Variedad Pan",
+            "texto": "Hallulla y Marraqueta  (280 kcal.)"
           },
           {
-            "categoria": "AGREGADOS",
-            "texto": "Mermelada / Mantequilla"
+            "categoria": "P. Solida",
+            "texto": "Agr Mermelada"
           },
           {
-            "categoria": "LECHE",
-            "texto": "Leche Caliente"
+            "categoria": "Agregado",
+            "texto": "Agr Mantequilla (102 kcal.)"
           },
           {
-            "categoria": "PORRIDGE",
+            "categoria": "P. Solida",
+            "texto": "Yogurt Sabores (90 kcal.)"
+          },
+          {
+            "categoria": "P. Solida",
+            "texto": "Snack"
+          },
+          {
+            "categoria": "Porcion Liquida",
+            "texto": "Leche Caliente (116 kcal.)"
+          },
+          {
+            "categoria": "Porridge",
             "texto": "Leche C/ Semola"
           },
           {
             "categoria": "MEJORADO",
             "texto": "BUFETT DE JAMON"
-          },
-          {
-            "categoria": "POSTRE",
-            "texto": "Yogurt de sabores / snack"
           }
         ]
       },
       "almuerzo": {
         "items": [
           {
-            "categoria": "ENTRADA CALIENTE · SOPA",
-            "texto": "Sopa de Pollo con Arroz"
+            "categoria": "E.Caliente Sopa",
+            "texto": "Sopa de Pollo con Arroz       (45 kcal.)"
           },
           {
-            "categoria": "FONDO NORMAL",
-            "texto": "Pulpa de Cerdo al Jugo con Papas doradas"
+            "categoria": "Fondo Normal",
+            "texto": "Pulpa de Cerdo al Jugo",
+            "cantidad": 60
           },
           {
-            "categoria": "FONDO ALTERNATIVO",
-            "texto": "SALSA BONTOUX con Spaguettis"
+            "categoria": "Fondo Alternativo",
+            "texto": "SALSA BONTOUX",
+            "cantidad": 20
           },
           {
-            "categoria": "TERCERA OPCIÓN",
-            "texto": "POROTOS CON RIENDAS LONGANIZA ASADA"
+            "categoria": "Acompañamiento Normal",
+            "texto": "Papas doradas"
           },
           {
-            "categoria": "HIPOCALÓRICO",
-            "texto": "Ensalada de atún"
+            "categoria": "Acompañamiento Alternativo",
+            "texto": "Spaguettis"
           },
           {
-            "categoria": "ENSALADAS",
-            "texto": "Choclo / Apio / Beterraga"
+            "categoria": "TERCERA OPCION",
+            "texto": "POROTOS CON RIENDAS LONGANIZA ASADA",
+            "cantidad": 20
           },
           {
-            "categoria": "POSTRES",
-            "texto": "Fruta / Leche Asada / Jalea / Torta Casera"
+            "categoria": "Hipocalórico",
+            "texto": "Pescado al horno con Ensaladas"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Choclo"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Apio"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Beterraga"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Fruta"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Mousse"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Jalea"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Torta Casera"
           }
         ]
       },
       "cena": {
         "items": [
           {
-            "categoria": "ENTRADA CALIENTE · SOPA",
-            "texto": "Crema de Arvejas con Jamon"
+            "categoria": "E.Caliente Sopa",
+            "texto": "Crema de Arvejas con Jamon  (49 kcal.)"
           },
           {
-            "categoria": "FONDO NORMAL",
-            "texto": "Vacuno Mongoliano con Arroz Chaufan"
+            "categoria": "Fondo Normal",
+            "texto": "Hamburguesa Napolitana",
+            "cantidad": 180
           },
           {
-            "categoria": "FONDO ALTERNATIVO",
-            "texto": "Milanesa de Pollo con BUDIN DE COLIFLOR"
+            "categoria": "Fondo Alternativo",
+            "texto": "Milanesa de Pollo",
+            "cantidad": 190
           },
           {
-            "categoria": "HIPOCALÓRICO",
-            "texto": "Ensalada de atún"
+            "categoria": "Acompañamiento Normal",
+            "texto": "Verduras al Vapor"
           },
           {
-            "categoria": "ENSALADAS",
-            "texto": "Ceviche de Mote / Brocoli / Leechuga"
+            "categoria": "Acompañamiento Alternativo",
+            "texto": "Budin de Coliflor"
           },
           {
-            "categoria": "POSTRES",
-            "texto": "Fruta / Leche Asada / Jalea / Torta Casera"
+            "categoria": "Hipocalórico",
+            "texto": "Pescado al horno con Ensaladas"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Ceviche de Mote (145 kcal.)"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Brocoli"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Leechuga"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Fruta"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Mousse"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Jalea"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Torta Casera"
           }
         ]
-      },
-      "colacion": "CROQUETA QUESO"
+      }
     },
     "2026-11-14": {
+      "colacion": "LOMITO QUESO",
       "desayuno": {
         "items": [
           {
-            "categoria": "SÁNDWICH",
+            "categoria": "Porción Solida",
             "texto": "CHURRASCO QUESO LECHUGA"
           },
           {
-            "categoria": "PAN",
-            "texto": "Hallulla y Marraqueta"
+            "categoria": "Variedad Pan",
+            "texto": "Hallulla y Marraqueta  (280 kcal.)"
           },
           {
-            "categoria": "AGREGADOS",
-            "texto": "Manjar / Mantequilla"
+            "categoria": "P. Solida",
+            "texto": "Agr Manjar  (55 kcal.)"
           },
           {
-            "categoria": "LECHE",
-            "texto": "Leche Caliente"
+            "categoria": "Agregado",
+            "texto": "Agr Mantequilla (102 kcal.)"
           },
           {
-            "categoria": "PORRIDGE",
+            "categoria": "P. Solida",
+            "texto": "Yogurt Sabores (90 kcal.)"
+          },
+          {
+            "categoria": "P. Solida",
+            "texto": "Snack"
+          },
+          {
+            "categoria": "Porcion Liquida",
+            "texto": "Leche Caliente (116 kcal.)"
+          },
+          {
+            "categoria": "Porridge",
             "texto": "Leche C/ Avena"
           },
           {
             "categoria": "MEJORADO",
             "texto": "MASA BREDEN MASTER"
-          },
-          {
-            "categoria": "POSTRE",
-            "texto": "Yogurt de sabores / snack"
           }
         ]
       },
       "almuerzo": {
         "items": [
           {
-            "categoria": "ENTRADA CALIENTE · SOPA",
-            "texto": "Crema de Espárragos"
+            "categoria": "E.Caliente Sopa",
+            "texto": "Crema de Espárragos            (49 kcal.)"
           },
           {
-            "categoria": "FONDO NORMAL",
-            "texto": "Estofado de Vacuno con Corbatitas"
+            "categoria": "Fondo Normal",
+            "texto": "Estofado de Vacuno",
+            "cantidad": 60
           },
           {
-            "categoria": "FONDO ALTERNATIVO",
-            "texto": "Pastel de Papas"
+            "categoria": "Fondo Alternativo",
+            "texto": "Pastel de Papas",
+            "cantidad": 10
           },
           {
-            "categoria": "TERCERA OPCIÓN",
-            "texto": "AJIACO DE VACUNO"
+            "categoria": "Acompañamiento Normal",
+            "texto": "Corbatitas"
           },
           {
-            "categoria": "HIPOCALÓRICO",
+            "categoria": "TERCERA OPCION",
+            "texto": "AJIACO DE VACUNO",
+            "cantidad": 20
+          },
+          {
+            "categoria": "Hipocalórico",
             "texto": "Ensalada Cesar"
           },
           {
-            "categoria": "ENSALADAS",
-            "texto": "Repollo / Haba / Tomate"
+            "categoria": "Ensaladas",
+            "texto": "Repollo"
           },
           {
-            "categoria": "POSTRES",
-            "texto": "Fruta / Leche Nevada / Jalea / Masa Breden Master"
+            "categoria": "Ensaladas",
+            "texto": "Haba"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Tomate"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Fruta"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Leche Nevada"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Jalea"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Masa Breden Master"
           }
         ]
       },
       "cena": {
         "items": [
           {
-            "categoria": "ENTRADA CALIENTE · SOPA",
-            "texto": "Sopa de Pollo con Arroz."
+            "categoria": "E.Caliente Sopa",
+            "texto": "Sopa de Pollo con Arroz.      (45 kcal.)"
           },
           {
-            "categoria": "FONDO NORMAL",
-            "texto": "Truto de Pollo a la Mostaza con Papas Fritas"
+            "categoria": "Fondo Normal",
+            "texto": "Truto de Pollo a la Mostaza",
+            "cantidad": 380
           },
           {
-            "categoria": "FONDO ALTERNATIVO",
-            "texto": "Higado al ajillo con Budin de Acelgas"
+            "categoria": "Fondo Alternativo",
+            "texto": "Higado al ajillo",
+            "cantidad": 60
           },
           {
-            "categoria": "HIPOCALÓRICO",
+            "categoria": "Acompañamiento Normal",
+            "texto": "Papas Fritas"
+          },
+          {
+            "categoria": "Acompañamiento Alternativo",
+            "texto": "Budin de Acelgas"
+          },
+          {
+            "categoria": "Hipocalórico",
             "texto": "Ensalada Cesar"
           },
           {
-            "categoria": "ENSALADAS",
-            "texto": "Poroto a la Chilena / Apio / Pepino"
+            "categoria": "Ensaladas",
+            "texto": "Poroto a la Chilena"
           },
           {
-            "categoria": "POSTRES",
-            "texto": "Fruta / Leche Nevada / Jalea / Masa Breden Master"
+            "categoria": "Ensaladas",
+            "texto": "Apio"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Pepino"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Fruta"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Leche Nevada"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Jalea"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Masa Breden Master"
           }
         ]
-      },
-      "colacion": "LOMITO QUESO"
+      }
     },
     "2026-11-15": {
+      "colacion": "AVE PIMENTON/MAYONESA",
       "desayuno": {
         "items": [
           {
-            "categoria": "SÁNDWICH",
+            "categoria": "Porción Solida",
             "texto": "HUEVO REVUELTO"
           },
           {
-            "categoria": "PAN",
-            "texto": "Hallulla y Marraqueta"
+            "categoria": "Variedad Pan",
+            "texto": "Hallulla y Marraqueta  (280 kcal.)"
           },
           {
-            "categoria": "AGREGADOS",
-            "texto": "Mermelada / Mantequilla"
+            "categoria": "P. Solida",
+            "texto": "Agr Mermelada (55 kcal.)"
           },
           {
-            "categoria": "LECHE",
-            "texto": "Leche Caliente"
+            "categoria": "Agregado",
+            "texto": "Agr Mantequilla (102 kcal.)"
           },
           {
-            "categoria": "PORRIDGE",
+            "categoria": "P. Solida",
+            "texto": "Yogurt Sabores (90 kcal.)"
+          },
+          {
+            "categoria": "P. Solida",
+            "texto": "Snack"
+          },
+          {
+            "categoria": "Porcion Liquida",
+            "texto": "Leche Caliente (116 kcal.)"
+          },
+          {
+            "categoria": "Porridge",
             "texto": "Leche C/ Chocolate"
           },
           {
             "categoria": "MEJORADO",
-            "texto": "BUFFET DE QUESO"
-          },
-          {
-            "categoria": "POSTRE",
-            "texto": "Yogurt de sabores / snack"
+            "texto": "CALZON ROTO"
           }
         ]
       },
       "almuerzo": {
         "items": [
           {
-            "categoria": "ENTRADA CALIENTE · SOPA",
-            "texto": "Sopa de Carne con Caracolitos"
+            "categoria": "E.Caliente Sopa",
+            "texto": "Sopa de Carne con Caracolitos (49 Kcal)"
           },
           {
-            "categoria": "FONDO NORMAL",
-            "texto": "Croquetas Atun Jurel con Epirales atomatados"
+            "categoria": "Fondo Normal",
+            "texto": "Croquetas Atun Jurel",
+            "cantidad": 10
           },
           {
-            "categoria": "FONDO ALTERNATIVO",
-            "texto": "Chuleta de Cerdo con Pure Lyonesa"
+            "categoria": "Fondo Alternativo",
+            "texto": "Chuleta de Cerdo",
+            "cantidad": 60
           },
           {
-            "categoria": "TERCERA OPCIÓN",
-            "texto": "LENTEJAS GUISADAS CON CHORIZOS"
+            "categoria": "Acompañamiento Normal",
+            "texto": "Epirales atomatados"
           },
           {
-            "categoria": "HIPOCALÓRICO",
+            "categoria": "Acompañamiento Alternativo",
+            "texto": "Pure Lyonesa"
+          },
+          {
+            "categoria": "TERCERA OPCION",
+            "texto": "LENTEJAS GUISADAS CON CHORIZOS",
+            "cantidad": 20
+          },
+          {
+            "categoria": "Hipocalórico",
             "texto": "Fideos Toscana, huevo Duro y Ensaladas"
           },
           {
-            "categoria": "ENSALADAS",
-            "texto": "Lechuga / Pebre / Zanahoria"
+            "categoria": "Ensaladas",
+            "texto": "Lechuga"
           },
           {
-            "categoria": "POSTRES",
-            "texto": "Fruta / Natilla / Jalea / Kuchen de manzana"
+            "categoria": "Ensaladas",
+            "texto": "Pebre"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Zanahoria"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Fruta"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Natilla"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Jalea"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Kuchen de manzana"
           }
         ]
       },
       "cena": {
         "items": [
           {
-            "categoria": "ENTRADA CALIENTE · SOPA",
-            "texto": "Crema de Tomates"
+            "categoria": "E.Caliente Sopa",
+            "texto": "Crema de Tomates (49 kcal.)"
           },
           {
-            "categoria": "FONDO NORMAL",
-            "texto": "Pescado Napolitano con Arroz Verde"
+            "categoria": "Fondo Normal",
+            "texto": "Pescado Napolitano",
+            "cantidad": 250
           },
           {
-            "categoria": "FONDO ALTERNATIVO",
-            "texto": "Albondigas Atomatadas con Fideos atomatados"
+            "categoria": "Fondo Alternativo",
+            "texto": "Albondigas Atomatadas",
+            "cantidad": 120
           },
           {
-            "categoria": "HIPOCALÓRICO",
+            "categoria": "Acompañamiento Normal",
+            "texto": "Arroz Verde"
+          },
+          {
+            "categoria": "Acompañamiento Alternativo",
+            "texto": "Fideos atomatados"
+          },
+          {
+            "categoria": "Hipocalórico",
             "texto": "Fideos Toscana, huevo Duro y Ensaladas"
           },
           {
-            "categoria": "ENSALADAS",
-            "texto": "Repollo / Choclo / Tomate"
+            "categoria": "Ensaladas",
+            "texto": "Repollo"
           },
           {
-            "categoria": "POSTRES",
-            "texto": "Fruta / Natilla / Jalea / Kuchen de manzana"
+            "categoria": "Ensaladas",
+            "texto": "Choclo"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Tomate"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Fruta"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Natilla"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Jalea"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Kuchen de manzana"
           }
         ]
-      },
-      "colacion": "AVE PIMENTON/MAYONESA"
+      }
     },
     "2026-11-16": {
+      "colacion": "ALIADO PALTA",
       "desayuno": {
         "items": [
           {
-            "categoria": "SÁNDWICH",
+            "categoria": "Porción Solida",
             "texto": "CHURRASCO PALTA TOMATE"
           },
           {
-            "categoria": "PAN",
-            "texto": "Hallulla y Marraqueta"
+            "categoria": "Variedad Pan",
+            "texto": "Hallulla y Marraqueta  (280 kcal.)"
           },
           {
-            "categoria": "AGREGADOS",
-            "texto": "Pate / Mantequilla"
+            "categoria": "P. Solida",
+            "texto": "Agr Pate"
           },
           {
-            "categoria": "LECHE",
-            "texto": "Leche Caliente"
+            "categoria": "Agregado",
+            "texto": "Agr Mantequilla (102 kcal.)"
           },
           {
-            "categoria": "PORRIDGE",
+            "categoria": "P. Solida",
+            "texto": "Yogurt Sabores (90 kcal.)"
+          },
+          {
+            "categoria": "P. Solida",
+            "texto": "Snack"
+          },
+          {
+            "categoria": "Porcion Liquida",
+            "texto": "Leche Caliente (116 kcal.)"
+          },
+          {
+            "categoria": "Porridge",
             "texto": "Leche de Frutilla"
           },
           {
             "categoria": "MEJORADO",
             "texto": "COKTEL DE FRUTAS"
-          },
-          {
-            "categoria": "POSTRE",
-            "texto": "Yogurt de sabores / snack"
           }
         ]
       },
       "almuerzo": {
         "items": [
           {
-            "categoria": "ENTRADA CALIENTE · SOPA",
-            "texto": "Consome al huevo"
+            "categoria": "E.Caliente Sopa",
+            "texto": "Consome al huevo  (49 kcal.)"
           },
           {
-            "categoria": "FONDO NORMAL",
-            "texto": "Vacuno al Jugo con ESPIRALES"
+            "categoria": "Fondo Normal",
+            "texto": "Vacuno al Jugo",
+            "cantidad": 50
           },
           {
-            "categoria": "FONDO ALTERNATIVO",
-            "texto": "Pastel de Choclo"
+            "categoria": "Fondo Alternativo",
+            "texto": "Pastel de Choclo",
+            "cantidad": 20
           },
           {
-            "categoria": "TERCERA OPCIÓN",
-            "texto": "CAZUELA DE AVE"
+            "categoria": "Acompañamiento Normal",
+            "texto": "ESPIRALES"
           },
           {
-            "categoria": "HIPOCALÓRICO",
+            "categoria": "TERCERA OPCION",
+            "texto": "CAZUELA DE AVE",
+            "cantidad": 40
+          },
+          {
+            "categoria": "Hipocalórico",
             "texto": "Omelette Jamon/Queso con Verduras al Vapor"
           },
           {
-            "categoria": "ENSALADAS",
-            "texto": "Arveja / Lechuga / Coliflor"
+            "categoria": "Ensaladas",
+            "texto": "Arveja"
           },
           {
-            "categoria": "POSTRES",
-            "texto": "Fruta / Bavaroise / Mote con Huesillos / Torta Casera"
+            "categoria": "Ensaladas",
+            "texto": "Lechuga"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Coliflor (16 kcal.)"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Fruta"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Bavaroise"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Mote con Huesillos"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Torta Casera"
           }
         ]
       },
       "cena": {
         "items": [
           {
-            "categoria": "ENTRADA CALIENTE · SOPA",
-            "texto": "Crema de Cholo"
+            "categoria": "E.Caliente Sopa",
+            "texto": "Crema de Cholo (49 kcal.)"
           },
           {
-            "categoria": "FONDO NORMAL",
-            "texto": "Cerdo Asado con Pure Rustico"
+            "categoria": "Fondo Normal",
+            "texto": "Cerdo Asado",
+            "cantidad": 210
           },
           {
-            "categoria": "FONDO ALTERNATIVO",
-            "texto": "Hamburguesa Napolitana con Budin de Coliflor"
+            "categoria": "Fondo Alternativo",
+            "texto": "Hamburguesa Napolitana",
+            "cantidad": 200
           },
           {
-            "categoria": "TERCERA OPCIÓN",
-            "texto": "LENTEJAS GUISADAS CON VIENESAS"
+            "categoria": "Acompañamiento Normal",
+            "texto": "Pure Rustico"
           },
           {
-            "categoria": "HIPOCALÓRICO",
+            "categoria": "Acompañamiento Alternativo",
+            "texto": "Budin de Coliflor"
+          },
+          {
+            "categoria": "TERCERA OPCION",
+            "texto": "LENTEJAS GUISADAS CON VIENESAS",
+            "cantidad": 90
+          },
+          {
+            "categoria": "Hipocalórico",
             "texto": "Omelette Jamon/Queso con Verduras al Vapor"
           },
           {
-            "categoria": "ENSALADAS",
-            "texto": "Pepino / Repollo / Choclo"
+            "categoria": "Ensaladas",
+            "texto": "Pepino"
           },
           {
-            "categoria": "POSTRES",
-            "texto": "Fruta / LECHE CON AVENA / Mote con Huesillos / Torta Casera"
+            "categoria": "Ensaladas",
+            "texto": "Repollo"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Choclo"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Fruta"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "LECHE CON AVENA"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Mote con Huesillos"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Torta Casera"
           }
         ]
-      },
-      "colacion": "ALIADO PALTA"
+      }
     },
     "2026-11-17": {
+      "colacion": "MECHADA QUESO",
       "desayuno": {
         "items": [
           {
-            "categoria": "SÁNDWICH",
+            "categoria": "Porción Solida",
             "texto": "HUEVO REVUELTO"
           },
           {
-            "categoria": "PAN",
-            "texto": "Hallulla y Marraqueta"
+            "categoria": "Variedad Pan",
+            "texto": "Hallulla y Marraqueta  (280 kcal.)"
           },
           {
-            "categoria": "AGREGADOS",
-            "texto": "Mermelada / Mantequilla"
+            "categoria": "P. Solida",
+            "texto": "Agr Mermelada (55 kcal.)"
           },
           {
-            "categoria": "LECHE",
-            "texto": "Leche Caliente"
+            "categoria": "Agregado",
+            "texto": "Agr Mantequilla (102 kcal.)"
           },
           {
-            "categoria": "PORRIDGE",
+            "categoria": "P. Solida",
+            "texto": "Yogurt Sabores (90 kcal.)"
+          },
+          {
+            "categoria": "P. Solida",
+            "texto": "Snack"
+          },
+          {
+            "categoria": "Porcion Liquida",
+            "texto": "Leche Caliente (116 kcal.)"
+          },
+          {
+            "categoria": "Porridge",
             "texto": "Leche C/ Semola"
           },
           {
             "categoria": "MEJORADO",
             "texto": "SALAME"
-          },
-          {
-            "categoria": "POSTRE",
-            "texto": "Yogurt de sabores / snack"
           }
         ]
       },
       "almuerzo": {
         "items": [
           {
-            "categoria": "ENTRADA CALIENTE · SOPA",
-            "texto": "Sopa Pollo con Fideos"
+            "categoria": "E.Caliente Sopa",
+            "texto": "Sopa Pollo con Fideos  (45 kcal.)"
           },
           {
-            "categoria": "FONDO NORMAL",
-            "texto": "Pescado Frito con Papas Lyonesa"
+            "categoria": "Fondo Normal",
+            "texto": "Pescado Frito",
+            "cantidad": 50
           },
           {
-            "categoria": "FONDO ALTERNATIVO",
-            "texto": "Salsa Italiana con Spaguettis"
+            "categoria": "Fondo Alternativo",
+            "texto": "Salsa Italiana",
+            "cantidad": 30
           },
           {
-            "categoria": "TERCERA OPCIÓN",
-            "texto": "POROTOS GRANADOS CON CHORIZOS"
+            "categoria": "Acompañamiento Normal",
+            "texto": "Papas Lyonesa"
           },
           {
-            "categoria": "HIPOCALÓRICO",
+            "categoria": "Acompañamiento Alternativo",
+            "texto": "Spaguettis"
+          },
+          {
+            "categoria": "TERCERA OPCION",
+            "texto": "POROTOS GRANADOS CON CHORIZOS",
+            "cantidad": 30
+          },
+          {
+            "categoria": "Hipocalórico",
             "texto": "Ensalada Griega"
           },
           {
-            "categoria": "ENSALADAS",
-            "texto": "Tomate / Brocoli / Zanahoria"
+            "categoria": "Ensaladas",
+            "texto": "Tomate"
           },
           {
-            "categoria": "POSTRES",
-            "texto": "Fruta / Arroz con leche / Jalea / Queque Marmoleado"
+            "categoria": "Ensaladas",
+            "texto": "Brocoli"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Zanahoria"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Fruta"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Arroz con leche"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Jalea"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Queque Marmoleado"
           }
         ]
       },
       "cena": {
         "items": [
           {
-            "categoria": "ENTRADA CALIENTE · SOPA",
-            "texto": "Sopa de Carne con Semola"
+            "categoria": "E.Caliente Sopa",
+            "texto": "Sopa de Carne con Semola (45 kcal.)"
           },
           {
-            "categoria": "FONDO NORMAL",
-            "texto": "Pollo thai con Arroz"
+            "categoria": "Fondo Normal",
+            "texto": "Pollo thai",
+            "cantidad": 310
           },
           {
-            "categoria": "FONDO ALTERNATIVO",
-            "texto": "Chupe de Mariscos"
+            "categoria": "Fondo Alternativo",
+            "texto": "Chupe de Mariscos",
+            "cantidad": 40
           },
           {
-            "categoria": "TERCERA OPCIÓN",
-            "texto": "AJIACO DE VACUNO"
+            "categoria": "Acompañamiento Normal",
+            "texto": "Arroz"
           },
           {
-            "categoria": "HIPOCALÓRICO",
+            "categoria": "TERCERA OPCION",
+            "texto": "AJIACO DE VACUNO",
+            "cantidad": 150
+          },
+          {
+            "categoria": "Hipocalórico",
             "texto": "Ensalada Griega"
           },
           {
-            "categoria": "ENSALADAS",
-            "texto": "Lechuga / Betarraga / Poroto Verde"
+            "categoria": "Ensaladas",
+            "texto": "Lechuga"
           },
           {
-            "categoria": "POSTRES",
-            "texto": "Fruta / Arroz con leche / Jalea / Queque Marmoleado"
+            "categoria": "Ensaladas",
+            "texto": "Betarraga"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Poroto Verde"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Fruta"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Arroz con leche"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Jalea"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Queque Marmoleado"
           }
         ]
-      },
-      "colacion": "MECHADA QUESO"
+      }
     },
     "2026-11-18": {
+      "colacion": "LOMITO QUESO",
       "desayuno": {
         "items": [
           {
-            "categoria": "SÁNDWICH",
+            "categoria": "Porción Solida",
             "texto": "HAMBURGUESA TOMATE"
           },
           {
-            "categoria": "PAN",
-            "texto": "Hallulla y Marraqueta"
+            "categoria": "Variedad Pan",
+            "texto": "Hallulla y Marraqueta             (280 kcal.)"
           },
           {
-            "categoria": "AGREGADOS",
-            "texto": "Mermelada / Mantequilla"
+            "categoria": "P. Solida",
+            "texto": "Agr Mermelada (55 kcal.)"
           },
           {
-            "categoria": "LECHE",
-            "texto": "Leche Caliente"
+            "categoria": "Agregado",
+            "texto": "Agr Mantequilla (102 kcal.)"
           },
           {
-            "categoria": "PORRIDGE",
+            "categoria": "P. Solida",
+            "texto": "Yogurt Sabores (90 kcal.)"
+          },
+          {
+            "categoria": "P. Solida",
+            "texto": "Snack"
+          },
+          {
+            "categoria": "Porcion Liquida",
+            "texto": "Leche Caliente (116 kcal.)"
+          },
+          {
+            "categoria": "Porridge",
             "texto": "Leche C/ Avena"
           },
           {
             "categoria": "MEJORADO",
             "texto": "BUFFET DE QUESO"
-          },
-          {
-            "categoria": "POSTRE",
-            "texto": "Yogurt de sabores / snack"
           }
         ]
       },
       "almuerzo": {
         "items": [
           {
-            "categoria": "ENTRADA CALIENTE · SOPA",
-            "texto": "Sopa Verduras con Arroz"
+            "categoria": "E.Caliente Sopa",
+            "texto": "Sopa Verduras con Arroz  (45 kcal.)"
           },
           {
-            "categoria": "FONDO NORMAL",
-            "texto": "Chuleta de Cerdo con ARROZ PRIMAVERA"
+            "categoria": "Fondo Normal",
+            "texto": "Chuleta de Cerdo",
+            "cantidad": 70
           },
           {
-            "categoria": "FONDO ALTERNATIVO",
-            "texto": "Pastel de Papas"
+            "categoria": "Fondo Alternativo",
+            "texto": "Pastel de Papas",
+            "cantidad": 20
           },
           {
-            "categoria": "TERCERA OPCIÓN",
-            "texto": "CARBONADA DE AVE"
+            "categoria": "Acompañamiento Normal",
+            "texto": "ARROZ PRIMAVERA"
           },
           {
-            "categoria": "HIPOCALÓRICO",
-            "texto": "Ensalada Cesar"
+            "categoria": "TERCERA OPCION",
+            "texto": "CARBONADA DE AVE",
+            "cantidad": 20
           },
           {
-            "categoria": "ENSALADAS",
-            "texto": "Cochayuyo / Repollo / Arveja"
+            "categoria": "Hipocalórico",
+            "texto": "Ensalada Cesar                   (230 kcal.)"
           },
           {
-            "categoria": "POSTRES",
-            "texto": "Fruta / Flan / Jalea / Tartaleta de Fruta"
+            "categoria": "Ensaladas",
+            "texto": "Cochayuyo"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Repollo"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Arveja"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Fruta"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Flan"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Jalea"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Tartaleta de Fruta"
           }
         ]
       },
       "cena": {
         "items": [
           {
-            "categoria": "ENTRADA CALIENTE · SOPA",
+            "categoria": "E.Caliente Sopa",
             "texto": "Consome de pollo"
           },
           {
-            "categoria": "FONDO NORMAL",
-            "texto": "Vacuno al Jugo con Papas Doradas"
+            "categoria": "Fondo Normal",
+            "texto": "Vacuno al Jugo",
+            "cantidad": 240
           },
           {
-            "categoria": "FONDO ALTERNATIVO",
-            "texto": "Pechuga de Pollo a la Mostaza con Budin de Zanahoria"
+            "categoria": "Fondo Alternativo",
+            "texto": "Pechuga de Pollo a la Mostaza",
+            "cantidad": 200
           },
           {
-            "categoria": "TERCERA OPCIÓN",
-            "texto": "ARVEJAS GUISADAS CON CHORIZO SALTEADO"
+            "categoria": "Acompañamiento Normal",
+            "texto": "Papas Doradas"
           },
           {
-            "categoria": "HIPOCALÓRICO",
-            "texto": "Ensalada Cesar"
+            "categoria": "Acompañamiento Alternativo",
+            "texto": "Budin de Zanahoria"
           },
           {
-            "categoria": "ENSALADAS",
-            "texto": "Acelga / Zanahoria / Tomate"
+            "categoria": "TERCERA OPCION",
+            "texto": "ARVEJAS GUISADAS CON CHORIZO SALTEADO",
+            "cantidad": 60
           },
           {
-            "categoria": "POSTRES",
-            "texto": "Fruta / Flan / Jalea / Tartaleta de Fruta"
+            "categoria": "Hipocalórico",
+            "texto": "Ensalada Cesar                   (230 kcal.)"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Acelga"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Zanahoria"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Tomate"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Fruta"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Flan"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Jalea"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Tartaleta de Fruta"
           }
         ]
-      },
-      "colacion": "LOMITO QUESO"
+      }
     },
     "2026-11-19": {
+      "colacion": "HAMBURGUESA QUESO",
       "desayuno": {
         "items": [
           {
-            "categoria": "SÁNDWICH",
+            "categoria": "Porción Solida",
             "texto": "JAMON PALTA"
           },
           {
-            "categoria": "PAN",
-            "texto": "Hallulla y Marraqueta"
+            "categoria": "Variedad Pan",
+            "texto": "Hallulla y Marraqueta                       (280 kcal.)"
           },
           {
-            "categoria": "AGREGADOS",
-            "texto": "Mermelada / Mantequilla"
+            "categoria": "P. Solida",
+            "texto": "Agr Mermelada (55 kcal.)"
           },
           {
-            "categoria": "LECHE",
-            "texto": "Leche Caliente"
+            "categoria": "Agregado",
+            "texto": "Agr Mantequilla (102 kcal.)"
           },
           {
-            "categoria": "PORRIDGE",
+            "categoria": "P. Solida",
+            "texto": "Yogurt Sabores (90 kcal.)"
+          },
+          {
+            "categoria": "P. Solida",
+            "texto": "Snack"
+          },
+          {
+            "categoria": "Porcion Liquida",
+            "texto": "Leche Caliente (116 kcal.)"
+          },
+          {
+            "categoria": "Porridge",
             "texto": "Leche C/ Chocolate"
           },
           {
             "categoria": "MEJORADO",
             "texto": "TORTA"
-          },
-          {
-            "categoria": "POSTRE",
-            "texto": "Yogurt de sabores / snack"
           }
         ]
       },
       "almuerzo": {
         "items": [
           {
-            "categoria": "ENTRADA CALIENTE · SOPA",
+            "categoria": "E.Caliente Sopa",
             "texto": "Crema de Lentejas"
           },
           {
-            "categoria": "FONDO NORMAL",
-            "texto": "Pollo Asado con Pure Rustico"
+            "categoria": "Fondo Normal",
+            "texto": "Pollo Asado",
+            "cantidad": 80
           },
           {
-            "categoria": "FONDO ALTERNATIVO",
-            "texto": "Albondigas Atomatadas con Tortillas de Coliflor"
+            "categoria": "Fondo Alternativo",
+            "texto": "Albondigas Atomatadas",
+            "cantidad": 20
           },
           {
-            "categoria": "TERCERA OPCIÓN",
-            "texto": "LENTEJAS GUISADAS CON VIENESAS"
+            "categoria": "Acompañamiento Normal",
+            "texto": "Pure Rustico"
           },
           {
-            "categoria": "HIPOCALÓRICO",
+            "categoria": "Acompañamiento Alternativo",
+            "texto": "Tortillas de Coliflor"
+          },
+          {
+            "categoria": "TERCERA OPCION",
+            "texto": "LENTEJAS GUISADAS CON VIENESAS",
+            "cantidad": 10
+          },
+          {
+            "categoria": "Hipocalórico",
             "texto": "Atun Cebollin con Ensaladas"
           },
           {
-            "categoria": "ENSALADAS",
-            "texto": "Rusa / Tomate / CEVICHE DE MOTE"
+            "categoria": "Ensaladas",
+            "texto": "Rusa"
           },
           {
-            "categoria": "POSTRES",
-            "texto": "Fruta / Semola con leche / Jalea / Queque de Limon"
+            "categoria": "Ensaladas",
+            "texto": "Tomate"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "CEVICHE DE MOTE"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Fruta"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Semola con leche"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Jalea"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Queque de Limon"
           }
         ]
       },
       "cena": {
         "items": [
           {
-            "categoria": "ENTRADA CALIENTE · SOPA",
+            "categoria": "E.Caliente Sopa",
             "texto": "Sopa de Vacuno con Semola"
           },
           {
-            "categoria": "FONDO NORMAL",
-            "texto": "HAMBURGUESA:TOMATE ,QUESO,LECHUGA,PALTA,CEBOLLA CARAMELIZADA, PAPAS FRITAS con PAPAS FRITAS"
+            "categoria": "Fondo Normal",
+            "texto": "HAMBURGUESA:TOMATE      ,QUESO,LECHUGA,PALTA,CEBOLLA CARAMELIZADA, PAPAS FRITAS",
+            "cantidad": 500
           },
           {
-            "categoria": "HIPOCALÓRICO",
+            "categoria": "Acompañamiento Normal",
+            "texto": "PAPAS FRITAS"
+          },
+          {
+            "categoria": "Hipocalórico",
             "texto": "Atun Cebollin con Ensaladas"
           },
           {
-            "categoria": "ENSALADAS",
-            "texto": "Choclo / Apio / Poroto Verde"
+            "categoria": "Ensaladas",
+            "texto": "Choclo"
           },
           {
-            "categoria": "POSTRES",
-            "texto": "Fruta / Semola con leche / Jalea / QUEQUE MANZANA CANELA"
+            "categoria": "Ensaladas",
+            "texto": "Apio"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Poroto Verde"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Fruta"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Semola con leche"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Jalea"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "QUEQUE MANZANA CANELA"
           }
         ]
-      },
-      "colacion": "HAMBURGUESA QUESO"
+      }
     },
     "2026-11-20": {
+      "colacion": "CHURRASCO QUESO",
       "desayuno": {
         "items": [
           {
-            "categoria": "SÁNDWICH",
+            "categoria": "Porción Solida",
             "texto": "LOMITO TOMATE"
           },
           {
-            "categoria": "PAN",
-            "texto": "Hallulla y Marraqueta"
+            "categoria": "Variedad Pan",
+            "texto": "Hallulla y Marraqueta  (280 kcal.)"
           },
           {
-            "categoria": "AGREGADOS",
-            "texto": "Manjar / Mantequilla"
+            "categoria": "P. Solida",
+            "texto": "Agr Manjar"
           },
           {
-            "categoria": "LECHE",
-            "texto": "Leche Caliente"
+            "categoria": "Agregado",
+            "texto": "Agr Mantequilla (102 kcal.)"
           },
           {
-            "categoria": "PORRIDGE",
+            "categoria": "P. Solida",
+            "texto": "Yogurt Sabores (90 kcal.)"
+          },
+          {
+            "categoria": "P. Solida",
+            "texto": "Snack"
+          },
+          {
+            "categoria": "Porcion Liquida",
+            "texto": "Leche Caliente (116 kcal.)"
+          },
+          {
+            "categoria": "Porridge",
             "texto": "Leche C/ Maicena"
           },
           {
             "categoria": "MEJORADO",
             "texto": "BUFFET DE QUESO"
-          },
-          {
-            "categoria": "POSTRE",
-            "texto": "Yogurt de sabores / snack"
           }
         ]
       },
       "almuerzo": {
         "items": [
           {
-            "categoria": "ENTRADA CALIENTE · SOPA",
-            "texto": "Crema Verduras"
+            "categoria": "E.Caliente Sopa",
+            "texto": "Crema Verduras (49 kcal.)"
           },
           {
-            "categoria": "FONDO NORMAL",
-            "texto": "Strogonoff de Vacuno con PAPAS DUQUESAS"
+            "categoria": "Fondo Normal",
+            "texto": "Strogonoff de Vacuno",
+            "cantidad": 50
           },
           {
-            "categoria": "FONDO ALTERNATIVO",
-            "texto": "Pescado Cancato con Verduras asada"
+            "categoria": "Fondo Alternativo",
+            "texto": "Pescado Cancato",
+            "cantidad": 20
           },
           {
-            "categoria": "TERCERA OPCIÓN",
-            "texto": "AJIACO MIXTO"
+            "categoria": "Acompañamiento Normal",
+            "texto": "PAPAS DUQUESAS"
           },
           {
-            "categoria": "HIPOCALÓRICO",
+            "categoria": "Acompañamiento Alternativo",
+            "texto": "Verduras asada"
+          },
+          {
+            "categoria": "TERCERA OPCION",
+            "texto": "AJIACO MIXTO",
+            "cantidad": 30
+          },
+          {
+            "categoria": "Hipocalórico",
             "texto": "Tomate Reina"
           },
           {
-            "categoria": "ENSALADAS",
-            "texto": "Chilena / Pepino / Repollo"
+            "categoria": "Ensaladas",
+            "texto": "Chilena"
           },
           {
-            "categoria": "POSTRES",
-            "texto": "Fruta / Mousse / Jalea / Breden Master"
+            "categoria": "Ensaladas",
+            "texto": "Pepino"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Repollo"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Fruta"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Mousse"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Jalea"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Breden Master"
           }
         ]
       },
       "cena": {
         "items": [
           {
-            "categoria": "ENTRADA CALIENTE · SOPA",
+            "categoria": "E.Caliente Sopa",
             "texto": "Crema de Champiñon"
           },
           {
-            "categoria": "FONDO NORMAL",
-            "texto": "PULPA DE CERDO CON SALSA DE CHAMPIÑON con Arroz Piamontes"
+            "categoria": "Fondo Normal",
+            "texto": "PULPA DE CERDO CON SALSA DE CHAMPIÑON",
+            "cantidad": 330
           },
           {
-            "categoria": "FONDO ALTERNATIVO",
-            "texto": "Aji de Gallina con Espirales Verde"
+            "categoria": "Fondo Alternativo",
+            "texto": "Aji de Gallina",
+            "cantidad": 100
           },
           {
-            "categoria": "TERCERA OPCIÓN",
-            "texto": "GARBANZOS GUISADOS CON VIANESAS"
+            "categoria": "Acompañamiento Normal",
+            "texto": "Arroz Piamontes"
           },
           {
-            "categoria": "HIPOCALÓRICO",
+            "categoria": "Acompañamiento Alternativo",
+            "texto": "Espirales Verde"
+          },
+          {
+            "categoria": "TERCERA OPCION",
+            "texto": "GARBANZOS GUISADOS CON VIANESAS",
+            "cantidad": 60
+          },
+          {
+            "categoria": "Hipocalórico",
             "texto": "Tomate Reina"
           },
           {
-            "categoria": "ENSALADAS",
-            "texto": "Ceviche de Mote / Brocoli / Leechuga"
+            "categoria": "Ensaladas",
+            "texto": "Ceviche de Mote"
           },
           {
-            "categoria": "POSTRES",
-            "texto": "Fruta / Mousse / ILUSION DE JALEA / Breden Master"
+            "categoria": "Ensaladas",
+            "texto": "Brocoli"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Leechuga"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Fruta"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Mousse"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "ILUSION DE JALEA"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Breden Master"
           }
         ]
-      },
-      "colacion": "CHURRASCO QUESO"
+      }
     },
     "2026-11-21": {
+      "colacion": "AVE PIMENTON/MAYONESA",
       "desayuno": {
         "items": [
           {
-            "categoria": "SÁNDWICH",
-            "texto": "ARROLLADO PALTA"
+            "categoria": "Porción Solida",
+            "texto": "HUEVO REVUELTO"
           },
           {
-            "categoria": "PAN",
-            "texto": "Hallulla y Marraqueta"
+            "categoria": "Variedad Pan",
+            "texto": "Hallulla y Marraqueta  (280 kcal.)"
           },
           {
-            "categoria": "AGREGADOS",
-            "texto": "Mermelada / Mantequilla"
+            "categoria": "P. Solida",
+            "texto": "Agr Mermelada"
           },
           {
-            "categoria": "LECHE",
-            "texto": "Leche Caliente"
+            "categoria": "Agregado",
+            "texto": "Agr Mantequilla (102 kcal.)"
           },
           {
-            "categoria": "PORRIDGE",
+            "categoria": "P. Solida",
+            "texto": "Yogurt Sabores (90 kcal.)"
+          },
+          {
+            "categoria": "P. Solida",
+            "texto": "Snack"
+          },
+          {
+            "categoria": "Porcion Liquida",
+            "texto": "Leche Caliente (116 kcal.)"
+          },
+          {
+            "categoria": "Porridge",
             "texto": "Capuccino"
           },
           {
             "categoria": "MEJORADO",
             "texto": "QUEQUE DE CHOCOLATE"
-          },
-          {
-            "categoria": "POSTRE",
-            "texto": "Yogurt de sabores / snack"
           }
         ]
       },
       "almuerzo": {
         "items": [
           {
-            "categoria": "ENTRADA CALIENTE · SOPA",
-            "texto": "Sopa Carne con Arroz"
+            "categoria": "E.Caliente Sopa",
+            "texto": "Sopa Carne con Arroz  (45 kcal.)"
           },
           {
-            "categoria": "FONDO NORMAL",
-            "texto": "Panita Lyonesa con ARROZ PILAF"
+            "categoria": "Fondo Normal",
+            "texto": "Panita Lyonesa",
+            "cantidad": 30
           },
           {
-            "categoria": "FONDO ALTERNATIVO",
-            "texto": "Lasaña Boloñesa"
+            "categoria": "Fondo Alternativo",
+            "texto": "Lasaña Boloñesa",
+            "cantidad": 50
           },
           {
-            "categoria": "TERCERA OPCIÓN",
-            "texto": "ARVEJAS GUISADAS CON CHORIZO SALTEADO"
+            "categoria": "Acompañamiento Normal",
+            "texto": "ARROZ PILAF"
           },
           {
-            "categoria": "HIPOCALÓRICO",
+            "categoria": "TERCERA OPCION",
+            "texto": "ARVEJAS GUISADAS CON CHORIZO SALTEADO",
+            "cantidad": 10
+          },
+          {
+            "categoria": "Hipocalórico",
             "texto": "Pescado al horno con Ensaladas"
           },
           {
-            "categoria": "ENSALADAS",
-            "texto": "Haba / Coliflor / Beterraga"
+            "categoria": "Ensaladas",
+            "texto": "Haba"
           },
           {
-            "categoria": "POSTRES",
-            "texto": "Fruta / Flan de Vainilla / Jalea / Torta Tres Leches"
+            "categoria": "Ensaladas",
+            "texto": "Coliflor"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Beterraga"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Fruta"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Flan de Vainilla"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Jalea"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Torta Tres Leches"
           }
         ]
       },
       "cena": {
         "items": [
           {
-            "categoria": "ENTRADA CALIENTE · SOPA",
+            "categoria": "E.Caliente Sopa",
             "texto": "Consome al Huevo"
           },
           {
-            "categoria": "FONDO NORMAL",
-            "texto": "Pollo Truto Arvejado con Tortilla de Papas"
+            "categoria": "Fondo Normal",
+            "texto": "Pollo  Truto Arvejado",
+            "cantidad": 330
           },
           {
-            "categoria": "FONDO ALTERNATIVO",
-            "texto": "Prietas Lyonesas con Budin de Verduras"
+            "categoria": "Fondo Alternativo",
+            "texto": "Prietas Lyonesas",
+            "cantidad": 60
           },
           {
-            "categoria": "TERCERA OPCIÓN",
-            "texto": "Carbonada de Vacuno"
+            "categoria": "Acompañamiento Normal",
+            "texto": "Tortilla de Papas"
           },
           {
-            "categoria": "HIPOCALÓRICO",
+            "categoria": "Acompañamiento Alternativo",
+            "texto": "Budin de Verduras"
+          },
+          {
+            "categoria": "TERCERA OPCION",
+            "texto": "Carbonada de Vacuno",
+            "cantidad": 100
+          },
+          {
+            "categoria": "Hipocalórico",
             "texto": "Pescado al horno con Ensaladas"
           },
           {
-            "categoria": "ENSALADAS",
-            "texto": "Repollo / Zanahoria / Pepino"
+            "categoria": "Ensaladas",
+            "texto": "Repollo"
           },
           {
-            "categoria": "POSTRES",
-            "texto": "Fruta / Flan de Vainilla / Jalea / Torta Tres Leches"
+            "categoria": "Ensaladas",
+            "texto": "Zanahoria"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Pepino"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Fruta"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Flan de Vainilla"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Jalea"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Torta Tres Leches"
           }
         ]
-      },
-      "colacion": "AVE PIMENTON/MAYONESA"
+      }
     },
     "2026-11-22": {
+      "colacion": "LOMITO QUESO",
       "desayuno": {
         "items": [
           {
-            "categoria": "SÁNDWICH",
+            "categoria": "Porción Solida",
             "texto": "ARROLLADO DE HUASO, PALTA"
           },
           {
-            "categoria": "PAN",
-            "texto": "Hallulla y Marraqueta"
+            "categoria": "Variedad Pan",
+            "texto": "Hallulla y Marraqueta  (280 kcal.)"
           },
           {
-            "categoria": "AGREGADOS",
-            "texto": "Mermelada / Mantequilla"
+            "categoria": "P. Solida",
+            "texto": "Agr Mermelada"
           },
           {
-            "categoria": "LECHE",
-            "texto": "Leche Caliente"
+            "categoria": "Agregado",
+            "texto": "Agr Mantequilla (102 kcal.)"
           },
           {
-            "categoria": "PORRIDGE",
+            "categoria": "P. Solida",
+            "texto": "Yogurt Sabores (90 kcal.)"
+          },
+          {
+            "categoria": "P. Solida",
+            "texto": "Snack"
+          },
+          {
+            "categoria": "Porcion Liquida",
+            "texto": "Leche Caliente (116 kcal.)"
+          },
+          {
+            "categoria": "Porridge",
             "texto": "Leche de Frutilla"
           },
           {
             "categoria": "MEJORADO",
             "texto": "SOPAIPILLAS"
-          },
-          {
-            "categoria": "POSTRE",
-            "texto": "Yogurt de sabores / snack"
           }
         ]
       },
       "almuerzo": {
         "items": [
           {
-            "categoria": "ENTRADA CALIENTE · SOPA",
-            "texto": "Crema Verduras"
+            "categoria": "E.Caliente Sopa",
+            "texto": "Crema Verduras (49 kcal.)"
           },
           {
-            "categoria": "FONDO NORMAL",
-            "texto": "Vacuno al Jugo con Budin De Verduras"
+            "categoria": "Fondo Normal",
+            "texto": "Vacuno al Jugo",
+            "cantidad": 50
           },
           {
-            "categoria": "FONDO ALTERNATIVO",
-            "texto": "Zapallos Italiano Relleno con CORBATAS AL OLIVO"
+            "categoria": "Fondo Alternativo",
+            "texto": "Zapallos Italiano Relleno",
+            "cantidad": 20
           },
           {
-            "categoria": "TERCERA OPCIÓN",
-            "texto": "Cazuela de Vacuno"
+            "categoria": "Acompañamiento Normal",
+            "texto": "Budin De Verduras"
           },
           {
-            "categoria": "HIPOCALÓRICO",
-            "texto": "Pollo Salteado con Verduras al Vapor."
+            "categoria": "Acompañamiento Alternativo",
+            "texto": "CORBATAS AL OLIVO"
           },
           {
-            "categoria": "ENSALADAS",
-            "texto": "Chilena / Pepino / Repollo"
+            "categoria": "TERCERA OPCION",
+            "texto": "Cazuela de Vacuno",
+            "cantidad": 20
           },
           {
-            "categoria": "POSTRES",
-            "texto": "Fruta / Leche Asada / Jalea / Pie de Limon"
+            "categoria": "Hipocalórico",
+            "texto": "Pollo Salteado con Verduras al Vapor.          (247 kcal)"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Chilena"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Pepino"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Repollo"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Fruta"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Leche Asada"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Jalea"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Pie de Limon"
           }
         ]
       },
       "cena": {
         "items": [
           {
-            "categoria": "ENTRADA CALIENTE · SOPA",
-            "texto": "Crema de Choclo"
+            "categoria": "E.Caliente Sopa",
+            "texto": "Crema de Choclo (49 kcal.)"
           },
           {
-            "categoria": "FONDO NORMAL",
-            "texto": "Chuleta de Cerdo con Papas Eneldo"
+            "categoria": "Fondo Normal",
+            "texto": "Chuleta de Cerdo",
+            "cantidad": 350
           },
           {
-            "categoria": "FONDO ALTERNATIVO",
-            "texto": "Charquican de Verduras con Huevo Frito"
+            "categoria": "Fondo Alternativo",
+            "texto": "Charquican de Verduras",
+            "cantidad": 60
           },
           {
-            "categoria": "TERCERA OPCIÓN",
-            "texto": "Pantrucas"
+            "categoria": "Acompañamiento Normal",
+            "texto": "Papas Eneldo"
           },
           {
-            "categoria": "HIPOCALÓRICO",
-            "texto": "Pollo Salteado con Verduras al Vapor."
+            "categoria": "Acompañamiento Alternativo",
+            "texto": "Huevo Frito"
           },
           {
-            "categoria": "ENSALADAS",
-            "texto": "Pepino / Apio / Beterraga"
+            "categoria": "TERCERA OPCION",
+            "texto": "Pantrucas",
+            "cantidad": 80
           },
           {
-            "categoria": "POSTRES",
-            "texto": "Fruta / Leche Asada / Jalea / Pie de Limon"
+            "categoria": "Hipocalórico",
+            "texto": "Pollo Salteado con Verduras al Vapor.          (247 kcal)"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Pepino"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Apio"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Beterraga"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Fruta"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Leche Asada"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Jalea"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Pie de Limon"
           }
         ]
-      },
-      "colacion": "LOMITO QUESO"
+      }
     },
     "2026-11-23": {
+      "colacion": "HAMBURGUESA QUESO",
       "desayuno": {
         "items": [
           {
-            "categoria": "SÁNDWICH",
-            "texto": "CHURRASCO TOMATE"
+            "categoria": "Porción Solida",
+            "texto": "CHURRASCO  TOMATE"
           },
           {
-            "categoria": "PAN",
-            "texto": "Hallulla y Marraqueta"
+            "categoria": "Variedad Pan",
+            "texto": "Hallulla y Marraqueta  (280 kcal.)"
           },
           {
-            "categoria": "AGREGADOS",
-            "texto": "Pate / Mantequilla"
+            "categoria": "P. Solida",
+            "texto": "Agr Pate"
           },
           {
-            "categoria": "LECHE",
-            "texto": "Leche Caliente"
+            "categoria": "Agregado",
+            "texto": "Agr Mantequilla (102 kcal.)"
           },
           {
-            "categoria": "PORRIDGE",
+            "categoria": "P. Solida",
+            "texto": "Yogurt Sabores (90 kcal.)"
+          },
+          {
+            "categoria": "P. Solida",
+            "texto": "Snack"
+          },
+          {
+            "categoria": "Porcion Liquida",
+            "texto": "Leche Caliente (116 kcal.)"
+          },
+          {
+            "categoria": "Porridge",
             "texto": "Leche C/ Maicena"
           },
           {
             "categoria": "MEJORADO",
             "texto": "BUFETT DE JAMON"
-          },
-          {
-            "categoria": "POSTRE",
-            "texto": "Yogurt de sabores / snack"
           }
         ]
       },
       "almuerzo": {
         "items": [
           {
-            "categoria": "ENTRADA CALIENTE · SOPA",
-            "texto": "Consome al huevo"
+            "categoria": "E.Caliente Sopa",
+            "texto": "Consome al huevo  (49 kcal.)"
           },
           {
-            "categoria": "FONDO NORMAL",
-            "texto": "Vacuno al Jugo con Arroz Primavera"
+            "categoria": "Fondo Normal",
+            "texto": "Vacuno al Jugo",
+            "cantidad": 60
           },
           {
-            "categoria": "FONDO ALTERNATIVO",
-            "texto": "Pastel de Choclo"
+            "categoria": "Fondo Alternativo",
+            "texto": "Pastel de Choclo",
+            "cantidad": 20
           },
           {
-            "categoria": "TERCERA OPCIÓN",
-            "texto": "CAZUELA DE AVE"
+            "categoria": "Acompañamiento Normal",
+            "texto": "Arroz Primavera"
           },
           {
-            "categoria": "HIPOCALÓRICO",
+            "categoria": "TERCERA OPCION",
+            "texto": "CAZUELA DE AVE",
+            "cantidad": 30
+          },
+          {
+            "categoria": "Hipocalórico",
             "texto": "Omelette Jamon/Queso con Verduras al Vapor"
           },
           {
-            "categoria": "ENSALADAS",
-            "texto": "Arveja / Lechuga / Coliflor"
+            "categoria": "Ensaladas",
+            "texto": "Arveja"
           },
           {
-            "categoria": "POSTRES",
-            "texto": "Fruta / Bavaroise / Jalea / Torta Casera"
+            "categoria": "Ensaladas",
+            "texto": "Lechuga"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Coliflor (16 kcal.)"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Fruta"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Bavaroise"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Jalea"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Torta Casera"
           }
         ]
       },
       "cena": {
         "items": [
           {
-            "categoria": "ENTRADA CALIENTE · SOPA",
-            "texto": "Crema de Esparragos"
+            "categoria": "E.Caliente Sopa",
+            "texto": "Crema de Esparragos (49 kcal.)"
           },
           {
-            "categoria": "FONDO NORMAL",
-            "texto": "Cerdo Asado con Pure Rustico"
+            "categoria": "Fondo Normal",
+            "texto": "Cerdo Asado"
           },
           {
-            "categoria": "FONDO ALTERNATIVO",
-            "texto": "Carme Mongoliana con Budin de Coliflor"
+            "categoria": "Fondo Alternativo",
+            "texto": "Carme  Mongoliana"
           },
           {
-            "categoria": "TERCERA OPCIÓN",
+            "categoria": "Acompañamiento Normal",
+            "texto": "Pure Rustico"
+          },
+          {
+            "categoria": "Acompañamiento Alternativo",
+            "texto": "Budin de Coliflor"
+          },
+          {
+            "categoria": "TERCERA OPCION",
             "texto": "LENTEJAS GUISADAS CON VIENESAS"
           },
           {
-            "categoria": "HIPOCALÓRICO",
+            "categoria": "Hipocalórico",
             "texto": "Omelette Jamon/Queso con Verduras al Vapor"
           },
           {
-            "categoria": "ENSALADAS",
-            "texto": "Pepino / Repollo / Choclo"
+            "categoria": "Ensaladas",
+            "texto": "Pepino"
           },
           {
-            "categoria": "POSTRES",
-            "texto": "Fruta / Bavaroise / Jalea / Torta Casera"
+            "categoria": "Ensaladas",
+            "texto": "Repollo"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Choclo"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Fruta"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Bavaroise"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Jalea"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Torta Casera"
           }
         ]
-      },
-      "colacion": "HAMBURGUESA QUESO"
+      }
     },
     "2026-11-24": {
+      "colacion": "MECHADA QUESO",
       "desayuno": {
         "items": [
           {
-            "categoria": "SÁNDWICH",
-            "texto": "HUEVO REVUELTO"
+            "categoria": "Porción Solida",
+            "texto": "ARROLLADO PALTA"
           },
           {
-            "categoria": "PAN",
+            "categoria": "Variedad Pan",
             "texto": "Hallulla y Marraqueta"
           },
           {
-            "categoria": "AGREGADOS",
-            "texto": "Mermelada / Mantequilla"
+            "categoria": "P. Solida",
+            "texto": "Agr Mermelada"
           },
           {
-            "categoria": "LECHE",
+            "categoria": "Agregado",
+            "texto": "Agr Mantequilla"
+          },
+          {
+            "categoria": "P. Solida",
+            "texto": "Yogurt Sabores"
+          },
+          {
+            "categoria": "P. Solida",
+            "texto": "Snack"
+          },
+          {
+            "categoria": "Porcion Liquida",
             "texto": "Leche Caliente"
           },
           {
-            "categoria": "PORRIDGE",
+            "categoria": "Porridge",
             "texto": "Leche Capuccino"
           },
           {
             "categoria": "MEJORADO",
             "texto": "BROWNIE"
-          },
-          {
-            "categoria": "POSTRE",
-            "texto": "Yogurt de sabores / snack"
           }
         ]
       },
       "almuerzo": {
         "items": [
           {
-            "categoria": "ENTRADA CALIENTE · SOPA",
+            "categoria": "E.Caliente Sopa",
             "texto": "Crema de Tomates"
           },
           {
-            "categoria": "FONDO NORMAL",
-            "texto": "Pescado Napolitano al horno con Papas Gajos"
+            "categoria": "Fondo Normal",
+            "texto": "Pescado Napolitano al horno",
+            "cantidad": 50
           },
           {
-            "categoria": "FONDO ALTERNATIVO",
-            "texto": "Prieta Lyonesas con Pure Mixto"
+            "categoria": "Fondo Alternativo",
+            "texto": "Prieta Lyonesas",
+            "cantidad": 40
           },
           {
-            "categoria": "TERCERA OPCIÓN",
-            "texto": "POROTOS GRANADOS C/ CHORIZO"
+            "categoria": "Acompañamiento Normal",
+            "texto": "Papas Gajos"
           },
           {
-            "categoria": "HIPOCALÓRICO",
+            "categoria": "Acompañamiento Alternativo",
+            "texto": "Pure Mixto"
+          },
+          {
+            "categoria": "TERCERA OPCION",
+            "texto": "POROTOS GRANADOS  C/ CHORIZO",
+            "cantidad": 30
+          },
+          {
+            "categoria": "Hipocalórico",
             "texto": "Ensalada de Cesar"
           },
           {
-            "categoria": "ENSALADAS",
-            "texto": "Cochayuyo / Zanahoria / Primavera"
+            "categoria": "Ensaladas",
+            "texto": "Cochayuyo"
           },
           {
-            "categoria": "POSTRES",
-            "texto": "Fruta / Arroz con leche / Jalea / Breden Master"
+            "categoria": "Ensaladas",
+            "texto": "Zanahoria"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Primavera"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Fruta"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Arroz con leche"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Jalea"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Breden Master"
           }
         ]
       },
       "cena": {
         "items": [
           {
-            "categoria": "ENTRADA CALIENTE · SOPA",
+            "categoria": "E.Caliente Sopa",
             "texto": "Sopa de Carne con Verduras"
           },
           {
-            "categoria": "FONDO NORMAL",
-            "texto": "Pechuga de Pollo con Papas Fritas"
+            "categoria": "Fondo Normal",
+            "texto": "Pechuga de Pollo"
           },
           {
-            "categoria": "FONDO ALTERNATIVO",
-            "texto": "Hamburguesa Napolitana con Arroz Perla"
+            "categoria": "Fondo Alternativo",
+            "texto": "Hamburguesa Napolitana"
           },
           {
-            "categoria": "TERCERA OPCIÓN",
+            "categoria": "Acompañamiento Normal",
+            "texto": "Papas Fritas"
+          },
+          {
+            "categoria": "Acompañamiento Alternativo",
+            "texto": "Arroz Perla"
+          },
+          {
+            "categoria": "TERCERA OPCION",
             "texto": "Carbonada de Vacuno"
           },
           {
-            "categoria": "HIPOCALÓRICO",
+            "categoria": "Hipocalórico",
             "texto": "Ensalada de Cesar"
           },
           {
-            "categoria": "ENSALADAS",
-            "texto": "Repollo / Habas / Tomate"
+            "categoria": "Ensaladas",
+            "texto": "Repollo"
           },
           {
-            "categoria": "POSTRES",
-            "texto": "Fruta / Arroz con leche / ILUSION DE JALEA / Breden Master"
+            "categoria": "Ensaladas",
+            "texto": "Habas"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Tomate"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Fruta"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Arroz con leche"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "ILUSION DE JALEA"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Breden Master"
           }
         ]
-      },
-      "colacion": "MECHADA QUESO"
+      }
     },
     "2026-11-25": {
+      "colacion": "LOMITO QUESO",
       "desayuno": {
         "items": [
           {
-            "categoria": "SÁNDWICH",
+            "categoria": "Porción Solida",
             "texto": "HAMBURGUESA TOMATE, LECHUGA"
           },
           {
-            "categoria": "PAN",
+            "categoria": "Variedad Pan",
             "texto": "Hallulla y Marraqueta"
           },
           {
-            "categoria": "AGREGADOS",
-            "texto": "Mermelada / Mantequilla"
+            "categoria": "P. Solida",
+            "texto": "Agr Mermelada"
           },
           {
-            "categoria": "LECHE",
+            "categoria": "Agregado",
+            "texto": "Agr Mantequilla"
+          },
+          {
+            "categoria": "P. Solida",
+            "texto": "Yogurt Sabores"
+          },
+          {
+            "categoria": "P. Solida",
+            "texto": "Snack"
+          },
+          {
+            "categoria": "Porcion Liquida",
             "texto": "Leche Caliente"
           },
           {
-            "categoria": "PORRIDGE",
+            "categoria": "Porridge",
             "texto": "Leche C/ Chocolate"
           },
           {
             "categoria": "MEJORADO",
             "texto": "SALAME"
-          },
-          {
-            "categoria": "POSTRE",
-            "texto": "Yogurt de sabores / snack"
           }
         ]
       },
       "almuerzo": {
         "items": [
           {
-            "categoria": "ENTRADA CALIENTE · SOPA",
+            "categoria": "E.Caliente Sopa",
             "texto": "Sopa Pollo con Fideos"
           },
           {
-            "categoria": "FONDO NORMAL",
-            "texto": "Chuleta de Cerdo con Spaguettis atomatado"
+            "categoria": "Fondo Normal",
+            "texto": "Chuleta de Cerdo",
+            "cantidad": 70
           },
           {
-            "categoria": "FONDO ALTERNATIVO",
-            "texto": "Charquican de Vacuno con Huevo Frito"
+            "categoria": "Fondo Alternativo",
+            "texto": "Charquican de Vacuno",
+            "cantidad": 10
           },
           {
-            "categoria": "TERCERA OPCIÓN",
-            "texto": "AJIACO MIXTO"
+            "categoria": "Acompañamiento Normal",
+            "texto": "Spaguettis atomatado"
           },
           {
-            "categoria": "HIPOCALÓRICO",
+            "categoria": "Acompañamiento Alternativo",
+            "texto": "Huevo Frito(1)"
+          },
+          {
+            "categoria": "TERCERA OPCION",
+            "texto": "AJIACO MIXTO",
+            "cantidad": 30
+          },
+          {
+            "categoria": "Hipocalórico",
             "texto": "Pescado al horno con Ensaladas"
           },
           {
-            "categoria": "ENSALADAS",
-            "texto": "Beterraga / Choclo / Tomate"
+            "categoria": "Ensaladas",
+            "texto": "Beterraga"
           },
           {
-            "categoria": "POSTRES",
-            "texto": "Fruta / Flan / Jalea / COLEGIAL"
+            "categoria": "Ensaladas",
+            "texto": "Choclo"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Tomate"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Fruta"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Flan"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Jalea"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "COLEGIAL"
           }
         ]
       },
       "cena": {
         "items": [
           {
-            "categoria": "ENTRADA CALIENTE · SOPA",
+            "categoria": "E.Caliente Sopa",
             "texto": "Crema de Choclo"
           },
           {
-            "categoria": "FONDO NORMAL",
-            "texto": "Pescado Napolitano con Tortilla de Verduras"
+            "categoria": "Fondo Normal",
+            "texto": "Pescado Napolitano"
           },
           {
-            "categoria": "FONDO ALTERNATIVO",
-            "texto": "Salsa Boloñesa con Quifaros"
+            "categoria": "Fondo Alternativo",
+            "texto": "Salsa Boloñesa"
           },
           {
-            "categoria": "TERCERA OPCIÓN",
+            "categoria": "Acompañamiento Normal",
+            "texto": "Tortilla de Verduras"
+          },
+          {
+            "categoria": "Acompañamiento Alternativo",
+            "texto": "Quifaros"
+          },
+          {
+            "categoria": "TERCERA OPCION",
             "texto": "ARVEJAS GUISADAS CON CHORIZOS"
           },
           {
-            "categoria": "HIPOCALÓRICO",
+            "categoria": "Hipocalórico",
             "texto": "Pescado al horno con Ensaladas"
           },
           {
-            "categoria": "ENSALADAS",
-            "texto": "Lechuga / Pebre / Zanahoria"
+            "categoria": "Ensaladas",
+            "texto": "Lechuga"
           },
           {
-            "categoria": "POSTRES",
-            "texto": "Fruta / Flan / Jalea / COLEGIAL"
+            "categoria": "Ensaladas",
+            "texto": "Pebre"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Zanahoria"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Fruta"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Flan"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Jalea"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "COLEGIAL"
           }
         ]
-      },
-      "colacion": "LOMITO QUESO"
+      }
     },
     "2026-11-26": {
+      "colacion": "AVE PIMENTON/MAYONESA",
       "desayuno": {
         "items": [
           {
-            "categoria": "SÁNDWICH",
+            "categoria": "Porción Solida",
             "texto": "ALIADO"
           },
           {
-            "categoria": "PAN",
+            "categoria": "Variedad Pan",
             "texto": "Hallulla y Marraqueta"
           },
           {
-            "categoria": "AGREGADOS",
-            "texto": "Queso Crema / Mantequilla"
+            "categoria": "P. Solida",
+            "texto": "Agr Queso Crema"
           },
           {
-            "categoria": "LECHE",
+            "categoria": "Agregado",
+            "texto": "Agr Mantequilla"
+          },
+          {
+            "categoria": "P. Solida",
+            "texto": "Yogurt Sabores"
+          },
+          {
+            "categoria": "P. Solida",
+            "texto": "Snack"
+          },
+          {
+            "categoria": "Porcion Liquida",
             "texto": "Leche Caliente"
           },
           {
-            "categoria": "PORRIDGE",
+            "categoria": "Porridge",
             "texto": "Leche C/ Semola"
           },
           {
             "categoria": "MEJORADO",
             "texto": "BERLINES"
-          },
-          {
-            "categoria": "POSTRE",
-            "texto": "Yogurt de sabores / snack"
           }
         ]
       },
       "almuerzo": {
         "items": [
           {
-            "categoria": "ENTRADA CALIENTE · SOPA",
-            "texto": "Crema Verduras"
+            "categoria": "E.Caliente Sopa",
+            "texto": "Crema Verduras (49 kcal.)"
           },
           {
-            "categoria": "FONDO NORMAL",
-            "texto": "Vacuno al Jugo con Budin De Verduras"
+            "categoria": "Fondo Normal",
+            "texto": "Vacuno al Jugo",
+            "cantidad": 70
           },
           {
-            "categoria": "FONDO ALTERNATIVO",
-            "texto": "Aji de Gallina con Arroz Piamontes"
+            "categoria": "Fondo Alternativo",
+            "texto": "Aji de Gallina",
+            "cantidad": 20
           },
           {
-            "categoria": "TERCERA OPCIÓN",
-            "texto": "GARBANZOS GUISADOS CON LONGANIZA ASADA"
+            "categoria": "Acompañamiento Normal",
+            "texto": "Budin De Verduras"
           },
           {
-            "categoria": "HIPOCALÓRICO",
-            "texto": "Pollo Salteado con Verduras al Vapor."
+            "categoria": "Acompañamiento Alternativo",
+            "texto": "Arroz Piamontes"
           },
           {
-            "categoria": "ENSALADAS",
-            "texto": "Habas a la chilena / Pepino / Repollo"
+            "categoria": "TERCERA OPCION",
+            "texto": "GARBANZOS GUISADOS CON LONGANIZA ASADA",
+            "cantidad": 10
           },
           {
-            "categoria": "POSTRES",
-            "texto": "Fruta / Leche Asada / Jalea / Queque Marmoleado"
+            "categoria": "Hipocalórico",
+            "texto": "Pollo Salteado con Verduras al Vapor.          (247 kcal)"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Habas a la chilena"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Pepino"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Repollo"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Fruta"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Leche Asada"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Jalea"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Queque Marmoleado"
           }
         ]
       },
       "cena": {
         "items": [
           {
-            "categoria": "ENTRADA CALIENTE · SOPA",
-            "texto": "Sopa de Verduras con Fideos"
+            "categoria": "E.Caliente Sopa",
+            "texto": "Sopa de Verduras con Fideos (49 kcal.)"
           },
           {
-            "categoria": "FONDO NORMAL",
-            "texto": "PECH DE POLLO A LA MOSTAZA con Papas Romero"
+            "categoria": "Fondo Normal",
+            "texto": "PECH DE POLLO A LA MOSTAZA"
           },
           {
-            "categoria": "FONDO ALTERNATIVO",
-            "texto": "Charquican de Verduras con Huevo Frito"
+            "categoria": "Fondo Alternativo",
+            "texto": "Charquican de Verduras"
           },
           {
-            "categoria": "TERCERA OPCIÓN",
-            "texto": "POROTOS GRANADOS C/ CHORIZO"
+            "categoria": "Acompañamiento Normal",
+            "texto": "Papas Romero"
           },
           {
-            "categoria": "HIPOCALÓRICO",
-            "texto": "Tomate Reina"
+            "categoria": "Acompañamiento Alternativo",
+            "texto": "Huevo Frito"
           },
           {
-            "categoria": "ENSALADAS",
-            "texto": "Pepino / Apio / Beterraga"
+            "categoria": "TERCERA OPCION",
+            "texto": "POROTOS GRANADOS  C/ CHORIZO"
           },
           {
-            "categoria": "POSTRES",
-            "texto": "Fruta / Leche Asada / Jalea / Queque Marmoleado"
+            "categoria": "Hipocalórico",
+            "texto": "Tomate Reina (268 kcal)"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Pepino"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Apio"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Beterraga"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Fruta"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Leche Asada"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Jalea"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Queque Marmoleado"
           }
         ]
-      },
-      "colacion": "AVE PIMENTON/MAYONESA"
+      }
     },
     "2026-11-27": {
+      "colacion": "CHURRASCO QUESO",
       "desayuno": {
         "items": [
           {
-            "categoria": "SÁNDWICH",
+            "categoria": "Porción Solida",
             "texto": "COMPLETO ITALIANO"
           },
           {
-            "categoria": "PAN",
+            "categoria": "Variedad Pan",
             "texto": "Hallulla y Marraqueta"
           },
           {
-            "categoria": "AGREGADOS",
-            "texto": "Mermelada / Mantequilla"
+            "categoria": "P. Solida",
+            "texto": "Agr Mermelada"
           },
           {
-            "categoria": "LECHE",
+            "categoria": "Agregado",
+            "texto": "Agr Mantequilla"
+          },
+          {
+            "categoria": "P. Solida",
+            "texto": "Yogurt Sabores"
+          },
+          {
+            "categoria": "P. Solida",
+            "texto": "Snack"
+          },
+          {
+            "categoria": "Porcion Liquida",
             "texto": "Leche Caliente"
           },
           {
-            "categoria": "PORRIDGE",
+            "categoria": "Porridge",
             "texto": "Leche C/ Frutilla"
           },
           {
             "categoria": "MEJORADO",
             "texto": "BROWNIE"
-          },
-          {
-            "categoria": "POSTRE",
-            "texto": "Yogurt de sabores / snack"
           }
         ]
       },
       "almuerzo": {
         "items": [
           {
-            "categoria": "ENTRADA CALIENTE · SOPA",
-            "texto": "Sopa Pollo con Semola"
+            "categoria": "E.Caliente Sopa",
+            "texto": "Sopa Pollo con Semola  (45 kcal.)"
           },
           {
-            "categoria": "FONDO NORMAL",
-            "texto": "Pescado Frito con Pure Rustico"
+            "categoria": "Fondo Normal",
+            "texto": "Pescado Frito",
+            "cantidad": 60
           },
           {
-            "categoria": "FONDO ALTERNATIVO",
-            "texto": "Panita al Ajillo con Tortilla de Zanahoria"
+            "categoria": "Fondo Alternativo",
+            "texto": "Panita al Ajillo",
+            "cantidad": 20
           },
           {
-            "categoria": "TERCERA OPCIÓN",
-            "texto": "CARBONADA MIXTA"
+            "categoria": "Acompañamiento Normal",
+            "texto": "Pure Rustico"
           },
           {
-            "categoria": "HIPOCALÓRICO",
-            "texto": "Tomate Reina"
+            "categoria": "Acompañamiento Alternativo",
+            "texto": "Tortilla de Zanahoria"
           },
           {
-            "categoria": "ENSALADAS",
-            "texto": "Ceviche de Mote / Brocoli / Acelga Cruda"
+            "categoria": "TERCERA OPCION",
+            "texto": "CARBONADA MIXTA",
+            "cantidad": 20
           },
           {
-            "categoria": "POSTRES",
-            "texto": "Fruta / Semola / Mote con Huesillos / BRAZO DE REINA"
+            "categoria": "Hipocalórico",
+            "texto": "Tomate Reina (268 kcal)"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Ceviche de Mote (145 kcal.)"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Brocoli"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Acelga Cruda"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Fruta"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Semola"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Mote con Huesillos"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "BRAZO DE REINA"
           }
         ]
       },
       "cena": {
         "items": [
           {
-            "categoria": "ENTRADA CALIENTE · SOPA",
-            "texto": "Sopa de Carne con Verduras"
+            "categoria": "E.Caliente Sopa",
+            "texto": "Sopa de Carne con Verduras (45 kcal.)"
           },
           {
-            "categoria": "FONDO NORMAL",
-            "texto": "Vacuno Mongoliano con Arroz Chaufan"
+            "categoria": "Fondo Normal",
+            "texto": "Vacuno Mongoliano"
           },
           {
-            "categoria": "FONDO ALTERNATIVO",
-            "texto": "Salsa Alfredo con Corbatas con Albahaca"
+            "categoria": "Fondo Alternativo",
+            "texto": "Salsa Alfredo"
           },
           {
-            "categoria": "TERCERA OPCIÓN",
+            "categoria": "Acompañamiento Normal",
+            "texto": "Arroz Chaufan"
+          },
+          {
+            "categoria": "Acompañamiento Alternativo",
+            "texto": "Corbatas con Albahaca"
+          },
+          {
+            "categoria": "TERCERA OPCION",
             "texto": "AJIACO DE VACUNO"
           },
           {
-            "categoria": "HIPOCALÓRICO",
-            "texto": "Ensalada Mediterranea"
+            "categoria": "Hipocalórico",
+            "texto": "Ensalada Mediterranea (206 kcal)"
           },
           {
-            "categoria": "ENSALADAS",
-            "texto": "Repollo Morado / Choclo / Tomate"
+            "categoria": "Ensaladas",
+            "texto": "Repollo Morado"
           },
           {
-            "categoria": "POSTRES",
-            "texto": "Fruta / Semola / Mote con Huesillos / BRAZO DE REINA"
+            "categoria": "Ensaladas",
+            "texto": "Choclo"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Tomate"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Fruta"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Semola"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Mote con Huesillos"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "BRAZO DE REINA"
           }
         ]
-      },
-      "colacion": "CHURRASCO QUESO"
+      }
     },
     "2026-11-28": {
+      "colacion": "ALIADO PALTA",
       "desayuno": {
         "items": [
           {
-            "categoria": "SÁNDWICH",
+            "categoria": "Porción Solida",
             "texto": "Atun Cebolla Cilantro"
           },
           {
-            "categoria": "PAN",
+            "categoria": "Variedad Pan",
             "texto": "Hallulla y Marraqueta"
           },
           {
-            "categoria": "AGREGADOS",
-            "texto": "Manjar / Mantequilla"
+            "categoria": "P. Solida",
+            "texto": "Agr Manjar"
           },
           {
-            "categoria": "LECHE",
+            "categoria": "Agregado",
+            "texto": "Agr Mantequilla"
+          },
+          {
+            "categoria": "P. Solida",
+            "texto": "Yogurt Sabores"
+          },
+          {
+            "categoria": "P. Solida",
+            "texto": "Snack"
+          },
+          {
+            "categoria": "Porcion Liquida",
             "texto": "Leche Caliente"
           },
           {
-            "categoria": "PORRIDGE",
+            "categoria": "Porridge",
             "texto": "Leche C/ Chocolate"
           },
           {
             "categoria": "MEJORADO",
             "texto": "BUFFET DE JAMON"
-          },
-          {
-            "categoria": "POSTRE",
-            "texto": "Yogurt de sabores / snack"
           }
         ]
       },
       "almuerzo": {
         "items": [
           {
-            "categoria": "ENTRADA CALIENTE · SOPA",
-            "texto": "Crema de Tomates"
+            "categoria": "E.Caliente Sopa",
+            "texto": "Crema de Tomates  (49 kcal.)"
           },
           {
-            "categoria": "FONDO NORMAL",
-            "texto": "Rogout de Pollo con Arroz Pilaf"
+            "categoria": "Fondo Normal",
+            "texto": "Rogout de Pollo",
+            "cantidad": 50
           },
           {
-            "categoria": "FONDO ALTERNATIVO",
-            "texto": "Salsa Boloñesa con Spaguettis atomatados"
+            "categoria": "Fondo Alternativo",
+            "texto": "Salsa Boloñesa",
+            "cantidad": 90
           },
           {
-            "categoria": "TERCERA OPCIÓN",
-            "texto": "LENTEJAS PARMESANAS CON VINESAS SALTEADAS"
+            "categoria": "Acompañamiento Normal",
+            "texto": "Arroz Pilaf"
           },
           {
-            "categoria": "HIPOCALÓRICO",
-            "texto": "Ensalada Mediterranea"
+            "categoria": "Acompañamiento Alternativo",
+            "texto": "Spaguettis atomatados"
           },
           {
-            "categoria": "ENSALADAS",
-            "texto": "Primavera / Lechuga / Pepino"
+            "categoria": "TERCERA OPCION",
+            "texto": "LENTEJAS PARMESANAS CON VINESAS SALTEADAS",
+            "cantidad": 10
           },
           {
-            "categoria": "POSTRES",
-            "texto": "Fruta / Natilla / Jalea / QUEQUE MANZANA CANELA"
+            "categoria": "Hipocalórico",
+            "texto": "Ensalada Mediterranea (206 kcal)"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Primavera"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Lechuga"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Pepino"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Fruta"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Natilla"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Jalea"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "QUEQUE MANZANA CANELA"
           }
         ]
       },
       "cena": {
         "items": [
           {
-            "categoria": "ENTRADA CALIENTE · SOPA",
-            "texto": "Crema de Tomate"
+            "categoria": "E.Caliente Sopa",
+            "texto": "Crema de Tomate  (45 kcal.)"
           },
           {
-            "categoria": "FONDO NORMAL",
-            "texto": "Pollo Asado con Papas Fritas"
+            "categoria": "Fondo Normal",
+            "texto": "Pollo Asado"
           },
           {
-            "categoria": "FONDO ALTERNATIVO",
+            "categoria": "Fondo Alternativo",
             "texto": "Chupe de Mariscos"
           },
           {
-            "categoria": "TERCERA OPCIÓN",
+            "categoria": "Acompañamiento Normal",
+            "texto": "Papas Fritas"
+          },
+          {
+            "categoria": "TERCERA OPCION",
             "texto": "GARBANZOS GUISADOS CON CHORIZOS"
           },
           {
-            "categoria": "HIPOCALÓRICO",
+            "categoria": "Hipocalórico",
             "texto": "Pescado al horno con Ensaladas"
           },
           {
-            "categoria": "ENSALADAS",
-            "texto": "Lechuga / Pebre / Zanahoria"
+            "categoria": "Ensaladas",
+            "texto": "Lechuga"
           },
           {
-            "categoria": "POSTRES",
-            "texto": "Fruta / Natilla / Jalea / QUEQUE MANZANA CANELA"
+            "categoria": "Ensaladas",
+            "texto": "Pebre"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Zanahoria"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Fruta"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Natilla"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Jalea"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "QUEQUE MANZANA CANELA"
           }
         ]
-      },
-      "colacion": "ALIADO PALTA"
+      }
     },
     "2026-11-29": {
+      "colacion": "LOMITO QUESO",
       "desayuno": {
         "items": [
           {
-            "categoria": "SÁNDWICH",
+            "categoria": "Porción Solida",
             "texto": "JAMON PALTA"
           },
           {
-            "categoria": "PAN",
+            "categoria": "Variedad Pan",
             "texto": "Hallulla y Marraqueta"
           },
           {
-            "categoria": "AGREGADOS",
-            "texto": "Mermelada / Mantequilla"
+            "categoria": "P. Solida",
+            "texto": "Agr Mermelada"
           },
           {
-            "categoria": "LECHE",
+            "categoria": "Agregado",
+            "texto": "Agr Mantequilla"
+          },
+          {
+            "categoria": "P. Solida",
+            "texto": "Yogurt Sabores"
+          },
+          {
+            "categoria": "P. Solida",
+            "texto": "Snack"
+          },
+          {
+            "categoria": "Porcion Liquida",
             "texto": "Leche Caliente"
           },
           {
-            "categoria": "PORRIDGE",
+            "categoria": "Porridge",
             "texto": "Capucchino con Vainilla"
           },
           {
             "categoria": "MEJORADO",
-            "texto": "BUFFET DE QUESO"
-          },
-          {
-            "categoria": "POSTRE",
-            "texto": "Yogurt de sabores / snack"
+            "texto": "BUFFET DE JAMON"
           }
         ]
       },
       "almuerzo": {
         "items": [
           {
-            "categoria": "ENTRADA CALIENTE · SOPA",
+            "categoria": "E.Caliente Sopa",
             "texto": "Sopa Pollo con Arroz"
           },
           {
-            "categoria": "FONDO NORMAL",
-            "texto": "Prietas Lyonesas con Papas Doradas"
+            "categoria": "Fondo Normal",
+            "texto": "Prietas Lyonesas",
+            "cantidad": 25
           },
           {
-            "categoria": "FONDO ALTERNATIVO",
-            "texto": "Pastel de Choclo"
+            "categoria": "Fondo Alternativo",
+            "texto": "Pastel de Choclo",
+            "cantidad": 25
           },
           {
-            "categoria": "TERCERA OPCIÓN",
-            "texto": "Cazuela de Vacuno"
+            "categoria": "Acompañamiento Normal",
+            "texto": "Papas Doradas"
           },
           {
-            "categoria": "HIPOCALÓRICO",
+            "categoria": "TERCERA OPCION",
+            "texto": "Cazuela de Vacuno",
+            "cantidad": 40
+          },
+          {
+            "categoria": "Hipocalórico",
             "texto": "Ensalada Cesar"
           },
           {
-            "categoria": "ENSALADAS",
-            "texto": "Chilena / Apio / Beterraga"
+            "categoria": "Ensaladas",
+            "texto": "Chilena"
           },
           {
-            "categoria": "POSTRES",
-            "texto": "Fruta / Bavaroise / Jalea / Torta Casera"
+            "categoria": "Ensaladas",
+            "texto": "Apio"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Beterraga"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Fruta"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Bavaroise"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Jalea"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Torta Casera"
           }
         ]
       },
       "cena": {
         "items": [
           {
-            "categoria": "ENTRADA CALIENTE · SOPA",
+            "categoria": "E.Caliente Sopa",
             "texto": "Sopa de Carne con Verduras"
           },
           {
-            "categoria": "FONDO NORMAL",
-            "texto": "Estofado de Cerdo con Espirales al Olivo"
+            "categoria": "Fondo Normal",
+            "texto": "Estofado de Cerdo"
           },
           {
-            "categoria": "FONDO ALTERNATIVO",
-            "texto": "Panita al Ajillo con Tortilla de Primavera"
+            "categoria": "Fondo Alternativo",
+            "texto": "Panita al Ajillo"
           },
           {
-            "categoria": "TERCERA OPCIÓN",
+            "categoria": "Acompañamiento Normal",
+            "texto": "Espirales al Olivo"
+          },
+          {
+            "categoria": "Acompañamiento Alternativo",
+            "texto": "Tortilla de Primavera"
+          },
+          {
+            "categoria": "TERCERA OPCION",
             "texto": "Pantrucas"
           },
           {
-            "categoria": "HIPOCALÓRICO",
+            "categoria": "Hipocalórico",
             "texto": "Atun Cebollin con Ensaladas"
           },
           {
-            "categoria": "ENSALADAS",
-            "texto": "Poroto a la Chilena / Apio / Pepino"
+            "categoria": "Ensaladas",
+            "texto": "Poroto a la Chilena"
           },
           {
-            "categoria": "POSTRES",
-            "texto": "Fruta / Bavaroise / Jalea / Colegial"
+            "categoria": "Ensaladas",
+            "texto": "Apio"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Pepino"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Fruta"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Bavaroise"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Jalea"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Colegial"
           }
         ]
-      },
-      "colacion": "LOMITO QUESO"
+      }
     },
     "2026-11-30": {
+      "colacion": "BUFETT DE JAMON",
       "desayuno": {
         "items": [
           {
-            "categoria": "SÁNDWICH",
+            "categoria": "Porción Solida",
             "texto": "ARROLLADO PALTA"
           },
           {
-            "categoria": "PAN",
+            "categoria": "Variedad Pan",
             "texto": "Hallulla y Marraqueta"
           },
           {
-            "categoria": "AGREGADOS",
-            "texto": "Mermelada / Mantequilla"
+            "categoria": "P. Solida",
+            "texto": "Agr Mermelada"
           },
           {
-            "categoria": "LECHE",
+            "categoria": "Agregado",
+            "texto": "Agr Mantequilla"
+          },
+          {
+            "categoria": "P. Solida",
+            "texto": "Yogurt Sabores"
+          },
+          {
+            "categoria": "P. Solida",
+            "texto": "Snack"
+          },
+          {
+            "categoria": "Porcion Liquida",
             "texto": "Leche Caliente"
           },
           {
-            "categoria": "PORRIDGE",
+            "categoria": "Porridge",
             "texto": "Capucchino con Vainilla"
           },
           {
             "categoria": "MEJORADO",
             "texto": "BUFFET DE QUESO"
-          },
-          {
-            "categoria": "POSTRE",
-            "texto": "Yogurt de sabores / snack"
           }
         ]
       },
       "almuerzo": {
         "items": [
           {
-            "categoria": "ENTRADA CALIENTE · SOPA",
+            "categoria": "E.Caliente Sopa",
             "texto": "Crema de Tomates"
           },
           {
-            "categoria": "FONDO NORMAL",
-            "texto": "Pescado Frito con Arroz Primavera"
+            "categoria": "Fondo Normal",
+            "texto": "Pescado Frito"
           },
           {
-            "categoria": "FONDO ALTERNATIVO",
-            "texto": "Chuleta de Cerdo Asada con Corbatitas Atomatadas"
+            "categoria": "Fondo Alternativo",
+            "texto": "Chuleta de Cerdo Asada"
           },
           {
-            "categoria": "TERCERA OPCIÓN",
+            "categoria": "Acompañamiento Normal",
+            "texto": "Arroz Primavera"
+          },
+          {
+            "categoria": "Acompañamiento Alternativo",
+            "texto": "Corbatitas Atomatadas"
+          },
+          {
+            "categoria": "TERCERA OPCION",
             "texto": "CARBONADA DE AVE"
           },
           {
-            "categoria": "HIPOCALÓRICO",
+            "categoria": "Hipocalórico",
             "texto": "Atun Cebollin con Ensaladas"
           },
           {
-            "categoria": "ENSALADAS",
-            "texto": "Repollo / Haba / Choclo"
+            "categoria": "Ensaladas",
+            "texto": "Repollo"
           },
           {
-            "categoria": "POSTRES",
-            "texto": "Fruta / Bavaroise / Jalea / Breden Master"
+            "categoria": "Ensaladas",
+            "texto": "Haba"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Choclo"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Fruta"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Bavaroise"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Jalea"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Breden Master"
           }
         ]
       },
       "cena": {
         "items": [
           {
-            "categoria": "ENTRADA CALIENTE · SOPA",
-            "texto": "Crema de Esparragos"
+            "categoria": "E.Caliente Sopa",
+            "texto": "Crema de Esparragos (49 kcal.)"
           },
           {
-            "categoria": "FONDO NORMAL",
-            "texto": "ESTOFADO DE CERDO con Pure Mixto"
+            "categoria": "Fondo Normal",
+            "texto": "ESTOFADO DE CERDO"
           },
           {
-            "categoria": "FONDO ALTERNATIVO",
+            "categoria": "Fondo Alternativo",
             "texto": "Lazaña Boloñesa"
           },
           {
-            "categoria": "TERCERA OPCIÓN",
+            "categoria": "Acompañamiento Normal",
+            "texto": "Pure Mixto"
+          },
+          {
+            "categoria": "TERCERA OPCION",
             "texto": "Carbonada de Vacuno"
           },
           {
-            "categoria": "HIPOCALÓRICO",
+            "categoria": "Hipocalórico",
             "texto": "Tomate Neptuno con Mix de Ensaladas"
           },
           {
-            "categoria": "ENSALADAS",
-            "texto": "TOMATE CON CILANRO / Pepino / Habas"
+            "categoria": "Ensaladas",
+            "texto": "TOMATE CON CILANRO"
           },
           {
-            "categoria": "POSTRES",
-            "texto": "Fruta / ARROZ CON LECHE / Jalea / Breden Master"
+            "categoria": "Ensaladas",
+            "texto": "Pepino"
+          },
+          {
+            "categoria": "Ensaladas",
+            "texto": "Habas"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Fruta"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "ARROZ CON LECHE"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Jalea"
+          },
+          {
+            "categoria": "Postres",
+            "texto": "Breden Master"
           }
         ]
-      },
-      "colacion": "BUFETT DE JAMON"
+      }
     }
   }
 }
