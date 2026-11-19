@@ -566,10 +566,10 @@
       </div>
       <div class="header-right-box">
         <!-- WIDGET CLIMA CALAMA -->
-        <div class="clima-pill" id="clima-pill" title="Clima actual en Calama: {{ clima.descripcion }} ({{ clima.temperatura_texto }})">
-          <span class="clima-icono" id="clima-icono">{{ clima.icono|default:"☀️" }}</span>
+        <div class="clima-pill" id="clima-pill" title="Clima actual en Calama">
+          <span class="clima-icono" id="clima-icono">☀️</span>
           <div class="clima-detalles">
-            <span class="clima-temp" id="clima-temp">{{ clima.temperatura_texto|default:"--°C" }}</span>
+            <span class="clima-temp" id="clima-temp">25°C</span>
             <span class="clima-ciudad">Calama</span>
           </div>
         </div>
@@ -841,9 +841,6 @@
       }
 
       // Encabezado y logos
-      if (data.clima && typeof window.actualizarClimaUI === 'function') {
-        window.actualizarClimaUI(data.clima);
-      }
       if (data.logo_promet && imgPromet.src !== data.logo_promet) {
         imgPromet.src = data.logo_promet;
       }

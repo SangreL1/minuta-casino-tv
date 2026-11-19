@@ -1,11 +1,13 @@
 /**
  * clima.js - Widget de Clima para Calama, Chile
- * Consulta Open-Meteo directamente desde el navegador (datos en vivo sin restricciones de proxy)
- * y endpoint local /api/clima/ como respaldo.
+ * Consulta Open-Meteo directamente desde el navegador para obtener la temperatura en tiempo real exacta.
+ * Usa almacenamiento local (localStorage) para persistencia instantánea y evitar parpadeos.
  */
 
 (function () {
   'use strict';
+
+  const STORAGE_KEY = 'calama_clima_data_v2';
 
   function aplicarClimaEnDOM(clima) {
     if (!clima) return;
@@ -16,7 +18,7 @@
     const descs = document.querySelectorAll('.clima-desc');
 
     const icono = clima.icono || '☀️';
-    const tempTxt = clima.temperatura_texto || (clima.temperatura !== undefined ? Math.round(clima.temperatura) + '°C' : '--°C');
+    const tempTxt = clima.temperatura_texto || (clima.temperatura !== undefined ? Math.round(clima.temperatura) + '°C' : '25°C');
     const descTxt = clima.descripcion || 'Calama';
 
     iconos.forEach(el => { el.textContent = icono; });
@@ -25,21 +27,33 @@
     pills.forEach(el => {
       el.title = `Clima actual en Calama: ${descTxt} (${tempTxt})`;
     });
+
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(clima));
+    } catch (e) {}
   }
 
-  // Exportar al objeto global para que la TV lo invoque directamente
+  // Exportar al objeto global
   window.actualizarClimaUI = aplicarClimaEnDOM;
 
+  // Restaurar de inmediato el último clima guardado para que no parpadee
+  try {
+    const cached = localStorage.getItem(STORAGE_KEY);
+    if (cached) {
+      aplicarClimaEnDOM(JSON.parse(cached));
+    }
+  } catch (e) {}
+
   async function consultarClima() {
-    // 1. Intentar consultar Open-Meteo directamente desde el navegador (sin proxy del servidor, siempre actualizado)
+    // 1. Consulta directa a Open-Meteo desde el navegador (temperatura viva sin proxy)
     try {
       const urlOM = 'https://api.open-meteo.com/v1/forecast?latitude=-22.4544&longitude=-68.9294&current=temperature_2m,is_day,weather_code&timezone=America%2FSantiago';
-      const respOM = await fetch(urlOM);
+      const respOM = await fetch(urlOM, { cache: 'no-store' });
       if (respOM.ok) {
         const payload = await respOM.json();
         const curr = payload.current || {};
         const rawTemp = curr.temperature_2m !== undefined ? curr.temperature_2m : 25;
-        // Redondeo estándar (24.5 -> 25°C como en celulares)
+        // Redondeo estándar (24.5 -> 25°C exactamente igual a las apps del celular)
         const temp = Math.round(rawTemp);
         const isDay = curr.is_day !== undefined ? curr.is_day : 1;
         const code = curr.weather_code || 0;
@@ -76,18 +90,19 @@
           temperatura_texto: `${temp}°C`,
           icono: icono,
           descripcion: desc,
-          ciudad: 'Calama'
+          ciudad: 'Calama',
+          fuente: 'open-meteo-direct'
         };
         aplicarClimaEnDOM(dataClima);
         return;
       }
     } catch (e) {
-      // Si falla llamada directa externa, pasar al fallback local
+      // Si falla llamada directa externa, pasar a fallback local
     }
 
     // 2. Fallback: Endpoint local Django
     try {
-      const resp = await fetch('/api/clima/?_t=' + Date.now());
+      const resp = await fetch('/api/clima/?_t=' + Date.now(), { cache: 'no-store' });
       if (resp.ok) {
         const data = await resp.json();
         if (data && data.status === 'ok') {
@@ -99,13 +114,12 @@
     }
   }
 
-  // Ejecutar al cargar la página
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', consultarClima);
   } else {
     consultarClima();
   }
 
-  // Refrescar cada 15 minutos automáticamente
-  setInterval(consultarClima, 15 * 60 * 1000);
+  // Refrescar cada 10 minutos automáticamente
+  setInterval(consultarClima, 10 * 60 * 1000);
 })();

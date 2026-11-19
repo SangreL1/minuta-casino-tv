@@ -104,25 +104,30 @@
       transition: all 0.2s ease;
       cursor: default;
     }
+
     .clima-pill:hover {
       background: #E0F2FE;
       border-color: #93C5FD;
       box-shadow: 0 2px 6px rgba(11, 63, 168, 0.08);
     }
+
     .clima-icono {
       font-size: 1.25rem;
       line-height: 1;
     }
+
     .clima-detalles {
       display: flex;
       flex-direction: column;
       line-height: 1.1;
     }
+
     .clima-temp {
       font-size: 0.95rem;
       font-weight: 800;
       color: #0F172A;
     }
+
     .clima-ciudad {
       font-size: 0.65rem;
       font-weight: 700;
@@ -914,10 +919,10 @@
     </div>
     <div class="header-right">
       <!-- WIDGET CLIMA CALAMA -->
-      <div class="clima-pill" id="clima-pill" title="Clima actual en Calama: {{ clima.descripcion }} ({{ clima.temperatura_texto }})">
-        <span class="clima-icono" id="clima-icono">{{ clima.icono|default:"☀️" }}</span>
+      <div class="clima-pill" id="clima-pill" title="Clima actual en Calama">
+        <span class="clima-icono" id="clima-icono">☀️</span>
         <div class="clima-detalles">
-          <span class="clima-temp" id="clima-temp">{{ clima.temperatura_texto|default:"--°C" }}</span>
+          <span class="clima-temp" id="clima-temp">25°C</span>
           <span class="clima-ciudad">Calama</span>
         </div>
       </div>
@@ -1212,7 +1217,8 @@
 
           <div class="card-title" style="margin-top: 24px;">⏱️ Tiempos de Visualización en Pantalla TV</div>
           <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 16px;">
-            Configura cuántos segundos se muestra cada vista en el televisor. Dale más tiempo a la minuta para que las personas alcancen a leer todos los platos con calma, y menos tiempo a los horarios o al QR.
+            Configura cuántos segundos se muestra cada vista en el televisor. Dale más tiempo a la minuta para que las
+            personas alcancen a leer todos los platos con calma, y menos tiempo a los horarios o al QR.
           </p>
           <div class="form-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
             <div class="form-group">

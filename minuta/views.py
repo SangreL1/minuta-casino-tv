@@ -179,7 +179,7 @@ def obtener_datos_clima_calama():
     # Estimación de temperatura si la API externa no respondió
     if temp is None:
         if 12 <= hora < 17:
-            temp = 24.0
+            temp = 25.0
         elif 17 <= hora < 20:
             temp = 20.5
         elif 20 <= hora or hora < 7:
