@@ -25,7 +25,10 @@ class ConfiguracionServicio(models.Model):
 
 
 class ConfiguracionGeneral(models.Model):
-    intervalo_rotacion_segundos = models.PositiveSmallIntegerField(default=10, help_text="Segundos entre Vista A y Vista B")
+    intervalo_rotacion_segundos = models.PositiveSmallIntegerField(default=10, help_text="Segundos base de rotación")
+    tiempo_minuta_segundos = models.PositiveSmallIntegerField(default=25, help_text="Segundos para la Minuta (Vista A)")
+    tiempo_horarios_segundos = models.PositiveSmallIntegerField(default=8, help_text="Segundos para Horarios de Servicio (Vista B)")
+    tiempo_qr_segundos = models.PositiveSmallIntegerField(default=8, help_text="Segundos para Código QR / Próximos Días (Vista C)")
     zona_horaria = models.CharField(max_length=50, default="America/Santiago")
     logo_promet = models.ImageField(upload_to="logos/", blank=True, null=True, help_text="Subir logo PROMET personalizado (opcional)")
     logo_coalfa = models.ImageField(upload_to="logos/", blank=True, null=True, help_text="Subir logo COALFA personalizado (opcional)")

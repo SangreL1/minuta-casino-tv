@@ -1,7 +1,7 @@
 /**
  * clima.js - Widget de Clima para Calama, Chile
- * Consulta Open-Meteo y endpoint local /api/clima/
- * Soporta Sol radiante, Nublado, Noche (Luna), Atardecer / Tarde
+ * Consulta Open-Meteo directamente desde el navegador (datos en vivo sin restricciones de proxy)
+ * y endpoint local /api/clima/ como respaldo.
  */
 
 (function () {
@@ -31,33 +31,20 @@
   window.actualizarClimaUI = aplicarClimaEnDOM;
 
   async function consultarClima() {
-    // 1. Intentar endpoint local Django
-    try {
-      const resp = await fetch('/api/clima/?_t=' + Date.now());
-      if (resp.ok) {
-        const data = await resp.json();
-        if (data && data.status === 'ok') {
-          aplicarClimaEnDOM(data);
-          return;
-        }
-      }
-    } catch (e) {
-      // Si falla local, intentar fallback directo a Open-Meteo
-    }
-
-    // 2. Fallback directo a Open-Meteo desde el navegador (CORS habilitado por Open-Meteo)
+    // 1. Intentar consultar Open-Meteo directamente desde el navegador (sin proxy del servidor, siempre actualizado)
     try {
       const urlOM = 'https://api.open-meteo.com/v1/forecast?latitude=-22.4544&longitude=-68.9294&current=temperature_2m,is_day,weather_code&timezone=America%2FSantiago';
       const respOM = await fetch(urlOM);
       if (respOM.ok) {
         const payload = await respOM.json();
         const curr = payload.current || {};
-        const temp = curr.temperature_2m !== undefined ? Math.round(curr.temperature_2m) : 22;
+        const rawTemp = curr.temperature_2m !== undefined ? curr.temperature_2m : 25;
+        // Redondeo estándar (24.5 -> 25°C como en celulares)
+        const temp = Math.round(rawTemp);
         const isDay = curr.is_day !== undefined ? curr.is_day : 1;
         const code = curr.weather_code || 0;
 
         const now = new Date();
-        // Hora en Chile (aproximada por Date o UTC-3)
         const horaChile = new Date(now.toLocaleString('en-US', { timeZone: 'America/Santiago' })).getHours();
         const esTarde = (isDay === 1 && (horaChile >= 18 && horaChile < 21));
 
@@ -92,6 +79,20 @@
           ciudad: 'Calama'
         };
         aplicarClimaEnDOM(dataClima);
+        return;
+      }
+    } catch (e) {
+      // Si falla llamada directa externa, pasar al fallback local
+    }
+
+    // 2. Fallback: Endpoint local Django
+    try {
+      const resp = await fetch('/api/clima/?_t=' + Date.now());
+      if (resp.ok) {
+        const data = await resp.json();
+        if (data && data.status === 'ok') {
+          aplicarClimaEnDOM(data);
+        }
       }
     } catch (err) {
       console.warn('No fue posible consultar el clima:', err);

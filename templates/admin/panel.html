@@ -1210,20 +1210,46 @@
           </div>
           {% endfor %}
 
-          <div class="card-title" style="margin-top: 24px;">Ajustes de Pantalla TV</div>
-          <div class="form-grid">
+          <div class="card-title" style="margin-top: 24px;">⏱️ Tiempos de Visualización en Pantalla TV</div>
+          <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 16px;">
+            Configura cuántos segundos se muestra cada vista en el televisor. Dale más tiempo a la minuta para que las personas alcancen a leer todos los platos con calma, y menos tiempo a los horarios o al QR.
+          </p>
+          <div class="form-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
             <div class="form-group">
-              <label for="intervalo_rotacion">Intervalo rotación Vistas (segundos)</label>
-              <input type="number" id="intervalo_rotacion" name="intervalo_rotacion" class="form-control"
-                value="{{ cfg.intervalo_rotacion_segundos }}" min="5" max="60">
-              <small style="color: var(--text-muted); display: block; margin-top: 4px;">Recomendado: 10 segundos</small>
+              <label for="tiempo_minuta">🍽️ Vista A: Minuta del Servicio</label>
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <input type="number" id="tiempo_minuta" name="tiempo_minuta" class="form-control"
+                  value="{{ cfg.tiempo_minuta_segundos|default:25 }}" min="5" max="180">
+                <span style="font-size: 13px; font-weight: 600; color: var(--text-muted);">seg</span>
+              </div>
+              <small style="color: var(--text-muted); display: block; margin-top: 4px;">Recomendado: 25 a 35 seg</small>
             </div>
             <div class="form-group">
-              <label for="recarga_minutos">Recarga completa TV (minutos)</label>
-              <input type="number" id="recarga_minutos" name="recarga_minutos" class="form-control"
-                value="{{ cfg.recarga_minutos }}" min="5" max="120">
-              <small style="color: var(--text-muted); display: block; margin-top: 4px;">Recomendado: 30 minutos (limpia
-                memoria en TV)</small>
+              <label for="tiempo_horarios">🕒 Vista B: Horarios de Servicio</label>
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <input type="number" id="tiempo_horarios" name="tiempo_horarios" class="form-control"
+                  value="{{ cfg.tiempo_horarios_segundos|default:8 }}" min="3" max="60">
+                <span style="font-size: 13px; font-weight: 600; color: var(--text-muted);">seg</span>
+              </div>
+              <small style="color: var(--text-muted); display: block; margin-top: 4px;">Recomendado: 8 seg</small>
+            </div>
+            <div class="form-group">
+              <label for="tiempo_qr">📱 Vista C: Próximos Días / QR</label>
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <input type="number" id="tiempo_qr" name="tiempo_qr" class="form-control"
+                  value="{{ cfg.tiempo_qr_segundos|default:8 }}" min="3" max="60">
+                <span style="font-size: 13px; font-weight: 600; color: var(--text-muted);">seg</span>
+              </div>
+              <small style="color: var(--text-muted); display: block; margin-top: 4px;">Recomendado: 8 seg</small>
+            </div>
+            <div class="form-group">
+              <label for="recarga_minutos">🔄 Recarga completa TV</label>
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <input type="number" id="recarga_minutos" name="recarga_minutos" class="form-control"
+                  value="{{ cfg.recarga_minutos|default:30 }}" min="5" max="120">
+                <span style="font-size: 13px; font-weight: 600; color: var(--text-muted);">min</span>
+              </div>
+              <small style="color: var(--text-muted); display: block; margin-top: 4px;">Limpia memoria en TV</small>
             </div>
           </div>
 

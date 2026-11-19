@@ -270,7 +270,7 @@ def obtener_datos_clima_calama():
             descripcion = 'Soleado'
             tipo = 'sol'
 
-    temp_round = int(round(temp))
+    temp_round = int(temp + 0.5) if temp is not None else 25
     data_clima = {
         'status': 'ok',
         'ciudad': 'Calama',
@@ -393,6 +393,9 @@ def api_tv_data(request):
         'items_col2': items_col2,
         'horarios_servicios': servicios_list,
         'intervalo_rotacion': cfg_gen.intervalo_rotacion_segundos,
+        'tiempo_minuta': getattr(cfg_gen, 'tiempo_minuta_segundos', 25),
+        'tiempo_horarios': getattr(cfg_gen, 'tiempo_horarios_segundos', 8),
+        'tiempo_qr': getattr(cfg_gen, 'tiempo_qr_segundos', 8),
         'pie_pagina': cfg_gen.pie_pagina,
         'recarga_minutos': cfg_gen.recarga_minutos,
         'logo_promet': logo_promet_url,
@@ -494,9 +497,73 @@ def login_view(request):
             return redirect('admin_panel')
         else:
             error = "Usuario o contraseña incorrectos."
+
     return render(request, 'admin/login.html', {
         'error': error,
         'clima': obtener_datos_clima_calama(),
+    })
+
+
+@csrf_exempt
+def api_actualizar_tiempos(request):
+    """
+    Endpoint AJAX para actualizar los tiempos de rotación desde el login o panel.
+    Requiere que el usuario esté logueado o provea la clave de administrador.
+    """
+    if request.method != 'POST':
+        return JsonResponse({'status': 'error', 'mensaje': 'Método no permitido'}, status=405)
+
+    if request.content_type == 'application/json':
+        try:
+            body = json.loads(request.body.decode('utf-8'))
+        except Exception:
+            body = {}
+    else:
+        body = request.POST
+
+    password = body.get('password', '').strip()
+    user_auth = request.user.is_authenticated
+
+    if not user_auth:
+        u = authenticate(request, username='admin', password=password)
+        if not u:
+            uname = body.get('username', 'admin').strip()
+            u = authenticate(request, username=uname, password=password)
+        if not u:
+            return JsonResponse({'status': 'error', 'mensaje': 'Contraseña de administrador incorrecta'}, status=403)
+        user_obj = u
+    else:
+        user_obj = request.user
+
+    cfg_gen = ConfiguracionGeneral.get_solo()
+    t_minuta = body.get('tiempo_minuta')
+    t_horarios = body.get('tiempo_horarios')
+    t_qr = body.get('tiempo_qr')
+
+    if t_minuta:
+        cfg_gen.tiempo_minuta_segundos = max(5, int(t_minuta))
+    if t_horarios:
+        cfg_gen.tiempo_horarios_segundos = max(3, int(t_horarios))
+    if t_qr:
+        cfg_gen.tiempo_qr_segundos = max(3, int(t_qr))
+
+    cfg_gen.save()
+
+    RegistroAuditoria.objects.create(
+        usuario=user_obj,
+        nombre_usuario=user_obj.username,
+        accion='CONFIGURACION',
+        resumen="Actualizó tiempos de visualización de la TV vía API",
+        detalles=f"Minuta: {cfg_gen.tiempo_minuta_segundos}s | Horarios: {cfg_gen.tiempo_horarios_segundos}s | QR: {cfg_gen.tiempo_qr_segundos}s",
+        ip=get_client_ip(request)
+    )
+
+    return JsonResponse({
+        'status': 'ok',
+        'mensaje': 'Tiempos de TV actualizados exitosamente',
+        'tiempo_minuta': cfg_gen.tiempo_minuta_segundos,
+        'tiempo_horarios': cfg_gen.tiempo_horarios_segundos,
+        'tiempo_qr': cfg_gen.tiempo_qr_segundos,
     })
 
 
@@ -664,6 +731,12 @@ def actualizar_configuracion(request):
         cfg_gen.pie_pagina = request.POST.get('pie_pagina', cfg_gen.pie_pagina).strip()
         cfg_gen.intervalo_rotacion_segundos = int(request.POST.get('intervalo_rotacion', 10))
         cfg_gen.recarga_minutos = int(request.POST.get('recarga_minutos', 30))
+        if request.POST.get('tiempo_minuta'):
+            cfg_gen.tiempo_minuta_segundos = max(5, int(request.POST.get('tiempo_minuta')))
+        if request.POST.get('tiempo_horarios'):
+            cfg_gen.tiempo_horarios_segundos = max(3, int(request.POST.get('tiempo_horarios')))
+        if request.POST.get('tiempo_qr'):
+            cfg_gen.tiempo_qr_segundos = max(3, int(request.POST.get('tiempo_qr')))
 
         if 'logo_promet' in request.FILES:
             cfg_gen.logo_promet = request.FILES['logo_promet']

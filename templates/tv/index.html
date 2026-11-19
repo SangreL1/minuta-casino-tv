@@ -747,6 +747,11 @@
     setInterval(tickClock, 1000);
 
     // 1. ALTERNANCIA SUAVE ENTRE 3 VISTAS (A → B → C → A)
+    let rotationTimeout = null;
+    let tiempoMinuta = 25;
+    let tiempoHorarios = 8;
+    let tiempoQR = 8;
+
     function switchView() {
       // Desactivar todas
       viewA.classList.remove('active');
@@ -771,10 +776,24 @@
       }
     }
 
-    function startRotation(seconds) {
-      if (rotationTimer) clearInterval(rotationTimer);
-      const s = parseInt(seconds, 10) || 10;
-      rotationTimer = setInterval(switchView, s * 1000);
+    function planificarRotacion() {
+      if (rotationTimeout) clearTimeout(rotationTimeout);
+
+      // Duración diferenciada según la vista visible actualmente
+      let duracion = tiempoMinuta;
+      if (currentView === 'A') {
+        duracion = tiempoMinuta;
+      } else if (currentView === 'B') {
+        duracion = tiempoHorarios;
+      } else if (currentView === 'C') {
+        duracion = tiempoQR;
+      }
+
+      const ms = Math.max(3, parseInt(duracion, 10) || 10) * 1000;
+      rotationTimeout = setTimeout(() => {
+        switchView();
+        planificarRotacion();
+      }, ms);
     }
 
     // 2. OBTENER Y ACTUALIZAR DATOS DESDE LA API (CADA 5 SEGUNDOS SIN CACHÉ)
@@ -863,10 +882,12 @@
       // Vista B: Tarjetas de horarios
       renderizarHorarios(data.horarios_servicios);
 
-      // Intervalo de rotación dinámico
-      if (data.intervalo_rotacion && data.intervalo_rotacion !== intervalSeconds) {
-        intervalSeconds = data.intervalo_rotacion;
-        startRotation(intervalSeconds);
+      // Tiempos de rotación diferenciados por vista (Minuta vs Horarios vs QR)
+      if (data.tiempo_minuta) tiempoMinuta = parseInt(data.tiempo_minuta, 10);
+      if (data.tiempo_horarios) tiempoHorarios = parseInt(data.tiempo_horarios, 10);
+      if (data.tiempo_qr) tiempoQR = parseInt(data.tiempo_qr, 10);
+      if (!rotationTimeout) {
+        planificarRotacion();
       }
     }
 
@@ -1014,7 +1035,7 @@
     window.addEventListener('DOMContentLoaded', () => {
       solicitarWakeLock();
       fetchMinutaData();
-      startRotation(intervalSeconds);
+      planificarRotacion();
 
       // Generar QR apuntando a /proximos-dias/
       generarQR();
