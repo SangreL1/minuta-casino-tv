@@ -72,6 +72,45 @@
       opacity: 0.85;
       margin-top: 2px;
     }
+    .header-tools {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .clima-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.16);
+      border: 1px solid rgba(255, 255, 255, 0.32);
+      border-radius: 999px;
+      padding: 5px 14px 5px 10px;
+      backdrop-filter: blur(8px);
+      color: #FFFFFF;
+      user-select: none;
+      transition: all 0.2s ease;
+    }
+    .clima-icono {
+      font-size: 1.35rem;
+      line-height: 1;
+    }
+    .clima-detalles {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+    .clima-temp {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #FFFFFF;
+    }
+    .clima-ciudad {
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.85);
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+    }
     .header-clock {
       font-size: 14px;
       font-weight: 700;
@@ -298,7 +337,17 @@
         <h1>Próximos días · Menú del Casino</h1>
         <p>Hotelería Promet · Servicio de alimentación Coalfa</p>
       </div>
-      <div class="header-clock" id="live-clock">--:--</div>
+      <div class="header-tools">
+        <!-- WIDGET CLIMA CALAMA -->
+        <div class="clima-pill" id="clima-pill" title="Clima actual en Calama: {{ clima.descripcion }} ({{ clima.temperatura_texto }})">
+          <span class="clima-icono" id="clima-icono">{{ clima.icono|default:"☀️" }}</span>
+          <div class="clima-detalles">
+            <span class="clima-temp" id="clima-temp">{{ clima.temperatura_texto|default:"--°C" }}</span>
+            <span class="clima-ciudad">Calama</span>
+          </div>
+        </div>
+        <div class="header-clock" id="live-clock">--:--</div>
+      </div>
     </div>
   </header>
 
@@ -407,6 +456,8 @@
     // Refrescar cada 5 minutos
     setInterval(cargarDatos, 300000);
   </script>
+  <!-- Widget Clima Calama -->
+  <script src="/static/js/clima.js"></script>
 </body>
 </html>
 

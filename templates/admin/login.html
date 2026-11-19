@@ -123,9 +123,57 @@
         font-size: 19px;
       }
     }
+    /* WIDGET CLIMA CALAMA */
+    .login-clima-top {
+      position: absolute;
+      top: 20px;
+      right: 24px;
+      z-index: 10;
+    }
+    .clima-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid rgba(11, 63, 168, 0.16);
+      border-radius: 999px;
+      padding: 5px 14px 5px 10px;
+      box-shadow: 0 4px 12px rgba(11, 63, 168, 0.08);
+      user-select: none;
+    }
+    .clima-icono {
+      font-size: 1.3rem;
+      line-height: 1;
+    }
+    .clima-detalles {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+    .clima-temp {
+      font-size: 1rem;
+      font-weight: 800;
+      color: #0F172A;
+    }
+    .clima-ciudad {
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: #0B3FA8;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+    }
   </style>
 </head>
 <body>
+  <div class="login-clima-top">
+    <div class="clima-pill" id="clima-pill" title="Clima actual en Calama: {{ clima.descripcion }} ({{ clima.temperatura_texto }})">
+      <span class="clima-icono" id="clima-icono">{{ clima.icono|default:"☀️" }}</span>
+      <div class="clima-detalles">
+        <span class="clima-temp" id="clima-temp">{{ clima.temperatura_texto|default:"--°C" }}</span>
+        <span class="clima-ciudad">Calama</span>
+      </div>
+    </div>
+  </div>
   <div class="login-card">
     <div class="logos-header">
       <img src="/static/img/logo_promet.svg" alt="PROMET">
@@ -156,5 +204,7 @@
       <a href="/" target="_blank">← Abrir pantalla de TV pública</a>
     </div>
   </div>
+  <!-- Widget Clima Calama -->
+  <script src="/static/js/clima.js"></script>
 </body>
 </html>

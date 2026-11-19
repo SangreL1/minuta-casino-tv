@@ -70,6 +70,63 @@
       filter: drop-shadow(0 1px 2px rgba(0,0,0,0.06));
     }
 
+    .header-right-box {
+      display: flex;
+      align-items: center;
+      gap: 2.2vw;
+    }
+
+    /* WIDGET CLIMA ESTÉTICO CALAMA */
+    .clima-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.9vw;
+      background: rgba(255, 255, 255, 0.94);
+      border: 1.5px solid rgba(11, 63, 168, 0.18);
+      border-radius: 999px;
+      padding: 0.8vh 1.4vw 0.8vh 1.1vw;
+      box-shadow: 0 4px 14px rgba(11, 63, 168, 0.08), 0 1px 3px rgba(0, 0, 0, 0.04);
+      backdrop-filter: blur(8px);
+      transition: all 0.3s ease;
+      user-select: none;
+    }
+
+    .clima-icono {
+      font-size: clamp(22px, 2.2vw, 32px);
+      line-height: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.12));
+      animation: climaPillFloat 4s ease-in-out infinite;
+    }
+
+    .clima-detalles {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.15;
+    }
+
+    .clima-temp {
+      font-size: clamp(16px, 1.45vw, 22px);
+      font-weight: 800;
+      color: #0F172A;
+      letter-spacing: -0.5px;
+    }
+
+    .clima-ciudad {
+      font-size: clamp(9px, 0.75vw, 11px);
+      font-weight: 700;
+      color: #0B3FA8;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+
+    @keyframes climaPillFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-3px); }
+    }
+
     /* CONTENEDOR DE VISTAS CON TRANSICIÓN SUAVE */
     main.views-container {
       flex: 1;
@@ -507,8 +564,18 @@
       <div class="header-logo logo-promet">
         <img id="img-promet" src="/static/img/logo_promet.svg" alt="PROMET">
       </div>
-      <div class="header-logo logo-coalfa">
-        <img id="img-coalfa" src="/static/img/logo_coalfa.svg" alt="COALFA">
+      <div class="header-right-box">
+        <!-- WIDGET CLIMA CALAMA -->
+        <div class="clima-pill" id="clima-pill" title="Clima actual en Calama: {{ clima.descripcion }} ({{ clima.temperatura_texto }})">
+          <span class="clima-icono" id="clima-icono">{{ clima.icono|default:"☀️" }}</span>
+          <div class="clima-detalles">
+            <span class="clima-temp" id="clima-temp">{{ clima.temperatura_texto|default:"--°C" }}</span>
+            <span class="clima-ciudad">Calama</span>
+          </div>
+        </div>
+        <div class="header-logo logo-coalfa">
+          <img id="img-coalfa" src="/static/img/logo_coalfa.svg" alt="COALFA">
+        </div>
       </div>
     </header>
 
@@ -755,6 +822,9 @@
       }
 
       // Encabezado y logos
+      if (data.clima && typeof window.actualizarClimaUI === 'function') {
+        window.actualizarClimaUI(data.clima);
+      }
       if (data.logo_promet && imgPromet.src !== data.logo_promet) {
         imgPromet.src = data.logo_promet;
       }
@@ -992,5 +1062,7 @@
       img.src = 'https://api.qrserver.com/v1/create-qr-code/?size=' + size + 'x' + size + '&data=' + encodeURIComponent(qrUrl) + '&format=png&margin=8';
     }
   </script>
+  <!-- Widget Clima Calama -->
+  <script src="/static/js/clima.js"></script>
 </body>
 </html>
