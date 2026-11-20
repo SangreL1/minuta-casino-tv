@@ -144,12 +144,16 @@
       display: flex;
       flex-direction: column;
       opacity: 0;
+      visibility: hidden;
+      z-index: 1;
       pointer-events: none;
-      transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: opacity 0.5s ease, visibility 0.5s ease;
     }
 
     .view-screen.active {
       opacity: 1;
+      visibility: visible;
+      z-index: 5;
       pointer-events: auto;
     }
 
@@ -706,11 +710,9 @@
        LÓGICA CLIENTE TV BRO / GOOGLE TV (Robusta, sin frameworks)
        ======================================================== */
     let currentView = 'A';
-    let rotationTimer = null;
     let dataFetchTimer = null;
     let reloadTimer = null;
     let simParam = new URLSearchParams(window.location.search).get('sim') || '';
-    let intervalSeconds = 10;
     let wakeLockSentinel = null;
     let lastRenderHash = '';
     let serverTimeDelta = 0;
@@ -747,54 +749,51 @@
     setInterval(tickClock, 1000);
 
     // 1. ALTERNANCIA SUAVE ENTRE 3 VISTAS (A → B → C → A)
+    // Función única de control de vistas - evita superposición y condiciones de carrera
     let rotationTimeout = null;
     let tiempoMinuta = 25;
     let tiempoHorarios = 8;
     let tiempoQR = 8;
 
-    function switchView() {
-      // Desactivar todas
-      viewA.classList.remove('active');
-      viewB.classList.remove('active');
-      viewC.classList.remove('active');
-      dotA.classList.remove('active');
-      dotB.classList.remove('active');
-      dotC.classList.remove('active');
+    const VISTAS = {
+      A: { el: null, dot: null, siguiente: 'B', getDuracion: () => tiempoMinuta },
+      B: { el: null, dot: null, siguiente: 'C', getDuracion: () => tiempoHorarios },
+      C: { el: null, dot: null, siguiente: 'A', getDuracion: () => tiempoQR }
+    };
 
-      if (currentView === 'A') {
-        viewB.classList.add('active');
-        dotB.classList.add('active');
-        currentView = 'B';
-      } else if (currentView === 'B') {
-        viewC.classList.add('active');
-        dotC.classList.add('active');
-        currentView = 'C';
-      } else {
-        viewA.classList.add('active');
-        dotA.classList.add('active');
-        currentView = 'A';
-      }
-    }
-
-    function planificarRotacion() {
-      if (rotationTimeout) clearTimeout(rotationTimeout);
-
-      // Duración diferenciada según la vista visible actualmente
-      let duracion = tiempoMinuta;
-      if (currentView === 'A') {
-        duracion = tiempoMinuta;
-      } else if (currentView === 'B') {
-        duracion = tiempoHorarios;
-      } else if (currentView === 'C') {
-        duracion = tiempoQR;
+    function irAVista(nombre) {
+      // 1. Cancelar cualquier timer pendiente (evitar doble-fire)
+      if (rotationTimeout) {
+        clearTimeout(rotationTimeout);
+        rotationTimeout = null;
       }
 
+      // 2. Actualizar estado
+      currentView = nombre;
+
+      // 3. Activar/desactivar vistas - UN SOLO elemento activo a la vez
+      ['A', 'B', 'C'].forEach(v => {
+        const info = VISTAS[v];
+        if (v === nombre) {
+          info.el.classList.add('active');
+          info.dot.classList.add('active');
+        } else {
+          info.el.classList.remove('active');
+          info.dot.classList.remove('active');
+        }
+      });
+
+      // 4. Programar la siguiente transición
+      const siguiente = VISTAS[nombre].siguiente;
+      const duracion = VISTAS[nombre].getDuracion();
       const ms = Math.max(3, parseInt(duracion, 10) || 10) * 1000;
       rotationTimeout = setTimeout(() => {
-        switchView();
-        planificarRotacion();
+        irAVista(siguiente);
       }, ms);
     }
+
+    // Alias de compatibilidad (no se usa internamente pero evita errores si queda alguna ref)
+    function planificarRotacion() { irAVista(currentView); }
 
     // 2. OBTENER Y ACTUALIZAR DATOS DESDE LA API (CADA 5 SEGUNDOS SIN CACHÉ)
     async function fetchMinutaData() {
@@ -880,11 +879,13 @@
       renderizarHorarios(data.horarios_servicios);
 
       // Tiempos de rotación diferenciados por vista (Minuta vs Horarios vs QR)
+      // Solo actualiza variables — el timer sigue corriendo sin reiniciarse
       if (data.tiempo_minuta) tiempoMinuta = parseInt(data.tiempo_minuta, 10);
       if (data.tiempo_horarios) tiempoHorarios = parseInt(data.tiempo_horarios, 10);
       if (data.tiempo_qr) tiempoQR = parseInt(data.tiempo_qr, 10);
+      // Si por alguna razón no hay timer activo (p.ej. arranque lento), iniciarlo
       if (!rotationTimeout) {
-        planificarRotacion();
+        irAVista(currentView);
       }
     }
 
@@ -1030,9 +1031,14 @@
 
     // INICIALIZACIÓN
     window.addEventListener('DOMContentLoaded', () => {
+      // Conectar VISTAS a los elementos del DOM (deben existir antes de llamar irAVista)
+      VISTAS.A.el  = viewA;  VISTAS.A.dot = dotA;
+      VISTAS.B.el  = viewB;  VISTAS.B.dot = dotB;
+      VISTAS.C.el  = viewC;  VISTAS.C.dot = dotC;
+
       solicitarWakeLock();
       fetchMinutaData();
-      planificarRotacion();
+      irAVista('A'); // Arranque limpio: solo Vista A activa, timer único
 
       // Generar QR apuntando a /proximos-dias/
       generarQR();
