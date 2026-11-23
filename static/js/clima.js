@@ -2,6 +2,7 @@
  * clima.js - Widget de Clima para Calama, Chile
  * Consulta Open-Meteo directamente desde el navegador para obtener la temperatura en tiempo real exacta.
  * Usa almacenamiento local (localStorage) para persistencia instantánea y evitar parpadeos.
+ * Incluye timeout de 8s para no congelar la TV si la red falla.
  */
 
 (function () {
@@ -44,11 +45,26 @@
     }
   } catch (e) {}
 
+  // Fetch con timeout para no bloquear la TV si la red falla
+  async function fetchConTimeout(url, opciones, timeoutMs) {
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), timeoutMs);
+    try {
+      const resp = await fetch(url, { ...opciones, signal: controller.signal });
+      clearTimeout(timer);
+      return resp;
+    } catch (e) {
+      clearTimeout(timer);
+      throw e;
+    }
+  }
+
   async function consultarClima() {
     // 1. Consulta directa a Open-Meteo desde el navegador (temperatura viva sin proxy)
+    // Timeout 8 segundos — si tarda más, usa el caché local y no congela la TV
     try {
       const urlOM = 'https://api.open-meteo.com/v1/forecast?latitude=-22.4544&longitude=-68.9294&current=temperature_2m,is_day,weather_code&timezone=America%2FSantiago';
-      const respOM = await fetch(urlOM, { cache: 'no-store' });
+      const respOM = await fetchConTimeout(urlOM, { cache: 'no-store' }, 8000);
       if (respOM.ok) {
         const payload = await respOM.json();
         const curr = payload.current || {};
@@ -97,29 +113,24 @@
         return;
       }
     } catch (e) {
-      // Si falla llamada directa externa, pasar a fallback local
-    }
-
-    // 2. Fallback: Endpoint local Django
-    try {
-      const resp = await fetch('/api/clima/?_t=' + Date.now(), { cache: 'no-store' });
-      if (resp.ok) {
-        const data = await resp.json();
-        if (data && data.status === 'ok') {
-          aplicarClimaEnDOM(data);
-        }
-      }
-    } catch (err) {
-      console.warn('No fue posible consultar el clima:', err);
+      // Timeout o error de red — continúa con caché local ya aplicado, no hace nada más
+      console.warn('[clima] Open-Meteo no disponible, usando caché:', e && e.name);
+      return;
     }
   }
 
+  // Lanzar DESPUÉS del DOM, con retraso de 3s para no competir con el arranque de la rotación
+  function iniciarClima() {
+    setTimeout(consultarClima, 3000);
+  }
+
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', consultarClima);
+    document.addEventListener('DOMContentLoaded', iniciarClima);
   } else {
-    consultarClima();
+    iniciarClima();
   }
 
   // Refrescar cada 10 minutos automáticamente
   setInterval(consultarClima, 10 * 60 * 1000);
 })();
+

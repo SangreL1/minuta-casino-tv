@@ -1029,16 +1029,17 @@
       fetchMinutaData();
     }
 
-    // INICIALIZACIÓN
-    window.addEventListener('DOMContentLoaded', () => {
-      // Conectar VISTAS a los elementos del DOM (deben existir antes de llamar irAVista)
+    // INICIALIZACIÓN — se ejecuta siempre, independientemente del estado del DOM
+    // (el script está al final del body, así que el DOM YA existe aquí)
+    function arrancarTV() {
+      // Conectar VISTAS a los elementos del DOM
       VISTAS.A.el  = viewA;  VISTAS.A.dot = dotA;
       VISTAS.B.el  = viewB;  VISTAS.B.dot = dotB;
       VISTAS.C.el  = viewC;  VISTAS.C.dot = dotC;
 
       solicitarWakeLock();
+      irAVista('A'); // Arranque limpio ANTES del primer fetch
       fetchMinutaData();
-      irAVista('A'); // Arranque limpio: solo Vista A activa, timer único
 
       // Generar QR apuntando a /proximos-dias/
       generarQR();
@@ -1050,7 +1051,14 @@
       reloadTimer = setTimeout(() => {
         window.location.reload();
       }, 30 * 60 * 1000);
-    });
+    }
+
+    // Disparar arranque: inmediatamente si DOM listo, o esperar DOMContentLoaded
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', arrancarTV);
+    } else {
+      arrancarTV();
+    }
 
     // GENERADOR QR COMPACTO (sin dependencias externas)
     function generarQR() {
@@ -1061,7 +1069,20 @@
       const size = 260;
       const img = new Image();
       img.crossOrigin = 'anonymous';
+
+      // Timeout de 10s — si la API de QR no responde, mostrar texto en canvas
+      const qrTimeout = setTimeout(() => {
+        img.src = ''; // abortar imagen colgada
+        const ctx = canvas.getContext('2d');
+        canvas.width = size; canvas.height = size;
+        ctx.fillStyle = '#FFFFFF'; ctx.fillRect(0, 0, size, size);
+        ctx.fillStyle = '#0B3FA8'; ctx.font = 'bold 15px sans-serif';
+        ctx.textAlign = 'center'; ctx.fillText('Escanear QR:', size/2, size/2 - 20);
+        ctx.font = '12px sans-serif'; ctx.fillText(qrUrl, size/2, size/2 + 10);
+      }, 10000);
+
       img.onload = function() {
+        clearTimeout(qrTimeout);
         canvas.width = size;
         canvas.height = size;
         const ctx = canvas.getContext('2d');
@@ -1070,6 +1091,7 @@
         ctx.drawImage(img, 0, 0, size, size);
       };
       img.onerror = function() {
+        clearTimeout(qrTimeout);
         // Fallback: mostrar la URL como texto si no se puede generar QR
         canvas.width = size;
         canvas.height = size;
