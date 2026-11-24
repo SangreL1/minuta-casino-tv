@@ -6,7 +6,6 @@ urlpatterns = [
     path('api/minuta-tv/', views.api_tv_data, name='api_tv_data'),
     path('proximos-dias/', views.proximos_dias, name='proximos_dias'),
     path('api/proximos-dias/', views.api_proximos_dias, name='api_proximos_dias'),
-    path('api/clima/', views.api_clima, name='api_clima'),
     path('api/actualizar-tiempos/', views.api_actualizar_tiempos, name='api_actualizar_tiempos'),
     path('login/', views.login_view, name='login'),
     path('logout/', views.logout_view, name='logout'),

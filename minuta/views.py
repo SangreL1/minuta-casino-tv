@@ -120,183 +120,10 @@ def index_tv(request):
     """Vista principal para la pantalla TV en TV Bro / Google TV"""
     cfg_gen = ConfiguracionGeneral.get_solo()
     servicios = ConfiguracionServicio.objects.all().order_by('orden')
-    clima = obtener_datos_clima_calama()
     return render(request, 'tv/index.html', {
         'cfg': cfg_gen,
         'servicios': servicios,
-        'clima': clima,
     })
-
-
-# ------------------ CLIMA CALAMA ------------------
-_CLIMA_CACHE = {
-    'timestamp': 0,
-    'data': None
-}
-
-def obtener_datos_clima_calama():
-    """
-    Consulta la API gratuita de Open-Meteo para Calama, Chile (-22.4544, -68.9294)
-    con caché de 15 minutos (900 seg) y fallback inteligente según la hora en Chile.
-    """
-    now_ts = time_mod.time()
-    if _CLIMA_CACHE['data'] and (now_ts - _CLIMA_CACHE['timestamp'] < 900):
-        return _CLIMA_CACHE['data']
-
-    cfg_gen = ConfiguracionGeneral.get_solo()
-    tz = ZoneInfo(cfg_gen.zona_horaria)
-    ahora = datetime.now(tz)
-    hora = ahora.hour
-    minuto = ahora.minute
-
-    # Coordenadas oficiales de Calama, Región de Antofagasta, Chile
-    url = (
-        "https://api.open-meteo.com/v1/forecast?"
-        "latitude=-22.4544&longitude=-68.9294&"
-        "current=temperature_2m,is_day,weather_code&"
-        "timezone=America%2FSantiago"
-    )
-
-    temp = None
-    is_day = None
-    weather_code = 0
-
-    try:
-        req = urllib.request.Request(url, headers={'User-Agent': 'MinutaCasinoCoalfa/1.0'})
-        with urllib.request.urlopen(req, timeout=4) as response:
-            payload = json.loads(response.read().decode('utf-8'))
-            curr = payload.get('current', {})
-            temp = curr.get('temperature_2m')
-            is_day = curr.get('is_day')
-            weather_code = curr.get('weather_code', 0)
-    except Exception:
-        pass
-
-    # Si is_day no vino de la API, inferir según hora local en Calama
-    if is_day is None:
-        is_day = 1 if (6 <= hora < 20 or (hora == 20 and minuto < 15)) else 0
-
-    # Estimación de temperatura si la API externa no respondió
-    if temp is None:
-        if 12 <= hora < 17:
-            temp = 25.0
-        elif 17 <= hora < 20:
-            temp = 20.5
-        elif 20 <= hora or hora < 7:
-            temp = 12.0
-        else:
-            temp = 17.0
-
-    # Determinar si es momento de 'tarde' / 'atardecer' (luz dorada del desierto, 17:30 a 20:15)
-    es_tarde = (is_day == 1 and (hora == 17 and minuto >= 30 or 18 <= hora < 20 or (hora == 20 and minuto <= 15)))
-
-    # Interpretar código meteorológico WMO (World Meteorological Organization)
-    if is_day == 0:
-        momento = 'noche'
-        if weather_code in [0, 1]:
-            icono = '🌙'
-            descripcion = 'Noche despejada'
-            tipo = 'noche_despejada'
-        elif weather_code == 2:
-            icono = '☁️'
-            descripcion = 'Noche con nubes'
-            tipo = 'noche_parcial'
-        elif weather_code == 3:
-            icono = '☁️'
-            descripcion = 'Nublado'
-            tipo = 'nublado'
-        elif weather_code in [45, 48]:
-            icono = '🌫️'
-            descripcion = 'Neblina nocturna'
-            tipo = 'neblina'
-        elif weather_code >= 51:
-            icono = '🌧️'
-            descripcion = 'Lluvia'
-            tipo = 'lluvia'
-        else:
-            icono = '🌙'
-            descripcion = 'Noche despejada'
-            tipo = 'noche_despejada'
-    elif es_tarde:
-        momento = 'tarde'
-        if weather_code in [0, 1]:
-            icono = '🌇'
-            descripcion = 'Atardecer despejado'
-            tipo = 'tarde_sol'
-        elif weather_code == 2:
-            icono = '⛅'
-            descripcion = 'Tarde parcialmente nublada'
-            tipo = 'tarde_parcial'
-        elif weather_code == 3:
-            icono = '☁️'
-            descripcion = 'Tarde nublada'
-            tipo = 'nublado'
-        elif weather_code in [45, 48]:
-            icono = '🌫️'
-            descripcion = 'Neblina'
-            tipo = 'neblina'
-        elif weather_code >= 51:
-            icono = '🌧️'
-            descripcion = 'Lluvia'
-            tipo = 'lluvia'
-        else:
-            icono = '🌇'
-            descripcion = 'Atardecer'
-            tipo = 'tarde_sol'
-    else:
-        momento = 'dia'
-        if weather_code == 0:
-            icono = '☀️'
-            descripcion = 'Soleado'
-            tipo = 'sol'
-        elif weather_code in [1, 2]:
-            icono = '🌤️'
-            descripcion = 'Parcialmente nublado'
-            tipo = 'sol_nubes'
-        elif weather_code == 3:
-            icono = '☁️'
-            descripcion = 'Nublado'
-            tipo = 'nublado'
-        elif weather_code in [45, 48]:
-            icono = '🌫️'
-            descripcion = 'Neblina'
-            tipo = 'neblina'
-        elif weather_code >= 51:
-            icono = '🌧️'
-            descripcion = 'Lluvia'
-            tipo = 'lluvia'
-        else:
-            icono = '☀️'
-            descripcion = 'Soleado'
-            tipo = 'sol'
-
-    temp_round = int(temp + 0.5) if temp is not None else 25
-    data_clima = {
-        'status': 'ok',
-        'ciudad': 'Calama',
-        'temperatura': round(temp, 1),
-        'temperatura_int': temp_round,
-        'temperatura_texto': f"{temp_round}°C",
-        'is_day': is_day,
-        'momento': momento,
-        'tipo': tipo,
-        'icono': icono,
-        'descripcion': descripcion,
-        'hora': ahora.strftime('%H:%M')
-    }
-
-    _CLIMA_CACHE['timestamp'] = now_ts
-    _CLIMA_CACHE['data'] = data_clima
-    return data_clima
-
-
-def api_clima(request):
-    """Endpoint JSON público para el clima de Calama"""
-    data = obtener_datos_clima_calama()
-    res = JsonResponse(data)
-    res['Access-Control-Allow-Origin'] = '*'
-    res['Cache-Control'] = 'public, max-age=600'
-    return res
 
 
 def api_tv_data(request):
@@ -400,7 +227,6 @@ def api_tv_data(request):
         'recarga_minutos': cfg_gen.recarga_minutos,
         'logo_promet': logo_promet_url,
         'logo_coalfa': logo_coalfa_url,
-        'clima': obtener_datos_clima_calama(),
     }
     response = JsonResponse(data)
     response['Cache-Control'] = 'no-cache, no-store, must-revalidate, max-age=0'
@@ -413,9 +239,7 @@ def api_tv_data(request):
 
 def proximos_dias(request):
     """Página pública con la minuta de los próximos 7 días — accesible por QR."""
-    return render(request, 'tv/proximos_dias.html', {
-        'clima': obtener_datos_clima_calama(),
-    })
+    return render(request, 'tv/proximos_dias.html')
 
 
 def api_proximos_dias(request):
@@ -468,7 +292,6 @@ def api_proximos_dias(request):
         'dias': dias_data,
         'generado_a': datetime.now(tz).strftime('%H:%M'),
         'pie_pagina': cfg_gen.pie_pagina,
-        'clima': obtener_datos_clima_calama(),
     }
     response = JsonResponse(data)
     response['Cache-Control'] = 'no-cache, no-store, must-revalidate, max-age=0'
@@ -500,7 +323,6 @@ def login_view(request):
 
     return render(request, 'admin/login.html', {
         'error': error,
-        'clima': obtener_datos_clima_calama(),
     })
 
 
@@ -620,7 +442,6 @@ def admin_panel(request):
         'items': items,
         'auditorias': auditorias,
         'total_dias_cargados': MinutaDia.objects.count(),
-        'clima': obtener_datos_clima_calama(),
     })
 
 

@@ -70,64 +70,7 @@
       filter: drop-shadow(0 1px 2px rgba(0,0,0,0.06));
     }
 
-    .header-right-box {
-      display: flex;
-      align-items: center;
-      gap: 2.2vw;
-    }
-
-    /* WIDGET CLIMA ESTÉTICO CALAMA */
-    .clima-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.9vw;
-      background: rgba(255, 255, 255, 0.94);
-      border: 1.5px solid rgba(11, 63, 168, 0.18);
-      border-radius: 999px;
-      padding: 0.8vh 1.4vw 0.8vh 1.1vw;
-      box-shadow: 0 4px 14px rgba(11, 63, 168, 0.08), 0 1px 3px rgba(0, 0, 0, 0.04);
-      backdrop-filter: blur(8px);
-      transition: all 0.3s ease;
-      user-select: none;
-    }
-
-    .clima-icono {
-      font-size: clamp(22px, 2.2vw, 32px);
-      line-height: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.12));
-      animation: climaPillFloat 4s ease-in-out infinite;
-    }
-
-    .clima-detalles {
-      display: flex;
-      flex-direction: column;
-      line-height: 1.15;
-    }
-
-    .clima-temp {
-      font-size: clamp(16px, 1.45vw, 22px);
-      font-weight: 800;
-      color: #0F172A;
-      letter-spacing: -0.5px;
-    }
-
-    .clima-ciudad {
-      font-size: clamp(9px, 0.75vw, 11px);
-      font-weight: 700;
-      color: #0B3FA8;
-      text-transform: uppercase;
-      letter-spacing: 0.8px;
-    }
-
-    @keyframes climaPillFloat {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-3px); }
-    }
-
-    /* CONTENEDOR DE VISTAS CON TRANSICIÓN SUAVE */
+    /* CONTENEDOR DE VISTAS */
     main.views-container {
       flex: 1;
       position: relative;
@@ -135,26 +78,18 @@
     }
 
     .view-screen {
+      display: none !important;
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
       padding: 0 3.8vw;
-      display: flex;
       flex-direction: column;
-      opacity: 0;
-      visibility: hidden;
-      z-index: 1;
-      pointer-events: none;
-      transition: opacity 0.5s ease, visibility 0.5s ease;
     }
 
     .view-screen.active {
-      opacity: 1;
-      visibility: visible;
-      z-index: 5;
-      pointer-events: auto;
+      display: flex !important;
     }
 
     /* VISTA A: FRANJA DE TÍTULO */
@@ -568,18 +503,8 @@
       <div class="header-logo logo-promet">
         <img id="img-promet" src="/static/img/logo_promet.svg" alt="PROMET">
       </div>
-      <div class="header-right-box">
-        <!-- WIDGET CLIMA CALAMA -->
-        <div class="clima-pill" id="clima-pill" title="Clima actual en Calama">
-          <span class="clima-icono" id="clima-icono">☀️</span>
-          <div class="clima-detalles">
-            <span class="clima-temp" id="clima-temp">25°C</span>
-            <span class="clima-ciudad">Calama</span>
-          </div>
-        </div>
-        <div class="header-logo logo-coalfa">
-          <img id="img-coalfa" src="/static/img/logo_coalfa.svg" alt="COALFA">
-        </div>
+      <div class="header-logo logo-coalfa">
+        <img id="img-coalfa" src="/static/img/logo_coalfa.svg" alt="COALFA">
       </div>
     </header>
 
@@ -710,13 +635,19 @@
        LÓGICA CLIENTE TV BRO / GOOGLE TV (Robusta, sin frameworks)
        ======================================================== */
     let currentView = 'A';
-    let dataFetchTimer = null;
-    let reloadTimer = null;
+    let segundosEnVista = 0;
+    let segundosParaFetch = 0;
+    let isFetching = false;
+    let tiempoMinuta = 25;
+    let tiempoHorarios = 8;
+    let tiempoQR = 8;
     let simParam = new URLSearchParams(window.location.search).get('sim') || '';
     let wakeLockSentinel = null;
     let lastRenderHash = '';
     let serverTimeDelta = 0;
     let serverTimeSynced = false;
+    let masterInterval = null;
+    let tvIniciada = false;
 
     const viewA = document.getElementById('view-a');
     const viewB = document.getElementById('view-b');
@@ -738,65 +669,66 @@
     const imgPromet = document.getElementById('img-promet');
     const imgCoalfa = document.getElementById('img-coalfa');
 
-    // RELOJ CONTINUO SEGUNDO A SEGUNDO
-    function tickClock() {
-      if (!serverTimeSynced) return;
-      const now = new Date(Date.now() + serverTimeDelta);
-      const hh = String(now.getHours()).padStart(2, '0');
-      const mm = String(now.getMinutes()).padStart(2, '0');
-      liveClock.textContent = `${hh}:${mm}`;
+    // 1. CONTROL DE VISTAS (1 sola vista visible a la vez, display:none en las demás)
+    function mostrarVista(nombre) {
+      currentView = nombre;
+      segundosEnVista = 0;
+
+      viewA.classList.toggle('active', nombre === 'A');
+      viewB.classList.toggle('active', nombre === 'B');
+      viewC.classList.toggle('active', nombre === 'C');
+
+      dotA.classList.toggle('active', nombre === 'A');
+      dotB.classList.toggle('active', nombre === 'B');
+      dotC.classList.toggle('active', nombre === 'C');
     }
-    setInterval(tickClock, 1000);
 
-    // 1. ALTERNANCIA SUAVE ENTRE 3 VISTAS (A → B → C → A)
-    // Función única de control de vistas - evita superposición y condiciones de carrera
-    let rotationTimeout = null;
-    let tiempoMinuta = 25;
-    let tiempoHorarios = 8;
-    let tiempoQR = 8;
+    function avanzarSiguienteVista() {
+      if (currentView === 'A') {
+        mostrarVista('B');
+      } else if (currentView === 'B') {
+        mostrarVista('C');
+      } else {
+        mostrarVista('A');
+      }
+    }
 
-    const VISTAS = {
-      A: { el: null, dot: null, siguiente: 'B', getDuracion: () => tiempoMinuta },
-      B: { el: null, dot: null, siguiente: 'C', getDuracion: () => tiempoHorarios },
-      C: { el: null, dot: null, siguiente: 'A', getDuracion: () => tiempoQR }
-    };
-
-    function irAVista(nombre) {
-      // 1. Cancelar cualquier timer pendiente (evitar doble-fire)
-      if (rotationTimeout) {
-        clearTimeout(rotationTimeout);
-        rotationTimeout = null;
+    // RELOJ CONTINUO Y MASTER TICKER (1 intervalo único y confiable de 1 segundo)
+    function tickMaster() {
+      // Reloj digital en vivo
+      if (serverTimeSynced) {
+        const now = new Date(Date.now() + serverTimeDelta);
+        const hh = String(now.getHours()).padStart(2, '0');
+        const mm = String(now.getMinutes()).padStart(2, '0');
+        liveClock.textContent = `${hh}:${mm}`;
       }
 
-      // 2. Actualizar estado
-      currentView = nombre;
+      // Rotación precisa de pantallas
+      segundosEnVista++;
+      let limite = tiempoMinuta;
+      if (currentView === 'B') limite = tiempoHorarios;
+      else if (currentView === 'C') limite = tiempoQR;
 
-      // 3. Activar/desactivar vistas - UN SOLO elemento activo a la vez
-      ['A', 'B', 'C'].forEach(v => {
-        const info = VISTAS[v];
-        if (v === nombre) {
-          info.el.classList.add('active');
-          info.dot.classList.add('active');
-        } else {
-          info.el.classList.remove('active');
-          info.dot.classList.remove('active');
+      limite = Math.max(3, parseInt(limite, 10) || 10);
+
+      if (segundosEnVista >= limite) {
+        avanzarSiguienteVista();
+      }
+
+      // Consulta periódica de datos al backend cada 10 segundos
+      segundosParaFetch++;
+      if (segundosParaFetch >= 10) {
+        segundosParaFetch = 0;
+        if (!isFetching) {
+          fetchMinutaData();
         }
-      });
-
-      // 4. Programar la siguiente transición
-      const siguiente = VISTAS[nombre].siguiente;
-      const duracion = VISTAS[nombre].getDuracion();
-      const ms = Math.max(3, parseInt(duracion, 10) || 10) * 1000;
-      rotationTimeout = setTimeout(() => {
-        irAVista(siguiente);
-      }, ms);
+      }
     }
 
-    // Alias de compatibilidad (no se usa internamente pero evita errores si queda alguna ref)
-    function planificarRotacion() { irAVista(currentView); }
-
-    // 2. OBTENER Y ACTUALIZAR DATOS DESDE LA API (CADA 5 SEGUNDOS SIN CACHÉ)
+    // 2. OBTENER Y ACTUALIZAR DATOS DESDE LA API
     async function fetchMinutaData() {
+      if (isFetching) return;
+      isFetching = true;
       try {
         let url = '/api/minuta-tv/?_t=' + Date.now();
         if (simParam) {
@@ -806,11 +738,14 @@
           cache: 'no-store',
           headers: { 'Cache-Control': 'no-cache', 'Pragma': 'no-cache' }
         });
-        if (!resp.ok) return;
-        const data = await resp.json();
-        actualizarPantalla(data);
+        if (resp.ok) {
+          const data = await resp.json();
+          actualizarPantalla(data);
+        }
       } catch (err) {
         console.warn('Error al consultar datos de minuta:', err);
+      } finally {
+        isFetching = false;
       }
     }
 
@@ -879,14 +814,9 @@
       renderizarHorarios(data.horarios_servicios);
 
       // Tiempos de rotación diferenciados por vista (Minuta vs Horarios vs QR)
-      // Solo actualiza variables — el timer sigue corriendo sin reiniciarse
       if (data.tiempo_minuta) tiempoMinuta = parseInt(data.tiempo_minuta, 10);
       if (data.tiempo_horarios) tiempoHorarios = parseInt(data.tiempo_horarios, 10);
       if (data.tiempo_qr) tiempoQR = parseInt(data.tiempo_qr, 10);
-      // Si por alguna razón no hay timer activo (p.ej. arranque lento), iniciarlo
-      if (!rotationTimeout) {
-        irAVista(currentView);
-      }
     }
 
     function renderizarMinuta(hayMinuta, items1, items2) {
@@ -1029,31 +959,21 @@
       fetchMinutaData();
     }
 
-    // INICIALIZACIÓN — se ejecuta siempre, independientemente del estado del DOM
-    // (el script está al final del body, así que el DOM YA existe aquí)
+    // INICIALIZACIÓN
     function arrancarTV() {
-      // Conectar VISTAS a los elementos del DOM
-      VISTAS.A.el  = viewA;  VISTAS.A.dot = dotA;
-      VISTAS.B.el  = viewB;  VISTAS.B.dot = dotB;
-      VISTAS.C.el  = viewC;  VISTAS.C.dot = dotC;
+      if (tvIniciada) return;
+      tvIniciada = true;
 
       solicitarWakeLock();
-      irAVista('A'); // Arranque limpio ANTES del primer fetch
-      fetchMinutaData();
-
-      // Generar QR apuntando a /proximos-dias/
+      mostrarVista('A'); // Vista A activa de entrada
+      fetchMinutaData(); // Primera consulta
       generarQR();
 
-      // Consultar cambios en background cada 5 segundos (actualización automática sin recargar)
-      dataFetchTimer = setInterval(fetchMinutaData, 5000);
-
-      // Recarga forzada cada 30 minutos para evitar fugas de memoria en TV
-      reloadTimer = setTimeout(() => {
-        window.location.reload();
-      }, 30 * 60 * 1000);
+      // Único timer maestro para todo el sistema (1 segundo)
+      if (masterInterval) clearInterval(masterInterval);
+      masterInterval = setInterval(tickMaster, 1000);
     }
 
-    // Disparar arranque: inmediatamente si DOM listo, o esperar DOMContentLoaded
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', arrancarTV);
     } else {
