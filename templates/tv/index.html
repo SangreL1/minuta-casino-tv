@@ -603,12 +603,208 @@
       height: clamp(160px, 15vw, 240px);
     }
 
-    .xmas-bush-bottom-right {
+    /* ESCENA: PELEA DE BOLAS DE NIEVE DE 2 MONOS DE NIEVE (ESQUINA INFERIOR DERECHA) */
+    .xmas-snowmen-scene {
+      position: absolute;
       bottom: 0;
-      right: 0;
-      width: clamp(160px, 15vw, 240px);
-      height: clamp(160px, 15vw, 240px);
-      transform: scaleX(-1);
+      right: 4px;
+      width: clamp(250px, 24vw, 360px);
+      height: clamp(150px, 14vw, 210px);
+      pointer-events: none;
+      z-index: 19;
+      filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.22));
+      overflow: visible;
+    }
+
+    /* Animaciones de Snowman Izquierdo (Gorro Copa) */
+    /* Ciclo total: 6s */
+    /* 0.0s - 0.7s: Snowman Izq se inclina atrás y lanza bola 1 */
+    /* 0.7s - 1.2s: Bola 1 vuela hacia Snowman Der */
+    /* 1.2s: Bola 1 impacta a Snowman Der */
+    /* 3.0s - 3.7s: Snowman Der se inclina y lanza bola 2 */
+    /* 3.7s - 4.2s: Bola 2 vuela hacia Snowman Izq */
+    /* 4.2s - 4.9s: ¡GOLPE directo a Snowman Izq! Se sacude, tiembla, cabeza/sombrero se inclina */
+    /* 4.9s - 6.0s: Recuperación e idle */
+
+    .snowman-left-group {
+      transform-origin: 65px 170px;
+      animation: snowmanLeftAction 6s ease-in-out infinite;
+    }
+
+    @keyframes snowmanLeftAction {
+      0%, 100% { transform: rotate(0deg) translateY(0); }
+      5% { transform: rotate(-8deg) translateY(2px); } /* Coge impulso hacia atrás */
+      11% { transform: rotate(12deg) translateY(-2px); } /* Lanza con fuerza */
+      18% { transform: rotate(0deg) translateY(0); } /* Vuelve a posición */
+      69% { transform: rotate(0deg) translateY(0); } /* Espera */
+      70% { transform: rotate(-18deg) translateY(5px) scale(0.96); } /* ¡IMPACTO DE BOLA! */
+      72% { transform: rotate(12deg) translateY(-3px); } /* Rebote */
+      75% { transform: rotate(-8deg) translateY(2px); }
+      78% { transform: rotate(5deg) translateY(0); }
+      82% { transform: rotate(0deg) translateY(0); } /* Se recupera */
+    }
+
+    .snowman-left-arm {
+      transform-origin: 75px 130px;
+      animation: snowmanLeftArmThrow 6s ease-in-out infinite;
+    }
+
+    @keyframes snowmanLeftArmThrow {
+      0%, 100% { transform: rotate(0deg); }
+      5% { transform: rotate(-35deg); } /* Brazo atrás cargando bola */
+      11% { transform: rotate(45deg); } /* ¡Lanza hacia adelante! */
+      17% { transform: rotate(0deg); }
+      70% { transform: rotate(-25deg); } /* Desbalance por el golpe */
+      76% { transform: rotate(15deg); }
+      82% { transform: rotate(0deg); }
+    }
+
+    /* Animaciones de Snowman Derecho (Gorro Lana Pompon) */
+    .snowman-right-group {
+      transform-origin: 235px 170px;
+      animation: snowmanRightAction 6s ease-in-out infinite;
+    }
+
+    @keyframes snowmanRightAction {
+      0%, 100% { transform: rotate(0deg) translateY(0); }
+      19% { transform: rotate(0deg) translateY(0); } /* Espera el impacto */
+      20% { transform: rotate(18deg) translateY(5px) scale(0.96); } /* ¡IMPACTO DE BOLA 1! */
+      22% { transform: rotate(-12deg) translateY(-3px); } /* Rebote */
+      25% { transform: rotate(8deg) translateY(2px); }
+      28% { transform: rotate(-5deg) translateY(0); }
+      33% { transform: rotate(0deg) translateY(0); } /* Se recupera y toma venganza */
+      54% { transform: rotate(8deg) translateY(2px); } /* Impulso hacia atrás */
+      60% { transform: rotate(-13deg) translateY(-2px); } /* ¡Lanza con furia bola 2! */
+      67% { transform: rotate(0deg) translateY(0); }
+    }
+
+    .snowman-right-arm {
+      transform-origin: 225px 130px;
+      animation: snowmanRightArmThrow 6s ease-in-out infinite;
+    }
+
+    @keyframes snowmanRightArmThrow {
+      0%, 100% { transform: rotate(0deg); }
+      20% { transform: rotate(25deg); } /* Desbalance por el golpe */
+      26% { transform: rotate(-15deg); }
+      32% { transform: rotate(0deg); }
+      54% { transform: rotate(35deg); } /* Brazo atrás cargando bola */
+      60% { transform: rotate(-45deg); } /* ¡Lanza con fuerza hacia la izquierda! */
+      66% { transform: rotate(0deg); }
+    }
+
+    /* Bola 1: Vuela de Snowman Izq a Snowman Der */
+    .snowball-to-right {
+      animation: flyBallToRight 6s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+    }
+
+    @keyframes flyBallToRight {
+      0%, 10% {
+        opacity: 0;
+        transform: translate(85px, 125px) scale(0.5);
+      }
+      11% {
+        opacity: 1;
+        transform: translate(90px, 120px) scale(1);
+      }
+      15.5% {
+        opacity: 1;
+        transform: translate(155px, 80px) scale(1.1); /* Cúspide del arco parábola */
+      }
+      19.9% {
+        opacity: 1;
+        transform: translate(220px, 105px) scale(1); /* Punto justo antes del impacto en cabeza/pecho */
+      }
+      20%, 100% {
+        opacity: 0;
+        transform: translate(226px, 108px) scale(1.5);
+      }
+    }
+
+    /* Impacto / Splash Bola 1 (en Snowman Der) */
+    .snow-hit-splash-right {
+      transform-origin: 226px 108px;
+      animation: splashRight 6s ease-out infinite;
+    }
+
+    @keyframes splashRight {
+      0%, 19.9% {
+        opacity: 0;
+        transform: scale(0.1);
+      }
+      20% {
+        opacity: 1;
+        transform: scale(0.5);
+      }
+      22% {
+        opacity: 1;
+        transform: scale(1.35);
+      }
+      25% {
+        opacity: 0.6;
+        transform: scale(1.7) translateY(6px);
+      }
+      27%, 100% {
+        opacity: 0;
+        transform: scale(2) translateY(14px);
+      }
+    }
+
+    /* Bola 2: Vuela de Snowman Der a Snowman Izq */
+    .snowball-to-left {
+      animation: flyBallToLeft 6s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+    }
+
+    @keyframes flyBallToLeft {
+      0%, 59% {
+        opacity: 0;
+        transform: translate(215px, 125px) scale(0.5);
+      }
+      60% {
+        opacity: 1;
+        transform: translate(210px, 120px) scale(1);
+      }
+      64.5% {
+        opacity: 1;
+        transform: translate(145px, 80px) scale(1.1); /* Cúspide de la parábola */
+      }
+      69.9% {
+        opacity: 1;
+        transform: translate(80px, 105px) scale(1); /* Justo antes de impactar */
+      }
+      70%, 100% {
+        opacity: 0;
+        transform: translate(74px, 108px) scale(1.5);
+      }
+    }
+
+    /* Impacto / Splash Bola 2 (en Snowman Izq) */
+    .snow-hit-splash-left {
+      transform-origin: 74px 108px;
+      animation: splashLeft 6s ease-out infinite;
+    }
+
+    @keyframes splashLeft {
+      0%, 69.9% {
+        opacity: 0;
+        transform: scale(0.1);
+      }
+      70% {
+        opacity: 1;
+        transform: scale(0.5);
+      }
+      72% {
+        opacity: 1;
+        transform: scale(1.35);
+      }
+      75% {
+        opacity: 0.6;
+        transform: scale(1.7) translateY(6px);
+      }
+      77%, 100% {
+        opacity: 0;
+        transform: scale(2) translateY(14px);
+      }
     }
 
     .xmas-bush-top-left {
@@ -1002,169 +1198,191 @@
 </svg>
 
       </div>
-      <div class="xmas-bush xmas-bush-bottom-right">
+      <!-- MONOS DE NIEVE TIRÁNDOSE BOLAS DE NIEVE (Reemplazo del arbusto inferior derecho) -->
+      <div class="xmas-snowmen-scene">
+        <svg width="100%" height="100%" viewBox="0 0 300 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <!-- Gradiente de cuerpo de nieve (blanco con sombra celeste suave) -->
+            <radialGradient id="snowBodyGrad" cx="35%" cy="30%" r="70%">
+              <stop offset="0%" stop-color="#FFFFFF"/>
+              <stop offset="75%" stop-color="#E0F2FE"/>
+              <stop offset="100%" stop-color="#BAE6FD"/>
+            </radialGradient>
+            <!-- Gradiente base de banco de nieve -->
+            <linearGradient id="snowBankGrad" x1="150" y1="160" x2="150" y2="200" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#FFFFFF"/>
+              <stop offset="40%" stop-color="#E0F2FE"/>
+              <stop offset="100%" stop-color="#7DD3FC"/>
+            </linearGradient>
+            <!-- Bola de nieve en vuelo -->
+            <radialGradient id="snowballGrad" cx="30%" cy="30%" r="70%">
+              <stop offset="0%" stop-color="#FFFFFF"/>
+              <stop offset="70%" stop-color="#E2E8F0"/>
+              <stop offset="100%" stop-color="#94A3B8"/>
+            </radialGradient>
+            <!-- Gorro de Lana Rojo -->
+            <linearGradient id="redBeanieGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#EF4444"/>
+              <stop offset="100%" stop-color="#991B1B"/>
+            </linearGradient>
+            <!-- Bufanda Azul Zafiro -->
+            <linearGradient id="blueScarfGrad" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#0284C7"/>
+              <stop offset="100%" stop-color="#0369A1"/>
+            </linearGradient>
+            <!-- Bufanda Roja -->
+            <linearGradient id="redScarfGrad" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#DC2626"/>
+              <stop offset="100%" stop-color="#991B1B"/>
+            </linearGradient>
+          </defs>
 
-<svg width="100%" height="100%" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <!-- Gradientes de agujas de pino -->
-    <linearGradient id="needleDark" x1="0" y1="220" x2="180" y2="40" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#0A2417"/>
-      <stop offset="100%" stop-color="#14422B"/>
-    </linearGradient>
-    <linearGradient id="needleMid" x1="0" y1="220" x2="180" y2="40" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#123E27"/>
-      <stop offset="100%" stop-color="#1E5C38"/>
-    </linearGradient>
-    <linearGradient id="needleLight" x1="0" y1="220" x2="180" y2="40" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#1A5333"/>
-      <stop offset="100%" stop-color="#2D7D4D"/>
-    </linearGradient>
-    <radialGradient id="berryG" cx="35%" cy="35%" r="65%">
-      <stop offset="0%" stop-color="#FF6B6B"/>
-      <stop offset="55%" stop-color="#D90429"/>
-      <stop offset="100%" stop-color="#6B0010"/>
-    </radialGradient>
-    <radialGradient id="pineconeG" cx="35%" cy="35%" r="70%">
-      <stop offset="0%" stop-color="#8B5E3C"/>
-      <stop offset="60%" stop-color="#54331C"/>
-      <stop offset="100%" stop-color="#2B170B"/>
-    </radialGradient>
-  </defs>
+          <!-- BANCO DE NIEVE INFERIOR -->
+          <path d="M0 200 Q40 168 110 174 Q180 180 230 168 Q270 160 300 170 L300 200 Z" fill="url(#snowBankGrad)"/>
+          <path d="M20 200 Q70 172 130 178 Q200 184 250 172 Q285 165 300 176 L300 200 Z" fill="#F0F9FF" opacity="0.6"/>
 
-  <!-- CAPA 1: RAMAS OSCURAS DE FONDO -->
-  <g stroke="url(#needleDark)" stroke-linecap="round" opacity="0.95">
-    <!-- Rama vertical hacia arriba -->
-    <path d="M5 215 Q15 150 18 60 Q22 45 25 35" stroke-width="4.5"/>
-    <path d="M18 130 L5 110 M18 120 L35 105 M18 100 L4 80 M18 90 L36 75 M19 70 L6 55 M19 60 L35 48 M21 45 L10 32 M21 40 L34 30 M24 35 L20 18" stroke-width="3"/>
-    
-    <!-- Rama diagonal principal -->
-    <path d="M10 215 Q60 160 115 110 Q145 85 165 70" stroke-width="5"/>
-    <path d="M60 165 L50 145 M65 160 L85 150 M80 145 L65 125 M85 140 L105 130 M100 125 L85 105 M105 120 L125 110 M120 105 L105 85 M125 100 L145 90 M140 85 L128 68 M145 80 L162 72 M160 72 L178 60" stroke-width="3.2"/>
+          <!-- MONO DE NIEVE 1: IZQUIERDO (Gorro de Copa Negro y Bufanda Azul) -->
+          <g class="snowman-left-group">
+            <!-- Brazo izquierdo quieto (soporte) -->
+            <path d="M50 135 Q35 125 22 132 M30 128 L24 122" stroke="#78350F" stroke-width="3" stroke-linecap="round"/>
 
-    <!-- Rama horizontal derecha -->
-    <path d="M10 215 Q90 205 155 185 Q185 175 205 170" stroke-width="4.5"/>
-    <path d="M90 205 L80 188 M95 203 L105 190 M120 196 L110 178 M125 194 L138 180 M150 187 L140 168 M155 185 L170 172 M175 178 L168 158 M180 176 L195 165 M195 172 L212 165" stroke-width="3"/>
-  </g>
+            <!-- Bola inferior del cuerpo -->
+            <circle cx="65" cy="156" r="32" fill="url(#snowBodyGrad)" filter="drop-shadow(0 3px 6px rgba(0,0,0,0.12))"/>
+            <!-- Botones de carbón en torso inferior -->
+            <circle cx="67" cy="148" r="2.8" fill="#1E293B"/>
+            <circle cx="68" cy="162" r="2.8" fill="#1E293B"/>
 
-  <!-- CAPA 2: RAMAS VERDE BOSQUE INTERMEDIAS -->
-  <g stroke="url(#needleMid)" stroke-linecap="round">
-    <!-- Abanico secundario diagonal -->
-    <path d="M15 215 Q45 140 85 85 Q110 55 130 40" stroke-width="4.2"/>
-    <path d="M45 150 L30 135 M48 145 L65 138 M60 125 L45 110 M65 120 L82 112 M75 100 L58 85 M80 95 L98 88 M95 75 L78 60 M100 70 L118 62 M115 52 L102 38 M120 48 L138 42 M128 40 L140 28" stroke-width="2.8"/>
-    
-    <!-- Ramaje denso esquinero -->
-    <path d="M12 215 Q80 180 130 145 Q160 125 185 115" stroke-width="4"/>
-    <path d="M75 185 L65 170 M80 180 L98 172 M100 165 L88 150 M105 160 L122 152 M125 148 L112 132 M130 142 L148 135 M150 130 L138 115 M155 126 L172 120 M175 118 L192 110" stroke-width="2.8"/>
-  </g>
+            <!-- Bola media / torso -->
+            <circle cx="66" cy="122" r="23" fill="url(#snowBodyGrad)"/>
+            <circle cx="67" cy="120" r="2.6" fill="#1E293B"/>
 
-  <!-- CAPA 3: BROTES CLAROS FRONTALES -->
-  <g stroke="url(#needleLight)" stroke-linecap="round">
-    <path d="M20 215 Q50 165 95 125 Q130 95 150 85" stroke-width="3.5"/>
-    <path d="M55 160 L42 148 M58 156 L72 150 M75 140 L62 128 M78 136 L92 130 M95 120 L82 108 M98 116 L112 110 M115 105 L102 92 M118 100 L132 95 M135 90 L152 82" stroke-width="2.4"/>
-    <path d="M25 215 Q70 195 120 175 Q155 160 180 152" stroke-width="3.2"/>
-    <path d="M70 195 L60 182 M75 192 L88 185 M95 183 L85 170 M100 180 L112 173 M120 174 L110 160 M125 170 L138 164 M145 163 L135 150 M150 160 L165 155 M170 154 L185 148" stroke-width="2.4"/>
-  </g>
+            <!-- Cabeza -->
+            <circle cx="68" cy="94" r="17" fill="url(#snowBodyGrad)" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.1))"/>
 
-  <!-- PIÑAS NAVIDEÑAS -->
-  <!-- Piña 1 -->
-  <g transform="translate(68, 142) rotate(-25)">
-    <ellipse cx="0" cy="0" rx="9" ry="14" fill="url(#pineconeG)" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.4))"/>
-    <path d="M-6 -8 Q0 -11 6 -8 M-8 -3 Q0 -6 8 -3 M-8 2 Q0 -1 8 2 M-7 7 Q0 4 7 7 M-4 11 Q0 9 4 11" stroke="#A67C52" stroke-width="1.2" fill="none"/>
-  </g>
-  <!-- Piña 2 -->
-  <g transform="translate(122, 172) rotate(35)">
-    <ellipse cx="0" cy="0" rx="8" ry="12" fill="url(#pineconeG)" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.4))"/>
-    <path d="M-5 -7 Q0 -10 5 -7 M-7 -2 Q0 -5 7 -2 M-7 3 Q0 0 7 3 M-5 7 Q0 5 5 7" stroke="#A67C52" stroke-width="1.2" fill="none"/>
-  </g>
+            <!-- Cara Snowman Izq (mirando hacia la derecha) -->
+            <!-- Ojos de carbón -->
+            <circle cx="72" cy="91" r="2.2" fill="#0F172A"/>
+            <circle cx="79" cy="91" r="2.2" fill="#0F172A"/>
+            <circle cx="73" cy="90" r="0.7" fill="#FFFFFF"/>
+            <circle cx="80" cy="90" r="0.7" fill="#FFFFFF"/>
 
-  <!-- HOJAS DE ACEBO Y BAYAS ROJAS -->
-  <!-- Ramillete 1 (arriba) -->
-  <g transform="translate(42, 92)">
-    <circle cx="-5" cy="0" r="5" fill="url(#berryG)"/>
-    <circle cx="-6.5" cy="-1.5" r="1.3" fill="#FFF" opacity="0.8"/>
-    <circle cx="4" cy="-3" r="5.2" fill="url(#berryG)"/>
-    <circle cx="2.5" cy="-4.5" r="1.3" fill="#FFF" opacity="0.8"/>
-    <circle cx="1" cy="4" r="4.8" fill="url(#berryG)"/>
-    <circle cx="-0.5" cy="2.5" r="1.2" fill="#FFF" opacity="0.8"/>
-  </g>
-  <!-- Ramillete 2 (centro) -->
-  <g transform="translate(98, 122)">
-    <circle cx="-4" cy="-2" r="5.5" fill="url(#berryG)"/>
-    <circle cx="-5.5" cy="-3.5" r="1.4" fill="#FFF" opacity="0.8"/>
-    <circle cx="5" cy="0" r="5" fill="url(#berryG)"/>
-    <circle cx="3.5" cy="-1.5" r="1.3" fill="#FFF" opacity="0.8"/>
-    <circle cx="0" cy="5" r="4.8" fill="url(#berryG)"/>
-    <circle cx="-1.5" cy="3.5" r="1.2" fill="#FFF" opacity="0.8"/>
-  </g>
-  <!-- Ramillete 3 (derecha) -->
-  <g transform="translate(162, 168)">
-    <circle cx="-3" cy="-1" r="4.8" fill="url(#berryG)"/>
-    <circle cx="-4.2" cy="-2.2" r="1.2" fill="#FFF" opacity="0.8"/>
-    <circle cx="4" cy="2" r="4.5" fill="url(#berryG)"/>
-    <circle cx="2.8" cy="0.8" r="1.1" fill="#FFF" opacity="0.8"/>
-  </g>
+            <!-- Nariz de Zanahoria (apunta a la derecha) -->
+            <polygon points="76,95 91,97 76,99" fill="#EA580C"/>
 
-  <!-- CABLE DE LUCES NAVIDEÑAS CURVADO -->
-  <path d="M16 48 Q35 95 65 88 T112 120 T150 138 T202 178" stroke="#061D12" stroke-width="2" stroke-linecap="round" fill="none"/>
+            <!-- Sonrisa de carbón -->
+            <circle cx="72" cy="103" r="1.3" fill="#1E293B"/>
+            <circle cx="75" cy="104.5" r="1.3" fill="#1E293B"/>
+            <circle cx="79" cy="104" r="1.3" fill="#1E293B"/>
+            <circle cx="82" cy="102" r="1.3" fill="#1E293B"/>
 
-  <!-- BOMBILLOS DE NAVIDAD PARPADEANTES -->
-  <!-- 1. Luz Roja (superior izquierda) -->
-  <g transform="translate(18, 52) rotate(35)" class="light-twinkle-1" style="color: #FF2A4D;">
-    <rect x="-2.5" y="-3" width="5" height="4" rx="1" fill="#0A2216"/>
-    <path d="M-4.5 1 C-4.5 7 0 11 0 11 C0 11 4.5 7 4.5 1 Z" fill="#FF2A4D"/>
-    <ellipse cx="-1.2" cy="4" rx="1.4" ry="3" fill="#FFFFFF" opacity="0.75"/>
-  </g>
+            <!-- Mejillas rosadas -->
+            <circle cx="69" cy="97" r="2.5" fill="#FDA4AF" opacity="0.6"/>
+            <circle cx="83" cy="97" r="2.5" fill="#FDA4AF" opacity="0.6"/>
 
-  <!-- 2. Luz Dorada Cálida -->
-  <g transform="translate(45, 92) rotate(-40)" class="light-twinkle-2" style="color: #FFD21E;">
-    <rect x="-2.5" y="-3" width="5" height="4" rx="1" fill="#0A2216"/>
-    <path d="M-4.5 1 C-4.5 7 0 11 0 11 C0 11 4.5 7 4.5 1 Z" fill="#FFD21E"/>
-    <ellipse cx="-1.2" cy="4" rx="1.4" ry="3" fill="#FFFFFF" opacity="0.85"/>
-  </g>
+            <!-- Bufanda Azul Coalfa -->
+            <path d="M55 106 Q68 111 81 106 Q82 112 68 115 Q54 112 55 106 Z" fill="url(#blueScarfGrad)"/>
+            <rect x="74" y="108" width="8" height="18" rx="2" fill="url(#blueScarfGrad)" transform="rotate(10 74 108)"/>
 
-  <!-- 3. Luz Verde Esmeralda -->
-  <g transform="translate(72, 85) rotate(25)" class="light-twinkle-3" style="color: #00E676;">
-    <rect x="-2.5" y="-3" width="5" height="4" rx="1" fill="#0A2216"/>
-    <path d="M-4.5 1 C-4.5 7 0 11 0 11 C0 11 4.5 7 4.5 1 Z" fill="#00E676"/>
-    <ellipse cx="-1.2" cy="4" rx="1.4" ry="3" fill="#FFFFFF" opacity="0.75"/>
-  </g>
+            <!-- Gorro de Copa Negro con Cinta Roja -->
+            <g transform="translate(68, 77) rotate(6)">
+              <ellipse cx="0" cy="3" rx="19" ry="4" fill="#0F172A"/>
+              <rect x="-11" y="-17" width="22" height="18" rx="2" fill="#1E293B"/>
+              <rect x="-11" y="-4" width="22" height="5" fill="#DC2626"/> <!-- Cinta roja -->
+              <ellipse cx="0" cy="-17" rx="11" ry="3" fill="#334155"/>
+            </g>
 
-  <!-- 4. Luz Azul Zafiro -->
-  <g transform="translate(92, 108) rotate(-30)" class="light-twinkle-4" style="color: #00B0FF;">
-    <rect x="-2.5" y="-3" width="5" height="4" rx="1" fill="#0A2216"/>
-    <path d="M-4.5 1 C-4.5 7 0 11 0 11 C0 11 4.5 7 4.5 1 Z" fill="#00B0FF"/>
-    <ellipse cx="-1.2" cy="4" rx="1.4" ry="3" fill="#FFFFFF" opacity="0.8"/>
-  </g>
+            <!-- Brazo Derecho Lanzador (animado) -->
+            <g class="snowman-left-arm">
+              <path d="M78 122 L98 115 M94 116 L99 109 M92 117 L100 120" stroke="#78350F" stroke-width="3" stroke-linecap="round"/>
+            </g>
+          </g>
 
-  <!-- 5. Luz Naranja Ámbar -->
-  <g transform="translate(114, 122) rotate(45)" class="light-twinkle-1" style="color: #FF9100;">
-    <rect x="-2.5" y="-3" width="5" height="4" rx="1" fill="#0A2216"/>
-    <path d="M-4.5 1 C-4.5 7 0 11 0 11 C0 11 4.5 7 4.5 1 Z" fill="#FF9100"/>
-    <ellipse cx="-1.2" cy="4" rx="1.4" ry="3" fill="#FFFFFF" opacity="0.85"/>
-  </g>
+          <!-- MONO DE NIEVE 2: DERECHO (Gorro de Lana Rojo y Bufanda Roja) -->
+          <g class="snowman-right-group">
+            <!-- Brazo derecho quieto (soporte) -->
+            <path d="M250 135 Q265 125 278 132 M270 128 L276 122" stroke="#78350F" stroke-width="3" stroke-linecap="round"/>
 
-  <!-- 6. Luz Magenta / Rosa Navideño -->
-  <g transform="translate(136, 132) rotate(-20)" class="light-twinkle-2" style="color: #FF4081;">
-    <rect x="-2.5" y="-3" width="5" height="4" rx="1" fill="#0A2216"/>
-    <path d="M-4.5 1 C-4.5 7 0 11 0 11 C0 11 4.5 7 4.5 1 Z" fill="#FF4081"/>
-    <ellipse cx="-1.2" cy="4" rx="1.4" ry="3" fill="#FFFFFF" opacity="0.8"/>
-  </g>
+            <!-- Bola inferior del cuerpo -->
+            <circle cx="235" cy="156" r="32" fill="url(#snowBodyGrad)" filter="drop-shadow(0 3px 6px rgba(0,0,0,0.12))"/>
+            <!-- Botones de carbón -->
+            <circle cx="233" cy="148" r="2.8" fill="#1E293B"/>
+            <circle cx="232" cy="162" r="2.8" fill="#1E293B"/>
 
-  <!-- 7. Luz Amarillo Brillante -->
-  <g transform="translate(162, 145) rotate(30)" class="light-twinkle-3" style="color: #FFE838;">
-    <rect x="-2.5" y="-3" width="5" height="4" rx="1" fill="#0A2216"/>
-    <path d="M-4.5 1 C-4.5 7 0 11 0 11 C0 11 4.5 7 4.5 1 Z" fill="#FFE838"/>
-    <ellipse cx="-1.2" cy="4" rx="1.4" ry="3" fill="#FFFFFF" opacity="0.9"/>
-  </g>
+            <!-- Bola media / torso -->
+            <circle cx="234" cy="122" r="23" fill="url(#snowBodyGrad)"/>
+            <circle cx="233" cy="120" r="2.6" fill="#1E293B"/>
 
-  <!-- 8. Luz Rubí Roja -->
-  <g transform="translate(198, 175) rotate(-35)" class="light-twinkle-4" style="color: #FF1744;">
-    <rect x="-2.5" y="-3" width="5" height="4" rx="1" fill="#0A2216"/>
-    <path d="M-4.5 1 C-4.5 7 0 11 0 11 C0 11 4.5 7 4.5 1 Z" fill="#FF1744"/>
-    <ellipse cx="-1.2" cy="4" rx="1.4" ry="3" fill="#FFFFFF" opacity="0.85"/>
-  </g>
-</svg>
+            <!-- Cabeza -->
+            <circle cx="232" cy="94" r="17" fill="url(#snowBodyGrad)" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.1))"/>
 
+            <!-- Cara Snowman Der (mirando hacia la izquierda) -->
+            <!-- Ojos de carbón -->
+            <circle cx="228" cy="91" r="2.2" fill="#0F172A"/>
+            <circle cx="221" cy="91" r="2.2" fill="#0F172A"/>
+            <circle cx="227" cy="90" r="0.7" fill="#FFFFFF"/>
+            <circle cx="220" cy="90" r="0.7" fill="#FFFFFF"/>
+
+            <!-- Nariz de Zanahoria (apunta hacia la izquierda) -->
+            <polygon points="224,95 209,97 224,99" fill="#EA580C"/>
+
+            <!-- Sonrisa de carbón -->
+            <circle cx="228" cy="103" r="1.3" fill="#1E293B"/>
+            <circle cx="225" cy="104.5" r="1.3" fill="#1E293B"/>
+            <circle cx="221" cy="104" r="1.3" fill="#1E293B"/>
+            <circle cx="218" cy="102" r="1.3" fill="#1E293B"/>
+
+            <!-- Mejillas rosadas -->
+            <circle cx="231" cy="97" r="2.5" fill="#FDA4AF" opacity="0.6"/>
+            <circle cx="217" cy="97" r="2.5" fill="#FDA4AF" opacity="0.6"/>
+
+            <!-- Bufanda Roja Navideña -->
+            <path d="M245 106 Q232 111 219 106 Q218 112 232 115 Q246 112 245 106 Z" fill="url(#redScarfGrad)"/>
+            <rect x="220" y="108" width="8" height="18" rx="2" fill="url(#redScarfGrad)" transform="rotate(-15 220 108)"/>
+
+            <!-- Gorro de Lana Rojo con Pom-Pom Blanco -->
+            <g transform="translate(232, 80) rotate(-8)">
+              <path d="M-15 0 C-15 -16 -4 -22 6 -24 C14 -22 17 -16 15 0 Z" fill="url(#redBeanieGrad)"/>
+              <rect x="-17" y="-2" width="34" height="6" rx="3" fill="#FFFFFF"/>
+              <!-- Pom-pom de nieve blanco -->
+              <circle cx="7" cy="-25" r="5" fill="#FFFFFF" filter="drop-shadow(0 1px 2px rgba(0,0,0,0.2))"/>
+            </g>
+
+            <!-- Brazo Izquierdo Lanzador (animado) -->
+            <g class="snowman-right-arm">
+              <path d="M222 122 L202 115 M206 116 L201 109 M208 117 L200 120" stroke="#78350F" stroke-width="3" stroke-linecap="round"/>
+            </g>
+          </g>
+
+          <!-- BOLA DE NIEVE 1 (Vuela de Izquierda a Derecha) -->
+          <circle cx="0" cy="0" r="6" fill="url(#snowballGrad)" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.25))" class="snowball-to-right"/>
+
+          <!-- GOLPE / SPLASH DE NIEVE EN SNOWMAN DERECHO -->
+          <g class="snow-hit-splash-right">
+            <!-- Estrella/Explosión de partículas de nieve -->
+            <path d="M226 95 L229 105 L239 107 L230 112 L232 121 L224 114 L216 119 L219 110 L212 105 L222 103 Z" fill="#FFFFFF" stroke="#BAE6FD" stroke-width="1.2"/>
+            <!-- Copitos salpicando por el impacto -->
+            <circle cx="240" cy="96" r="3" fill="#FFFFFF"/>
+            <circle cx="244" cy="114" r="2.2" fill="#E0F2FE"/>
+            <circle cx="236" cy="126" r="2.8" fill="#FFFFFF"/>
+            <circle cx="218" cy="94" r="2.5" fill="#E0F2FE"/>
+            <circle cx="212" cy="116" r="3.2" fill="#FFFFFF"/>
+          </g>
+
+          <!-- BOLA DE NIEVE 2 (Vuela de Derecha a Izquierda) -->
+          <circle cx="0" cy="0" r="6" fill="url(#snowballGrad)" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.25))" class="snowball-to-left"/>
+
+          <!-- GOLPE / SPLASH DE NIEVE EN SNOWMAN IZQUIERDO -->
+          <g class="snow-hit-splash-left">
+            <!-- Estrella/Explosión de partículas de nieve -->
+            <path d="M74 95 L77 105 L87 107 L78 112 L80 121 L72 114 L64 119 L67 110 L60 105 L70 103 Z" fill="#FFFFFF" stroke="#BAE6FD" stroke-width="1.2"/>
+            <!-- Copitos salpicando por el impacto -->
+            <circle cx="60" cy="96" r="3" fill="#FFFFFF"/>
+            <circle cx="56" cy="114" r="2.2" fill="#E0F2FE"/>
+            <circle cx="64" cy="126" r="2.8" fill="#FFFFFF"/>
+            <circle cx="82" cy="94" r="2.5" fill="#E0F2FE"/>
+            <circle cx="88" cy="116" r="3.2" fill="#FFFFFF"/>
+          </g>
+        </svg>
       </div>
       <div class="xmas-bush xmas-bush-top-left">
 
