@@ -557,9 +557,9 @@
     .xmas-flake {
       position: absolute;
       top: 0;
-      color: #FFFFFF;
-      text-shadow: 0 0 6px rgba(186, 230, 253, 0.95), 0 0 12px rgba(255, 255, 255, 0.7);
-      font-size: var(--size, 14px);
+      color: #0284C7;
+      text-shadow: 0 0 8px rgba(56, 189, 248, 0.85), 0 2px 5px rgba(11, 63, 168, 0.35);
+      font-size: var(--size, 24px);
       line-height: 1;
       will-change: transform, opacity;
       animation: snowFallAndFade var(--dur, 3.8s) cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
@@ -570,20 +570,20 @@
 
     @keyframes snowFallAndFade {
       0% {
-        transform: translate3d(0, -16px, 0);
+        transform: translate3d(0, -22px, 0);
         opacity: 0;
       }
       15% {
-        opacity: 0.95;
+        opacity: 0.98;
       }
       60% {
-        opacity: 0.8;
+        opacity: 0.9;
       }
       80% {
-        opacity: 0.3;
+        opacity: 0.4;
       }
       100% {
-        transform: translate3d(var(--drift, 12px), 12vh, 0);
+        transform: translate3d(var(--drift, 14px), 12vh, 0);
         opacity: 0; /* Desvanece por completo antes de llegar a la franja del menú */
       }
     }
@@ -681,23 +681,23 @@
 
     <!-- COPOS DE NIEVE CAYENDO EN LA CABECERA (SE DESVANECEN ANTES DE TOCAR EL MENÚ) -->
     <div class="xmas-snow-wrap" aria-hidden="true">
-      <div class="xmas-flake" style="left: 4%; --drift: 12px; --dur: 3.5s; --delay: 0s; --size: 14px;">❄</div>
-      <div class="xmas-flake" style="left: 8%; --drift: -14px; --dur: 4.2s; --delay: 1.2s; --size: 17px;">❅</div>
-      <div class="xmas-flake" style="left: 14%; --drift: 10px; --dur: 3.8s; --delay: 2.1s; --size: 11px;">✻</div>
-      <div class="xmas-flake" style="left: 21%; --drift: -9px; --dur: 4.6s; --delay: 0.5s; --size: 16px;">❄</div>
-      <div class="xmas-flake" style="left: 26%; --drift: 13px; --dur: 3.2s; --delay: 1.8s; --size: 13px;">•</div>
-      <div class="xmas-flake" style="left: 32%; --drift: -11px; --dur: 4.0s; --delay: 0.2s; --size: 18px;">❅</div>
-      <div class="xmas-flake" style="left: 38%; --drift: 9px; --dur: 3.6s; --delay: 2.7s; --size: 12px;">✻</div>
-      <div class="xmas-flake" style="left: 44%; --drift: -13px; --dur: 4.8s; --delay: 1.0s; --size: 15px;">❄</div>
-      <div class="xmas-flake" style="left: 49%; --drift: 11px; --dur: 3.4s; --delay: 2.4s; --size: 17px;">❅</div>
-      <div class="xmas-flake" style="left: 55%; --drift: -10px; --dur: 4.3s; --delay: 0.8s; --size: 13px;">✻</div>
-      <div class="xmas-flake" style="left: 61%; --drift: 14px; --dur: 3.9s; --delay: 1.5s; --size: 16px;">❄</div>
-      <div class="xmas-flake" style="left: 67%; --drift: -12px; --dur: 4.5s; --delay: 0.3s; --size: 12px;">•</div>
-      <div class="xmas-flake" style="left: 73%; --drift: 11px; --dur: 3.7s; --delay: 2.2s; --size: 18px;">❅</div>
-      <div class="xmas-flake" style="left: 79%; --drift: -14px; --dur: 4.1s; --delay: 0.9s; --size: 14px;">✻</div>
-      <div class="xmas-flake" style="left: 85%; --drift: 10px; --dur: 3.3s; --delay: 1.7s; --size: 16px;">❄</div>
-      <div class="xmas-flake" style="left: 91%; --drift: -11px; --dur: 4.7s; --delay: 0.6s; --size: 13px;">❅</div>
-      <div class="xmas-flake" style="left: 96%; --drift: 8px; --dur: 3.8s; --delay: 2.0s; --size: 15px;">✻</div>
+      <div class="xmas-flake" style="left: 4%; --drift: 14px; --dur: 3.5s; --delay: 0s; --size: 24px;">❄</div>
+      <div class="xmas-flake" style="left: 9%; --drift: -16px; --dur: 4.2s; --delay: 1.2s; --size: 28px; color: #0284C7;">❅</div>
+      <div class="xmas-flake" style="left: 15%; --drift: 12px; --dur: 3.8s; --delay: 2.1s; --size: 22px; color: #0EA5E9;">✻</div>
+      <div class="xmas-flake" style="left: 22%; --drift: -11px; --dur: 4.6s; --delay: 0.5s; --size: 26px;">❄</div>
+      <div class="xmas-flake" style="left: 27%; --drift: 15px; --dur: 3.3s; --delay: 1.8s; --size: 21px; color: #0284C7;">❅</div>
+      <div class="xmas-flake" style="left: 33%; --drift: -13px; --dur: 4.0s; --delay: 0.2s; --size: 28px; color: #0B3FA8;">❄</div>
+      <div class="xmas-flake" style="left: 39%; --drift: 10px; --dur: 3.6s; --delay: 2.7s; --size: 23px;">✻</div>
+      <div class="xmas-flake" style="left: 45%; --drift: -15px; --dur: 4.8s; --delay: 1.0s; --size: 26px; color: #0284C7;">❅</div>
+      <div class="xmas-flake" style="left: 51%; --drift: 13px; --dur: 3.4s; --delay: 2.4s; --size: 27px; color: #0EA5E9;">❄</div>
+      <div class="xmas-flake" style="left: 57%; --drift: -12px; --dur: 4.3s; --delay: 0.8s; --size: 22px;">✻</div>
+      <div class="xmas-flake" style="left: 63%; --drift: 16px; --dur: 3.9s; --delay: 1.5s; --size: 26px; color: #0284C7;">❅</div>
+      <div class="xmas-flake" style="left: 69%; --drift: -14px; --dur: 4.5s; --delay: 0.3s; --size: 24px; color: #0B3FA8;">❄</div>
+      <div class="xmas-flake" style="left: 75%; --drift: 13px; --dur: 3.7s; --delay: 2.2s; --size: 28px;">❅</div>
+      <div class="xmas-flake" style="left: 81%; --drift: -15px; --dur: 4.1s; --delay: 0.9s; --size: 23px; color: #0EA5E9;">✻</div>
+      <div class="xmas-flake" style="left: 87%; --drift: 12px; --dur: 3.3s; --delay: 1.7s; --size: 26px; color: #0284C7;">❄</div>
+      <div class="xmas-flake" style="left: 92%; --drift: -13px; --dur: 4.7s; --delay: 0.6s; --size: 22px;">❅</div>
+      <div class="xmas-flake" style="left: 96%; --drift: 10px; --dur: 3.8s; --delay: 2.0s; --size: 25px; color: #0B3FA8;">✻</div>
     </div>
 
 
