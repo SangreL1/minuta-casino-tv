@@ -512,7 +512,7 @@
       overflow: hidden;
     }
 
-    /* 1. BOLAS NAVIDEÑAS COLGANTES CON SUAVE BAMBOLEO */
+    /* 1. BOLAS NAVIDEÑAS COLGANTES CON SUAVE BAMBOLEO (GPU ACCELERATED) */
     .xmas-baubles-wrap {
       position: absolute;
       top: 0;
@@ -529,20 +529,20 @@
       transform-origin: 50% 0%;
       animation: xmasSway var(--sway-dur, 4s) ease-in-out infinite alternate;
       animation-delay: var(--sway-del, 0s);
-      filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.22));
       will-change: transform;
+      contain: layout paint;
     }
 
     @keyframes xmasSway {
       0% {
-        transform: rotate(calc(-1 * var(--sway-deg, 5deg)));
+        transform: rotate3d(0, 0, 1, calc(-1 * var(--sway-deg, 5deg)));
       }
       100% {
-        transform: rotate(var(--sway-deg, 5deg));
+        transform: rotate3d(0, 0, 1, var(--sway-deg, 5deg));
       }
     }
 
-    /* 2. COPOS DE NIEVE CAYENDO (DESVANECEN ANTES DE ENTRAR AL MENÚ) */
+    /* 2. COPOS DE NIEVE CAYENDO (OPTIMIZADOS PARA GPU DE SMART TV) */
     .xmas-snow-wrap {
       position: absolute;
       top: 0;
@@ -552,20 +552,21 @@
       overflow: hidden;
       pointer-events: none;
       z-index: 15;
+      contain: strict;
     }
 
     .xmas-flake {
       position: absolute;
       top: 0;
       color: #0284C7;
-      text-shadow: 0 0 8px rgba(56, 189, 248, 0.85), 0 2px 5px rgba(11, 63, 168, 0.35);
       font-size: var(--size, 24px);
       line-height: 1;
       will-change: transform, opacity;
-      animation: snowFallAndFade var(--dur, 3.8s) cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
+      animation: snowFallAndFade var(--dur, 3.8s) linear infinite;
       animation-delay: var(--delay, 0s);
       opacity: 0;
       user-select: none;
+      contain: layout paint;
     }
 
     @keyframes snowFallAndFade {
@@ -574,26 +575,26 @@
         opacity: 0;
       }
       15% {
-        opacity: 0.98;
+        opacity: 0.95;
       }
-      60% {
-        opacity: 0.9;
+      65% {
+        opacity: 0.85;
       }
-      80% {
-        opacity: 0.4;
+      85% {
+        opacity: 0.35;
       }
       100% {
         transform: translate3d(var(--drift, 14px), 12vh, 0);
-        opacity: 0; /* Desvanece por completo antes de llegar a la franja del menú */
+        opacity: 0;
       }
     }
 
-    /* 3. ARBUSTOS DE PINO CON LUCES DE NAVIDAD EN LAS ESQUINAS */
+    /* 3. ARBUSTOS DE PINO CON LUCES EN ESQUINAS */
     .xmas-bush {
       position: absolute;
       pointer-events: none;
       z-index: 18;
-      filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.18));
+      contain: layout paint;
     }
 
     .xmas-bush-bottom-left {
@@ -612,49 +613,42 @@
       height: clamp(150px, 14vw, 210px);
       pointer-events: none;
       z-index: 19;
-      filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.22));
       overflow: visible;
+      contain: layout;
     }
 
     /* Animaciones de Snowman Izquierdo (Gorro Copa) */
-    /* Ciclo total: 6s */
-    /* 0.0s - 0.7s: Snowman Izq se inclina atrás y lanza bola 1 */
-    /* 0.7s - 1.2s: Bola 1 vuela hacia Snowman Der */
-    /* 1.2s: Bola 1 impacta a Snowman Der */
-    /* 3.0s - 3.7s: Snowman Der se inclina y lanza bola 2 */
-    /* 3.7s - 4.2s: Bola 2 vuela hacia Snowman Izq */
-    /* 4.2s - 4.9s: ¡GOLPE directo a Snowman Izq! Se sacude, tiembla, cabeza/sombrero se inclina */
-    /* 4.9s - 6.0s: Recuperación e idle */
-
     .snowman-left-group {
       transform-origin: 65px 170px;
       animation: snowmanLeftAction 6s ease-in-out infinite;
+      will-change: transform;
     }
 
     @keyframes snowmanLeftAction {
-      0%, 100% { transform: rotate(0deg) translateY(0); }
-      5% { transform: rotate(-8deg) translateY(2px); } /* Coge impulso hacia atrás */
-      11% { transform: rotate(12deg) translateY(-2px); } /* Lanza con fuerza */
-      18% { transform: rotate(0deg) translateY(0); } /* Vuelve a posición */
-      69% { transform: rotate(0deg) translateY(0); } /* Espera */
-      70% { transform: rotate(-18deg) translateY(5px) scale(0.96); } /* ¡IMPACTO DE BOLA! */
-      72% { transform: rotate(12deg) translateY(-3px); } /* Rebote */
-      75% { transform: rotate(-8deg) translateY(2px); }
-      78% { transform: rotate(5deg) translateY(0); }
-      82% { transform: rotate(0deg) translateY(0); } /* Se recupera */
+      0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+      5% { transform: translate3d(0, 2px, 0) rotate(-8deg); }
+      11% { transform: translate3d(0, -2px, 0) rotate(12deg); }
+      18% { transform: translate3d(0, 0, 0) rotate(0deg); }
+      69% { transform: translate3d(0, 0, 0) rotate(0deg); }
+      70% { transform: translate3d(0, 5px, 0) rotate(-18deg) scale(0.96); }
+      72% { transform: translate3d(0, -3px, 0) rotate(12deg); }
+      75% { transform: translate3d(0, 2px, 0) rotate(-8deg); }
+      78% { transform: translate3d(0, 0, 0) rotate(5deg); }
+      82% { transform: translate3d(0, 0, 0) rotate(0deg); }
     }
 
     .snowman-left-arm {
       transform-origin: 75px 130px;
       animation: snowmanLeftArmThrow 6s ease-in-out infinite;
+      will-change: transform;
     }
 
     @keyframes snowmanLeftArmThrow {
       0%, 100% { transform: rotate(0deg); }
-      5% { transform: rotate(-35deg); } /* Brazo atrás cargando bola */
-      11% { transform: rotate(45deg); } /* ¡Lanza hacia adelante! */
+      5% { transform: rotate(-35deg); }
+      11% { transform: rotate(45deg); }
       17% { transform: rotate(0deg); }
-      70% { transform: rotate(-25deg); } /* Desbalance por el golpe */
+      70% { transform: rotate(-25deg); }
       76% { transform: rotate(15deg); }
       82% { transform: rotate(0deg); }
     }
@@ -663,61 +657,64 @@
     .snowman-right-group {
       transform-origin: 235px 170px;
       animation: snowmanRightAction 6s ease-in-out infinite;
+      will-change: transform;
     }
 
     @keyframes snowmanRightAction {
-      0%, 100% { transform: rotate(0deg) translateY(0); }
-      19% { transform: rotate(0deg) translateY(0); } /* Espera el impacto */
-      20% { transform: rotate(18deg) translateY(5px) scale(0.96); } /* ¡IMPACTO DE BOLA 1! */
-      22% { transform: rotate(-12deg) translateY(-3px); } /* Rebote */
-      25% { transform: rotate(8deg) translateY(2px); }
-      28% { transform: rotate(-5deg) translateY(0); }
-      33% { transform: rotate(0deg) translateY(0); } /* Se recupera y toma venganza */
-      54% { transform: rotate(8deg) translateY(2px); } /* Impulso hacia atrás */
-      60% { transform: rotate(-13deg) translateY(-2px); } /* ¡Lanza con furia bola 2! */
-      67% { transform: rotate(0deg) translateY(0); }
+      0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+      19% { transform: translate3d(0, 0, 0) rotate(0deg); }
+      20% { transform: translate3d(0, 5px, 0) rotate(18deg) scale(0.96); }
+      22% { transform: translate3d(0, -3px, 0) rotate(-12deg); }
+      25% { transform: translate3d(0, 2px, 0) rotate(8deg); }
+      28% { transform: translate3d(0, 0, 0) rotate(-5deg); }
+      33% { transform: translate3d(0, 0, 0) rotate(0deg); }
+      54% { transform: translate3d(0, 2px, 0) rotate(8deg); }
+      60% { transform: translate3d(0, -2px, 0) rotate(-13deg); }
+      67% { transform: translate3d(0, 0, 0) rotate(0deg); }
     }
 
     .snowman-right-arm {
       transform-origin: 225px 130px;
       animation: snowmanRightArmThrow 6s ease-in-out infinite;
+      will-change: transform;
     }
 
     @keyframes snowmanRightArmThrow {
       0%, 100% { transform: rotate(0deg); }
-      20% { transform: rotate(25deg); } /* Desbalance por el golpe */
+      20% { transform: rotate(25deg); }
       26% { transform: rotate(-15deg); }
       32% { transform: rotate(0deg); }
-      54% { transform: rotate(35deg); } /* Brazo atrás cargando bola */
-      60% { transform: rotate(-45deg); } /* ¡Lanza con fuerza hacia la izquierda! */
+      54% { transform: rotate(35deg); }
+      60% { transform: rotate(-45deg); }
       66% { transform: rotate(0deg); }
     }
 
     /* Bola 1: Vuela de Snowman Izq a Snowman Der */
     .snowball-to-right {
       animation: flyBallToRight 6s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+      will-change: transform, opacity;
     }
 
     @keyframes flyBallToRight {
       0%, 10% {
         opacity: 0;
-        transform: translate(85px, 125px) scale(0.5);
+        transform: translate3d(85px, 125px, 0) scale(0.5);
       }
       11% {
         opacity: 1;
-        transform: translate(90px, 120px) scale(1);
+        transform: translate3d(90px, 120px, 0) scale(1);
       }
       15.5% {
         opacity: 1;
-        transform: translate(155px, 80px) scale(1.1); /* Cúspide del arco parábola */
+        transform: translate3d(155px, 80px, 0) scale(1.1);
       }
       19.9% {
         opacity: 1;
-        transform: translate(220px, 105px) scale(1); /* Punto justo antes del impacto en cabeza/pecho */
+        transform: translate3d(220px, 105px, 0) scale(1);
       }
       20%, 100% {
         opacity: 0;
-        transform: translate(226px, 108px) scale(1.5);
+        transform: translate3d(226px, 108px, 0) scale(1.5);
       }
     }
 
@@ -725,56 +722,58 @@
     .snow-hit-splash-right {
       transform-origin: 226px 108px;
       animation: splashRight 6s ease-out infinite;
+      will-change: transform, opacity;
     }
 
     @keyframes splashRight {
       0%, 19.9% {
         opacity: 0;
-        transform: scale(0.1);
+        transform: translate3d(0, 0, 0) scale(0.1);
       }
       20% {
         opacity: 1;
-        transform: scale(0.5);
+        transform: translate3d(0, 0, 0) scale(0.5);
       }
       22% {
         opacity: 1;
-        transform: scale(1.35);
+        transform: translate3d(0, 0, 0) scale(1.35);
       }
       25% {
         opacity: 0.6;
-        transform: scale(1.7) translateY(6px);
+        transform: translate3d(0, 6px, 0) scale(1.7);
       }
       27%, 100% {
         opacity: 0;
-        transform: scale(2) translateY(14px);
+        transform: translate3d(0, 14px, 0) scale(2);
       }
     }
 
     /* Bola 2: Vuela de Snowman Der a Snowman Izq */
     .snowball-to-left {
       animation: flyBallToLeft 6s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+      will-change: transform, opacity;
     }
 
     @keyframes flyBallToLeft {
       0%, 59% {
         opacity: 0;
-        transform: translate(215px, 125px) scale(0.5);
+        transform: translate3d(215px, 125px, 0) scale(0.5);
       }
       60% {
         opacity: 1;
-        transform: translate(210px, 120px) scale(1);
+        transform: translate3d(210px, 120px, 0) scale(1);
       }
       64.5% {
         opacity: 1;
-        transform: translate(145px, 80px) scale(1.1); /* Cúspide de la parábola */
+        transform: translate3d(145px, 80px, 0) scale(1.1);
       }
       69.9% {
         opacity: 1;
-        transform: translate(80px, 105px) scale(1); /* Justo antes de impactar */
+        transform: translate3d(80px, 105px, 0) scale(1);
       }
       70%, 100% {
         opacity: 0;
-        transform: translate(74px, 108px) scale(1.5);
+        transform: translate3d(74px, 108px, 0) scale(1.5);
       }
     }
 
@@ -782,28 +781,29 @@
     .snow-hit-splash-left {
       transform-origin: 74px 108px;
       animation: splashLeft 6s ease-out infinite;
+      will-change: transform, opacity;
     }
 
     @keyframes splashLeft {
       0%, 69.9% {
         opacity: 0;
-        transform: scale(0.1);
+        transform: translate3d(0, 0, 0) scale(0.1);
       }
       70% {
         opacity: 1;
-        transform: scale(0.5);
+        transform: translate3d(0, 0, 0) scale(0.5);
       }
       72% {
         opacity: 1;
-        transform: scale(1.35);
+        transform: translate3d(0, 0, 0) scale(1.35);
       }
       75% {
         opacity: 0.6;
-        transform: scale(1.7) translateY(6px);
+        transform: translate3d(0, 6px, 0) scale(1.7);
       }
       77%, 100% {
         opacity: 0;
-        transform: scale(2) translateY(14px);
+        transform: translate3d(0, 14px, 0) scale(2);
       }
     }
 
@@ -824,35 +824,39 @@
       opacity: 0.92;
     }
 
-    /* PARPADEO Y BRILLO REALISTA DE LUCES DE NAVIDAD */
+    /* PARPADEO DE LUCES DE NAVIDAD (100% GPU OPACITY - CERO DROP-SHADOW PESADO) */
     .light-twinkle-1 {
       animation: xmasGlow1 1.7s ease-in-out infinite alternate;
+      will-change: opacity;
     }
     .light-twinkle-2 {
       animation: xmasGlow2 2.2s ease-in-out infinite alternate;
+      will-change: opacity;
     }
     .light-twinkle-3 {
       animation: xmasGlow3 1.9s ease-in-out infinite alternate;
+      will-change: opacity;
     }
     .light-twinkle-4 {
       animation: xmasGlow4 2.4s ease-in-out infinite alternate;
+      will-change: opacity;
     }
 
     @keyframes xmasGlow1 {
-      0%, 100% { opacity: 0.35; filter: drop-shadow(0 0 2px currentColor); transform: scale(0.9); }
-      50% { opacity: 1; filter: drop-shadow(0 0 8px currentColor) drop-shadow(0 0 15px currentColor); transform: scale(1.15); }
+      0%, 100% { opacity: 0.35; }
+      50% { opacity: 1; }
     }
     @keyframes xmasGlow2 {
-      0%, 100% { opacity: 1; filter: drop-shadow(0 0 8px currentColor) drop-shadow(0 0 15px currentColor); transform: scale(1.15); }
-      50% { opacity: 0.3; filter: drop-shadow(0 0 2px currentColor); transform: scale(0.9); }
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
     }
     @keyframes xmasGlow3 {
-      0%, 100% { opacity: 0.4; filter: drop-shadow(0 0 3px currentColor); transform: scale(0.92); }
-      50% { opacity: 1; filter: drop-shadow(0 0 9px currentColor) drop-shadow(0 0 16px currentColor); transform: scale(1.18); }
+      0%, 100% { opacity: 0.4; }
+      50% { opacity: 1; }
     }
     @keyframes xmasGlow4 {
-      0%, 100% { opacity: 1; filter: drop-shadow(0 0 9px currentColor) drop-shadow(0 0 16px currentColor); transform: scale(1.18); }
-      50% { opacity: 0.35; filter: drop-shadow(0 0 3px currentColor); transform: scale(0.92); }
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.35; }
     }
 
   </style>
@@ -877,23 +881,15 @@
 
     <!-- COPOS DE NIEVE CAYENDO EN LA CABECERA (SE DESVANECEN ANTES DE TOCAR EL MENÚ) -->
     <div class="xmas-snow-wrap" aria-hidden="true">
-      <div class="xmas-flake" style="left: 4%; --drift: 14px; --dur: 3.5s; --delay: 0s; --size: 24px;">❄</div>
-      <div class="xmas-flake" style="left: 9%; --drift: -16px; --dur: 4.2s; --delay: 1.2s; --size: 28px; color: #0284C7;">❅</div>
-      <div class="xmas-flake" style="left: 15%; --drift: 12px; --dur: 3.8s; --delay: 2.1s; --size: 22px; color: #0EA5E9;">✻</div>
-      <div class="xmas-flake" style="left: 22%; --drift: -11px; --dur: 4.6s; --delay: 0.5s; --size: 26px;">❄</div>
-      <div class="xmas-flake" style="left: 27%; --drift: 15px; --dur: 3.3s; --delay: 1.8s; --size: 21px; color: #0284C7;">❅</div>
-      <div class="xmas-flake" style="left: 33%; --drift: -13px; --dur: 4.0s; --delay: 0.2s; --size: 28px; color: #0B3FA8;">❄</div>
-      <div class="xmas-flake" style="left: 39%; --drift: 10px; --dur: 3.6s; --delay: 2.7s; --size: 23px;">✻</div>
-      <div class="xmas-flake" style="left: 45%; --drift: -15px; --dur: 4.8s; --delay: 1.0s; --size: 26px; color: #0284C7;">❅</div>
-      <div class="xmas-flake" style="left: 51%; --drift: 13px; --dur: 3.4s; --delay: 2.4s; --size: 27px; color: #0EA5E9;">❄</div>
-      <div class="xmas-flake" style="left: 57%; --drift: -12px; --dur: 4.3s; --delay: 0.8s; --size: 22px;">✻</div>
-      <div class="xmas-flake" style="left: 63%; --drift: 16px; --dur: 3.9s; --delay: 1.5s; --size: 26px; color: #0284C7;">❅</div>
-      <div class="xmas-flake" style="left: 69%; --drift: -14px; --dur: 4.5s; --delay: 0.3s; --size: 24px; color: #0B3FA8;">❄</div>
-      <div class="xmas-flake" style="left: 75%; --drift: 13px; --dur: 3.7s; --delay: 2.2s; --size: 28px;">❅</div>
-      <div class="xmas-flake" style="left: 81%; --drift: -15px; --dur: 4.1s; --delay: 0.9s; --size: 23px; color: #0EA5E9;">✻</div>
-      <div class="xmas-flake" style="left: 87%; --drift: 12px; --dur: 3.3s; --delay: 1.7s; --size: 26px; color: #0284C7;">❄</div>
-      <div class="xmas-flake" style="left: 92%; --drift: -13px; --dur: 4.7s; --delay: 0.6s; --size: 22px;">❅</div>
-      <div class="xmas-flake" style="left: 96%; --drift: 10px; --dur: 3.8s; --delay: 2.0s; --size: 25px; color: #0B3FA8;">✻</div>
+      <div class="xmas-flake" style="left: 6%; --drift: 12px; --dur: 3.5s; --delay: 0s; --size: 24px;">❄</div>
+      <div class="xmas-flake" style="left: 17%; --drift: -14px; --dur: 4.2s; --delay: 1.2s; --size: 26px; color: #0284C7;">❅</div>
+      <div class="xmas-flake" style="left: 28%; --drift: 10px; --dur: 3.8s; --delay: 2.1s; --size: 22px; color: #0EA5E9;">✻</div>
+      <div class="xmas-flake" style="left: 39%; --drift: -12px; --dur: 4.0s; --delay: 0.5s; --size: 26px; color: #0B3FA8;">❄</div>
+      <div class="xmas-flake" style="left: 50%; --drift: 14px; --dur: 3.4s; --delay: 1.8s; --size: 24px;">❅</div>
+      <div class="xmas-flake" style="left: 61%; --drift: -10px; --dur: 4.5s; --delay: 0.8s; --size: 25px; color: #0284C7;">✻</div>
+      <div class="xmas-flake" style="left: 72%; --drift: 12px; --dur: 3.7s; --delay: 2.2s; --size: 26px; color: #0EA5E9;">❄</div>
+      <div class="xmas-flake" style="left: 83%; --drift: -14px; --dur: 4.1s; --delay: 1.0s; --size: 23px;">❅</div>
+      <div class="xmas-flake" style="left: 94%; --drift: 10px; --dur: 3.6s; --delay: 1.7s; --size: 25px; color: #0B3FA8;">✻</div>
     </div>
 
 
