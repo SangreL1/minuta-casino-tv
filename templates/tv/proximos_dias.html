@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,9 +20,14 @@
       --white: #FFFFFF;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-    html, body {
+    html,
+    body {
       background: var(--bg);
       color: var(--text);
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Calibri", Arial, sans-serif;
@@ -39,6 +45,7 @@
       z-index: 10;
       box-shadow: 0 3px 12px rgba(11, 63, 168, 0.3);
     }
+
     .header-inner {
       max-width: 1100px;
       margin: 0 auto;
@@ -48,40 +55,47 @@
       gap: 16px;
       flex-wrap: wrap;
     }
+
     .header-logos {
       display: flex;
       align-items: center;
       gap: 14px;
     }
+
     .header-logos img {
       height: 34px;
       object-fit: contain;
       filter: brightness(0) invert(1);
     }
+
     .header-title {
       flex: 1;
     }
+
     .header-title h1 {
       font-size: clamp(16px, 3.5vw, 22px);
       font-weight: 800;
       letter-spacing: 0.3px;
       line-height: 1.2;
     }
+
     .header-title p {
       font-size: clamp(11px, 2.2vw, 14px);
       opacity: 0.85;
       margin-top: 2px;
     }
+
     .header-tools {
       display: flex;
       align-items: center;
       gap: 12px;
     }
+
     .header-clock {
       font-size: 14px;
       font-weight: 700;
       opacity: 0.9;
-      background: rgba(255,255,255,0.15);
+      background: rgba(255, 255, 255, 0.15);
       padding: 6px 14px;
       border-radius: 20px;
     }
@@ -110,6 +124,7 @@
       padding: 80px 20px;
       color: var(--text-muted);
     }
+
     .loading-state .spinner {
       width: 40px;
       height: 40px;
@@ -119,7 +134,12 @@
       animation: spin 0.8s linear infinite;
       margin: 0 auto 16px;
     }
-    @keyframes spin { to { transform: rotate(360deg); } }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
 
     /* CARD POR DÍA */
     .dia-card {
@@ -131,17 +151,21 @@
       box-shadow: 0 2px 8px rgba(11, 63, 168, 0.05);
       transition: box-shadow 0.2s;
     }
+
     .dia-card:hover {
       box-shadow: 0 4px 16px rgba(11, 63, 168, 0.12);
     }
+
     .dia-card.hoy {
       border-color: var(--azul);
       border-width: 2.5px;
     }
+
     .dia-card.hoy .dia-header {
       background: var(--azul);
       color: #FFFFFF;
     }
+
     .dia-card.hoy .dia-header .dia-badge-hoy {
       display: inline-block;
     }
@@ -155,16 +179,19 @@
       gap: 10px;
       flex-wrap: wrap;
     }
+
     .dia-nombre {
       font-size: clamp(17px, 3vw, 22px);
       font-weight: 900;
       text-transform: capitalize;
     }
+
     .dia-fecha {
       font-size: clamp(12px, 2vw, 15px);
       font-weight: 600;
       opacity: 0.85;
     }
+
     .dia-badge-hoy {
       display: none;
       background: #FFFFFF;
@@ -188,6 +215,7 @@
       padding: 16px 18px;
       border-right: 1px solid var(--border);
     }
+
     .servicio-col:last-child {
       border-right: none;
     }
@@ -200,6 +228,7 @@
       padding-bottom: 8px;
       border-bottom: 2px solid var(--azul);
     }
+
     .servicio-col-nombre {
       font-size: 13px;
       font-weight: 800;
@@ -207,6 +236,7 @@
       text-transform: uppercase;
       letter-spacing: 0.8px;
     }
+
     .servicio-col-horario {
       font-size: 11px;
       color: var(--text-muted);
@@ -216,6 +246,7 @@
     .plato-item {
       margin-bottom: 10px;
     }
+
     .plato-categoria {
       font-size: 10px;
       font-weight: 800;
@@ -224,6 +255,7 @@
       letter-spacing: 1px;
       margin-bottom: 2px;
     }
+
     .plato-nombre {
       font-size: clamp(12px, 2vw, 14px);
       font-weight: 600;
@@ -239,7 +271,9 @@
     }
 
     /* EMOJI ICONOS POR SERVICIO */
-    .ico { font-size: 16px; }
+    .ico {
+      font-size: 16px;
+    }
 
     /* COLACION */
     .colacion-row {
@@ -249,6 +283,7 @@
       font-size: 13px;
       color: var(--text-muted);
     }
+
     .colacion-row strong {
       color: var(--text);
       font-weight: 700;
@@ -263,6 +298,7 @@
       border-top: 1px solid var(--border);
       margin-top: 10px;
     }
+
     .page-footer .org {
       font-weight: 700;
       color: var(--azul);
@@ -270,19 +306,28 @@
 
     /* RESPONSIVE MÓVIL */
     @media (max-width: 700px) {
-      .page-header { padding: 14px 16px 12px; }
-      .header-clock { display: none; }
+      .page-header {
+        padding: 14px 16px 12px;
+      }
+
+      .header-clock {
+        display: none;
+      }
+
       .servicios-grid {
         grid-template-columns: 1fr;
       }
+
       .servicio-col {
         border-right: none;
         border-bottom: 1px solid var(--border);
         padding: 14px 16px;
       }
+
       .servicio-col:last-child {
         border-bottom: none;
       }
+
       .disclaimer-banner {
         font-size: 13px;
         padding: 10px 14px;
@@ -290,6 +335,7 @@
     }
   </style>
 </head>
+
 <body>
 
   <!-- HEADER -->
@@ -415,5 +461,5 @@
     setInterval(cargarDatos, 300000);
   </script>
 </body>
-</html>
 
+</html>
